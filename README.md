@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run generate`
+
+Allows you to auto-generate boilerplate code for common parts of your application, specifically components, and containers. You can also run npm run generate <part> to skip the first selection. (e.g. npm run generate container)
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
