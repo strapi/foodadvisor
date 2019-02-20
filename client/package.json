@@ -16,7 +16,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "pretest": "rimraf ./coverage",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate": "plop --plopfile internals/generators/index.js",
