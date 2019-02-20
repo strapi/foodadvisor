@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Query } from "react-apollo";
+import { Query } from 'react-apollo';
 import { GET_RESTAURANTS } from '../../queries';
 
 // Components
@@ -17,17 +17,16 @@ import Loading from '../../components/Loading';
 import getQueryParameters from '../../utils/getQueryParameters';
 
 /* eslint-disable react/prefer-stateless-function */
-class RestaurantsPage extends React.Component { // NOTE: I'm not sure if a class is needed here
+class RestaurantsPage extends React.Component {
+  // NOTE: I'm not sure if a class is needed here
   renderRestaurant = restaurant => {
-    return (
-      <li key={restaurant.id}>
-        {restaurant.name}
-      </li>
-    );
-  }
+    return <li key={restaurant.id}>{restaurant.name}</li>;
+  };
 
   render() {
-    const { location: { search } } = this.props;
+    const {
+      location: { search }
+    } = this.props;
     // NOTE: Prepare for pagination
     const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
 
@@ -37,7 +36,7 @@ class RestaurantsPage extends React.Component { // NOTE: I'm not sure if a class
         variables={{
           limit: 1,
           start,
-          sort: 'name:ASC',
+          sort: 'name:ASC'
         }}
       >
         {({ data, error, loading }) => {
@@ -48,15 +47,12 @@ class RestaurantsPage extends React.Component { // NOTE: I'm not sure if a class
           if (loading) {
             return <Loading />;
           }
-          
+
           const { restaurants } = data;
 
           return (
             <div>
-              <ul>
-                {restaurants.map(this.renderRestaurant)}
-              </ul>              
-              
+              <ul>{restaurants.map(this.renderRestaurant)}</ul>
             </div>
           );
         }}
@@ -67,7 +63,7 @@ class RestaurantsPage extends React.Component { // NOTE: I'm not sure if a class
 
 RestaurantsPage.defaultProps = {};
 RestaurantsPage.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default RestaurantsPage;

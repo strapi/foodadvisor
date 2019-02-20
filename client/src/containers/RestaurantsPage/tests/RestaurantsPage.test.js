@@ -5,9 +5,6 @@ import wait from 'waait';
 import { MockedProvider } from 'react-apollo/test-utils';
 
 import { GET_RESTAURANTS } from '../../../queries';
-
-import Loading from '../../../components/Loading';
-import Error from '../../../components/Error';
 // import { enzymeFind } from 'styled-components/test-utils';
 
 import RestaurantsPage from '../index';
@@ -20,22 +17,24 @@ const mocks = [
       variables: {
         limit: 1,
         start: 0,
-        sort: 'name:ASC',
-      },
+        sort: 'name:ASC'
+      }
     },
     result: {
       data: {
-        restaurants: [{
-          id: '1',
-          name: 'restaurant',
-          description: 'A cool restaurant',
-          cover: {
-            url: '/uploads/5002461eee1c4c87b2e6eb558eead789.png'
-          },
-        }] ,
-      },
-    },
-  },
+        restaurants: [
+          {
+            id: '1',
+            name: 'restaurant',
+            description: 'A cool restaurant',
+            cover: {
+              url: '/uploads/5002461eee1c4c87b2e6eb558eead789.png'
+            }
+          }
+        ]
+      }
+    }
+  }
 ];
 
 describe('<RestaurantsPage />', () => {
@@ -43,16 +42,16 @@ describe('<RestaurantsPage />', () => {
     renderer.create(
       <MockedProvider mocks={mocks} addTypename={false}>
         <RestaurantsPage {...props} />
-      </MockedProvider>,
+      </MockedProvider>
     );
   });
 
-  it('should not crash', () => {
+  it('renderRestaurant should return a li', () => {
     const rendered = shallow(<RestaurantsPage {...props} />);
 
     const { renderRestaurant } = rendered.instance();
     const expected = <li key="1">restaurant</li>;
-    
+
     expect(renderRestaurant({ id: '1', name: 'restaurant' })).toEqual(expected);
   });
 
@@ -60,7 +59,7 @@ describe('<RestaurantsPage />', () => {
     const component = renderer.create(
       <MockedProvider mocks={[]}>
         <RestaurantsPage {...props} />
-      </MockedProvider>,
+      </MockedProvider>
     );
     const tree = component.toJSON();
 
@@ -71,12 +70,12 @@ describe('<RestaurantsPage />', () => {
     const component = renderer.create(
       <MockedProvider mocks={mocks} addTypename={false}>
         <RestaurantsPage {...props} />
-      </MockedProvider>,
+      </MockedProvider>
     );
 
     await wait(0); // wait for response
     const li = component.root.findByType('li');
-    expect(li.children).toContain('restaurant')
+    expect(li.children).toContain('restaurant');
   });
 
   it('should show error UI', async () => {
@@ -86,20 +85,20 @@ describe('<RestaurantsPage />', () => {
         variables: {
           limit: 1,
           start: 0,
-          sort: 'name:ASC',
-        },
+          sort: 'name:ASC'
+        }
       },
-      error: new Error('aw shucks'),
+      error: new Error('aw shucks')
     };
-  
+
     const component = renderer.create(
       <MockedProvider mocks={[restaurantsMock]} addTypename={false}>
         <RestaurantsPage {...props} />
-      </MockedProvider>,
+      </MockedProvider>
     );
-  
+
     await wait(0); // wait for response
-  
+
     const tree = component.toJSON();
     expect(tree.children).toContain('Error');
   });
