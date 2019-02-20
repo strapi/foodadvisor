@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators, compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { capitalize, findIndex, get, isUndefined, toInteger, upperFirst } from 'lodash';
+import { capitalize, findIndex, get, isEmpty, isUndefined, toInteger, upperFirst } from 'lodash';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FormattedMessage } from 'react-intl';
 import cn from 'classnames';
@@ -188,7 +188,7 @@ export class ListPage extends React.Component {
    * Retrieve the model's schema
    * @return {Object} Fields
    */
-  getCurrentSchema = () => 
+  getCurrentSchema = () =>
     get(this.props.schema, ['models', this.getCurrentModelName(), 'fields']) ||
     get(this.props.schema, ['models', 'plugins', this.getSource(), this.getCurrentModelName(), 'fields']);
 
@@ -278,10 +278,10 @@ export class ListPage extends React.Component {
     } else {
       const attributes = this.getCurrentModelAttributes();
       const searchable = attributes[target.name].type !== 'json' && attributes[target.name] !== 'array';
-      const attrToAdd = defaultSettingsAttrIndex !== -1 
+      const attrToAdd = defaultSettingsAttrIndex !== -1
         ? get(defaultSettingsDisplay, [defaultSettingsAttrIndex], {})
         : Object.assign(attributes[target.name], { name: target.name, label: upperFirst(target.name), searchable, sortable: searchable });
-      
+
       this.props.addAttr(attrToAdd, defaultSettingsAttrIndex);
     }
   }
@@ -365,7 +365,13 @@ export class ListPage extends React.Component {
 
   showSearch = () => get(this.getCurrentModel(), ['search']);
 
-  showFilters = () => get(this.getCurrentModel(), ['filters']);
+  showFilters = () => {
+    if (isEmpty(get(this.getCurrentModel(), ['editDisplay', 'availableFields']))) {
+      return false;
+    }
+
+    return get(this.getCurrentModel(), ['filters']);
+  }
 
   showBulkActions = () => get(this.getCurrentModel(), ['bulkActions']);
 
