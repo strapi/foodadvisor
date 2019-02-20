@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "jest-enzyme": "^7.0.1",
+    "apollo-boost": "^0.1.28",
+    "graphql": "^14.1.1",
     "react": "^16.8.2",
+    "react-apollo": "^2.4.1",
     "react-dom": "^16.8.2",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
@@ -18,7 +18,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate": "plop --plopfile internals/generators/index.js"
+    "generate": "plop --plopfile internals/generators/index.js",
+    "precommit": "NODE_ENV=production lint-staged",
+    "lint": "eslint src internals",
+    "lint:staged": "lint-staged",
+    "lint:fix": "eslint src/ internals/ --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,13 +33,38 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "pretty-quick --staged",
+      "yarn lint:fix",
+      "yarn run lint",
+      "git add"
+    ]
+  },
   "devDependencies": {
-    "plop": "^2.2.0"
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "jest-enzyme": "^7.0.1",
+    "jest-styled-components": "^6.3.1",
+    "lint-staged": "^8.1.4",
+    "plop": "^2.2.0",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0",
+    "waait": "^1.0.4"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/**/*.{js,jsx}",
       "!src/**/**/tests/*.test.{js,jsx}",
+      "!src/queries/*.js",
       "!src/*.js",
       "!<rootDir>/node_modules/",
       "!<rootDir>/path/to/dir/"
