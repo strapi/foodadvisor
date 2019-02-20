@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "pretest": "rimraf ./coverage",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate": "plop --plopfile internals/generators/index.js"
@@ -34,7 +35,8 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "jest-enzyme": "^7.0.1",
     "jest-styled-components": "^6.3.1",
-    "plop": "^2.2.0"
+    "plop": "^2.2.0",
+    "waait": "^1.0.4"
   },
   "jest": {
     "collectCoverageFrom": [
