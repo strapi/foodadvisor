@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "likes",
+  "info": {
+    "name": "like",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "author": {
+      "model": "user",
+      "via": "likes",
+      "plugin": "users-permissions"
+    },
+    "review": {
+      "model": "review",
+      "via": "likes"
+    }
+  }
+}
