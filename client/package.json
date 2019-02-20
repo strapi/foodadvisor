@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "generate": "plop --plopfile internals/generators/index.js",
     "precommit": "NODE_ENV=production lint-staged",
-    "lint": "eslint --cache src internals",
+    "lint": "eslint src internals",
     "lint:staged": "lint-staged",
     "lint:fix": "eslint src/ internals/ --fix"
   },
@@ -44,7 +44,6 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
-    "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
