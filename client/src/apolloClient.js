@@ -3,7 +3,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory'; // eslint-disable-line im
 import { HttpLink } from 'apollo-link-http'; // eslint-disable-line import/no-extraneous-dependencies
 
 const cache = new InMemoryCache();
-
 const link = new HttpLink({
   uri: 'http://localhost:1337/graphql'
 });
