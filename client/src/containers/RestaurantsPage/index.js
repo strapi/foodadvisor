@@ -6,21 +6,33 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Query } from 'react-apollo';
 import { GET_RESTAURANTS } from '../../queries';
-
-// Components
-import Error from '../../components/Error';
-import Loading from '../../components/Loading';
+import Query from '../../components/Query';
 
 // Utils
 import getQueryParameters from '../../utils/getQueryParameters';
 
 /* eslint-disable react/prefer-stateless-function */
 class RestaurantsPage extends React.Component {
+  handleClick = ({ target: { id } }) => this.props.history.push(`/${id}`);
+
   // NOTE: I'm not sure if a class is needed here
-  renderRestaurant = restaurant => {
-    return <li key={restaurant.id}>{restaurant.name}</li>;
+  renderRestaurants = ({ restaurants }) => {
+    return (
+      <div>
+        <ul>
+          {restaurants.map(restaurant => (
+            <li
+              key={restaurant.id}
+              id={restaurant.id}
+              onClick={this.handleClick}
+            >
+              {restaurant.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   };
 
   render() {
@@ -33,30 +45,13 @@ class RestaurantsPage extends React.Component {
     return (
       <Query
         query={GET_RESTAURANTS}
+        render={this.renderRestaurants}
         variables={{
           limit: 1,
           start,
           sort: 'name:ASC'
         }}
-      >
-        {({ data, error, loading }) => {
-          if (error) {
-            return <Error />;
-          }
-
-          if (loading) {
-            return <Loading />;
-          }
-
-          const { restaurants } = data;
-
-          return (
-            <div>
-              <ul>{restaurants.map(this.renderRestaurant)}</ul>
-            </div>
-          );
-        }}
-      </Query>
+      />
     );
   }
 }
