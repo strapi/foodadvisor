@@ -14,13 +14,21 @@ import getQueryParameters from '../../utils/getQueryParameters';
 
 /* eslint-disable react/prefer-stateless-function */
 class RestaurantsPage extends React.Component {
+  handleClick = ({ target: { id } }) => this.props.history.push(`/${id}`);
+
   // NOTE: I'm not sure if a class is needed here
   renderRestaurants = ({ restaurants }) => {
     return (
       <div>
         <ul>
           {restaurants.map(restaurant => (
-            <li key={restaurant.id}>{restaurant.name}</li>
+            <li
+              key={restaurant.id}
+              id={restaurant.id}
+              onClick={this.handleClick}
+            >
+              {restaurant.name}
+            </li>
           ))}
         </ul>
       </div>
