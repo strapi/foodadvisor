@@ -15,11 +15,28 @@ module.exports = {
    */
 
   find: async (ctx) => {
+    let restaurants;
+
     if (ctx.query._q) {
-      return strapi.services.restaurant.search(ctx.query);
+      restaurants = await strapi.services.restaurant.search(ctx.query);
     } else {
-      return strapi.services.restaurant.fetchAll(ctx.query);
+      restaurants = await strapi.services.restaurant.fetchAll(ctx.query);
     }
+
+    restaurants = restaurants.toJSON();
+
+    restaurants = await Promise.all(restaurants.map(async (restaurant) => {
+      let note = await strapi.api.review.services.review.average(restaurant.id);
+
+      note = note.toJSON();
+
+      restaurant.note = note['avg(`note`)'];
+
+      return restaurant;
+    }));
+
+
+    return restaurants;
   },
 
   /**
@@ -29,7 +46,21 @@ module.exports = {
    */
 
   findOne: async (ctx) => {
-    return strapi.services.restaurant.fetch(ctx.params);
+    let restaurant = await strapi.services.restaurant.fetch(ctx.params);
+
+    restaurant = restaurant.toJSON();
+
+    if (!restaurant) {
+      return ctx.notFound();
+    }
+
+    let note = await strapi.api.review.services.review.average(restaurant.id);
+
+    note = note.toJSON();
+
+    restaurant.note = note['avg(`note`)'];
+
+    return restaurant;
   },
 
   /**

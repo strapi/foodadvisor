@@ -17,7 +17,8 @@
     },
     "note": {
       "default": "",
-      "type": "integer"
+      "type": "integer",
+      "max": 5
     },
     "author": {
       "model": "user",
