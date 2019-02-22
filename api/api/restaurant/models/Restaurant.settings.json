@@ -64,6 +64,10 @@
         "_19th",
         "_20th"
       ]
+    },
+    "category": {
+      "model": "category",
+      "via": "restaurants"
     }
   }
 }
