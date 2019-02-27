@@ -6,6 +6,9 @@ const GET_RESTAURANT = gql`
     restaurant(id: $id) {
       name
       description
+      price
+      district
+      reviews
       cover {
         url
       }
