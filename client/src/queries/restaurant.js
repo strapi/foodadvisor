@@ -12,8 +12,13 @@ const GET_RESTAURANT = gql`
         url
       }
       reviews {
+        id
         note
         content
+        created_at
+        author {
+          username
+        }
       }
     }
   }
