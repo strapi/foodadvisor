@@ -129,7 +129,8 @@ const StyledHeader = styled.div`
         display: table-cell;
         a,
         &:last-of-type a {
-          border-bottom: 1px solid transparent;
+          border-bottom: 2px solid transparent;
+          &:hover,
           &.active {
             border-color: ${colors.lightOrange};
           }
