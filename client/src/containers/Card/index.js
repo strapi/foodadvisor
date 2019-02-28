@@ -14,7 +14,15 @@ import Price from '../../components/Price';
 import Rate from '../../components/Rate';
 
 function Card(props) {
-  const { name, price, district, cover, note } = props.restaurant;
+  const {
+    name,
+    price,
+    district,
+    cover,
+    note,
+    reviews,
+    category
+  } = props.restaurant;
 
   return (
     <StyledCard>
@@ -27,16 +35,22 @@ function Card(props) {
           />
         )}
       </div>
-      <H4>{name}</H4>
-      <p className="description">
-        <Price value={price} />
-        &nbsp;•&nbsp;
-        <span>{note}</span>
-        &nbsp;•&nbsp;
-        <span>{district}</span>
-      </p>
-
-      <Rate value={Math.floor(note)} />
+      <div className="card-infos">
+        <div className="left-infos">
+          <H4>{name}</H4>
+          <p className="description">
+            <Price value={price} />
+            &nbsp;•&nbsp;
+            <span>{category.name}</span>
+            &nbsp;•&nbsp;
+            <span>{district}</span>
+          </p>
+        </div>
+        <div className="right-infos">
+          <Rate value={Math.floor(note)} clickable={false} />
+          <p>{reviews.length}&nbsp;reviews</p>
+        </div>
+      </div>
     </StyledCard>
   );
 }

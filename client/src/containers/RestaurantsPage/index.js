@@ -99,7 +99,7 @@ const restaurants2 = [
       }
     ],
     reviews: [],
-    note: null
+    note: 4
   }
 ];
 
@@ -110,7 +110,6 @@ class RestaurantsPage extends React.Component {
 
   // eslint-disable-next-line no-unused-vars
   renderRestaurants = ({ restaurants }) => {
-    console.log(restaurants);
     // TO OPTIM WHEN DATA AVAILABLE
     const restaurantsToDiplay = restaurants2.map(restaurant => {
       const price = restaurant.price
