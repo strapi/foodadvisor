@@ -11,31 +11,32 @@ import StyledCard from './StyledCard';
 import H4 from '../../components/H4';
 import Img from '../../components/Img';
 import Price from '../../components/Price';
+import Rate from '../../components/Rate';
 
 function Card(props) {
-  const { restaurant } = props;
+  const { name, price, district, cover, note } = props.restaurant;
 
   return (
     <StyledCard>
       <div className="img-wrapper">
-        {restaurant.cover.length && (
+        {cover.length && (
           <Img
             type="article"
-            src={`${process.env.REACT_APP_BACKEND_URL}${
-              restaurant.cover[0].url
-            }`}
+            src={`${process.env.REACT_APP_BACKEND_URL}${cover[0].url}`}
             alt="cover"
           />
         )}
       </div>
-      <H4>{restaurant.name}</H4>
+      <H4>{name}</H4>
       <p className="description">
-        <Price value={restaurant.price} />
+        <Price value={price} />
         &nbsp;•&nbsp;
-        <span>{restaurant.price}</span>
+        <span>{note}</span>
         &nbsp;•&nbsp;
-        <span>{restaurant.district}</span>
+        <span>{district}</span>
       </p>
+
+      <Rate value={Math.floor(note)} />
     </StyledCard>
   );
 }
