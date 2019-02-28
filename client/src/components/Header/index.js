@@ -31,10 +31,12 @@ function Header({ links }) {
             <img src={logo} alt="logo" />
           </NavbarBrand>
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav navbar>
               {links.map(link => (
-                <NavItem key={link.to}>
-                  <Link url={link.to}>{link.name}</Link>
+                <NavItem key={link.to} className="active">
+                  <Link url={link.to} active={false}>
+                    <span>{link.name}</span>
+                  </Link>
                 </NavItem>
               ))}
             </Nav>
