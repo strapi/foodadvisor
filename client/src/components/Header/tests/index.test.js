@@ -5,14 +5,16 @@ import { mount } from 'enzyme';
 import { NavbarToggler, Collapse } from 'reactstrap';
 import Header from '../index';
 
-const renderComponent = properies =>
+const renderComponent = properties =>
   mount(
-    React.createElement(props => (
-      <Router>
-        <Header {...props} />
-      </Router>
-    )),
-    properies
+    React.createElement(
+      props => (
+        <Router>
+          <Header {...props} />
+        </Router>
+      ),
+      properties
+    )
   );
 
 describe('<Header />', () => {

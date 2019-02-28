@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 // import renderer from 'react-test-renderer';
 
-import Link from '../index';
+import StyledLink from '../StyledLink';
 
-describe('<Link />', () => {
+describe('<StyledLink />', () => {
   it('should not crash', () => {
-    shallow(<Link />);
+    shallow(<StyledLink />);
   });
 
   // it('Expect to have unit tests specified', () => {

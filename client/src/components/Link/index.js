@@ -22,12 +22,13 @@ function Link(props) {
 
 Link.defaultProps = {
   children: null,
-  message: null
+  message: null,
+  url: '#'
 };
 
 Link.propTypes = {
   children: PropTypes.node,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   message: PropTypes.string
 };
 
