@@ -1,38 +1,50 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import 'jest-styled-components';
 
-import Img from '../index';
+import StyledImg from '../StyledImg';
 
+const alt = 'testAlt';
 const src = 'test.png';
-const alt = 'test';
 const renderComponent = (props = {}) =>
-  shallow(<Img src={src} alt={alt} {...props} />);
+  mount(<StyledImg src={src} alt={alt} {...props} />);
 
-describe('<Img />', () => {
+describe('<StyledImg />', () => {
+  it('should render an <img> tag', () => {
+    const renderedComponent = renderComponent();
+
+    expect(renderedComponent.type().target).toBe('img');
+  });
+
   it('should have an src attribute', () => {
     const renderedComponent = renderComponent();
+
     expect(renderedComponent.prop('src')).toEqual(src);
   });
 
   it('should have an alt attribute', () => {
     const renderedComponent = renderComponent();
+
     expect(renderedComponent.prop('alt')).toEqual(alt);
   });
 
   it('should not have a className attribute', () => {
     const renderedComponent = renderComponent();
+
     expect(renderedComponent.prop('className')).toBeUndefined();
   });
 
   it('should adopt a className attribute', () => {
     const className = 'test';
     const renderedComponent = renderComponent({ className });
+
     expect(renderedComponent.hasClass(className)).toBe(true);
   });
 
-  it('should not adopt a srcset attribute', () => {
-    const srcset = 'test-HD.png 2x';
-    const renderedComponent = renderComponent({ srcset });
-    expect(renderedComponent.prop('srcset')).toBeUndefined();
-  });
+  // TODO: Uncomment for img sizes
+  // it('should have a height of 176px if its type is article', () => {
+  //   const tree = renderer.create(<StyledImg src={src} alt={alt} type="article" />).toJSON();
+
+  //   expect(tree).toHaveStyleRule('height', '176px');
+  // });
 });
