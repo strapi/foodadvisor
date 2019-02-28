@@ -10,7 +10,32 @@ import PropTypes from 'prop-types';
 import { GET_RESTAURANT } from '../../queries';
 import Query from '../../components/Query';
 
-export const renderView = ({ restaurant }) => <div>{restaurant.name}</div>;
+import Slider from '../../components/Slider';
+
+export const renderView = ({ restaurant }) => {
+  const {
+    name,
+    price,
+    district,
+    id,
+    cover,
+    note,
+    reviews,
+    category
+  } = restaurant;
+
+  console.log(restaurant);
+  console.log(name);
+  console.log(cover);
+  return (
+    <div>
+      {restaurant.name}
+      <div className="slider-wrapper">
+        <Slider slides={cover} />
+      </div>
+    </div>
+  );
+};
 
 function RestaurantPage(props) {
   const {
@@ -20,7 +45,11 @@ function RestaurantPage(props) {
   } = props;
 
   return (
-    <Query query={GET_RESTAURANT} render={renderView} variables={{ id }} />
+    <div className="page-wrapper">
+      <div className="container">
+        <Query query={GET_RESTAURANT} render={renderView} variables={{ id }} />
+      </div>
+    </div>
   );
 }
 
