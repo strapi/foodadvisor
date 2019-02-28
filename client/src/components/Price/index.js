@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* istanbul ignore next */
 function Price(props) {
   return (
     <span>

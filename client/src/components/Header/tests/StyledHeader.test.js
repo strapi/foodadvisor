@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-// import renderer from 'react-test-renderer';
 
 import Header from '../index';
 
@@ -9,7 +8,7 @@ describe('<Header />', () => {
     shallow(<Header />);
   });
 
-  // it('Expect to have unit tests specified', () => {
+  // it('To match snapshot', () => {
   //   const tree = renderer.create(<Error />).toJSON();
   //   expect(tree).toMatchSnapshot();
   // });
