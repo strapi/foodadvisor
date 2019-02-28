@@ -9,7 +9,8 @@ import PropTypes from 'prop-types';
 import { GET_RESTAURANTS } from '../../queries';
 import Query from '../../components/Query';
 
-import Card from '../Card';
+import Grid from '../../components/Grid';
+import Card from '../../components/Card';
 import H1 from '../../components/H1';
 
 // Utils
@@ -100,6 +101,105 @@ const restaurants2 = [
     ],
     reviews: [],
     note: 4
+  },
+  {
+    id: 3,
+    name: 'Sakura',
+    description: 'Sushis',
+    price: '_4',
+    district: '_5th',
+    category: {
+      id: 2,
+      name: 'japanese',
+      created_at: 1550850851786,
+      updated_at: 1550850851790
+    },
+    created_at: 1550850740183,
+    updated_at: 1551276135639,
+    cover: [
+      {
+        id: 2,
+        name: 'vegan-food-selection-t.jpg',
+        hash: '1156e47d75d4416ca714f5307327862e',
+        sha256: '9nqpzzSc2rjJCauaDODWZ8VxxlQUVZC9agr2yczD3MY',
+        ext: '.jpg',
+        mime: 'image/jpeg',
+        size: '141.86',
+        url: '/uploads/1156e47d75d4416ca714f5307327862e.jpg',
+        provider: 'local',
+        public_id: null,
+        created_at: 1551274617056,
+        updated_at: 1551274617063
+      }
+    ],
+    reviews: [],
+    note: 4
+  },
+  {
+    id: 4,
+    name: 'Sakura',
+    description: 'Sushis',
+    price: '_4',
+    district: '_5th',
+    category: {
+      id: 2,
+      name: 'japanese',
+      created_at: 1550850851786,
+      updated_at: 1550850851790
+    },
+    created_at: 1550850740183,
+    updated_at: 1551276135639,
+    cover: [
+      {
+        id: 2,
+        name: 'vegan-food-selection-t.jpg',
+        hash: '1156e47d75d4416ca714f5307327862e',
+        sha256: '9nqpzzSc2rjJCauaDODWZ8VxxlQUVZC9agr2yczD3MY',
+        ext: '.jpg',
+        mime: 'image/jpeg',
+        size: '141.86',
+        url: '/uploads/1156e47d75d4416ca714f5307327862e.jpg',
+        provider: 'local',
+        public_id: null,
+        created_at: 1551274617056,
+        updated_at: 1551274617063
+      }
+    ],
+    reviews: [],
+    note: 4
+  },
+  {
+    id: 5,
+    name: 'Sakura',
+    description: 'Sushis',
+    price: '_4',
+    district: '_5th',
+    category: {
+      id: 2,
+      name: 'japanese',
+      created_at: 1550850851786,
+      updated_at: 1550850851790
+    },
+    created_at: 1550850740183,
+    updated_at: 1551276135639,
+    cover: [
+      {
+        id: 2,
+        name: 'vegan-food-selection-t.jpg',
+        hash: '1156e47d75d4416ca714f5307327862e',
+        sha256: '9nqpzzSc2rjJCauaDODWZ8VxxlQUVZC9agr2yczD3MY',
+        ext: '.jpg',
+        mime: 'image/jpeg',
+        size: '141.86',
+        url: '/uploads/1156e47d75d4416ca714f5307327862e.jpg',
+        provider: 'local',
+        public_id: null,
+        created_at: 1551274617056,
+        updated_at: 1551274617063
+      }
+    ],
+    reviews: [],
+    note: 4
   }
 ];
 
@@ -127,7 +227,7 @@ class RestaurantsPage extends React.Component {
     });
 
     return (
-      <ul>
+      <Grid>
         {restaurantsToDiplay.map(restaurant => (
           <Card
             key={restaurant.id}
@@ -135,7 +235,7 @@ class RestaurantsPage extends React.Component {
             onClick={this.handleClick}
           />
         ))}
-      </ul>
+      </Grid>
     );
   };
 

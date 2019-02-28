@@ -36,7 +36,8 @@ const StyledCard = styled.li`
         text-align: right;
         width: 100%;
       }
-      .rating, label {
+      .rating,
+      label {
         height: 22px;
         line-height: 22px;
       }
