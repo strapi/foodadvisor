@@ -1,6 +1,6 @@
 import colors from './colors';
 
-export const mixins = (color = colors.lightGreyAlpha) => ({
+const mixins = (color = colors.lightGreyAlpha) => ({
   bbox:
     'box-sizing: border-box;\n' +
     '-moz-box-sizing: border-box;\n' +

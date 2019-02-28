@@ -104,16 +104,17 @@ const restaurants2 = [
 ];
 
 /* eslint-disable react/prefer-stateless-function */
+// NOTE: I'm not sure if a class is needed here
 class RestaurantsPage extends React.Component {
   handleClick = ({ target: { id } }) => this.props.history.push(`/${id}`);
 
-  // NOTE: I'm not sure if a class is needed here
+  // eslint-disable-next-line no-unused-vars
   renderRestaurants = ({ restaurants }) => {
     console.log(restaurants);
     // TO OPTIM WHEN DATA AVAILABLE
     const restaurantsToDiplay = restaurants2.map(restaurant => {
       const price = restaurant.price
-        ? parseInt(restaurant.price.replace('_', ''))
+        ? parseInt(restaurant.price.replace('_', ''), 10)
         : 1;
       const district = restaurant.district
         ? restaurant.district.replace('_', '')

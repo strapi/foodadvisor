@@ -19,15 +19,19 @@ const StyledImg = styled.img`
   ${props =>
     props.type === 'article' &&
     css`
-      //height: ${sizes.article.img.height};   
+      // height: ${sizes.article.img.height};   
     `}}
 `;
 
 StyledImg.defaultProps = {
-  type: 'article'
+  type: 'article',
+  src: ''
 };
 
 StyledImg.propTypes = {
+  alt: PropTypes.string.isRequired,
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  // TODO: I would prefer having a size prop instead of a type one
   type: PropTypes.oneOf(['article', 'slide', 'avatar'])
 };
 

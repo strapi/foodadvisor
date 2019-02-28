@@ -12,7 +12,7 @@ function Price(props) {
     <span>
       {Array(props.value)
         .fill(1)
-        .map((el, i) => '€')}
+        .map(() => '€')}
     </span>
   );
 }

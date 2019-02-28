@@ -41,10 +41,14 @@ function Card(props) {
   );
 }
 
-Card.defaultProps = {};
+Card.defaultProps = {
+  restaurant: {
+    cover: []
+  }
+};
 
 Card.propTypes = {
-  restaurant: PropTypes.object.isRequired
+  restaurant: PropTypes.object
 };
 
 export default Card;

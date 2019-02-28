@@ -6,12 +6,13 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import GlobalStyles from '../../components/GlobalStyles';
 import Header from '../../components/Header';
 import RestaurantsPage from '../RestaurantsPage';
 import RestaurantPage from '../RestaurantPage';
 import NotFound from '../NotFound';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
