@@ -10,6 +10,13 @@ const GET_RESTAURANTS = gql`
       cover {
         url
       }
+      category {
+        name
+      }
+      reviews {
+        note
+        content
+      }
     }
   }
 `;

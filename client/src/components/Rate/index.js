@@ -7,19 +7,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledRate from './StyledRate';
+/* eslint-disable react/no-array-index-key */
 
 const range = (min, max) =>
   Array(max - min + 1)
     .fill()
     .map((_, i) => min + i);
 
-const RatingItem = ({ checked, colored, onChange, value, clickable, htmlFor }) => (
-  <label className={`rating-item ${colored ? 'rating-item-selected' : ''}`} htmlFor={htmlFor}>
+const RatingItem = ({
+  checked,
+  colored,
+  onChange,
+  value,
+  clickable,
+  htmlFor
+}) => (
+  <label
+    className={`rating-item ${colored ? 'rating-item-selected' : ''}`}
+    htmlFor={htmlFor}
+  >
     <input
       id={htmlFor}
       checked={checked}
       className="rating-input"
-      onChange={e => onChange(value)}
+      onChange={() => onChange(value)}
       type="radio"
       value={value}
       disabled={!clickable}
@@ -79,7 +90,7 @@ Rate.defaultProps = {
 };
 
 Rate.propTypes = {
-  value: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
+  value: PropTypes.oneOf([0, 1, 2, 3, 4, 5, NaN]),
   clickable: PropTypes.bool
 };
 

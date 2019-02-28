@@ -8,9 +8,12 @@ const GET_RESTAURANT = gql`
       description
       price
       district
-      reviews
       cover {
         url
+      }
+      reviews {
+        note
+        content
       }
     }
   }

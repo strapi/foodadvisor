@@ -8,24 +8,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StyledCard from './StyledCard';
-import H4 from "../H4";
-import Img from "../Img";
-import Price from "../Price";
-import Rate from "../Rate";
+import H4 from '../H4';
+import Img from '../Img';
+import Price from '../Price';
+import Rate from '../Rate';
 
 function Card(props) {
   const {
-    name,
-    price,
-    district,
-    cover,
-    note,
-    reviews,
-    category
-  } = props.restaurant;
+    restaurant: { name, price, district, id, cover, note, reviews, category },
+    onClick
+  } = props;
 
   return (
-    <StyledCard>
+    <StyledCard onClick={() => onClick(id)}>
       <div className="img-wrapper">
         {cover.length && (
           <Img
@@ -57,7 +52,9 @@ function Card(props) {
 
 Card.defaultProps = {
   restaurant: {
-    cover: []
+    name: null,
+    cover: [],
+    reviews: []
   }
 };
 
