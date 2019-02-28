@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
   text-transform: uppercase;
   padding: ${sizes.margin * 2}px 0;
   display: block;
-  &:hover {
+  &:hover, &.active {
     ${fonts.bold}
     color: ${colors.darkBlue};
     text-decoration: none;

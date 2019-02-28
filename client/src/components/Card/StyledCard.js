@@ -12,6 +12,7 @@ import colors from '../../assets/styles/colors';
 
 const StyledCard = styled.li`
   padding-top: ${sizes.margin * 3}px;
+  cursor: pointer;
   .img-wrapper {
     width: 100%;
     height: ${sizes.article.img.height};
@@ -36,7 +37,8 @@ const StyledCard = styled.li`
         text-align: right;
         width: 100%;
       }
-      .rating, label {
+      .rating,
+      label {
         height: 22px;
         line-height: 22px;
       }

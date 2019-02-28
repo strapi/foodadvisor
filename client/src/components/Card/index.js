@@ -8,10 +8,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StyledCard from './StyledCard';
-import H4 from '../../components/H4';
-import Img from '../../components/Img';
-import Price from '../../components/Price';
-import Rate from '../../components/Rate';
+import H4 from '../H4';
+import Img from '../Img';
+import Price from '../Price';
+import Rate from '../Rate';
 
 function Card(props) {
   const {
@@ -36,7 +36,7 @@ function Card(props) {
           <p className="description">
             <Price value={price} />
             &nbsp;•&nbsp;
-            <span>{category}</span>
+            <span>{category.name}</span>
             &nbsp;•&nbsp;
             <span>{district}</span>
           </p>

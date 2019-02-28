@@ -9,99 +9,12 @@ import PropTypes from 'prop-types';
 import { GET_RESTAURANTS } from '../../queries';
 import Query from '../../components/Query';
 
-import Card from '../Card';
+import Grid from '../../components/Grid';
+import Card from '../../components/Card';
 import H1 from '../../components/H1';
 
 // Utils
 import getQueryParameters from '../../utils/getQueryParameters';
-
-// const restaurants2 = [
-//   {
-//     id: 1,
-//     name: 'Tacoland',
-//     description: 'fresh mexican restaurant in Paris',
-//     price: '_2',
-//     district: '_13th',
-//     category: {
-//       id: 1,
-//       name: 'mexican food',
-//       created_at: 1550850829097,
-//       updated_at: 1550850829109
-//     },
-//     created_at: 1550850683018,
-//     updated_at: 1551277718768,
-//     cover: [
-//       {
-//         id: 1,
-//         name: '6824939518_64c5ec2d5a_b.jpg',
-//         hash: '49edc36dade04328b9f4be0af3cfadc3',
-//         sha256: 'A2UezhsfHiGtzyz8t5ulMvVewxIWn2Igmv7lXRQJWp4',
-//         ext: '.jpg',
-//         mime: 'image/jpeg',
-//         size: '297.01',
-//         url: '/uploads/49edc36dade04328b9f4be0af3cfadc3.jpg',
-//         provider: 'local',
-//         public_id: null,
-//         created_at: 1551274602277,
-//         updated_at: 1551274602284
-//       }
-//     ],
-//     reviews: [
-//       {
-//         id: 1,
-//         content: 'vfdsvdbdsz',
-//         note: 1,
-//         author: 1,
-//         restaurant: 1,
-//         created_at: 1551289694167,
-//         updated_at: 1551289694182
-//       },
-//       {
-//         id: 2,
-//         content: 'qesdfgh',
-//         note: 2,
-//         author: 1,
-//         restaurant: 1,
-//         created_at: 1551289711417,
-//         updated_at: 1551289726797
-//       }
-//     ],
-//     note: 1.5
-//   },
-//   {
-//     id: 2,
-//     name: 'Sakura',
-//     description: 'Sushis',
-//     price: '_4',
-//     district: '_5th',
-//     category: {
-//       id: 2,
-//       name: 'japanese',
-//       created_at: 1550850851786,
-//       updated_at: 1550850851790
-//     },
-//     created_at: 1550850740183,
-//     updated_at: 1551276135639,
-//     cover: [
-//       {
-//         id: 2,
-//         name: 'vegan-food-selection-t.jpg',
-//         hash: '1156e47d75d4416ca714f5307327862e',
-//         sha256: '9nqpzzSc2rjJCauaDODWZ8VxxlQUVZC9agr2yczD3MY',
-//         ext: '.jpg',
-//         mime: 'image/jpeg',
-//         size: '141.86',
-//         url: '/uploads/1156e47d75d4416ca714f5307327862e.jpg',
-//         provider: 'local',
-//         public_id: null,
-//         created_at: 1551274617056,
-//         updated_at: 1551274617063
-//       }
-//     ],
-//     reviews: [],
-//     note: 4
-//   }
-// ];
 
 /* eslint-disable react/prefer-stateless-function */
 // NOTE: I'm not sure if a class is needed here
@@ -112,6 +25,7 @@ class RestaurantsPage extends React.Component {
   renderRestaurants = ({ restaurants }) => {
     // TO OPTIM WHEN DATA AVAILABLE
     // NEED TO BE UPDATED
+
     const restaurantsToDiplay = restaurants.map(restaurant => {
       const price = restaurant.price
         ? parseInt(restaurant.price.replace('_', ''), 10)
@@ -128,7 +42,7 @@ class RestaurantsPage extends React.Component {
     });
 
     return (
-      <ul>
+      <Grid>
         {restaurantsToDiplay.map(restaurant => (
           <Card
             key={restaurant.id}
@@ -136,7 +50,7 @@ class RestaurantsPage extends React.Component {
             onClick={this.handleClick}
           />
         ))}
-      </ul>
+      </Grid>
     );
   };
 
