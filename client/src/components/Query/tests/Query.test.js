@@ -27,6 +27,13 @@ const mocks = [
             description: 'A cool restaurant',
             cover: {
               url: '/uploads/5002461eee1c4c87b2e6eb558eead789.png'
+            },
+            reviews: {
+              note: 0,
+              content: 'cool stuff usefull'
+            },
+            category: {
+              name: 'cool category'
             }
           }
         ]

@@ -15,17 +15,12 @@ import Rate from '../../components/Rate';
 
 function Card(props) {
   const {
-    name,
-    price,
-    district,
-    cover,
-    note,
-    reviews,
-    category
-  } = props.restaurant;
+    restaurant: { name, price, district, id, cover, note, reviews, category },
+    onClick
+  } = props;
 
   return (
-    <StyledCard>
+    <StyledCard onClick={() => onClick(id)}>
       <div className="img-wrapper">
         {cover.length && (
           <Img
@@ -41,7 +36,7 @@ function Card(props) {
           <p className="description">
             <Price value={price} />
             &nbsp;•&nbsp;
-            <span>{category.name}</span>
+            <span>{category}</span>
             &nbsp;•&nbsp;
             <span>{district}</span>
           </p>
@@ -57,7 +52,9 @@ function Card(props) {
 
 Card.defaultProps = {
   restaurant: {
-    cover: []
+    name: null,
+    cover: [],
+    reviews: []
   }
 };
 

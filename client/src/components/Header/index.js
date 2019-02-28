@@ -5,7 +5,7 @@
  */
 
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {
   Collapse,
@@ -20,7 +20,7 @@ import StyledHeader from './StyledHeader';
 import Link from '../Link';
 import logo from '../../assets/img/logo.svg';
 
-function Header() {
+function Header({ links }) {
   const [isOpen, toggleIsOpen] = useState(false);
 
   return (
@@ -32,15 +32,11 @@ function Header() {
           </NavbarBrand>
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link url="#">Restaurants</Link>
-              </NavItem>
-              <NavItem>
-                <Link url="#">About us</Link>
-              </NavItem>
-              <NavItem>
-                <Link url="#">Blog</Link>
-              </NavItem>
+              {links.map(link => (
+                <NavItem key={link.to}>
+                  <Link url={link.to}>{link.name}</Link>
+                </NavItem>
+              ))}
             </Nav>
           </Collapse>
           <NavbarToggler onClick={() => toggleIsOpen(!isOpen)}>
@@ -57,11 +53,13 @@ function Header() {
   );
 }
 
-NavbarBrand.propTypes = {
+Header.defaultProps = {
+  links: []
   // tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
   // pass in custom element to use
 };
-Navbar.propTypes = {
+Header.propTypes = {
+  links: PropTypes.array
   // light: PropTypes.bool,
   // dark: PropTypes.bool,
   // fixed: PropTypes.string,
