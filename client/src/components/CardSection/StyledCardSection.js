@@ -39,7 +39,6 @@ const StyledCardSection = styled.div`
   .description {
     text-transform: capitalize;
   }
-
 `;
 
 export default StyledCardSection;

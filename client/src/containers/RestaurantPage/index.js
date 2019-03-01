@@ -13,6 +13,7 @@ import Query from '../../components/Query';
 import Grid from '../../components/Grid';
 import CardSection from '../../components/CardSection';
 import Slider from '../../components/Slider';
+import Tabs from '../../components/Tabs';
 
 export const renderView = ({ restaurant }) => {
   const { cover } = restaurant;
@@ -36,6 +37,10 @@ export const renderView = ({ restaurant }) => {
       <div className="slider-wrapper">
         <Slider slides={cover} />
       </div>
+
+      <div className="informations-wrapper">
+        <Tabs />
+      </div>
     </div>
   );
 };
@@ -48,10 +53,8 @@ function RestaurantPage(props) {
   } = props;
 
   return (
-    <div className="page-wrapper">
-      <div className="container">
-        <Query query={GET_RESTAURANT} render={renderView} variables={{ id }} />
-      </div>
+    <div className="page-wrapper" id="restaurant-page">
+      <Query query={GET_RESTAURANT} render={renderView} variables={{ id }} />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 import mixins from '../../assets/styles/mixins';
-import sizes from '../../assets/styles/sizes';
 
 const General = createGlobalStyle`
   * { ${mixins().bbox} }
@@ -20,6 +19,7 @@ const General = createGlobalStyle`
     }
     ul {
       list-style-type: none;
+      margin-bottom: 0;
     }
     .link-wrapper {
       a.link {
@@ -37,10 +37,7 @@ const General = createGlobalStyle`
       }
     }
     .page-wrapper {
-      padding: ${sizes.margin * 2}px;
-      @media (min-width: ${sizes.tablet}) {
-        padding: ${sizes.margin * 4}px ${sizes.margin * 2}px;
-      }
+      position: relative;
     }
   }
 `;
