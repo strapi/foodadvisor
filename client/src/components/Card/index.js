@@ -18,17 +18,16 @@ function Card(props) {
     restaurant: { name, price, district, id, cover, note, reviews, category },
     onClick
   } = props;
+  const coverURL = cover[0] ? cover[0].url : '';
 
   return (
     <StyledCard onClick={() => onClick(id)}>
       <div className="img-wrapper">
-        {cover.length && (
-          <Img
-            type="article"
-            src={`${process.env.REACT_APP_BACKEND_URL}${cover[0].url}`}
-            alt="cover"
-          />
-        )}
+        <Img
+          type="article"
+          src={`${process.env.REACT_APP_BACKEND_URL}${coverURL}`}
+          alt="cover"
+        />
       </div>
       <div className="card-infos">
         <div className="left-infos">
@@ -36,14 +35,14 @@ function Card(props) {
           <p className="description">
             <Price value={price} />
             &nbsp;•&nbsp;
-            <span>{category.name}</span>
+            <span>{category && category.name}</span>
             &nbsp;•&nbsp;
             <span>{district}</span>
           </p>
         </div>
         <div className="right-infos">
           <Rate value={Math.floor(note)} clickable={false} />
-          <p>{reviews.length}&nbsp;reviews</p>
+          <p>{reviews ? reviews.length : 0}&nbsp;reviews</p>
         </div>
       </div>
     </StyledCard>

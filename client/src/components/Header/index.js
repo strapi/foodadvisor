@@ -22,9 +22,13 @@ import logo from '../../assets/img/logo.svg';
 
 function Header({ links }) {
   const [isOpen, toggleIsOpen] = useState(false);
+  // Retrieve the active link with the window.pathname
+  const activeLink = links.indexOf(
+    links.find(link => window.location.pathname === link.to)
+  );
 
   return (
-    <StyledHeader>
+    <StyledHeader activeLink={activeLink}>
       <Navbar expand="md">
         <div className="container">
           <NavbarBrand href="/">
@@ -32,13 +36,15 @@ function Header({ links }) {
           </NavbarBrand>
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
-              {links.map(link => (
-                <NavItem key={link.to} className="active">
-                  <Link url={link.to} active={false}>
-                    <span>{link.name}</span>
-                  </Link>
-                </NavItem>
-              ))}
+              {links.map(link => {
+                return (
+                  <NavItem key={link.to} className="active">
+                    <Link url={link.to} active={false}>
+                      <span>{link.name}</span>
+                    </Link>
+                  </NavItem>
+                );
+              })}
             </Nav>
           </Collapse>
           <NavbarToggler onClick={() => toggleIsOpen(!isOpen)}>
