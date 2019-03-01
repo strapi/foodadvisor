@@ -11,6 +11,7 @@ import { GET_RESTAURANT } from '../../queries';
 import Query from '../../components/Query';
 import Review from '../../components/Review';
 
+/* istanbul ignore */
 export const renderView = ({ restaurant: { reviews } }) =>
   reviews.map(review => <Review key={review.id} {...review} />);
 
