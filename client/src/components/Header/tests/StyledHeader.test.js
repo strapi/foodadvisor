@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
-import Header from '../index';
+import StyledHeader from '../StyledHeader';
 
-describe('<Header />', () => {
+describe('<StyledHeader />', () => {
   it('should not crash', () => {
-    shallow(<Header />);
+    mount(<StyledHeader />);
   });
 
   // it('To match snapshot', () => {

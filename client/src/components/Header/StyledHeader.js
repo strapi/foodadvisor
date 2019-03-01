@@ -5,12 +5,9 @@
  */
 
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import colors from '../../assets/styles/colors';
-import fonts from '../../assets/styles/fonts';
 import sizes from '../../assets/styles/sizes';
-/* eslint-disable consistent-return */
 
 const StyledHeader = styled.div`
   .navbar {
@@ -140,24 +137,6 @@ const StyledHeader = styled.div`
           }
         }
       }
-
-      ${({ activeLink }) => {
-        if (activeLink !== -1) {
-          return `
-            li:nth-child(${activeLink + 1}) {
-              padding: 0 ${sizes.margin * 4}px;
-              display: table-cell;
-              a,
-              &:last-of-type a {
-                font-family: ${fonts.bold};
-                color: ${colors.darkBlue};
-                border-bottom: 2px solid transparent;
-                border-color: ${colors.lightOrange};
-              }
-            }
-          `;
-        }
-      }}
     }
 
     @media (min-width: ${sizes.desktop}) {
@@ -172,13 +151,5 @@ const StyledHeader = styled.div`
     }
   }
 `;
-
-StyledHeader.defaultProps = {
-  activeLink: -1
-};
-
-StyledHeader.propTypes = {
-  activeLink: PropTypes.number
-};
 
 export default StyledHeader;
