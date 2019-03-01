@@ -13,20 +13,8 @@ import Query from '../../components/Query';
 import Slider from '../../components/Slider';
 
 export const renderView = ({ restaurant }) => {
-  const {
-    name,
-    price,
-    district,
-    id,
-    cover,
-    note,
-    reviews,
-    category
-  } = restaurant;
+  const { cover } = restaurant;
 
-  console.log(restaurant);
-  console.log(name);
-  console.log(cover);
   return (
     <div>
       {restaurant.name}

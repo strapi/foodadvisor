@@ -6,15 +6,9 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl
-  // CarouselIndicators,
-} from 'reactstrap';
+import { Carousel, CarouselItem, CarouselControl } from 'reactstrap';
 import StyledSlider from './StyledSlider';
-import Img from "../Img";
-
+import Img from '../Img';
 
 class Slider extends Component {
   constructor(props) {
@@ -23,7 +17,6 @@ class Slider extends Component {
     this.state = { activeIndex: 0 };
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
-    // this.goToIndex = this.goToIndex.bind(this);
     this.handleGotTo = this.handleGotTo.bind(this);
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
@@ -41,30 +34,27 @@ class Slider extends Component {
 
   next() {
     if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === this.items.length - 1
-        ? 0
-        : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
+    this.setState(prevState => ({
+      activeIndex:
+        prevState.activeIndex === this.items.length - 1
+          ? 0
+          : prevState.activeIndex + 1
+    }));
   }
 
   previous() {
     if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === 0
-        ? this.items.length - 1
-        : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
+    this.setState(prevState => ({
+      activeIndex:
+        prevState.activeIndex === 0
+          ? this.items.length - 1
+          : prevState.activeIndex - 1
+    }));
   }
-
-  // goToIndex(newIndex) {
-  //   if (this.animating) return;
-  //   this.setState({ activeIndex: newIndex });
-  // }
 
   handleGotTo(e) {
     if (this.animating) return;
-    this.setState({ activeIndex: parseInt(e.currentTarget.id) });
+    this.setState({ activeIndex: parseInt(e.currentTarget.id, 10) });
   }
 
   render() {
@@ -75,7 +65,7 @@ class Slider extends Component {
         <CarouselItem
           onExiting={this.onExiting}
           onExited={this.onExited}
-          key={`slide_${index}`}
+          key={item.url}
         >
           <Img
             src={`${process.env.REACT_APP_BACKEND_URL}${item.url}`}
@@ -87,7 +77,12 @@ class Slider extends Component {
 
     const indicators = this.items.map((item, index) => {
       return (
-        <li key={index} id={index} onClick={this.handleGotTo}>
+        <li
+          id={index}
+          onClick={this.handleGotTo}
+          className={activeIndex === index ? 'active' : ''}
+          key={item.url}
+        >
           <Img
             src={`${process.env.REACT_APP_BACKEND_URL}${item.url}`}
             alt={`slide_${index}`}
@@ -103,18 +98,21 @@ class Slider extends Component {
           activeIndex={activeIndex}
           next={this.next}
           previous={this.previous}
+          interval={false}
         >
           {slides}
-          <CarouselControl
-            direction="prev"
-            directionText="Previous"
-            onClickHandler={this.previous}
-          />
-          <CarouselControl
-            direction="next"
-            directionText="Next"
-            onClickHandler={this.next}
-          />
+          <div className="carousel-controls">
+            <CarouselControl
+              direction="prev"
+              directionText="Previous"
+              onClickHandler={this.previous}
+            />
+            <CarouselControl
+              direction="next"
+              directionText="Next"
+              onClickHandler={this.next}
+            />
+          </div>
         </Carousel>
         <ol className="indicators">{indicators}</ol>
       </React.Fragment>

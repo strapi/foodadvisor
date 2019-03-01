@@ -19,6 +19,18 @@ const sizes = {
     img: {
       height: '176px'
     }
+  },
+  slider: {
+    height: {
+      small: '172px',
+      large: '356px'
+    },
+    controls: {
+      size: '68px'
+    },
+    indicators: {
+      size: '74px'
+    }
   }
 };
 
