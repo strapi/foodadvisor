@@ -12,6 +12,7 @@ const StyledGrid = styled.ul`
     @media (min-width: ${sizes.tablet}) {
       width: 50%;
       display: inline-block;
+      vertical-align: top;
       padding-bottom: ${sizes.margin * 3}px;
       &:nth-child(even) {
         padding-left: ${sizes.margin * 1.5}px;

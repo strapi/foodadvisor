@@ -21,9 +21,23 @@ const General = createGlobalStyle`
     ul {
       list-style-type: none;
     }
+    .link-wrapper {
+      a.link {
+        display: table;
+        float: right;
+      }
+    }
+    a.link {
+      cursor: pointer;
+      p {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
+    }
     .page-wrapper {
       padding: ${sizes.margin * 2}px;
-
       @media (min-width: ${sizes.tablet}) {
         padding: ${sizes.margin * 4}px ${sizes.margin * 2}px;
       }

@@ -8,53 +8,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StyledCard from './StyledCard';
-import H4 from '../H4';
+import CardSection from '../CardSection';
 import Img from '../Img';
-import Price from '../Price';
-import Rate from '../Rate';
 
 function Card(props) {
   const {
-    restaurant: { name, price, district, id, cover, note, reviews, category },
+    restaurant: { id, cover },
     onClick
   } = props;
 
   return (
-    <StyledCard onClick={() => onClick(id)}>
+    <StyledCard onClick={() => onClick(id)} className="clickable-card">
       <div className="img-wrapper">
-        {cover.length && (
+        {cover.length ? (
           <Img
             type="article"
             src={`${process.env.REACT_APP_BACKEND_URL}${cover[0].url}`}
             alt="cover"
           />
+        ) : (
+          <Img type="article" alt="cover" />
         )}
       </div>
-      <div className="card-infos">
-        <div className="left-infos">
-          <H4>{name}</H4>
-          <p className="description">
-            <Price value={price} />
-            &nbsp;•&nbsp;
-            <span>{category.name}</span>
-            &nbsp;•&nbsp;
-            <span>{district}</span>
-          </p>
-        </div>
-        <div className="right-infos">
-          <Rate value={Math.floor(note)} clickable={false} />
-          <p>{reviews.length}&nbsp;reviews</p>
-        </div>
-      </div>
+      <CardSection restaurant={props.restaurant} />
     </StyledCard>
   );
 }
 
 Card.defaultProps = {
   restaurant: {
-    name: null,
-    cover: [],
-    reviews: []
+    cover: []
   }
 };
 
