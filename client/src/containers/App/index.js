@@ -13,7 +13,6 @@ import Header from '../../components/Header';
 import About from '../About';
 import Blog from '../Blog';
 import RestaurantsPage from '../RestaurantsPage';
-// import TempRestaurant from '../TempRestaurant';
 import RestaurantPage from '../RestaurantPage';
 import NotFound from '../NotFound';
 
@@ -33,7 +32,6 @@ function App() {
         <Route path="/about" component={About} exact />
         <Route path="/blog" component={Blog} exact />
         <Route path="/:id/:content" component={RestaurantPage} exact />
-        {/* <Route path="/:id/:content" component={TempRestaurant} exact /> */}
         <Route component={NotFound} />
       </Switch>
     </div>

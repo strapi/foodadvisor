@@ -12,6 +12,8 @@ import Query from '../../components/Query';
 
 import Slider from '../../components/Slider';
 
+/* istanbul ignore next */
+// NOTE: will be replaced by './RenderView'
 export const renderView = ({ restaurant }) => {
   const { cover } = restaurant;
 
