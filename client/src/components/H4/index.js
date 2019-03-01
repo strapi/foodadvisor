@@ -8,16 +8,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledH4 from './StyledH4';
 
-function H4(props) {
+function H4({ children, message, ...rest }) {
   const content = (() => {
-    if (props.message) {
-      return props.message;
+    if (message) {
+      return message;
     }
 
-    return props.children;
+    return children;
   })();
 
-  return <StyledH4>{content}</StyledH4>;
+  return <StyledH4 {...rest}>{content}</StyledH4>;
 }
 
 H4.defaultProps = {

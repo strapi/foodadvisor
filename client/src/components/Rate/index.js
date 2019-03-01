@@ -7,36 +7,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledRate from './StyledRate';
+
+import RatingItem from './RatingItem';
 /* eslint-disable react/no-array-index-key */
 
 const range = (min, max) =>
   Array(max - min + 1)
     .fill()
     .map((_, i) => min + i);
-
-const RatingItem = ({
-  checked,
-  colored,
-  onChange,
-  value,
-  clickable,
-  htmlFor
-}) => (
-  <label
-    className={`rating-item ${colored ? 'rating-item-selected' : ''}`}
-    htmlFor={htmlFor}
-  >
-    <input
-      id={htmlFor}
-      checked={checked}
-      className="rating-input"
-      onChange={() => onChange(value)}
-      type="radio"
-      value={value}
-      disabled={!clickable}
-    />
-  </label>
-);
 
 const Rating = ({ min, max, onChange, value, clickable }) => {
   return (
@@ -56,18 +34,20 @@ const Rating = ({ min, max, onChange, value, clickable }) => {
   );
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class Rate extends React.Component {
-  constructor() {
-    super();
+  // NOTE: I'm commenting this since we don't need it yet
+  // state = { rating: 0 };
 
-    this.state = { rating: 0 };
-  }
+  // componentDidMount() {
+  //   const { value } = this.props;
 
-  componentDidMount() {
-    this.setState({ rating: this.props.value });
-  }
+  //   this.setState({ rating: value });
+  // }
 
   render() {
+    const { clickable, value } = this.props;
+
     return (
       <StyledRate
         className={`${this.props.clickable ? 'rating-item-clickable' : ''}`}
@@ -75,9 +55,10 @@ class Rate extends React.Component {
         <Rating
           min={1}
           max={5}
-          onChange={rating => this.setState({ rating })}
-          value={this.state.rating}
-          clickable={this.props.clickable}
+          // onChange={rating => this.setState({ rating })}
+          // value={this.state.rating}
+          value={value}
+          clickable={clickable}
         />
       </StyledRate>
     );

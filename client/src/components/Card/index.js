@@ -35,13 +35,13 @@ function Card(props) {
           <p className="description">
             <Price value={price} />
             &nbsp;•&nbsp;
-            <span>{category && category.name}</span>
+            <span id="category-name">{category && category.name}</span>
             &nbsp;•&nbsp;
             <span>{district}</span>
           </p>
         </div>
         <div className="right-infos">
-          <Rate value={Math.floor(note)} clickable={false} />
+          <Rate value={note} clickable={false} />
           <p>{reviews ? reviews.length : 0}&nbsp;reviews</p>
         </div>
       </div>
