@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 import sizes from '../../assets/styles/sizes';
 
-const StyledCard = styled.li`
+const StyledCard = styled.div`
   padding-top: ${sizes.margin * 3}px;
   &.clickable-card {
     cursor: pointer;

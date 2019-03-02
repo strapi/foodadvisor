@@ -29,7 +29,7 @@ export const renderView = ({ restaurant }) => {
     <div>
       <div className="intro-wrapper">
         <Grid>
-          <li>
+          <li className="column">
             <CardSection restaurant={{ ...restaurant, price, district }} link />
           </li>
         </Grid>

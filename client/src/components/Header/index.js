@@ -35,7 +35,9 @@ function Header({ links }) {
               {links.map(link => (
                 <NavItem key={link.to} className="active">
                   <Link url={link.to} active={false}>
-                    <span>{link.name}</span>
+                    <p>
+                      <span>{link.name}</span>
+                    </p>
                   </Link>
                 </NavItem>
               ))}

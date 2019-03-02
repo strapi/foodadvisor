@@ -34,8 +34,11 @@ const Restaurant = createGlobalStyle`
       }
     }
     .informations-wrapper {
-      padding: ${sizes.margin * 5}px ${sizes.margin * 2}px;
+      padding: ${sizes.margin}px ${sizes.margin * 2}px;
       background-color: ${colors.greyBkdg};
+      h1 {
+        padding: ${sizes.margin * 4}px 0 ${sizes.margin * 1.5}px 0;
+      }
     }
 
     @media (min-width: ${sizes.tablet}) {
