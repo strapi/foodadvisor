@@ -52,14 +52,7 @@ class Rate extends React.Component {
       <StyledRate
         className={`${this.props.clickable ? 'rating-item-clickable' : ''}`}
       >
-        <Rating
-          min={1}
-          max={5}
-          // onChange={rating => this.setState({ rating })}
-          // value={this.state.rating}
-          value={value}
-          clickable={clickable}
-        />
+        <Rating min={1} max={5} value={value} clickable={clickable} />
       </StyledRate>
     );
   }

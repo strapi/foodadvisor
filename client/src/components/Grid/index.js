@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import sizes from '../../assets/styles/sizes';
 
 const Grid = styled.ul`
-  li {
+  li.column {
     @media (min-width: ${sizes.tablet}) {
       width: 50%;
       display: inline-block;

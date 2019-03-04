@@ -4,30 +4,20 @@
  *
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import StyledH1 from './StyledH1';
+import styled from 'styled-components';
 
-function H1(props) {
-  const content = (() => {
-    if (props.message) {
-      return props.message;
-    }
+import fonts from '../../assets/styles/fonts';
+import colors from '../../assets/styles/colors';
+import sizes from '../../assets/styles/sizes';
 
-    return props.children;
-  })();
+const StyledH1 = styled.h1`
+  ${fonts.bold}
+  font-size: 16px;
+  color: ${colors.black};
 
-  return <StyledH1>{content}</StyledH1>;
-}
+  @media (min-width: ${sizes.tablet}) {
+    font-size: 32px;
+  }
+`;
 
-H1.defaultProps = {
-  children: null,
-  message: null
-};
-
-H1.propTypes = {
-  children: PropTypes.node,
-  message: PropTypes.string
-};
-
-export default H1;
+export default StyledH1;
