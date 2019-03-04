@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 import Slider from '../../components/Slider';
 
-const RenderView = ({ restaurant }) => {
-  const { cover } = restaurant;
-
+const RenderView = ({ restaurant: { cover, name } }) => {
   return (
     <div>
-      {restaurant.name}
+      {name}
       <div className="slider-wrapper">
         <Slider slides={cover} />
       </div>
@@ -18,15 +16,15 @@ const RenderView = ({ restaurant }) => {
 
 RenderView.defaultProps = {
   restaurant: {
-    name: null,
-    cover: []
+    cover: [],
+    name: null
   }
 };
 
 RenderView.propTypes = {
   restaurant: PropTypes.shape({
-    name: PropTypes.string,
-    cover: PropTypes.array
+    cover: PropTypes.array,
+    name: PropTypes.string
   })
 };
 

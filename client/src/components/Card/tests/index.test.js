@@ -15,7 +15,8 @@ describe('<Card />', () => {
       restaurant: {
         id: '1',
         cover: [{ url: '/test.png' }],
-        category: { name: null }
+        category: { name: null },
+        reviews: []
       }
     };
   });
@@ -46,20 +47,5 @@ describe('<Card />', () => {
     element.simulate('click');
 
     expect(props.onClick).toHaveBeenCalledWith('1');
-  });
-
-  it('should display the category name if given', () => {
-    props.restaurant.category.name = 'super category';
-    const wrapper = mount(<Card {...props} />);
-    const span = wrapper.find('#category-name');
-
-    expect(span.text()).toBe('super category');
-  });
-
-  it('should display an empty string if the category name if empty', () => {
-    const wrapper = mount(<Card {...props} />);
-    const span = wrapper.find('#category-name');
-
-    expect(span.text()).toBe('');
   });
 });

@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Container } from 'reactstrap';
 import { GET_RESTAURANTS } from '../../queries';
 import Query from '../../components/Query';
 
@@ -44,11 +45,13 @@ class RestaurantsPage extends React.Component {
     return (
       <Grid>
         {restaurantsToDiplay.map(restaurant => (
-          <Card
-            key={restaurant.id}
-            restaurant={restaurant}
-            onClick={this.handleClick}
-          />
+          <li className="column" key={restaurant.id}>
+            <Card
+              key={restaurant.id}
+              restaurant={restaurant}
+              onClick={this.handleClick}
+            />
+          </li>
         ))}
       </Grid>
     );
@@ -62,8 +65,8 @@ class RestaurantsPage extends React.Component {
     const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
 
     return (
-      <div className="page-wrapper">
-        <div className="container">
+      <div className="page-wrapper" id="restaurants-page">
+        <Container>
           <H1>Best restaurants in Paris</H1>
           <Query
             query={GET_RESTAURANTS}
@@ -74,7 +77,7 @@ class RestaurantsPage extends React.Component {
               sort: 'name:ASC'
             }}
           />
-        </div>
+        </Container>
       </div>
     );
   }

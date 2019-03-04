@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 import mixins from '../../assets/styles/mixins';
-import sizes from '../../assets/styles/sizes';
 
 const General = createGlobalStyle`
   * { ${mixins().bbox} }
@@ -20,13 +19,25 @@ const General = createGlobalStyle`
     }
     ul {
       list-style-type: none;
+      margin-bottom: 0;
+    }
+    .link-wrapper {
+      a.link {
+        display: table;
+        float: right;
+      }
+    }
+    a.link {
+      cursor: pointer;
+      p {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
     }
     .page-wrapper {
-      padding: ${sizes.margin * 2}px;
-
-      @media (min-width: ${sizes.tablet}) {
-        padding: ${sizes.margin * 4}px ${sizes.margin * 2}px;
-      }
+      position: relative;
     }
   }
 `;
