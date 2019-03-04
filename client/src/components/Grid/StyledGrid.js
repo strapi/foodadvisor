@@ -1,8 +1,8 @@
-/**
- *
- * StyledGrid
- *
- */
+// /**
+//  *
+//  * StyledGrid
+//  *
+//  */
 
 import styled from 'styled-components';
 import sizes from '../../assets/styles/sizes';

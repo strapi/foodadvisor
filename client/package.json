@@ -68,6 +68,7 @@
       "src/**/**/*.{js,jsx}",
       "!src/assets/**",
       "!src/components/GlobalStyles/*.{js,jsx}",
+      "!src/components/Slider/*.{js,jsx}",
       "!src/**/**/tests/*.test.{js,jsx}",
       "!src/queries/*.js",
       "!src/*.js",

@@ -19,7 +19,8 @@ const StyledImg = styled.img`
   ${props =>
     props.type === 'article' &&
     css`
-      // height: ${sizes.article.img.height};   
+      max-height: ${sizes.article.img.height};
+      min-height: ${sizes.article.img.height};
     `}}
 `;
 
