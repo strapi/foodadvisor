@@ -31,7 +31,13 @@ function NotePaper(props) {
 }
 
 NotePaper.defaultProps = {
-  informations: null
+  informations: {
+    title: null,
+    infos: {
+      subtitle: null,
+      text: null
+    }
+  }
 };
 
 NotePaper.propTypes = {
