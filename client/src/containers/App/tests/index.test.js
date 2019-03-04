@@ -2,10 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-import Card from '../index';
+import App from '../index';
 
-describe('<Card />', () => {
-  it('should not crash', () => {
-    shallow(<Card />);
+describe('<App />', () => {
+  it('renders without crashing', () => {
+    shallow(<App />);
   });
 });

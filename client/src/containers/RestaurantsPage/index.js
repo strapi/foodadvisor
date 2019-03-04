@@ -45,7 +45,7 @@ class RestaurantsPage extends React.Component {
     return (
       <Grid>
         {restaurantsToDiplay.map(restaurant => (
-          <li className="column">
+          <li className="column" key={restaurant.id}>
             <Card
               key={restaurant.id}
               restaurant={restaurant}

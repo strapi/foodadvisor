@@ -15,6 +15,8 @@ import CardSection from '../../components/CardSection';
 import Slider from '../../components/Slider';
 import Tabs from '../../components/Tabs';
 
+/* istanbul ignore next */
+// NOTE: will be replaced by './RenderView'
 export const renderView = ({ restaurant }) => {
   const { cover } = restaurant;
 

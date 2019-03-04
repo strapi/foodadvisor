@@ -16,18 +16,16 @@ function Card(props) {
     restaurant: { id, cover },
     onClick
   } = props;
+  const coverURL = cover[0] ? cover[0].url : '';
 
   return (
     <StyledCard onClick={() => onClick(id)} className="clickable-card">
       <div className="img-wrapper">
-        {cover.length ? (
-          <Img
-            src={`${process.env.REACT_APP_BACKEND_URL}${cover[0].url}`}
-            alt="cover"
-          />
-        ) : (
-          <Img alt="cover" />
-        )}
+        <Img
+          type="article"
+          src={`${process.env.REACT_APP_BACKEND_URL}${coverURL}`}
+          alt="cover"
+        />
       </div>
       <CardSection restaurant={props.restaurant} />
     </StyledCard>
@@ -36,7 +34,10 @@ function Card(props) {
 
 Card.defaultProps = {
   restaurant: {
-    cover: []
+    category: { name: '' },
+    cover: [],
+    name: null,
+    reviews: []
   }
 };
 

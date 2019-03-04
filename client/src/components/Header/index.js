@@ -32,15 +32,18 @@ function Header({ links }) {
           </NavbarBrand>
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
-              {links.map(link => (
-                <NavItem key={link.to} className="active">
-                  <Link url={link.to} active={false}>
-                    <p>
+              {links.map(link => {
+                return (
+                  <NavItem key={link.to} className="active">
+                    <Link
+                      url={link.to}
+                      active={window.location.pathname === link.to}
+                    >
                       <span>{link.name}</span>
-                    </p>
-                  </Link>
-                </NavItem>
-              ))}
+                    </Link>
+                  </NavItem>
+                );
+              })}
             </Nav>
           </Collapse>
           <NavbarToggler onClick={() => toggleIsOpen(!isOpen)}>

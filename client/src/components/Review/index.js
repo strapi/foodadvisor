@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   border-bottom: 1px solid #f3f3f3;
 `;
 
-const Title = styled(H4)`
+export const Title = styled(H4)`
   padding-right: 8px;
 `;
 
