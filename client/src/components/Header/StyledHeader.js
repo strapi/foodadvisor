@@ -68,6 +68,7 @@ const StyledHeader = styled.div`
     left: 0;
     background-color: ${colors.beige};
     padding: 0 ${sizes.header.padding};
+    z-index: 99;
     li {
       a {
         border-bottom: 1px solid ${colors.lightGrey};

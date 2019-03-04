@@ -20,7 +20,6 @@ const StyledLink = styled(Link)`
   letter-spacing 1.2px;
   p {
     overflow: hidden;
-    text-align: center;
     position: relative;
     ${fonts.reg};
   }

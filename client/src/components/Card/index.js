@@ -22,12 +22,11 @@ function Card(props) {
       <div className="img-wrapper">
         {cover.length ? (
           <Img
-            type="article"
             src={`${process.env.REACT_APP_BACKEND_URL}${cover[0].url}`}
             alt="cover"
           />
         ) : (
-          <Img type="article" alt="cover" />
+          <Img alt="cover" />
         )}
       </div>
       <CardSection restaurant={props.restaurant} />

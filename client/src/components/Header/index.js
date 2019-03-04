@@ -59,19 +59,9 @@ function Header({ links }) {
 
 Header.defaultProps = {
   links: []
-  // tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-  // pass in custom element to use
 };
 Header.propTypes = {
   links: PropTypes.array
-  // light: PropTypes.bool,
-  // dark: PropTypes.bool,
-  // fixed: PropTypes.string,
-  // color: PropTypes.string,
-  // role: PropTypes.string,
-  // expand: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  // tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-  // pass in custom element to use
 };
 
 export default Header;
