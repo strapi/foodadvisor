@@ -10,7 +10,7 @@ import fonts from '../../assets/styles/fonts';
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
 
-const StyledH1 = styled.h1`
+const H1 = styled.h1`
   ${fonts.bold}
   font-size: 16px;
   color: ${colors.black};
@@ -20,4 +20,4 @@ const StyledH1 = styled.h1`
   }
 `;
 
-export default StyledH1;
+export default H1;

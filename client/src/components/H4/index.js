@@ -4,30 +4,14 @@
  *
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import StyledH4 from './StyledH4';
+import styled from 'styled-components';
+import colors from '../../assets/styles/colors';
+import fonts from '../../assets/styles/fonts';
 
-function H4({ children, message, ...rest }) {
-  const content = (() => {
-    if (message) {
-      return message;
-    }
-
-    return children;
-  })();
-
-  return <StyledH4 {...rest}>{content}</StyledH4>;
-}
-
-H4.defaultProps = {
-  children: null,
-  message: null
-};
-
-H4.propTypes = {
-  children: PropTypes.node,
-  message: PropTypes.string
-};
+const H4 = styled.h4`
+  ${fonts.bold}
+  font-size: 16px;
+  color: ${colors.black};
+`;
 
 export default H4;
