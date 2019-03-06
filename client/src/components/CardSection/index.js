@@ -17,13 +17,13 @@ import StyledCardSection from './StyledCardSection';
 function CardSection(props) {
   const {
     restaurant: { name, price, district, note, reviews, category },
-    link
+    hasLink
   } = props;
 
   return (
-    <StyledCardSection className={link && 'banner'}>
+    <StyledCardSection className={hasLink && 'banner'}>
       <div className="left-infos">
-        {!link ? <H4>{name}</H4> : <H1>{name}</H1>}
+        {!hasLink ? <H4>{name}</H4> : <H1>{name}</H1>}
         <p className="description">
           <Price value={price} />
           {category && <span>&nbsp;•&nbsp;{category.name}</span>}
@@ -32,7 +32,7 @@ function CardSection(props) {
       </div>
       <div className="right-infos">
         <Rate value={Math.floor(note)} clickable={false} />
-        {!link ? (
+        {!hasLink ? (
           <p>{reviews.length}&nbsp;reviews</p>
         ) : (
           <div className="link-wrapper">
@@ -55,12 +55,12 @@ CardSection.defaultProps = {
     reviews: [],
     category: null
   },
-  link: false
+  hasLink: false
 };
 
 CardSection.propTypes = {
   restaurant: PropTypes.object,
-  link: PropTypes.bool
+  hasLink: PropTypes.bool
 };
 
 export default CardSection;

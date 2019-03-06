@@ -96,7 +96,7 @@ Review.defaultProps = {
 
 Review.propTypes = {
   content: PropTypes.string,
-  created_at: PropTypes.string,
+  created_at: PropTypes.number,
   author: PropTypes.shape({
     username: PropTypes.string
   }),

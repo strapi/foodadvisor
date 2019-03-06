@@ -18,7 +18,7 @@ import Tabs from '../../components/Tabs';
 /* istanbul ignore next */
 // NOTE: will be replaced by './RenderView'
 export const renderView = ({ restaurant }) => {
-  const { cover } = restaurant;
+  const { cover, reviews } = restaurant;
 
   const price = restaurant.price
     ? parseInt(restaurant.price.replace('_', ''), 10)
@@ -32,7 +32,10 @@ export const renderView = ({ restaurant }) => {
       <div className="intro-wrapper">
         <Grid>
           <li className="column">
-            <CardSection restaurant={{ ...restaurant, price, district }} link />
+            <CardSection
+              restaurant={{ ...restaurant, price, district }}
+              hasLink
+            />
           </li>
         </Grid>
       </div>
@@ -41,7 +44,7 @@ export const renderView = ({ restaurant }) => {
       </div>
 
       <div className="informations-wrapper">
-        <Tabs />
+        <Tabs reviews={reviews} />
       </div>
     </div>
   );
