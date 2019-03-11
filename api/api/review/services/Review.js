@@ -59,6 +59,15 @@ module.exports = {
     }).fetch();
   },
 
+  notedetails: (restaurant) => {
+    return Review.query(function(qb) {
+      qb.where('restaurant', '=', restaurant.id);
+      qb.groupBy('note');
+      qb.select('note');
+      qb.count();
+    }).fetchAll();
+  },
+
   /**
    * Promise to fetch a/an review.
    *

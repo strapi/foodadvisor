@@ -2,6 +2,7 @@ module.exports = {
   definition: /* GraphQL */ `
     extend type Restaurant {
       note: Float
+      noteDetails: [RestaurantNote!]!
     }
 
     type RestaurantsConnection {
@@ -9,6 +10,12 @@ module.exports = {
     }
 
     type RestaurantsAggregate {
+      count: Int
+    }
+
+
+    type RestaurantNote {
+      note: Int
       count: Int
     }
   `,
