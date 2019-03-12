@@ -35,7 +35,6 @@ module.exports = {
       return restaurant;
     }));
 
-
     return restaurants;
   },
 
@@ -59,6 +58,37 @@ module.exports = {
     note = note.toJSON();
 
     restaurant.note = note['avg(`note`)'];
+
+    let noteDetails = await Review.query(function(qb) {
+      qb.where('restaurant', '=', restaurant.id);
+      qb.groupBy('note');
+      qb.select('note');
+      qb.count();
+    }).fetchAll();
+
+    noteDetails = noteDetails.toJSON();
+
+    restaurant.noteDetails = [];
+
+    for (let i = 1; i <= 5; i++) {
+      let detail = noteDetails.find((detail) => {
+        return detail.note === i;
+      });
+
+      if (detail) {
+        detail = {
+          note: detail.note,
+          count: detail['count(*)']
+        };
+      } else {
+        detail = {
+          note: i,
+          count: 0
+        };
+      }
+
+      restaurant.noteDetails.push(detail);
+    }
 
     return restaurant;
   },
