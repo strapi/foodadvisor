@@ -160,7 +160,8 @@ class RestaurantsPage extends React.Component {
             query={GET_RESTAURANTS}
             render={this.renderRestaurants}
             variables={{
-              limit: 12,
+              //limit: 12, // Fit with one, two or  three columns
+              limit: 32,
               start,
               sort: `${orderby}:ASC`,
               where

@@ -13,7 +13,7 @@ const Restaurants = createGlobalStyle`
       ul {
         margin-top: ${sizes.margin * 3}px;
         li.column {
-          padding-bottom: ${sizes.margin * 3}px;
+          padding-bottom: ${sizes.margin * 2.8}px;
         }
       }
     }
@@ -34,8 +34,8 @@ const Restaurants = createGlobalStyle`
           padding-left: ${sizes.margin * 3}px;
         }
         ul {
-          li {
-            padding-bottom: ${sizes.margin * 6}px;
+          li.column {
+            padding-bottom: ${sizes.margin * 5.6}px;
           }
         }
       }

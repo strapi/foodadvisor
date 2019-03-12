@@ -9,7 +9,7 @@ const StyledFilters = createGlobalStyle`
     position: absolute;
     top: 0;
     right: 0;
-    padding: ø;
+    padding: 0;
     .filter-btn {
       ${fonts.reg};
       font-size: 16px;
@@ -28,7 +28,10 @@ const StyledFilters = createGlobalStyle`
     width: 100%;
     background: white;
     .filters-wrapper {
-      height: 100%;
+      ul {
+        max-height: 35vh;
+        overflow: scroll;
+      }
     }
     h1 {
       padding-bottom: ${sizes.margin * 1.5}px;

@@ -12,7 +12,8 @@ const Restaurant = createGlobalStyle`
       top: calc(${sizes.slider.height.small} - 24px);
       padding: 0 ${sizes.margin * 7}px 0 ${sizes.margin * 2}px;
       ul {
-        padding: ${sizes.margin * 0.8}px ${sizes.margin * 1.2}px;
+        padding: ${sizes.margin * 0.7}px ${sizes.margin *
+  1.2}px ${sizes.margin * 0.6}px ${sizes.margin * 1.2}px;
         background-color: white;
       }
     }
@@ -25,6 +26,7 @@ const Restaurant = createGlobalStyle`
       @media (min-width: ${sizes.tablet}) {
         max-width: 720px;
         margin: 0 auto;
+        margin-top: ${sizes.margin * 0.3}px;
       }
       @media (min-width: 992px) {
         max-width: 960px;
@@ -34,10 +36,10 @@ const Restaurant = createGlobalStyle`
       }
     }
     .informations-wrapper {
-      padding: ${sizes.margin}px ${sizes.margin * 2}px;
+      padding: ${sizes.margin * 5}px ${sizes.margin * 2}px;
       background-color: ${colors.greyBkdg};
       h1 {
-        padding: ${sizes.margin * 4}px 0 ${sizes.margin * 1.5}px 0;
+        padding: 0 0 ${sizes.margin * 1.4}px 0;
       }
     }
 
@@ -45,7 +47,7 @@ const Restaurant = createGlobalStyle`
       .intro-wrapper {
         position: relative;
         top: inherit;
-        padding: ${sizes.margin * 5}px 0 0 0;
+        padding: ${sizes.margin * 5.7}px 0 0 0;
         ul {
           padding: 0;
         }

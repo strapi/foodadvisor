@@ -6,12 +6,12 @@ import fonts from '../../assets/styles/fonts';
 
 const StyledNotePaper = styled.div`
   background-color: white;
-  padding: ${sizes.margin * 2.5}px;
+  padding: ${sizes.margin * 2.4}px;
   h4 {
-    margin-bottom: ${sizes.margin / 2}px;
+    margin-bottom: ${sizes.margin * 1.8}px;
   }
   li {
-    padding-top: ${sizes.margin}px;
+    padding-bottom: ${sizes.margin * 1.1}px;
     display: block;
   }
   p {
@@ -20,6 +20,7 @@ const StyledNotePaper = styled.div`
     font-size: 12px;
     &:first-of-type {
       color: ${colors.black};
+      margin-bottom: ${sizes.margin * 0.3}px;
     }
   }
   @media (min-width: ${sizes.tablet}) {
