@@ -17,8 +17,13 @@ import Tabs from '../../components/Tabs';
 
 /* istanbul ignore next */
 // NOTE: will be replaced by './RenderView'
-export const renderView = ({ restaurant }) => {
-  const { cover, reviews } = restaurant;
+export const renderView = ({ restaurant, ...rest }) => {
+  const { cover } = restaurant;
+  const {
+    reviewsConnection: {
+      aggregate: { count }
+    }
+  } = rest;
 
   const price = restaurant.price
     ? parseInt(restaurant.price.replace('_', ''), 10)
@@ -42,9 +47,8 @@ export const renderView = ({ restaurant }) => {
       <div className="slider-wrapper">
         <Slider slides={cover} />
       </div>
-
       <div className="informations-wrapper">
-        <Tabs reviews={reviews} />
+        <Tabs restaurant={{ ...restaurant, count }} />
       </div>
     </div>
   );

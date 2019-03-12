@@ -36,7 +36,7 @@ function CardSection(props) {
           <p>{reviews.length}&nbsp;reviews</p>
         ) : (
           <div className="link-wrapper">
-            <a className="link">
+            <a href="/" className="link">
               <p>See all reviews</p>
             </a>
           </div>

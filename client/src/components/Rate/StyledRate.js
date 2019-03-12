@@ -10,10 +10,8 @@ import colors from '../../assets/styles/colors';
 const StyledRate = styled.div`
   .rating {
     &-item {
-      padding-left: 4px;
       margin-bottom: 0;
       &::before {
-        font-size: 9px;
         content: '★';
         color: ${colors.lightGrey};
       }
@@ -33,6 +31,22 @@ const StyledRate = styled.div`
     }
     .rating-item:hover ~ .rating-item::before {
       color: ${colors.lightGrey};
+    }
+  }
+  &.small {
+    .rating-item {
+      padding-left: 4px;
+      &::before {
+        font-size: 9px;
+      }
+    }
+  }
+  &.big {
+    .rating-item {
+      padding-left: 9px;
+      &::before {
+        font-size: 21px;
+      }
     }
   }
 `;

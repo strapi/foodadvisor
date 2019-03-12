@@ -11,6 +11,12 @@
     "comment": ""
   },
   "attributes": {
+    "cover": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
     "name": {
       "default": "",
       "type": "string"
@@ -19,25 +25,26 @@
       "default": "",
       "type": "text"
     },
-    "cover": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload",
-      "required": false
+    "opening_hours": {
+      "default": "",
+      "type": "text"
     },
-    "reviews": {
-      "collection": "review",
-      "via": "restaurant"
+    "address": {
+      "default": "",
+      "type": "string"
+    },
+    "website": {
+      "default": "",
+      "type": "string"
+    },
+    "phone": {
+      "default": "",
+      "type": "string"
     },
     "price": {
       "default": "",
       "type": "enumeration",
-      "enum": [
-        "_1",
-        "_2",
-        "_3",
-        "_4"
-      ]
+      "enum": ["_1", "_2", "_3", "_4"]
     },
     "district": {
       "default": "",
@@ -64,6 +71,10 @@
         "_19th",
         "_20th"
       ]
+    },
+    "reviews": {
+      "collection": "review",
+      "via": "restaurant"
     },
     "category": {
       "model": "category",

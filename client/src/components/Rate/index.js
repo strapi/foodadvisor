@@ -50,7 +50,9 @@ class Rate extends React.Component {
 
     return (
       <StyledRate
-        className={`${this.props.clickable ? 'rating-item-clickable' : ''}`}
+        className={`${this.props.size} ${
+          this.props.clickable ? 'rating-item-clickable' : ''
+        }`}
       >
         <Rating min={1} max={5} value={value} clickable={clickable} />
       </StyledRate>
@@ -60,11 +62,13 @@ class Rate extends React.Component {
 
 Rate.defaultProps = {
   value: 0,
-  clickable: false
+  clickable: false,
+  size: 'small'
 };
 
 Rate.propTypes = {
   value: PropTypes.oneOf([0, 1, 2, 3, 4, 5, NaN]),
+  size: PropTypes.oneOf(['small', 'big']),
   clickable: PropTypes.bool
 };
 

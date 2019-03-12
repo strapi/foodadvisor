@@ -80,9 +80,6 @@ const StyledTabs = createGlobalStyle`
       .nav-tabs {
         display: flex;
       }
-      h1 {
-        display: none;
-      }
       .tab-pane {
         display: none;
         &.active {
@@ -91,6 +88,9 @@ const StyledTabs = createGlobalStyle`
         &.informations-pane {
           padding-top: ${sizes.margin * 6}px;
           padding-bottom: ${sizes.margin * 4}px;
+          h1 {
+            display: none;
+          }
           .informations-card {
             margin-bottom: 0;
           }

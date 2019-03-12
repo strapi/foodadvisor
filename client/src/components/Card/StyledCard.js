@@ -7,9 +7,9 @@
 import styled from 'styled-components';
 
 import sizes from '../../assets/styles/sizes';
+import colors from '../../assets/styles/colors';
 
 const StyledCard = styled.div`
-  padding-top: ${sizes.margin * 3}px;
   &.clickable-card {
     cursor: pointer;
   }
@@ -17,6 +17,7 @@ const StyledCard = styled.div`
     width: 100%;
     height: ${sizes.article.img.height};
     margin-bottom: ${sizes.margin * 0.7}px;
+    background-color: ${colors.lightGrey};
   }
 `;
 

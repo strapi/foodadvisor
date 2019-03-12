@@ -52,6 +52,10 @@ const Restaurant = createGlobalStyle`
       }
       .informations-wrapper {
         padding: ${sizes.margin * 10}px 0 0 0;
+        h1 {
+          padding: ${sizes.margin}px 0 ${sizes.margin *
+  3}px calc(40% + ${sizes.margin * 3}px);
+        }
       }
     }
   }

@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 const GET_RESTAURANT = gql`
   query restaurant($id: ID!) {
     restaurant(id: $id) {
+      id
       name
       description
       price
@@ -11,7 +12,29 @@ const GET_RESTAURANT = gql`
       cover {
         url
       }
+      note
       reviews {
+        id
+        note
+        content
+        created_at
+        author {
+          username
+        }
+      }
+    }
+    reviewsConnection {
+      aggregate {
+        count
+      }
+    }
+  }
+`;
+
+const GET_REVIEWS_BY_NOTE = gql`
+  query restaurant($id: ID!, $where: JSON) {
+    restaurant(id: $id) {
+      reviews(where: $where) {
         id
         note
         content
@@ -24,4 +47,4 @@ const GET_RESTAURANT = gql`
   }
 `;
 
-export { GET_RESTAURANT };
+export { GET_RESTAURANT, GET_REVIEWS_BY_NOTE };

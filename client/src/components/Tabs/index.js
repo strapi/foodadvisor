@@ -41,10 +41,12 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const { reviews } = this.props;
+    const {
+      restaurant: { reviews, note, count, id }
+    } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         <StyledTabs />
         <div className="tabs-wrapper">
           <Nav tabs>
@@ -93,24 +95,29 @@ class Tabs extends React.Component {
               <Container>
                 <Row>
                   <Col sm="12">
-                    <Reviews reviews={reviews} />
+                    <Reviews
+                      reviews={reviews}
+                      note={note}
+                      count={count}
+                      id={id}
+                    />
                   </Col>
                 </Row>
               </Container>
             </TabPane>
           </TabContent>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }
 
 Tabs.defaultProps = {
-  reviews: []
+  restaurant: {}
 };
 
 Tabs.propTypes = {
-  reviews: PropTypes.array
+  restaurant: PropTypes.object
 };
 
 export default Tabs;

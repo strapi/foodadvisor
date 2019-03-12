@@ -11,7 +11,7 @@ import sizes from '../../assets/styles/sizes';
 
 const StyledHeader = styled.div`
   .navbar {
-    background-color: ${colors.beige};
+    background-color: ${colors.lightBeige};
     padding: 0 ${sizes.header.padding};
     height: ${sizes.header.height.small};
     position: relative;
@@ -67,7 +67,7 @@ const StyledHeader = styled.div`
     width: 100%;
     top: ${sizes.header.height.small};
     left: 0;
-    background-color: ${colors.beige};
+    background-color: ${colors.lightBeige};
     padding: 0 ${sizes.header.padding};
     z-index: 99;
     li {
