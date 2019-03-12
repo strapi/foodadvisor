@@ -13,6 +13,10 @@ const GET_RESTAURANT = gql`
         url
       }
       note
+      noteDetails {
+        note
+        count
+      }
       reviews {
         id
         note

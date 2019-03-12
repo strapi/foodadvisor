@@ -34,12 +34,12 @@ function Header({ links }) {
             <Nav navbar>
               {links.map(link => {
                 return (
-                  <NavItem key={link.to} className="active">
+                  <NavItem key={link.to}>
                     <Link
                       url={link.to}
                       active={window.location.pathname === link.to}
                     >
-                      <span>{link.name}</span>
+                      <span title={link.name}>{link.name}</span>
                     </Link>
                   </NavItem>
                 );

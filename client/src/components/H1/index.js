@@ -14,7 +14,7 @@ const H1 = styled.h1`
   ${fonts.bold}
   font-size: 16px;
   color: ${colors.black};
-
+  line-height: normal;
   @media (min-width: ${sizes.tablet}) {
     font-size: 32px;
   }

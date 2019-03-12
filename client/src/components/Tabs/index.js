@@ -28,7 +28,7 @@ class Tabs extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '1'
+      activeTab: '2'
     };
   }
 
@@ -41,9 +41,7 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const {
-      restaurant: { reviews, note, count, id }
-    } = this.props;
+    const { restaurant } = this.props;
 
     return (
       <>
@@ -95,12 +93,7 @@ class Tabs extends React.Component {
               <Container>
                 <Row>
                   <Col sm="12">
-                    <Reviews
-                      reviews={reviews}
-                      note={note}
-                      count={count}
-                      id={id}
-                    />
+                    <Reviews restaurant={restaurant} />
                   </Col>
                 </Row>
               </Container>

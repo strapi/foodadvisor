@@ -15,7 +15,7 @@ const StyledCardSection = styled.div`
   width: 100%;
   p {
     ${fonts.reg}
-    margin-top: ${sizes.margin * 0.8}px;
+    margin-top: ${sizes.margin * 0.2}px;
     font-size: 12px;
     line-height: 1.33;
     color: ${colors.darkGrey};

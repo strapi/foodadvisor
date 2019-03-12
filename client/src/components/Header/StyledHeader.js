@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 import colors from '../../assets/styles/colors';
 import sizes from '../../assets/styles/sizes';
+import fonts from '../../assets/styles/fonts';
 
 const StyledHeader = styled.div`
   .navbar {
@@ -81,7 +82,6 @@ const StyledHeader = styled.div`
       }
     }
   }
-
   .navbar-collapse.show + button {
     .nav-icon span:nth-child(1) {
       top: 18px;
@@ -108,6 +108,14 @@ const StyledHeader = styled.div`
   }
 
   @media (min-width: ${sizes.tablet}) {
+    .navbar {
+      height: ${sizes.header.height.large};
+      .container,
+      .collapse,
+      ul {
+        height: 100%;
+      }
+    }
     .navbar-brand,
     .navbar-collapse {
       display: inline-block;
@@ -129,17 +137,48 @@ const StyledHeader = styled.div`
       li {
         padding: 0 ${sizes.margin * 4}px;
         display: table-cell;
+        a {
+          height: 100%;
+          display: flex;
+          position: relative;
+          span {
+            line-height: 17px;
+            margin: auto;
+            ${fonts.reg};
+            ::after {
+              display: block;
+              content: attr(title);
+              font-weight: bold;
+              height: 0;
+              overflow: hidden;
+              visibility: hidden;
+            }
+          }
+          &:after {
+            content: ' ';
+            display: block;
+            border: 1px solid transparent;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+          }
+          &.active,
+          &:hover {
+            span {
+              ${fonts.bold};
+            }
+            &:after {
+              border-color: ${colors.lightOrange};
+            }
+          }
+        }
         a,
         &:last-of-type a {
-          border-bottom: 2px solid transparent;
-          &:hover,
-          &.active {
-            border-color: ${colors.lightOrange};
-          }
+          border-bottom: 0;
         }
       }
     }
-
     @media (min-width: ${sizes.desktop}) {
       .navbar-brand {
         margin-right: ${sizes.margin * 5.5}px;

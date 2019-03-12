@@ -13,6 +13,7 @@ import Query from '../../components/Query';
 import Grid from '../../components/Grid';
 import Card from '../../components/Card';
 import Filters from '../../components/Filters';
+import Paging from '../../components/Paging';
 import H1 from '../../components/H1';
 
 // Utils
@@ -35,10 +36,12 @@ class RestaurantsPage extends React.Component {
 
   handleChange = filter => {
     const { filters } = this.state;
-
     filters[filter.target.name] = filter.target.value;
-
     this.setState({ filters });
+  };
+
+  renderPagination = count => {
+    return <Paging />;
   };
 
   renderFilters = categories => {
@@ -89,8 +92,13 @@ class RestaurantsPage extends React.Component {
   };
 
   renderRestaurants = ({ restaurants, ...rest }) => {
+    const {
+      restaurantsConnection: {
+        aggregate: { count }
+      }
+    } = rest;
     const restaurantsToDiplay = restaurants.map(restaurant => {
-      // Update data cause of underscores due to GraphQL
+      // Update data format due to GraphQL
       const price = restaurant.price
         ? parseInt(restaurant.price.replace('_', ''), 10)
         : 1;
@@ -107,17 +115,21 @@ class RestaurantsPage extends React.Component {
     return (
       <>
         {this.renderFilters(rest.categories)}
-        <Grid>
-          {restaurantsToDiplay.map(restaurant => (
-            <li className="column" key={restaurant.id}>
-              <Card
-                key={restaurant.id}
-                restaurant={restaurant}
-                onClick={this.handleClick}
-              />
-            </li>
-          ))}
-        </Grid>
+        <div className="restaurants-wrapper">
+          <H1>Best restaurants in Paris</H1>
+          <Grid>
+            {restaurantsToDiplay.map(restaurant => (
+              <li className="column" key={restaurant.id}>
+                <Card
+                  key={restaurant.id}
+                  restaurant={restaurant}
+                  onClick={this.handleClick}
+                />
+              </li>
+            ))}
+          </Grid>
+        </div>
+        {this.renderPagination(count)}
       </>
     );
   };
@@ -144,12 +156,11 @@ class RestaurantsPage extends React.Component {
     return (
       <div className="page-wrapper" id="restaurants-page">
         <Container>
-          <H1>Best restaurants in Paris</H1>
           <Query
             query={GET_RESTAURANTS}
             render={this.renderRestaurants}
             variables={{
-              limit: 35,
+              limit: 12,
               start,
               sort: `${orderby}:ASC`,
               where

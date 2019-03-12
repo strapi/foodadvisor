@@ -31,18 +31,19 @@ function Radio({
 
   return (
     <>
-      <label htmlFor={value}>
+      <StyledRadio
+        autoFocus={autoFocus}
+        id={value}
+        name={name}
+        onChange={handleChange}
+        tabIndex={tabIndex}
+        value={value}
+        checked={checked}
+        {...rest}
+        className="radio-custom"
+      />
+      <label htmlFor={value} className="radio-custom-label">
         {message === '' ? 'all' : message}
-        <StyledRadio
-          autoFocus={autoFocus}
-          id={value}
-          name={name}
-          onChange={handleChange}
-          tabIndex={tabIndex}
-          value={value}
-          checked={checked}
-          {...rest}
-        />
       </label>
     </>
   );

@@ -25,11 +25,13 @@ function Filters(props) {
       <Collapse className="filters-collapse" isOpen={isOpen} navbar>
         <H1>Filters</H1>
         <hr />
-        {filters.map(filter => {
-          return (
-            <FiltersGroup {...filter} key={filter.name} onChange={onChange} />
-          );
-        })}
+        <div className="filters-wrapper">
+          {filters.map(filter => {
+            return (
+              <FiltersGroup {...filter} key={filter.name} onChange={onChange} />
+            );
+          })}
+        </div>
       </Collapse>
       <NavbarToggler onClick={() => toggleIsOpen(!isOpen)}>
         <div className="filter-btn">

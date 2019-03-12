@@ -11,7 +11,7 @@ import colors from '../../assets/styles/colors';
 
 const ProgressBar = styled.div`
   background-color: ${colors.darkBeige};
-  width: ${props => (props.value * 100) / 5}%;
+  width: ${props => props.value}%;
   height: 100%;
 `;
 

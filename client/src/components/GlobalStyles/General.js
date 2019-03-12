@@ -13,6 +13,10 @@ const General = createGlobalStyle`
     }
     p, h1, h2, h3, h4, h5 {
       margin-bottom: 0;
+      line-height: normal;
+    }
+    span {
+      line-height: normal;
     }
     .container, ul {
       padding: 0;

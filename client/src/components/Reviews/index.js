@@ -15,36 +15,31 @@ import ProgressBar from '../ProgressBar';
 
 const notes = [
   {
-    title: 'Excellent',
-    value: 5
+    title: 'Excellent'
   },
   {
-    title: 'Good',
-    value: 4
+    title: 'Good'
   },
   {
-    title: 'Average',
-    value: 3
+    title: 'Average'
   },
   {
-    title: 'Bellow Average',
-    value: 2
+    title: 'Bellow Average'
   },
   {
-    title: 'Poor',
-    value: 1
+    title: 'Poor'
   }
 ];
 
-export const renderNotes = () => {
+export const renderNotes = (noteDetails, count) => {
   return (
     <ul>
-      {notes.map(item => {
+      {noteDetails.map((item, index) => {
         return (
-          <li key={item.title}>
-            <p>{item.title}</p>
+          <li key={notes[index].title}>
+            <p>{notes[index].title}</p>
             <div className="progress-wrapper">
-              <ProgressBar value={item.value} />
+              <ProgressBar value={(item.count * 100) / count} />
             </div>
           </li>
         );
@@ -54,7 +49,7 @@ export const renderNotes = () => {
 };
 
 function Reviews(props) {
-  const { reviews, note, count } = props;
+  const { reviews, note, count, noteDetails } = props.restaurant;
 
   return (
     <>
@@ -65,8 +60,7 @@ function Reviews(props) {
         <Rate value={Math.floor(note)} clickable={false} size="big" />
         <p className="reviews-value">{Math.floor(note)}/5</p>
         <p className="reviews-count">{count}&nbsp;Reviews</p>
-
-        <div className="reviews-gauges">{renderNotes()}</div>
+        <div className="reviews-gauges">{renderNotes(noteDetails, count)}</div>
       </section>
       <section className="reviews-list">
         {reviews.map(review => (
@@ -77,14 +71,10 @@ function Reviews(props) {
   );
 }
 
-Reviews.defaultProps = {
-  reviews: [],
-  note: 0
-};
+Reviews.defaultProps = {};
 
 Reviews.propTypes = {
-  reviews: PropTypes.array,
-  note: PropTypes.number
+  restaurant: PropTypes.object.isRequired
 };
 
 export default Reviews;
