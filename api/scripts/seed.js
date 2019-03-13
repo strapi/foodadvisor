@@ -26,11 +26,11 @@ const tmpPath = path.resolve('.tmp');
     console.log(`Fail to remove ${uploadPath}`);
   }
 
-  await (() => new Promise((resolve) => {
+  await new Promise((resolve) => {
     fs.createReadStream(zipPath)
       .pipe(unzip.Extract({ path: 'data' }))
       .on('close', resolve);
-  }))();
+  });
 
   try {
     fs.renameSync(uploadDataPath, uploadPath);
