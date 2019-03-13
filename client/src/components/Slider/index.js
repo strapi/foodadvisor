@@ -10,6 +10,8 @@ import { Carousel, CarouselItem, CarouselControl } from 'reactstrap';
 import StyledSlider from './StyledSlider';
 import Img from '../Img';
 
+// Code from https://reactstrap.github.io/components/carousel/
+
 class Slider extends Component {
   constructor(props) {
     super(props);

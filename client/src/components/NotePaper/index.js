@@ -10,11 +10,8 @@ import PropTypes from 'prop-types';
 import H4 from '../H4';
 import StyledNotePaper from './StyledNotePaper';
 
-function NotePaper(props) {
-  const {
-    informations: { title, infos }
-  } = props;
-
+function NotePaper({ informations }) {
+  const { title, infos } = informations;
   return (
     <StyledNotePaper>
       <H4>{title}</H4>

@@ -7,8 +7,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'reactstrap';
+import { set } from 'lodash';
 import { GET_RESTAURANTS } from '../../queries';
 import Query from '../../components/Query';
+
+import data from '../../assets/utils/data';
 
 import Grid from '../../components/Grid';
 import Card from '../../components/Card';
@@ -20,23 +23,21 @@ import H1 from '../../components/H1';
 import getQueryParameters from '../../utils/getQueryParameters';
 
 class RestaurantsPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      filters: {
-        orderby: 'name',
-        category: '',
-        district: ''
+  state = {
+    filters: {
+      orderby: 'name',
+      where: {
+        category: 'all',
+        district: '_all'
       }
-    };
-  }
+    }
+  };
 
   handleClick = id => this.props.history.push(`/${id}/informations`);
 
-  handleChange = filter => {
+  handleChange = ({ target }) => {
     const { filters } = this.state;
-    filters[filter.target.name] = filter.target.value;
+    set(filters, target.name, target.value);
     this.setState({ filters });
   };
 
@@ -44,47 +45,29 @@ class RestaurantsPage extends React.Component {
     return <Paging />;
   };
 
-  renderFilters = categories => {
+  renderFilters = ({ categories }) => {
+    const {
+      filters: { where, orderby }
+    } = this.state;
     const filters = [
+      // Uncomment when backend is available - V2
       {
         title: 'Order by',
         name: 'orderby',
         options: ['ranking', 'name'],
-        value: this.state.filters.orderby
+        value: orderby
       },
       {
         title: 'Categories',
-        name: 'category',
-        options: [{ id: '', name: 'all' }, ...categories],
-        value: this.state.filters.category
+        name: 'where.category',
+        options: [{ id: 'all', name: 'all' }, ...categories],
+        value: where.category
       },
       {
         title: 'Neighborhood',
-        name: 'district',
-        options: [
-          'all',
-          '1st',
-          '2nd',
-          '3rd',
-          '4th',
-          '5th',
-          '6th',
-          '7th',
-          '8th',
-          '9th',
-          '10th',
-          '11th',
-          '12th',
-          '13th',
-          '14th',
-          '15th',
-          '16th',
-          '17th',
-          '18th',
-          '19th',
-          '20th'
-        ],
-        value: this.state.filters.district
+        name: 'where.district',
+        options: data.districts,
+        value: where.district
       }
     ];
 
@@ -102,19 +85,16 @@ class RestaurantsPage extends React.Component {
       const price = restaurant.price
         ? parseInt(restaurant.price.replace('_', ''), 10)
         : 1;
-      const district = restaurant.district
-        ? restaurant.district.replace('_', '')
-        : '1st';
+
       return {
         ...restaurant,
-        price,
-        district
+        price
       };
     });
 
     return (
       <>
-        {this.renderFilters(rest.categories)}
+        {this.renderFilters(rest)}
         <div className="restaurants-wrapper">
           <H1>Best restaurants in Paris</H1>
           <Grid>
@@ -134,6 +114,20 @@ class RestaurantsPage extends React.Component {
     );
   };
 
+  getWhereParams = () => {
+    const {
+      filters: { where }
+    } = this.state;
+
+    return Object.keys(where).reduce((acc, current) => {
+      if (!!where[current] && !where[current].includes('all')) {
+        acc[current] = where[current];
+      }
+
+      return acc;
+    }, {});
+  };
+
   render() {
     const {
       location: { search }
@@ -143,15 +137,8 @@ class RestaurantsPage extends React.Component {
     const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
 
     const {
-      filters: { orderby, district, category }
+      filters: { orderby }
     } = this.state;
-    const where = {};
-    if (district) {
-      where.district = `_${district}`;
-    }
-    if (category) {
-      where.category = category;
-    }
 
     return (
       <div className="page-wrapper" id="restaurants-page">
@@ -160,11 +147,11 @@ class RestaurantsPage extends React.Component {
             query={GET_RESTAURANTS}
             render={this.renderRestaurants}
             variables={{
-              //limit: 12, // Fit with one, two or  three columns
+              // limit: 12, // Fit with one, two or  three columns
               limit: 32,
               start,
               sort: `${orderby}:ASC`,
-              where
+              where: this.getWhereParams()
             }}
           />
         </Container>

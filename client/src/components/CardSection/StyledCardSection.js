@@ -27,8 +27,8 @@ const StyledCardSection = styled.div`
   .right-infos {
     div,
     p {
-      text-align: right;
       width: 100%;
+      text-align: right;
     }
     .rating,
     label {

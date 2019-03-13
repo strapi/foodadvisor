@@ -12,21 +12,20 @@ import sizes from '../../assets/styles/sizes';
 import fonts from '../../assets/styles/fonts';
 
 const StyledLink = styled(Link)`
-  color: ${colors.mediumGrey};
-  padding: ${sizes.margin * 2}px 0;
   display: block;
+  padding: ${sizes.margin * 2}px 0;
+  color: ${colors.mediumGrey};
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing 1.2px;
   p {
-    overflow: hidden;
     position: relative;
     ${fonts.reg};
+    overflow: hidden;
   }
   span {
     padding: 0 ${sizes.margin / 2}px;
   }
-
   &:hover, &.active {
     text-decoration: none;
     color: ${colors.darkBlue};

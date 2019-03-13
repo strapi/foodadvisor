@@ -5,14 +5,17 @@ const GET_RESTAURANT = gql`
   query restaurant($id: ID!) {
     restaurant(id: $id) {
       id
-      name
+      address
       description
       price
       district
       cover {
         url
       }
+      name
       note
+      opening_hours
+      phone
       noteDetails {
         note
         count
@@ -26,6 +29,7 @@ const GET_RESTAURANT = gql`
           username
         }
       }
+      website
     }
     reviewsConnection {
       aggregate {
@@ -35,20 +39,4 @@ const GET_RESTAURANT = gql`
   }
 `;
 
-const GET_REVIEWS_BY_NOTE = gql`
-  query restaurant($id: ID!, $where: JSON) {
-    restaurant(id: $id) {
-      reviews(where: $where) {
-        id
-        note
-        content
-        created_at
-        author {
-          username
-        }
-      }
-    }
-  }
-`;
-
-export { GET_RESTAURANT, GET_REVIEWS_BY_NOTE };
+export { GET_RESTAURANT };

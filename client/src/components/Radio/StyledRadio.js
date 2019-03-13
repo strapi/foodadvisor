@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledRadio = styled.input`
-  //display: none;
+  display: none;
 `;
 
 StyledRadio.defaultProps = {

@@ -5,7 +5,6 @@ const GET_RESTAURANTS = gql`
   query($limit: Int, $start: Int, $sort: String, $where: JSON) {
     restaurants(limit: $limit, start: $start, sort: $sort, where: $where) {
       id
-      name
       description
       district
       cover {
@@ -14,6 +13,7 @@ const GET_RESTAURANTS = gql`
       category {
         name
       }
+      name
       note
       reviews {
         note

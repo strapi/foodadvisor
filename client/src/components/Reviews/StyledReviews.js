@@ -16,9 +16,9 @@ const StyledReviews = createGlobalStyle`
       color: ${colors.mediumGrey};
     }
     .reviews-value {
+      ${fonts.bold};
       font-size: 46px;
       color: ${colors.black};
-      ${fonts.bold};
     }
     .reviews-count {
       font-size: 12px;
@@ -34,7 +34,7 @@ const StyledReviews = createGlobalStyle`
         padding-top: ${sizes.margin}px;
       }
       li {
-        margin-top: ${sizes.margin * 0.5}px;
+        margin-top: ${sizes.margin * 0.4}px;
       }
       p {
         width: 40%;
@@ -61,13 +61,17 @@ const StyledReviews = createGlobalStyle`
       vertical-align: top;
     }
     .reviews-main {
-      background-color: ${colors.greyBkdg};
       width: 40%;
       padding-top: 0;
+      background-color: ${colors.greyBkdg};
     }
     .reviews-list {
       width: 60%;
+      padding-top: ${sizes.margin * 0.2}px;
       padding-left: ${sizes.margin * 3}px;
+      .reviews-title {
+        margin-bottom: ${sizes.margin * 0.8}px;
+      }
     }
   }
 `;

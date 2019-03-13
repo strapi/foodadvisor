@@ -12,10 +12,10 @@ import fonts from '../../assets/styles/fonts';
 
 const StyledHeader = styled.div`
   .navbar {
-    background-color: ${colors.lightBeige};
-    padding: 0 ${sizes.header.padding};
-    height: ${sizes.header.height.small};
     position: relative;
+    height: ${sizes.header.height.small};
+    padding: 0 ${sizes.header.padding};
+    background-color: ${colors.lightBeige};
   }
   .navbar-brand {
     img {
@@ -26,28 +26,28 @@ const StyledHeader = styled.div`
 
   // Animated hamburger icon
   .navbar-toggler {
-    border: 0;
     position: absolute;
     top: ${sizes.header.padding};
     right: 0;
     padding: 0 ${sizes.header.padding};
+    border: 0;
     .nav-icon {
+      position: relative;
       width: 20px;
       height: 13px;
-      position: relative;
       transform: rotate(0deg);
       transition: 0.15s ease-in-out;
       cursor: pointer;
     }
     .nav-icon span {
-      display: block;
       position: absolute;
+      right: 0;
+      display: block;
       width: 100%;
       height: 1px;
       background: ${colors.darkBlue};
       border-radius: 100px;
       opacity: 1;
-      right: 0;
       transform: rotate(0deg);
       transition: 0.15s ease-in-out;
     }
@@ -65,12 +65,12 @@ const StyledHeader = styled.div`
 
   .navbar-collapse {
     position: fixed;
-    width: 100%;
     top: ${sizes.header.height.small};
     left: 0;
-    background-color: ${colors.lightBeige};
-    padding: 0 ${sizes.header.padding};
     z-index: 99;
+    width: 100%;
+    padding: 0 ${sizes.header.padding};
+    background-color: ${colors.lightBeige};
     li {
       a {
         border-bottom: 1px solid ${colors.lightGrey};
@@ -89,15 +89,9 @@ const StyledHeader = styled.div`
       left: 50%;
     }
     .nav-icon span:nth-child(2) {
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
       transform: rotate(45deg);
     }
     .nav-icon span:nth-child(3) {
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
     .nav-icon span:nth-child(4) {
@@ -129,39 +123,39 @@ const StyledHeader = styled.div`
     }
     .navbar-collapse {
       position: relative;
-      width: inherit;
       top: inherit;
       left: inherit;
+      width: inherit;
       padding: 0;
       border-left: 1px solid ${colors.lightGrey};
       li {
-        padding: 0 ${sizes.margin * 4}px;
         display: table-cell;
+        padding: 0 ${sizes.margin * 4}px;
         a {
-          height: 100%;
-          display: flex;
           position: relative;
+          display: flex;
+          height: 100%;
           span {
-            line-height: 17px;
             margin: auto;
+            line-height: 17px;
             ${fonts.reg};
             ::after {
               display: block;
               content: attr(title);
-              font-weight: bold;
               height: 0;
               overflow: hidden;
               visibility: hidden;
+              font-weight: bold;
             }
           }
           &:after {
             content: ' ';
-            display: block;
-            border: 1px solid transparent;
             position: absolute;
             bottom: 0;
             left: 0;
+            display: block;
             width: 100%;
+            border: 1px solid transparent;
           }
           &.active,
           &:hover {

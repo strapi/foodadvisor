@@ -40,13 +40,13 @@ const Restaurants = createGlobalStyle`
         }
       }
       .filters-collapse.collapse:not(.show), .filters-collapse.collapse {
-        padding-top: ${sizes.margin * 7.3}px;
         position: relative;
         display: inline-block;
         width: calc(${sizes.header.logoWidth.large} + ${sizes.margin * 5.5}px);
+        padding-top: ${sizes.margin * 7.3}px;
         .filters-wrapper {
-          border-right: 1px solid ${colors.lightGrey};
           padding-right: ${sizes.margin * 3}px;
+          border-right: 1px solid ${colors.lightGrey};
           li {
             margin-bottom: ${sizes.margin * 1.2}px;
           }

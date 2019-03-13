@@ -11,11 +11,8 @@ import StyledCard from './StyledCard';
 import CardSection from '../CardSection';
 import Img from '../Img';
 
-function Card(props) {
-  const {
-    restaurant: { id, cover },
-    onClick
-  } = props;
+function Card({ restaurant, onClick }) {
+  const { id, cover } = restaurant;
   const coverURL = cover[0] ? cover[0].url : '';
 
   return (
@@ -27,17 +24,14 @@ function Card(props) {
           alt="cover"
         />
       </div>
-      <CardSection restaurant={props.restaurant} />
+      <CardSection restaurant={restaurant} />
     </StyledCard>
   );
 }
 
 Card.defaultProps = {
   restaurant: {
-    category: { name: '' },
-    cover: [],
-    name: null,
-    reviews: []
+    cover: []
   }
 };
 

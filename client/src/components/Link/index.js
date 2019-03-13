@@ -8,34 +8,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledLink from './StyledLink';
 
-function Link(props) {
-  const content = (() => {
-    if (props.message) {
-      return props.message;
-    }
-
-    return props.children;
-  })();
-
+function Link({ active, children, url }) {
   return (
-    <StyledLink className={props.active && 'active'} to={props.url}>
-      {content}
+    <StyledLink className={active && 'active'} to={url}>
+      {children}
     </StyledLink>
   );
 }
 
 Link.defaultProps = {
+  active: null,
   children: null,
-  message: null,
-  url: '#',
-  active: null
+  url: '#'
 };
 
 Link.propTypes = {
-  children: PropTypes.node,
-  url: PropTypes.string,
-  message: PropTypes.string,
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  url: PropTypes.string
 };
 
 export default Link;

@@ -23,14 +23,7 @@ import Informations from '../Informations';
 import Reviews from '../Reviews';
 
 class Tabs extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      activeTab: '2'
-    };
-  }
+  state = { activeTab: '2' };
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
@@ -58,9 +51,7 @@ class Tabs extends React.Component {
                     this.toggle('1');
                   }}
                 >
-                  <p>
-                    <span>Informations</span>
-                  </p>
+                  <span title="Informations">Informations</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -72,9 +63,7 @@ class Tabs extends React.Component {
                     this.toggle('2');
                   }}
                 >
-                  <p>
-                    <span>Reviews</span>
-                  </p>
+                  <span title="Reviews">Reviews</span>
                 </NavLink>
               </NavItem>
             </Container>

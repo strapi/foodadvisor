@@ -20,13 +20,11 @@ const Restaurant = createGlobalStyle`
     .slider-wrapper {
       z-index: 0;
     }
-
     .intro-wrapper, .slider-wrapper {
       // Bootstrap custom
       @media (min-width: ${sizes.tablet}) {
         max-width: 720px;
         margin: 0 auto;
-        margin-top: ${sizes.margin * 0.3}px;
       }
       @media (min-width: 992px) {
         max-width: 960px;
@@ -42,7 +40,6 @@ const Restaurant = createGlobalStyle`
         padding: 0 0 ${sizes.margin * 1.4}px 0;
       }
     }
-
     @media (min-width: ${sizes.tablet}) {
       .intro-wrapper {
         position: relative;
@@ -52,11 +49,14 @@ const Restaurant = createGlobalStyle`
           padding: 0;
         }
       }
+      .slider-wrapper {
+        margin-top: ${sizes.margin * 0.3}px;
+      }
       .informations-wrapper {
         padding: ${sizes.margin * 10}px 0 0 0;
         h1 {
-          padding: ${sizes.margin}px 0 ${sizes.margin *
-  3}px calc(40% + ${sizes.margin * 3}px);
+          padding: ${sizes.margin * 1.8}px 0 ${sizes.margin *
+  2.9}px calc(40% + ${sizes.margin * 3}px);
         }
       }
     }

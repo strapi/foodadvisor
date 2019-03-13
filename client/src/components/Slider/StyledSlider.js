@@ -13,7 +13,6 @@ const StyledSlider = createGlobalStyle`
     .indicators, .carousel-controls {
       display: none;
     }
-
     .carousel {
       width: 100%;
       height: ${sizes.slider.height.small};
@@ -21,7 +20,6 @@ const StyledSlider = createGlobalStyle`
         height: 100%;
       }
     }
-
     .indicators {
       position: absolute;
       right: 0;
@@ -41,24 +39,23 @@ const StyledSlider = createGlobalStyle`
         }
       }
     }
-    
     .carousel-controls {
-      height: ${sizes.slider.controls.size};
       position: absolute;
       left:  ${sizes.margin * 3}px;
-      bottom: calc(-${sizes.slider.controls.size}/2);
+      bottom: calc(-${sizes.slider.controls.size}/2 + ${sizes.margin * 0.2}px);
+      height: ${sizes.slider.controls.size};
       a {
         position: relative;
         display: inline-block;
-        background: ${colors.darkBlue};
         width: ${sizes.slider.controls.size};
         height: ${sizes.slider.controls.size};
-        opacity: 1;
+        margin-right: 1px;
+        background: ${colors.darkBlue};
         background-image: url(${LeftArrow});
         background-repeat:no-repeat;
         background-position:center center;
         background-size: 8px;
-        margin-right: 1px;
+        opacity: 1;
         span {
           display: none;
         }
@@ -70,13 +67,11 @@ const StyledSlider = createGlobalStyle`
         }
       }
     }
-  
     @media (min-width: ${sizes.tablet}) {
       .carousel {
         height: ${sizes.slider.height.large};
       }
     }
-
     @media (min-width: ${sizes.desktop}) {
       padding-right: calc(${sizes.slider.indicators.size} + ${sizes.margin *
   3}px);

@@ -8,17 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledRadio from './StyledRadio';
 
-function Radio({
-  autoFocus,
-  checked,
-  id,
-  message,
-  name,
-  onChange,
-  tabIndex,
-  value,
-  ...rest
-}) {
+function Radio({ checked, id, message, name, onChange, value, ...rest }) {
   const handleChange = () => {
     const target = {
       name,
@@ -26,47 +16,43 @@ function Radio({
       type: 'radio',
       checked: !checked
     };
+
     onChange({ target });
   };
 
   return (
     <>
       <StyledRadio
-        autoFocus={autoFocus}
+        checked={checked}
         id={value}
         name={name}
         onChange={handleChange}
-        tabIndex={tabIndex}
         value={value}
-        checked={checked}
         {...rest}
         className="radio-custom"
       />
       <label htmlFor={value} className="radio-custom-label">
-        {message === '' ? 'all' : message}
+        {message.includes('_') ? message.replace('_', '') : message}
       </label>
     </>
   );
 }
 
 Radio.defaultProps = {
-  autoFocus: false,
   checked: false,
   id: null,
+  message: null,
   onChange: () => {},
-  tabIndex: '0',
-  value: '',
-  message: null
+  value: ''
 };
+
 Radio.propTypes = {
-  autoFocus: PropTypes.bool,
   checked: PropTypes.bool,
   id: PropTypes.string,
+  message: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  tabIndex: PropTypes.string,
-  value: PropTypes.string,
-  message: PropTypes.string
+  value: PropTypes.string
 };
 
 export default Radio;

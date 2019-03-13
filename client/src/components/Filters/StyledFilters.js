@@ -30,7 +30,7 @@ const StyledFilters = createGlobalStyle`
     .filters-wrapper {
       ul {
         max-height: 35vh;
-        overflow: scroll;
+        overflow-y: scroll;
       }
     }
     h1 {
@@ -41,10 +41,10 @@ const StyledFilters = createGlobalStyle`
       border-color: ${colors.lightGrey};
     }
     p {
-      color: ${colors.black};
       ${fonts.bold};
-      font-size: 16px;
       padding-bottom: ${sizes.margin * 1.5}px;
+      color: ${colors.black};
+      font-size: 16px;
     }
   }
 
@@ -56,16 +56,16 @@ const StyledFilters = createGlobalStyle`
   }
   .radio-custom-label {
     position: relative;
-    text-transform: capitalize;
-    color: ${colors.black};
-    line-height: normal;
-    font-size: 16px;
     margin-bottom: 0;
-    padding-left: ${sizes.margin * 2}px
+    padding-left: ${sizes.margin * 2}px;
+    font-size: 16px;
+    line-height: normal;
+    color: ${colors.black};
+    text-transform: capitalize;
   }  
   .radio-custom {
-    opacity: 0;
     position: absolute;   
+    opacity: 0;
   }
   .radio-custom + .radio-custom-label:before {
     content: '';

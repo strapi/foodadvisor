@@ -5,14 +5,15 @@ import colors from '../../assets/styles/colors';
 import fonts from '../../assets/styles/fonts';
 
 const StyledNotePaper = styled.div`
-  background-color: white;
   padding: ${sizes.margin * 2.4}px;
+  background-color: white;
+  min-height: 231px;
   h4 {
     margin-bottom: ${sizes.margin * 1.8}px;
   }
   li {
-    padding-bottom: ${sizes.margin * 1.1}px;
     display: block;
+    padding-bottom: ${sizes.margin * 1.1}px;
   }
   p {
     ${fonts.reg};
@@ -24,6 +25,7 @@ const StyledNotePaper = styled.div`
     }
   }
   @media (min-width: ${sizes.tablet}) {
+    padding-bottom: ${sizes.margin * 2.3}px;
     &:hover {
       box-shadow: 0 2px 4px 0 rgba(243, 222, 212, 0.34);
     }

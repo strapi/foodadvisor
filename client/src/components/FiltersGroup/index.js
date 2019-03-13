@@ -9,32 +9,20 @@ import PropTypes from 'prop-types';
 
 import Radio from '../Radio';
 
-function FiltersGroup(props) {
-  const { title, name, options, value, onChange } = props;
-
+function FiltersGroup({ title, name, options, value, onChange }) {
   return (
     <div>
       <p>{title}</p>
       <ul>
         {options.map(option => {
-          return typeof option === 'string' ? (
-            <li key={option}>
+          return (
+            <li key={option.name || option}>
               <Radio
                 onChange={onChange}
                 name={name}
-                message={option}
-                value={option}
-                checked={value === option}
-              />
-            </li>
-          ) : (
-            <li key={option.name}>
-              <Radio
-                onChange={onChange}
-                name={name}
-                message={option.name}
-                value={option.id}
-                checked={value === option.id}
+                message={option.name || option}
+                value={option.id || option}
+                checked={value === option.id || value === option}
               />
             </li>
           );

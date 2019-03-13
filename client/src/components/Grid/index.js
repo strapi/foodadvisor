@@ -10,9 +10,9 @@ import sizes from '../../assets/styles/sizes';
 const Grid = styled.ul`
   li.column {
     @media (min-width: ${sizes.tablet}) {
-      width: 50%;
       display: inline-block;
       vertical-align: top;
+      width: 50%;
       padding-bottom: ${sizes.margin * 3}px;
       &:nth-child(even) {
         padding-left: ${sizes.margin * 1.5}px;

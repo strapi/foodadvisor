@@ -14,11 +14,8 @@ import Rate from '../Rate';
 
 import StyledCardSection from './StyledCardSection';
 
-function CardSection(props) {
-  const {
-    restaurant: { name, price, district, note, reviews, category },
-    hasLink
-  } = props;
+function CardSection({ restaurant, hasLink }) {
+  const { name, price, district, note, reviews, category } = restaurant;
 
   return (
     <StyledCardSection className={hasLink && 'banner'}>
@@ -27,7 +24,10 @@ function CardSection(props) {
         <p className="description">
           <Price value={price} />
           {category && <span>&nbsp;•&nbsp;{category.name}</span>}
-          <span>&nbsp;•&nbsp;{district}</span>
+          <span>
+            &nbsp;•&nbsp;
+            {district.includes('_') ? district.replace('_', '') : district}
+          </span>
         </p>
       </div>
       <div className="right-infos">

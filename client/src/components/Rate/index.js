@@ -16,10 +16,10 @@ const range = (min, max) =>
     .fill()
     .map((_, i) => min + i);
 
-const Rating = ({ min, max, onChange, value, clickable }) => {
+const Rating = ({ onChange, value, clickable }) => {
   return (
     <div className="rating">
-      {range(min, max).map((item, index) => (
+      {range(1, 5).map((item, index) => (
         <RatingItem
           colored={value >= item}
           checked={value === item}
@@ -34,30 +34,14 @@ const Rating = ({ min, max, onChange, value, clickable }) => {
   );
 };
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Rate extends React.Component {
-  // NOTE: I'm commenting this since we don't need it yet
-  // state = { rating: 0 };
-
-  // componentDidMount() {
-  //   const { value } = this.props;
-
-  //   this.setState({ rating: value });
-  // }
-
-  render() {
-    const { clickable, value } = this.props;
-
-    return (
-      <StyledRate
-        className={`${this.props.size} ${
-          this.props.clickable ? 'rating-item-clickable' : ''
-        }`}
-      >
-        <Rating min={1} max={5} value={value} clickable={clickable} />
-      </StyledRate>
-    );
-  }
+function Rate({ clickable, value, size }) {
+  return (
+    <StyledRate
+      className={`${size} ${clickable ? 'rating-item-clickable' : ''}`}
+    >
+      <Rating value={value} clickable={clickable} />
+    </StyledRate>
+  );
 }
 
 Rate.defaultProps = {

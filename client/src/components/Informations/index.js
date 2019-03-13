@@ -39,7 +39,7 @@ const infos = [
   }
 ];
 
-function Informations() {
+function Informations({ address, opening_hours, phone, website }) {
   return (
     <>
       <H1>Informations</H1>
