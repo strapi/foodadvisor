@@ -102,3 +102,8 @@ node_modules
 
 testApp
 coverage
+
+
+# Custom
+
+!data.zip

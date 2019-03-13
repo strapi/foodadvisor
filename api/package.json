@@ -9,7 +9,8 @@
     "start": "node server.js",
     "strapi": "node_modules/strapi/bin/strapi.js",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
-    "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
+    "postinstall": "node node_modules/strapi/lib/utils/post-install.js && node scripts/seed.js",
+    "seed": "node scripts/seed.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -19,12 +20,14 @@
     "eslint-plugin-react": "^7.7.0"
   },
   "dependencies": {
+    "knex": "0.16.3",
     "lodash": "^4.17.5",
+    "rimraf": "^2.6.3",
+    "sqlite3": "4.0.6",
     "strapi": "3.0.0-alpha.24.1",
     "strapi-hook-bookshelf": "3.0.0-alpha.24.1",
     "strapi-hook-knex": "3.0.0-alpha.24.1",
-    "knex": "0.16.3",
-    "sqlite3": "4.0.6"
+    "unzip-stream": "^0.3.0"
   },
   "author": {
     "name": "lauriejim",
