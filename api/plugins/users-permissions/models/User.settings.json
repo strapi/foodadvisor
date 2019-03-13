@@ -56,6 +56,12 @@
     "likes": {
       "collection": "like",
       "via": "author"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   },
   "collectionName": "users-permissions_user"
