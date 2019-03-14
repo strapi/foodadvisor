@@ -14,6 +14,7 @@ const StyledPaging = createGlobalStyle`
   ul.pagination {
     display: table;
     margin: 0 auto;
+    margin-top: ${sizes.margin*2.7}px;
     color: ${colors.darkGrey};
     font-size: 10px;
     .page-item {
