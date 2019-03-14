@@ -8,10 +8,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /* istanbul ignore next */
-function Price(props) {
+function Price({ value }) {
+  const formattedValue = value ? value.replace('_', '') : 1;
+
   return (
     <span>
-      {Array(props.value)
+      {Array(parseInt(formattedValue))
         .fill(1)
         .map(() => '€')}
     </span>
@@ -19,11 +21,11 @@ function Price(props) {
 }
 
 Price.defaultProps = {
-  value: 1
+  value: "_1"
 };
 
 Price.propTypes = {
-  value: PropTypes.oneOf([1, 2, 3, 4])
+  value: PropTypes.oneOf(["_1", "_2", "_3", "_4"]),
 };
 
 export default Price;

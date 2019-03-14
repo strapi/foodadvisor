@@ -10,49 +10,7 @@ import PropTypes from 'prop-types';
 import { GET_RESTAURANT } from '../../queries';
 import Query from '../../components/Query';
 
-import Grid from '../../components/Grid';
-import CardSection from '../../components/CardSection';
-import Slider from '../../components/Slider';
-import Tabs from '../../components/Tabs';
-
-/* istanbul ignore next */
-// NOTE: will be replaced by './RenderView'
-export const renderView = ({ restaurant, ...rest }) => {
-  const { cover } = restaurant;
-  const {
-    reviewsConnection: {
-      aggregate: { count }
-    }
-  } = rest;
-
-  const price = restaurant.price
-    ? parseInt(restaurant.price.replace('_', ''), 10)
-    : 1;
-  const district = restaurant.district
-    ? restaurant.district.replace('_', '')
-    : '1st';
-
-  return (
-    <div>
-      <div className="intro-wrapper">
-        <Grid>
-          <li className="column">
-            <CardSection
-              restaurant={{ ...restaurant, price, district }}
-              hasLink
-            />
-          </li>
-        </Grid>
-      </div>
-      <div className="slider-wrapper">
-        <Slider slides={cover} />
-      </div>
-      <div className="informations-wrapper">
-        <Tabs restaurant={{ ...restaurant, count }} />
-      </div>
-    </div>
-  );
-};
+import RenderView from './RenderView';
 
 function RestaurantPage(props) {
   const {
@@ -60,6 +18,15 @@ function RestaurantPage(props) {
       params: { id }
     }
   } = props;
+
+  console.log(props.history.location);
+
+  const renderView = ({ restaurant, ...rest }) => {
+    
+    return (
+      <RenderView restaurant={restaurant} rest={rest} />
+    );
+  };
 
   return (
     <div className="page-wrapper" id="restaurant-page">

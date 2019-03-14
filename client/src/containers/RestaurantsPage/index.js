@@ -41,8 +41,16 @@ class RestaurantsPage extends React.Component {
     this.setState({ filters });
   };
 
+  handlePageChange = ({ target }) => {
+    this.props.history.push({ search: `?start=${target.value}` });
+  };
+
   renderPagination = count => {
-    return <Paging />;
+    const {
+      location: { search }
+    } = this.props;
+    const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
+    return <Paging onChange={this.handlePageChange} count={count} range={12} page={start} />;
   };
 
   renderFilters = ({ categories }) => {
@@ -51,12 +59,12 @@ class RestaurantsPage extends React.Component {
     } = this.state;
     const filters = [
       // Uncomment when backend is available - V2
-      {
-        title: 'Order by',
-        name: 'orderby',
-        options: ['ranking', 'name'],
-        value: orderby
-      },
+      // {
+      //   title: 'Order by',
+      //   name: 'orderby',
+      //   options: ['ranking', 'name'],
+      //   value: orderby
+      // },
       {
         title: 'Categories',
         name: 'where.category',
@@ -81,14 +89,9 @@ class RestaurantsPage extends React.Component {
       }
     } = rest;
     const restaurantsToDiplay = restaurants.map(restaurant => {
-      // Update data format due to GraphQL
-      const price = restaurant.price
-        ? parseInt(restaurant.price.replace('_', ''), 10)
-        : 1;
 
       return {
-        ...restaurant,
-        price
+        ...restaurant
       };
     });
 
@@ -108,8 +111,8 @@ class RestaurantsPage extends React.Component {
               </li>
             ))}
           </Grid>
+          {this.renderPagination(count)}
         </div>
-        {this.renderPagination(count)}
       </>
     );
   };
@@ -132,10 +135,7 @@ class RestaurantsPage extends React.Component {
     const {
       location: { search }
     } = this.props;
-
-    // NOTE: Prepare for pagination
     const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
-
     const {
       filters: { orderby }
     } = this.state;
@@ -147,8 +147,7 @@ class RestaurantsPage extends React.Component {
             query={GET_RESTAURANTS}
             render={this.renderRestaurants}
             variables={{
-              // limit: 12, // Fit with one, two or  three columns
-              limit: 32,
+              limit: 12, // Fit with one, two or  three columns
               start,
               sort: `${orderby}:ASC`,
               where: this.getWhereParams()

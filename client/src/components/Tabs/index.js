@@ -26,6 +26,11 @@ class Tabs extends React.Component {
   state = { activeTab: '2' };
 
   toggle(tab) {
+
+    console.log(this.props.history);
+
+    this.props.history.push({ search: `?tab=${tab}` });
+
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab

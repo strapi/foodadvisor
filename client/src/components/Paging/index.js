@@ -6,37 +6,55 @@
 
 import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function Paging() {
+import StyledPaging from './StyledPaging';
+
+function Paging({
+  count,
+  page,
+  onChange,
+  range,
+}) {
+  const pagesCount = Math.round(count/range);
+
   return (
-    <Pagination aria-label="Page navigation example">
-      <PaginationItem>
-        <PaginationLink previous href="#" />
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink href="#">1</PaginationLink>
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink href="#">2</PaginationLink>
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink href="#">3</PaginationLink>
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink href="#">4</PaginationLink>
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink href="#">5</PaginationLink>
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationLink next href="#" />
-      </PaginationItem>
-    </Pagination>
+    <>
+      <StyledPaging />
+      <Pagination aria-label="Page navigation">
+        <PaginationItem>
+          <PaginationLink onClick={onChange} value={0} />
+        </PaginationItem>
+        {Array(pagesCount)
+          .fill(1)
+          .map((item, index) => {
+            return (
+              <>
+              <span>&nbsp;•&nbsp;</span>
+              <PaginationItem key={index} onClick={onChange} className={page === index*range ? 'selected' : ''}>
+                <PaginationLink onClick={onChange} value={index*range}>{index + 1}</PaginationLink>
+              </PaginationItem>
+              </>
+            )
+          })}
+        <PaginationItem>
+          <PaginationLink onClick={onChange} value={(pagesCount-1) * range} />
+        </PaginationItem>
+      </Pagination>
+    </>
   );
 }
 
-Paging.defaultProps = {};
-Paging.propTypes = {};
+Paging.defaultProps = {
+  count: 0,
+  onChange: () => {},
+  range: 12,
+};
+
+Paging.propTypes = {
+  count: PropTypes.number,
+  range: PropTypes.number,
+  onChange: PropTypes.func,
+};
 
 export default Paging;
