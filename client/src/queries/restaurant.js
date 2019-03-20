@@ -31,7 +31,7 @@ const GET_RESTAURANT = gql`
       }
       website
     }
-    reviewsConnection {
+    reviewsConnection(where: { restaurant: $id }) {
       aggregate {
         count
       }

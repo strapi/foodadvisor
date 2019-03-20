@@ -30,13 +30,16 @@ class RestaurantsPage extends React.Component {
         category: 'all',
         district: '_all'
       }
-    }
+    },
+    range: 15
   };
 
   handleClick = id => this.props.history.push(`/${id}/informations`);
 
   handleChange = ({ target }) => {
     const { filters } = this.state;
+
+    this.props.history.push({ search: `` });
     set(filters, target.name, target.value);
     this.setState({ filters });
   };
@@ -50,12 +53,19 @@ class RestaurantsPage extends React.Component {
       location: { search }
     } = this.props;
     const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
-    return <Paging onChange={this.handlePageChange} count={count} range={12} page={start} />;
+    return (
+      <Paging
+        onChange={this.handlePageChange}
+        count={count}
+        range={this.state.range}
+        page={start}
+      />
+    );
   };
 
   renderFilters = ({ categories }) => {
     const {
-      filters: { where, orderby }
+      filters: { where /* , orderby */ }
     } = this.state;
     const filters = [
       // Uncomment when backend is available - V2
@@ -88,8 +98,8 @@ class RestaurantsPage extends React.Component {
         aggregate: { count }
       }
     } = rest;
-    const restaurantsToDiplay = restaurants.map(restaurant => {
 
+    const restaurantsToDiplay = restaurants.map(restaurant => {
       return {
         ...restaurant
       };
@@ -111,7 +121,7 @@ class RestaurantsPage extends React.Component {
               </li>
             ))}
           </Grid>
-          {this.renderPagination(count)}
+          {count > this.state.range && this.renderPagination(count)}
         </div>
       </>
     );
@@ -147,7 +157,7 @@ class RestaurantsPage extends React.Component {
             query={GET_RESTAURANTS}
             render={this.renderRestaurants}
             variables={{
-              limit: 12, // Fit with one, two or  three columns
+              limit: this.state.range,
               start,
               sort: `${orderby}:ASC`,
               where: this.getWhereParams()

@@ -32,7 +32,10 @@ const infos = [
   {
     title: 'Location',
     infos: [
-      { subtitle: '107 Boulevard Richard Lenoir 75011 Paris', info: '' },
+      {
+        subtitle: '107 Boulevard Richard Lenoir 75011 Paris',
+        multipleLine: true
+      },
       { subtitle: 'Website', text: 'http://obermama.com' },
       { subtitle: 'Phone number', text: '+331 58 30 62 78' }
     ]

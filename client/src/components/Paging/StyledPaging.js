@@ -14,7 +14,6 @@ const StyledPaging = createGlobalStyle`
   ul.pagination {
     display: table;
     margin: 0 auto;
-    margin-top: ${sizes.margin*2.7}px;
     color: ${colors.darkGrey};
     font-size: 10px;
     .page-item {
@@ -27,7 +26,7 @@ const StyledPaging = createGlobalStyle`
         ${fonts.reg};
         font-size: 12px;
         background-color: transparent;
-        padding: 0 ${sizes.margin*0.5}px;
+        padding: 0 ${sizes.margin * 0.5}px;
         color: ${colors.darkGrey};
         &:hover {
           color: ${colors.darkBlue};

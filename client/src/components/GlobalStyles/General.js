@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import mixins from '../../assets/styles/mixins';
+import sizes from '../../assets/styles/sizes';
 
 const General = createGlobalStyle`
   * { ${mixins().bbox} }
@@ -21,6 +22,11 @@ const General = createGlobalStyle`
     .container, ul {
       padding: 0;
     }
+    .container {
+      @media (min-width: ${sizes.wide}) {
+        max-width: 1240px;
+      }
+    }
     ul {
       list-style-type: none;
       margin-bottom: 0;
@@ -34,7 +40,8 @@ const General = createGlobalStyle`
     a.link {
       cursor: pointer;
       p {
-        font-size: 10px;
+        font-size: 10px;    
+        line-height: 22px;
         letter-spacing: 0.8px;
         text-transform: uppercase;
         text-decoration: underline;
@@ -42,6 +49,18 @@ const General = createGlobalStyle`
     }
     .page-wrapper {
       position: relative;
+    }
+  }
+  .navbar-brand {
+    font-size: 0;
+    img {
+      width: ${sizes.header.logoWidth.small};
+      height: auto;
+    }
+    @media (min-width: ${sizes.tablet}) {
+      img {
+        width: ${sizes.header.logoWidth.large};
+      }
     }
   }
 `;

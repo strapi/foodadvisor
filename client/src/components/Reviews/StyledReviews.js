@@ -17,7 +17,8 @@ const StyledReviews = createGlobalStyle`
     }
     .reviews-value {
       ${fonts.bold};
-      font-size: 46px;
+      font-size: 56px;
+      line-height: 54px;
       color: ${colors.black};
     }
     .reviews-count {

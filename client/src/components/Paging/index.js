@@ -10,13 +10,8 @@ import PropTypes from 'prop-types';
 
 import StyledPaging from './StyledPaging';
 
-function Paging({
-  count,
-  page,
-  onChange,
-  range,
-}) {
-  const pagesCount = Math.round(count/range);
+function Paging({ count, page, onChange, range }) {
+  const pagesCount = Math.round(count / range);
 
   return (
     <>
@@ -29,16 +24,22 @@ function Paging({
           .fill(1)
           .map((item, index) => {
             return (
-              <>
-              <span>&nbsp;•&nbsp;</span>
-              <PaginationItem key={index} onClick={onChange} className={page === index*range ? 'selected' : ''}>
-                <PaginationLink onClick={onChange} value={index*range}>{index + 1}</PaginationLink>
-              </PaginationItem>
-              </>
-            )
+              <React.Fragment key={index}>
+                <span>&nbsp;•&nbsp;</span>
+                <PaginationItem
+                  key={index}
+                  onClick={onChange}
+                  className={page === index * range ? 'selected' : ''}
+                >
+                  <PaginationLink onClick={onChange} value={index * range}>
+                    {index + 1}
+                  </PaginationLink>
+                </PaginationItem>
+              </React.Fragment>
+            );
           })}
         <PaginationItem>
-          <PaginationLink onClick={onChange} value={(pagesCount-1) * range} />
+          <PaginationLink onClick={onChange} value={(pagesCount - 1) * range} />
         </PaginationItem>
       </Pagination>
     </>
@@ -48,13 +49,13 @@ function Paging({
 Paging.defaultProps = {
   count: 0,
   onChange: () => {},
-  range: 12,
+  range: 15
 };
 
 Paging.propTypes = {
   count: PropTypes.number,
   range: PropTypes.number,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 export default Paging;

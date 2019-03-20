@@ -10,7 +10,7 @@ const sizes = {
       large: '84px'
     },
     logoWidth: {
-      small: '97px',
+      small: '96px',
       large: '170px'
     },
     padding: '20px'
@@ -31,6 +31,9 @@ const sizes = {
     indicators: {
       size: '74px'
     }
+  },
+  input: {
+    height: '44px'
   }
 };
 

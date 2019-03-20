@@ -76,6 +76,9 @@ const StyledTabs = createGlobalStyle`
           margin-bottom: ${sizes.margin * 2}px;
         }
       }
+      &.reviews-pane {
+        margin-bottom: ${sizes.margin * 0.2}px;
+      }
     }
     @media (min-width: ${sizes.tablet}) {
       .nav-tabs {
@@ -86,9 +89,12 @@ const StyledTabs = createGlobalStyle`
         &.active {
           display: block;
         }
+        &.reviews-pane {
+          margin-bottom: ${sizes.margin * 0.4}px;
+        }
         &.informations-pane {
           padding-top: ${sizes.margin * 5.9}px;
-          padding-bottom: ${sizes.margin * 4}px;
+          padding-bottom: ${sizes.margin * 4.3}px;
           h1 {
             display: none;
           }
