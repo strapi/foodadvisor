@@ -14,8 +14,12 @@ import Rate from '../Rate';
 
 import StyledCardSection from './StyledCardSection';
 
-function CardSection({ restaurant, hasLink }) {
-  const { name, price, district, note, reviews, category } = restaurant;
+function CardSection({ restaurant, hasLink, history }) {
+  const { category, district, id, name, note, price, reviews } = restaurant;
+
+  const goToReviews = () => {
+    history.push(`/${id}/reviews`);
+  };
 
   return (
     <StyledCardSection className={hasLink && 'banner'}>
@@ -36,7 +40,7 @@ function CardSection({ restaurant, hasLink }) {
           <p>{reviews.length}&nbsp;reviews</p>
         ) : (
           <div className="link-wrapper">
-            <a href="/" className="link">
+            <a onClick={goToReviews} className="link">
               <p>See all reviews</p>
             </a>
           </div>

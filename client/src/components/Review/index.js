@@ -61,12 +61,20 @@ const RateContainer = styled.div`
   top: -4px;
 `;
 
-function Review({ created_at, author: { username }, note, content }) {
+function Review(
+  props,
+  {
+    created_at,
+    // author: { username },
+    note,
+    content
+  }
+) {
   return (
     <Wrapper>
       <Flex>
         <div style={{ marginRight: '32px' }}>
-          <Avatar src={Pic} alt={username} />
+          <Avatar src={Pic} alt="username" />
         </div>
         <div style={{ width: '100%' }}>
           <Flex style={{ justifyContent: 'space-between' }}>

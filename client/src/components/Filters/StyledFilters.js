@@ -9,15 +9,24 @@ const StyledFilters = createGlobalStyle`
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 0;    
+    z-index: 1;
+    border: 0;
     .filter-btn {
       ${fonts.reg};
       font-size: 16px;
       color: ${colors.darkGrey};
+      img, span {
+        vertical-align: middle;
+      }
+      span {
+        line-height: 12px;
+      }
       img {
         width: 14px;
         height: auto;
-        margin-right: ${sizes.margin / 2}px;
+        margin-right: ${sizes.margin}px;
+        margin-top: ${sizes.margin * 0.4}px;
       }
     }
   }
@@ -27,10 +36,31 @@ const StyledFilters = createGlobalStyle`
     left: 0;
     width: 100%;
     background: white;
+    z-index: 1;
     .filters-wrapper {
       ul {
         max-height: 35vh;
         overflow-y: scroll;
+        position: relative;
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 6px;
+          height: 6px;
+        }
+        &::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          width: 6px;
+          height: 6px;
+          background-color: ${colors.mediumGrey};
+        }
       }
     }
     h1 {

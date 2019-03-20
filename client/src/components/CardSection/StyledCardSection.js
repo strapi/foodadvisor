@@ -15,16 +15,24 @@ const StyledCardSection = styled.div`
   width: 100%;
   p {
     ${fonts.reg}
-    margin-top: ${sizes.margin * 0.2}px;
     font-size: 12px;
-    line-height: 1.33;
     color: ${colors.darkGrey};
+    line-height: 10px;
+    margin-top: ${sizes.margin * 0.4}px;
+    &.description {
+      line-height: 1.33;
+      margin-top: ${sizes.margin * 0.6}px;
+    }
+  }
+  .link p {
+    margin-top: ${sizes.margin * 0.3}px;
   }
   .left-infos,
   .right-infos {
-    display: table-cell;
+    display: block;
   }
   .right-infos {
+    margin-top: -${sizes.margin * 2}px;
     div,
     p {
       width: 100%;
@@ -33,7 +41,7 @@ const StyledCardSection = styled.div`
     .rating,
     label {
       height: 22px;
-      line-height: 22px;
+      line-height: 23px;
     }
   }
   .description {

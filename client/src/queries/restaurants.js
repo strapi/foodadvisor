@@ -21,7 +21,7 @@ const GET_RESTAURANTS = gql`
         content
       }
     }
-    restaurantsConnection {
+    restaurantsConnection(where: $where) {
       aggregate {
         count
       }

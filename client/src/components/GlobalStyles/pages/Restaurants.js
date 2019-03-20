@@ -5,20 +5,21 @@ import colors from '../../../assets/styles/colors';
 
 const Restaurants = createGlobalStyle`
   #restaurants-page {
-    padding: ${sizes.margin * 2}px;
+    padding: ${sizes.margin * 1.9}px ${sizes.margin * 2}px;
     .container {
       position: relative;
     }
     .restaurants-wrapper {
       ul:not(.pagination) {
-        margin-top: ${sizes.margin * 3}px;
+        margin-top: ${sizes.margin * 2.6}px;
         li.column {
-          padding-bottom: ${sizes.margin * 2.8}px;
+          padding-bottom: ${sizes.margin * 7.6}px;
         }
       }
     }
     @media (min-width: ${sizes.tablet}) {
-      padding: ${sizes.margin * 3.8}px ${sizes.margin * 2}px;
+      padding: ${sizes.margin * 3.8}px ${sizes.margin * 2}px ${sizes.margin *
+  4}px ${sizes.margin * 2}px;
     }
     @media (min-width: ${sizes.desktop}) {
       .navbar-toggler {
@@ -29,20 +30,20 @@ const Restaurants = createGlobalStyle`
         vertical-align: top;
         width: calc(100% - calc(${
           sizes.header.logoWidth.large
-        } + ${sizes.margin * 5.5}px));
+        } + ${sizes.margin * 11.6}px));
         h1 {
           padding-left: ${sizes.margin * 3}px;
         }
-        ul {
+        ul:not(.pagination) {
           li.column {
-            padding-bottom: ${sizes.margin * 5.6}px;
+            padding-bottom: ${sizes.margin * 7.9}px;
           }
         }
       }
       .filters-collapse.collapse:not(.show), .filters-collapse.collapse {
         position: relative;
         display: inline-block;
-        width: calc(${sizes.header.logoWidth.large} + ${sizes.margin * 5.5}px);
+        width: calc(${sizes.header.logoWidth.large} + ${sizes.margin * 11.6}px);
         padding-top: ${sizes.margin * 7.3}px;
         .filters-wrapper {
           padding-right: ${sizes.margin * 3}px;

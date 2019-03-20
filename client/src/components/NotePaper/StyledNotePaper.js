@@ -14,6 +14,7 @@ const StyledNotePaper = styled.div`
   li {
     display: block;
     padding-bottom: ${sizes.margin * 1.1}px;
+    min-height: 48px;
   }
   p {
     ${fonts.reg};

@@ -30,13 +30,13 @@ const Grid = styled.ul`
         padding-right: inherit;
       }
       :nth-child(3n + 1) {
-        padding-left: ${sizes.margin * 3}px;
+        padding-left: ${sizes.margin * 3.3}px;
       }
       :nth-child(3n + 2) {
-        padding-left: ${sizes.margin * 3}px;
+        padding-left: ${sizes.margin * 3.3}px;
       }
       :nth-child(3n + 3) {
-        padding-left: ${sizes.margin * 3}px;
+        padding-left: ${sizes.margin * 3.3}px;
       }
     }
   }

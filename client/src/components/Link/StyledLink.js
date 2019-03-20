@@ -23,9 +23,6 @@ const StyledLink = styled(Link)`
     ${fonts.reg};
     overflow: hidden;
   }
-  span {
-    padding: 0 ${sizes.margin / 2}px;
-  }
   &:hover, &.active {
     text-decoration: none;
     color: ${colors.darkBlue};

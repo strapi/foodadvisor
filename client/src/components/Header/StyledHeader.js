@@ -17,12 +17,6 @@ const StyledHeader = styled.div`
     padding: 0 ${sizes.header.padding};
     background-color: ${colors.lightBeige};
   }
-  .navbar-brand {
-    img {
-      width: ${sizes.header.logoWidth.small};
-      height: auto;
-    }
-  }
 
   // Animated hamburger icon
   .navbar-toggler {
@@ -74,6 +68,12 @@ const StyledHeader = styled.div`
     li {
       a {
         border-bottom: 1px solid ${colors.lightGrey};
+        &.active,
+        &:hover {
+          span {
+            ${fonts.bold};
+          }
+        }
       }
       &:last-of-type {
         a {
@@ -117,9 +117,6 @@ const StyledHeader = styled.div`
     }
     .navbar-brand {
       margin-right: ${sizes.margin * 4}px;
-      img {
-        width: ${sizes.header.logoWidth.large};
-      }
     }
     .navbar-collapse {
       position: relative;
@@ -159,9 +156,6 @@ const StyledHeader = styled.div`
           }
           &.active,
           &:hover {
-            span {
-              ${fonts.bold};
-            }
             &:after {
               border-color: ${colors.lightOrange};
             }
@@ -175,11 +169,11 @@ const StyledHeader = styled.div`
     }
     @media (min-width: ${sizes.desktop}) {
       .navbar-brand {
-        margin-right: ${sizes.margin * 5.5}px;
+        margin-right: ${sizes.margin * 11.5}px;
       }
       .navbar-collapse {
         li {
-          padding: 0 ${sizes.margin * 5.5}px;
+          padding: 0 0 0 ${sizes.margin * 11.5}px;
         }
       }
     }

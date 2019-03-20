@@ -59,7 +59,7 @@ function Reviews(props) {
         <p className="reviews-title">Overrall rating</p>
         <Rate value={Math.floor(note)} clickable={false} size="big" />
         <p className="reviews-value">{Math.floor(note)}/5</p>
-        <p className="reviews-count">{count}&nbsp;Reviews</p>
+        <p className="reviews-count">{reviews.length}&nbsp;Reviews</p>
         <div className="reviews-gauges">{renderNotes(noteDetails, count)}</div>
       </section>
       <section className="reviews-list">

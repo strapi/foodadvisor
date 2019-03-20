@@ -16,7 +16,7 @@ const StyledCard = styled.div`
   .img-wrapper {
     width: 100%;
     height: ${sizes.article.img.height};
-    margin-bottom: ${sizes.margin * 0.7}px;
+    margin-bottom: ${sizes.margin * 2}px;
     background-color: ${colors.lightGrey};
   }
 `;
