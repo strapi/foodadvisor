@@ -5,6 +5,9 @@ import Paging from '../../components/Paging';
 import Grid from '../../components/Grid';
 import Card from '../../components/Card';
 import H1 from '../../components/H1';
+import Img from '../../components/Img'; 
+
+import img from '../../assets/img/ooops.png'
 
 const RenderView = ({ onClick, onPagingChange, restaurants, rest, start, range }) => {
   const {
@@ -39,6 +42,15 @@ const RenderView = ({ onClick, onPagingChange, restaurants, rest, start, range }
         ))}
       </Grid>
       {count > range && renderPagination(count)}
+      {restaurants.length < 1 && (
+        <div className="ooops-wrapper">
+          <div className="ooops-img">
+            <Img src={img} alt="oops" />
+          </div>
+          <p className="ooops-title">Ooops!</p>
+          <p className="ooops-text">Seems like there are no restaurants matchings thoses filters.</p>
+        </div>
+      )}
     </div>
   );
 };
