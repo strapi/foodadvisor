@@ -26,7 +26,7 @@ function Filters({ filters, onChange }) {
         <div className="filters-wrapper">
           {filters.map(filter => {
             return (
-              <FiltersGroup {...filter} key={filter.name} onChange={onChange} />
+              <FiltersGroup {...filter} key={filter.name} onChange={e => { toggleIsOpen(!isOpen); onChange(e) }} />
             );
           })}
         </div>

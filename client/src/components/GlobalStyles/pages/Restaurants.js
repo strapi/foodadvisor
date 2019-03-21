@@ -17,9 +17,24 @@ const Restaurants = createGlobalStyle`
         }
       }
     }
+    .filters-wrapper {
+      li {
+        margin-bottom: ${sizes.margin * 1.2}px;
+      }
+    }
     @media (min-width: ${sizes.tablet}) {
       padding: ${sizes.margin * 3.8}px ${sizes.margin * 2}px ${sizes.margin *
   4}px ${sizes.margin * 2}px;
+      .clickable-card {
+        .img-wrapper {
+          transition: transform 0.3s ease-out 0s;
+        }
+        &:hover {
+          .img-wrapper {
+            transform: translateY(-4px);
+          }
+        }
+      }
     }
     @media (min-width: ${sizes.desktop}) {
       .navbar-toggler {
@@ -48,9 +63,6 @@ const Restaurants = createGlobalStyle`
         .filters-wrapper {
           padding-right: ${sizes.margin * 3}px;
           border-right: 1px solid ${colors.lightGrey};
-          li {
-            margin-bottom: ${sizes.margin * 1.2}px;
-          }
         }
         h1 {
           &, & + hr {

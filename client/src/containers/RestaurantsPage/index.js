@@ -13,13 +13,9 @@ import Query from '../../components/Query';
 
 import data from '../../assets/utils/data';
 
-import Grid from '../../components/Grid';
-import Card from '../../components/Card';
+import RenderView from './RenderView';
 import Filters from '../../components/Filters';
-import Paging from '../../components/Paging';
-import H1 from '../../components/H1';
 
-// Utils
 import getQueryParameters from '../../utils/getQueryParameters';
 
 class RestaurantsPage extends React.Component {
@@ -28,10 +24,10 @@ class RestaurantsPage extends React.Component {
       orderby: 'name',
       where: {
         category: 'all',
-        district: '_all'
+        district: '_all',
       }
     },
-    range: 15
+    range: 15,
   };
 
   handleClick = id => this.props.history.push(`/${id}/informations`);
@@ -48,21 +44,6 @@ class RestaurantsPage extends React.Component {
     this.props.history.push({ search: `?start=${target.value}` });
   };
 
-  renderPagination = count => {
-    const {
-      location: { search }
-    } = this.props;
-    const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
-    return (
-      <Paging
-        onChange={this.handlePageChange}
-        count={count}
-        range={this.state.range}
-        page={start}
-      />
-    );
-  };
-
   renderFilters = ({ categories }) => {
     const {
       filters: { where /* , orderby */ }
@@ -73,56 +54,42 @@ class RestaurantsPage extends React.Component {
       //   title: 'Order by',
       //   name: 'orderby',
       //   options: ['ranking', 'name'],
-      //   value: orderby
+      //   value: orderby,
       // },
       {
         title: 'Categories',
         name: 'where.category',
         options: [{ id: 'all', name: 'all' }, ...categories],
-        value: where.category
+        value: where.category,
       },
       {
         title: 'Neighborhood',
         name: 'where.district',
         options: data.districts,
-        value: where.district
+        value: where.district,
       }
     ];
 
-    return <Filters filters={filters} onChange={this.handleChange} />;
+    return <Filters filters={filters} onChange={this.handleChange} range={this.state.range} />;
   };
 
-  renderRestaurants = ({ restaurants, ...rest }) => {
+  renderView = ({ restaurants, ...rest }) => {
     const {
-      restaurantsConnection: {
-        aggregate: { count }
-      }
-    } = rest;
-
-    const restaurantsToDiplay = restaurants.map(restaurant => {
-      return {
-        ...restaurant
-      };
-    });
+      location: { search }
+    } = this.props;
+    const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
 
     return (
       <>
         {this.renderFilters(rest)}
-        <div className="restaurants-wrapper">
-          <H1>Best restaurants in Paris</H1>
-          <Grid>
-            {restaurantsToDiplay.map(restaurant => (
-              <li className="column" key={restaurant.id}>
-                <Card
-                  key={restaurant.id}
-                  restaurant={restaurant}
-                  onClick={this.handleClick}
-                />
-              </li>
-            ))}
-          </Grid>
-          {count > this.state.range && this.renderPagination(count)}
-        </div>
+        <RenderView 
+          restaurants={restaurants} 
+          onClick={this.handleClick}
+          onPagingChange={this.handlePageChange}
+          rest={rest}
+          start={start} 
+          range={this.state.range}
+        />
       </>
     );
   };
@@ -136,7 +103,6 @@ class RestaurantsPage extends React.Component {
       if (!!where[current] && !where[current].includes('all')) {
         acc[current] = where[current];
       }
-
       return acc;
     }, {});
   };
@@ -155,7 +121,7 @@ class RestaurantsPage extends React.Component {
         <Container>
           <Query
             query={GET_RESTAURANTS}
-            render={this.renderRestaurants}
+            render={this.renderView}
             variables={{
               limit: this.state.range,
               start,

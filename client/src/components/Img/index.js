@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import StyledImg from './StyledImg';
 
-function Img({ alt, src, type, ...rest }) {
+function Img({ alt, src, ...rest }) {
   const cleanedProps = rest;
   delete cleanedProps.srcset;
 

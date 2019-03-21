@@ -34,6 +34,13 @@ const sizes = {
   },
   input: {
     height: '44px'
+  },
+  cover: {
+    height: {
+      small: '172px',
+      large: '356px',
+      wide: '560px',
+    },
   }
 };
 

@@ -56,6 +56,9 @@ const StyledReviews = createGlobalStyle`
       height: 8px;
     }
   }
+  .reviews-list {
+    background-color: white;
+  }
   @media (min-width: ${sizes.tablet}) {
     .reviews-main, .reviews-list {
       display: inline-block;
