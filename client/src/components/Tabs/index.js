@@ -51,7 +51,7 @@ function Tabs({ restaurant, selected, toggleTab }) {
             </NavItem>
           </Container>
         </Nav>
-        <TabContent activeTab={`${selected}`}>
+        <TabContent activeTab={`${selected}`} id="tab-content">
           <TabPane tabId="1" className="informations-pane">
             <Container>
               <Row>

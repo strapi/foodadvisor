@@ -4,6 +4,7 @@ import Font from './Font';
 
 import Restaurant from './pages/Restaurant';
 import Restaurants from './pages/Restaurants';
+import About from './pages/About';
 
 function GlobalStyles() {
   return (
@@ -12,6 +13,7 @@ function GlobalStyles() {
       <General />
       <Restaurant />
       <Restaurants />
+      <About />
     </React.Fragment>
   );
 }

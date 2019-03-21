@@ -66,6 +66,22 @@ const Restaurant = createGlobalStyle`
           padding: ${sizes.margin * 1.8}px 0 ${sizes.margin *
   2.9}px calc(40% + ${sizes.margin * 3}px);
         }
+        li.column {
+          @media (min-width: ${sizes.desktop}) {
+            :nth-child(3n + 1) {
+              padding-left: 0;
+              padding-right: calc(${sizes.margin * 3.2}px/3*2);
+            }
+            :nth-child(3n + 2) {
+              padding-left: calc(${sizes.margin * 3.2}px/3);
+              padding-right: calc(${sizes.margin * 3.2}px/3);
+            }
+            :nth-child(3n + 3) {
+              padding-left: calc(${sizes.margin * 3.2}px/3*2);
+              padding-right: 0;
+            }
+          }
+        }
       }
     }
   }

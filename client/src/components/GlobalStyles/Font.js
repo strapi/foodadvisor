@@ -1,28 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
 
-import OpenSansLight from '../../assets/fonts/Open_Sans/OpenSans-Light.ttf';
-import OpenSansRegular from '../../assets/fonts/Open_Sans/OpenSans-Regular.ttf';
-import OpenSansBold from '../../assets/fonts/Open_Sans/OpenSans-Bold.ttf';
-
 const Font = createGlobalStyle`
 
 @font-face {
   font-family: 'Open Sans';
-  src: url(${OpenSansLight}) format("ttf");
+  src: url('https://fonts.googleapis.com/css?family=Open+Sans:300')
   font-weight: light;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url(${OpenSansRegular}) format("ttf");
+  src: url('https://fonts.googleapis.com/css?family=Open+Sans:400')
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url(${OpenSansBold}) format("ttf");
+  src: url('https://fonts.googleapis.com/css?family=Open+Sans:700')
   font-weight: bold;
   font-style: normal;
 }

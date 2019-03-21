@@ -19,6 +19,8 @@ function CardSection({ restaurant, hasLink, history }) {
 
   const goToReviews = () => {
     history.push(`/${id}/reviews`);
+    var element = document.getElementById("tab-content");
+    element.scrollIntoView({behavior: "smooth"});
   };
 
   return (

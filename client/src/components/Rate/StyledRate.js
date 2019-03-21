@@ -5,7 +5,9 @@
  */
 
 import styled from 'styled-components';
+
 import colors from '../../assets/styles/colors';
+import sizes from '../../assets/styles/sizes';
 
 const StyledRate = styled.div`
   .rating {
@@ -46,6 +48,9 @@ const StyledRate = styled.div`
       padding-left: 9px;
       &::before {
         font-size: 21px;
+        @media (min-width: ${sizes.tablet}) {
+          font-size: 42px;
+        }
       }
     }
   }

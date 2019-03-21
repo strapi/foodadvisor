@@ -5,7 +5,6 @@ import colors from '../../assets/styles/colors';
 import fonts from '../../assets/styles/fonts';
 
 const StyledTabs = createGlobalStyle`
-
   .tabs-wrapper {
     .nav-tabs {
       display: none;
@@ -20,17 +19,17 @@ const StyledTabs = createGlobalStyle`
       a {
         display: flex;
         position: relative;
-        padding: ${sizes.margin * 3}px ${sizes.margin * 8}px ${sizes.margin *
-  3}px 0;
+        padding: 0 ${sizes.margin * 8}px 0 0;
         border: 0;
         color: ${colors.black};
         font-size: 16px;
         text-align: center;
         span {
-          margin: auto;
-          padding-left: ${sizes.margin * 2}px;
           ${fonts.reg};
           opacity: 0.3;
+          padding: ${sizes.margin * 3}px 0 ${sizes.margin *
+    3}px ${sizes.margin * 2}px;
+          border-bottom: 2px solid transparent;
           &:before {
             display: block;
             content: attr(title);
@@ -55,6 +54,7 @@ const StyledTabs = createGlobalStyle`
             opacity: 1;
             ${fonts.bold};
             color: ${colors.darkBlue};
+            border-color: ${colors.lightOrange};
             &:after {
               top: calc(50% - 3px);
               width: 7px;
@@ -78,6 +78,7 @@ const StyledTabs = createGlobalStyle`
       }
       &.reviews-pane {
         margin-bottom: ${sizes.margin * 0.2}px;
+        background-color: ${colors.greyBkdg};
       }
     }
     @media (min-width: ${sizes.tablet}) {

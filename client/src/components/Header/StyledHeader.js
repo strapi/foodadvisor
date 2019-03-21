@@ -108,6 +108,7 @@ const StyledHeader = styled.div`
       .collapse,
       ul {
         height: 100%;
+        margin: auto;
       }
     }
     .navbar-brand,
@@ -127,7 +128,7 @@ const StyledHeader = styled.div`
       border-left: 1px solid ${colors.lightGrey};
       li {
         display: table-cell;
-        padding: 0 ${sizes.margin * 4}px;
+        padding: 0 ${sizes.margin * 6}px;
         a {
           position: relative;
           display: flex;
@@ -173,7 +174,7 @@ const StyledHeader = styled.div`
       }
       .navbar-collapse {
         li {
-          padding: 0 0 0 ${sizes.margin * 11.5}px;
+          padding: 0 ${sizes.margin * 10}px;
         }
       }
     }
