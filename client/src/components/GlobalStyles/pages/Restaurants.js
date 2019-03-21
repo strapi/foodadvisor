@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import sizes from '../../../assets/styles/sizes';
 import colors from '../../../assets/styles/colors';
+import fonts from '../../../assets/styles/fonts';
 
 const Restaurants = createGlobalStyle`
   #restaurants-page {
@@ -20,6 +21,26 @@ const Restaurants = createGlobalStyle`
     .filters-wrapper {
       li {
         margin-bottom: ${sizes.margin * 1.2}px;
+      }
+    }
+    .ooops-wrapper {
+      margin-top: ${sizes.margin * 6}px;
+      padding: 0 ${sizes.margin*2}px;
+      text-align: center;
+      .ooops-img {
+        margin: 0 auto;
+        width: 138px;
+      }
+      .ooops-title {
+        font-size: 36px;
+        color: ${colors.darkBlue};
+        ${fonts.bold};
+        margin-top: ${sizes.margin * 4.7}px;
+        margin-bottom: ${sizes.margin*0.9}px;
+      }
+      .ooops-text {
+        font-size: 16px;
+        color: ${colors.mediumGrey};
       }
     }
     @media (min-width: ${sizes.tablet}) {
