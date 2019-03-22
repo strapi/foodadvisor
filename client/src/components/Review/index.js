@@ -61,15 +61,12 @@ const RateContainer = styled.div`
   top: -4px;
 `;
 
-function Review(
-  props,
-  {
-    created_at,
-    // author: { username },
-    note,
-    content
-  }
-) {
+function Review({
+  created_at,
+  // author: { username },
+  note,
+  content
+}) {
   return (
     <Wrapper>
       <Flex>

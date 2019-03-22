@@ -5,18 +5,25 @@ import Paging from '../../components/Paging';
 import Grid from '../../components/Grid';
 import Card from '../../components/Card';
 import H1 from '../../components/H1';
-import Img from '../../components/Img'; 
+import Img from '../../components/Img';
 
-import img from '../../assets/img/ooops.png'
+import img from '../../assets/img/ooops.png';
 
-const RenderView = ({ onClick, onPagingChange, restaurants, rest, start, range }) => {
+const RenderView = ({
+  onClick,
+  onPagingChange,
+  restaurants,
+  rest,
+  start,
+  range
+}) => {
   const {
     restaurantsConnection: {
       aggregate: { count }
     }
   } = rest;
 
-  const renderPagination = count => {
+  const renderPagination = () => {
     return (
       <Paging
         onChange={onPagingChange}
@@ -41,14 +48,16 @@ const RenderView = ({ onClick, onPagingChange, restaurants, rest, start, range }
           </li>
         ))}
       </Grid>
-      {count > range && renderPagination(count)}
+      {count > range && renderPagination()}
       {restaurants.length < 1 && (
         <div className="ooops-wrapper">
           <div className="ooops-img">
             <Img src={img} alt="oops" />
           </div>
           <p className="ooops-title">Ooops!</p>
-          <p className="ooops-text">Seems like there are no restaurants matchings thoses filters.</p>
+          <p className="ooops-text">
+            Seems like there are no restaurants matchings thoses filters.
+          </p>
         </div>
       )}
     </div>
@@ -56,12 +65,12 @@ const RenderView = ({ onClick, onPagingChange, restaurants, rest, start, range }
 };
 
 RenderView.defaultProps = {
- onClick: () => {},
- onPagingChange: () => {},
- range: 0,
- restaurants: [],
- rest: {},
- start: 0,
+  onClick: () => {},
+  onPagingChange: () => {},
+  range: 0,
+  restaurants: [],
+  rest: {},
+  start: 0
 };
 
 RenderView.propTypes = {
@@ -70,7 +79,7 @@ RenderView.propTypes = {
   range: PropTypes.number,
   restaurants: PropTypes.array,
   rest: PropTypes.object,
-  start: PropTypes.number,
+  start: PropTypes.number
 };
 
 export default RenderView;

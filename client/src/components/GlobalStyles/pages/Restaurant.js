@@ -63,8 +63,8 @@ const Restaurant = createGlobalStyle`
       .informations-wrapper {
         padding: ${sizes.margin * 10}px 0 0 0;
         h1 {
-          padding: ${sizes.margin * 1.8}px 0 ${sizes.margin *
-  2.9}px calc(40% + ${sizes.margin * 3}px);
+          padding: ${sizes.margin * 2}px 0 ${sizes.margin *
+  2.8}px calc(40% + ${sizes.margin * 3}px);
         }
         li.column {
           @media (min-width: ${sizes.desktop}) {

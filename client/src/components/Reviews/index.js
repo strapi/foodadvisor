@@ -39,7 +39,9 @@ export const renderNotes = (noteDetails, count) => {
           <li key={notes[index].title}>
             <p>{notes[index].title}</p>
             <div className="progress-wrapper">
-              <ProgressBar value={(item.count * 100) / count} />
+              <div className="progress-content">
+                <ProgressBar value={(item.count * 100) / count} />
+              </div>
             </div>
           </li>
         );
@@ -56,16 +58,24 @@ function Reviews(props) {
       <StyledReviews />
       <H1>Reviews</H1>
       <section className="reviews-main">
-        <p className="reviews-title">Overrall rating</p>
-        <Rate value={Math.floor(note)} clickable={false} size="big" />
-        <p className="reviews-value">{Math.floor(note)}/5</p>
-        <p className="reviews-count">{reviews.length}&nbsp;Reviews</p>
-        <div className="reviews-gauges">{renderNotes(noteDetails, count)}</div>
+        <div className="reviews-bkgd grey-bkgd" />
+        <div className="reviews-content">
+          <p className="reviews-title">Overrall rating</p>
+          <Rate value={Math.floor(note)} clickable={false} size="big" />
+          <p className="reviews-value">{Math.floor(note)}/5</p>
+          <p className="reviews-count">{reviews.length}&nbsp;Reviews</p>
+          <div className="reviews-gauges">
+            {renderNotes(noteDetails, count)}
+          </div>
+        </div>
       </section>
       <section className="reviews-list">
-        {reviews.map(review => (
-          <Review {...review} key={review.id} />
-        ))}
+        <div className="reviews-bkgd white-bkgd" />
+        <div className="reviews-content">
+          {reviews.map(review => (
+            <Review {...review} key={review.id} />
+          ))}
+        </div>
       </section>
     </>
   );

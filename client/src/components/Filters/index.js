@@ -26,7 +26,16 @@ function Filters({ filters, onChange }) {
         <div className="filters-wrapper">
           {filters.map(filter => {
             return (
-              <FiltersGroup {...filter} key={filter.name} onChange={e => { toggleIsOpen(!isOpen); onChange(e) }} />
+              <FiltersGroup
+                {...filter}
+                key={filter.name}
+                onChange={e => {
+                  if (window.innerWidth < 768) {
+                    toggleIsOpen(!isOpen);
+                  }
+                  onChange(e);
+                }}
+              />
             );
           })}
         </div>

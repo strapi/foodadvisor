@@ -28,7 +28,7 @@ const StyledTabs = createGlobalStyle`
           ${fonts.reg};
           opacity: 0.3;
           padding: ${sizes.margin * 3}px 0 ${sizes.margin *
-    3}px ${sizes.margin * 2}px;
+  3}px ${sizes.margin * 2}px;
           border-bottom: 2px solid transparent;
           &:before {
             display: block;
@@ -77,8 +77,31 @@ const StyledTabs = createGlobalStyle`
         }
       }
       &.reviews-pane {
-        margin-bottom: ${sizes.margin * 0.2}px;
+        padding-bottom: ${sizes.margin * 0.2}px;
         background-color: ${colors.greyBkdg};
+        .reviews-content, h1 {
+          position: relative;
+          z-index: 1;
+        }
+        .reviews-list {
+          position: relative;
+        }
+        .reviews-bkgd {
+          position: absolute;
+          top: 0;
+          z-index: 0;
+          width: 300%;
+          height: 100%;
+          left: -100%;
+          right: -100%;
+          &.white-bkgd {
+            background-color: white;
+          }
+          &.grey-bkgd {
+            background-color: ${colors.greyBkdg};
+            display: none;
+          }
+        }
       }
     }
     @media (min-width: ${sizes.tablet}) {
@@ -91,10 +114,23 @@ const StyledTabs = createGlobalStyle`
           display: block;
         }
         &.reviews-pane {
-          margin-bottom: ${sizes.margin * 0.4}px;
+          padding-bottom: ${sizes.margin * 0.4}px;
+          overflow: hidden;
+          .reviews-list {
+            position: initial;
+          }
+          .reviews-bkgd {
+            &.white-bkgd {
+              left: 40%;
+            }
+            &.grey-bkgd {
+              right: 60%;
+              display: block;
+            }
+          }
         }
         &.informations-pane {
-          padding-top: ${sizes.margin * 5.9}px;
+          padding-top: ${sizes.margin * 6.1}px;
           padding-bottom: ${sizes.margin * 4.3}px;
           h1 {
             display: none;

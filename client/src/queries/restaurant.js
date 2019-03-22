@@ -6,6 +6,9 @@ const GET_RESTAURANT = gql`
     restaurant(id: $id) {
       id
       address
+      category {
+        name
+      }
       description
       price
       district

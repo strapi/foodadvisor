@@ -19,8 +19,8 @@ function CardSection({ restaurant, hasLink, history }) {
 
   const goToReviews = () => {
     history.push(`/${id}/reviews`);
-    var element = document.getElementById("tab-content");
-    element.scrollIntoView({behavior: "smooth"});
+    const element = document.getElementById('tab-content');
+    element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -42,7 +42,7 @@ function CardSection({ restaurant, hasLink, history }) {
           <p>{reviews.length}&nbsp;reviews</p>
         ) : (
           <div className="link-wrapper">
-            <a onClick={goToReviews} className="link">
+            <a onClick={goToReviews} className="link" role="navigation">
               <p>See all reviews</p>
             </a>
           </div>

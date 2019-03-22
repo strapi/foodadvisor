@@ -13,7 +13,7 @@ function Price({ value }) {
 
   return (
     <span>
-      {Array(parseInt(formattedValue))
+      {Array(parseInt(formattedValue, 10))
         .fill(1)
         .map(() => '€')}
     </span>
@@ -21,11 +21,11 @@ function Price({ value }) {
 }
 
 Price.defaultProps = {
-  value: "_1"
+  value: '_1'
 };
 
 Price.propTypes = {
-  value: PropTypes.oneOf(["_1", "_2", "_3", "_4"]),
+  value: PropTypes.oneOf(['_1', '_2', '_3', '_4'])
 };
 
 export default Price;
