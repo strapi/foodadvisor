@@ -12,42 +12,62 @@ import { GET_RESTAURANTS } from '../../queries';
 import Query from '../../components/Query';
 
 import data from '../../assets/utils/data';
+import getQueryParameters from '../../utils/getQueryParameters';
 
 import RenderView from './RenderView';
 import Filters from '../../components/Filters';
 
-import getQueryParameters from '../../utils/getQueryParameters';
+function RestaurantsPage({ location, history }) {
+  const { search } = location;
+  const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
+  const orderby = getQueryParameters(search, 'orderby') || 'name';
+  const range = 15;
 
-class RestaurantsPage extends React.Component {
-  state = {
-    filters: {
-      orderby: 'name',
-      where: {
-        category: 'all',
-        district: '_all',
+  const getWhereParams = () => {
+    const category = getQueryParameters(search, 'category') || 'all';
+    const district = getQueryParameters(search, 'district') || '_all';
+
+    return {
+      category,
+      district
+    };
+  };
+
+  const prepareWhereParams = () => {
+    const where = getWhereParams();
+
+    return Object.keys(where).reduce((acc, current) => {
+      if (!!where[current] && !where[current].includes('all')) {
+        acc[current] = where[current];
       }
-    },
-    range: 15,
+      return acc;
+    }, {});
   };
 
-  handleClick = id => this.props.history.push(`/${id}/informations`);
+  const handleClick = id => history.push(`/${id}/informations`);
 
-  handleChange = ({ target }) => {
-    const { filters } = this.state;
+  const handleChange = ({ target }) => {
+    const where = getWhereParams();
+    set(where, target.name, target.value);
 
-    this.props.history.push({ search: `` });
-    set(filters, target.name, target.value);
-    this.setState({ filters });
+    history.push({
+      search: `?category=${where.category}&district=${where.district}`
+    });
   };
 
-  handlePageChange = ({ target }) => {
-    this.props.history.push({ search: `?start=${target.value}` });
+  const handlePageChange = ({ target }) => {
+    let searchPath = `?start=${target.value}`;
+
+    if (
+      !!history.location.search &&
+      getQueryParameters(search, 'start') !== target.value
+    ) {
+      searchPath = `${search}&start=${target.value}`;
+    }
+    history.push({ searchPath });
   };
 
-  renderFilters = ({ categories }) => {
-    const {
-      filters: { where /* , orderby */ }
-    } = this.state;
+  const renderFilters = ({ categories }) => {
     const filters = [
       // Uncomment when backend is available - V2
       // {
@@ -58,85 +78,58 @@ class RestaurantsPage extends React.Component {
       // },
       {
         title: 'Categories',
-        name: 'where.category',
+        name: 'category',
         options: [{ id: 'all', name: 'all' }, ...categories],
-        value: where.category,
+        value: getQueryParameters(search, 'category') || 'all'
       },
       {
         title: 'Neighborhood',
-        name: 'where.district',
+        name: 'district',
         options: data.districts,
-        value: where.district,
+        value: getQueryParameters(search, 'district') || '_all'
       }
     ];
 
-    return <Filters filters={filters} onChange={this.handleChange} range={this.state.range} />;
+    return <Filters filters={filters} onChange={handleChange} range={range} />;
   };
 
-  renderView = ({ restaurants, ...rest }) => {
-    const {
-      location: { search }
-    } = this.props;
-    const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
-
+  const renderView = ({ restaurants, ...rest }) => {
     return (
       <>
-        {this.renderFilters(rest)}
-        <RenderView 
-          restaurants={restaurants} 
-          onClick={this.handleClick}
-          onPagingChange={this.handlePageChange}
+        {renderFilters(rest)}
+        <RenderView
+          restaurants={restaurants}
+          onClick={handleClick}
+          onPagingChange={handlePageChange}
           rest={rest}
-          start={start} 
-          range={this.state.range}
+          start={start}
+          range={range}
         />
       </>
     );
   };
 
-  getWhereParams = () => {
-    const {
-      filters: { where }
-    } = this.state;
-
-    return Object.keys(where).reduce((acc, current) => {
-      if (!!where[current] && !where[current].includes('all')) {
-        acc[current] = where[current];
-      }
-      return acc;
-    }, {});
-  };
-
-  render() {
-    const {
-      location: { search }
-    } = this.props;
-    const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
-    const {
-      filters: { orderby }
-    } = this.state;
-
-    return (
-      <div className="page-wrapper" id="restaurants-page">
-        <Container>
-          <Query
-            query={GET_RESTAURANTS}
-            render={this.renderView}
-            variables={{
-              limit: this.state.range,
-              start,
-              sort: `${orderby}:ASC`,
-              where: this.getWhereParams()
-            }}
-          />
-        </Container>
-      </div>
-    );
-  }
+  return (
+    <div className="page-wrapper" id="restaurants-page">
+      <Container>
+        <Query
+          query={GET_RESTAURANTS}
+          render={renderView}
+          variables={{
+            limit: range,
+            start,
+            sort: `${orderby}:ASC`,
+            where: prepareWhereParams()
+          }}
+        />
+      </Container>
+    </div>
+  );
 }
 
 RestaurantsPage.defaultProps = {};
 RestaurantsPage.propTypes = {
+  history: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired
 };
 

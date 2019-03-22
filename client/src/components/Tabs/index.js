@@ -56,7 +56,7 @@ function Tabs({ restaurant, selected, toggleTab }) {
             <Container>
               <Row>
                 <Col sm="12">
-                  <Informations />
+                  <Informations restaurant={restaurant} />
                 </Col>
               </Row>
             </Container>

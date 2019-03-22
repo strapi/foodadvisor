@@ -38,22 +38,25 @@ const StyledReviews = createGlobalStyle`
         margin-top: ${sizes.margin * 0.4}px;
       }
       p {
-        width: 40%;
+        width: 35%;
         text-align: right;
         font-size: 12px;
       }
       .progress-wrapper {
-        width: 60%;
+        width: 65%;
+        height: 8px;
+        max-width: 259px;
         padding-left: ${sizes.margin * 1.5}px;
+        .progress-content {
+          background-color: white;
+          width: 100%;
+          height: 100%;
+        }
       }
       .progress-wrapper, p {
         display: inline-block;
         vertical-align: middle;
       }
-    }
-    .progress-wrapper {
-      width: 100%;
-      height: 8px;
     }
   }
   .reviews-list {
@@ -68,6 +71,16 @@ const StyledReviews = createGlobalStyle`
       width: 40%;
       padding-top: 0;
       background-color: ${colors.greyBkdg};
+      .reviews-title {
+        margin-bottom: ${sizes.margin * 1.2}px;
+      }
+      .reviews-value {
+        margin-top: ${sizes.margin * 2}px;
+      }
+      .reviews-count {
+        margin-top: ${sizes.margin * 0.4}px;
+        margin-bottom: ${sizes.margin * 2.4}px;
+      }
     }
     .reviews-list {
       width: 60%;

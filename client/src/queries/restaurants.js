@@ -26,7 +26,7 @@ const GET_RESTAURANTS = gql`
         count
       }
     }
-    categories(limit: $limit, start: $start, sort: $sort) {
+    categories {
       id
       name
     }

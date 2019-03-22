@@ -9,6 +9,7 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import StyledPaging from './StyledPaging';
+/* eslint-disable react/no-array-index-key */
 
 function Paging({ count, page, onChange, range }) {
   const pagesCount = Math.round(count / range);
