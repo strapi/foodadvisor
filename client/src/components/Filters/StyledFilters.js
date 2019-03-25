@@ -68,7 +68,7 @@ const StyledFilters = createGlobalStyle`
     }
     hr {
       margin: ${sizes.margin * 2.8}px 0 ${sizes.margin * 3}px 0;
-      border-color: ${colors.lightGrey};
+      border-color: ${colors.greyBorder};
     }
     p {
       ${fonts.bold};

@@ -41,7 +41,10 @@ const sizes = {
       large: '356px',
       wide: '560px',
     },
-  }
+  },
+  social: {
+    size: '24px',
+  },
 };
 
 export default sizes;

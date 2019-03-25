@@ -44,6 +44,7 @@ const Restaurant = createGlobalStyle`
     }
     .informations-wrapper {
       padding: ${sizes.margin * 2.1}px ${sizes.margin * 2}px;
+      overflow: hidden;
       background-color: ${colors.greyBkdg};
       h1 {
         padding: 0 0 ${sizes.margin * 1.4}px 0;

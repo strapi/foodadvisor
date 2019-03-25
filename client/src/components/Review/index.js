@@ -7,86 +7,43 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+
+import StyledReview from './StyledReview';
 
 /* eslint-disable camelcase */
-
-import Pic from '../../assets/tempToRemove/temp.png';
 import Rate from '../Rate';
-import H4 from '../H4';
 import Img from '../Img';
-
-const Avatar = styled(Img)`
-  width: 74px;
-  height: 74px;
-  object-fit: contain;
-  box-shadow: 0 0 4px 0 #e7e7e7;
-  border-radius: 50%;
-`;
-
-const Published = styled.p`
-  height: 16px;
-  font-size: 8px;
-  line-height: 2;
-  color: #969696;
-`;
-
-const Flex = styled.div`
-  display: flex;
-  position: relative;
-  max-width: calc(100vw);
-`;
-
-const Content = styled.p`
-  margin-top: 5px;
-  font-family: Open Sans;
-  font-size: 12px;
-  line-height: 1.5;
-  color: #191919;
-  overflow-wrap: break-word;
-`;
-
-const Wrapper = styled.div`
-  padding-bottom: 22px;
-  border-bottom: 1px solid #f3f3f3;
-`;
-
-export const Title = styled(H4)`
-  padding-right: 8px;
-`;
-
-const RateContainer = styled.div`
-  position: absolute !important;
-  right: 0;
-  top: -4px;
-`;
 
 function Review({
   created_at,
-  // author: { username },
+  author,
   note,
   content
 }) {
+
+  const author1 = author || { username: 'user', picture: { url: '/uploads/7360be631cfa47179e444a4573f5859f.jpg' }};
+  const { username, picture: {url} } =  author1;
+
   return (
-    <Wrapper>
-      <Flex>
-        <div style={{ marginRight: '32px' }}>
-          <Avatar src={Pic} alt="username" />
+    <StyledReview>
+      <div className="review-wrapper">
+        <div className="img-wrapper">
+          <Img src={`${process.env.REACT_APP_BACKEND_URL}${url}`} alt={username} />
         </div>
-        <div style={{ width: '100%' }}>
-          <Flex style={{ justifyContent: 'space-between' }}>
-            <Title>Username</Title>
-            <RateContainer>
-              <Rate min={0} max={5} value={note} />
-            </RateContainer>
-          </Flex>
-          <Published>
+        <div className="infos-wrapper">
+          <p className="username">{username}</p>
+          <p className="published">
             Published {moment().diff(moment(created_at), 'days')} days ago
-          </Published>
-          <Content>{content}</Content>
+          </p>
+          <div className="rate-wrapper">
+            <Rate min={0} max={5} value={note} />
+          </div>
         </div>
-      </Flex>
-    </Wrapper>
+        <div className="comment">
+          <p>{content}</p>
+        </div>
+      </div>
+    </StyledReview>
   );
 }
 
