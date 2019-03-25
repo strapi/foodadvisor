@@ -15,7 +15,7 @@ import Rate from '../Rate';
 import StyledCardSection from './StyledCardSection';
 
 function CardSection({ restaurant, hasLink, history }) {
-  const { category, district, id, name, note, price, reviews } = restaurant;
+  const { category, district, id, name, note, price } = restaurant;
 
   const goToReviews = () => {
     history.push(`/${id}/reviews`);
@@ -38,9 +38,7 @@ function CardSection({ restaurant, hasLink, history }) {
       </div>
       <div className="right-infos">
         <Rate value={Math.floor(note)} clickable={false} />
-        {!hasLink ? (
-          <p>{reviews.length}&nbsp;reviews</p>
-        ) : (
+        {hasLink && (
           <div className="link-wrapper">
             <a onClick={goToReviews} className="link" role="navigation">
               <p>See all reviews</p>

@@ -53,9 +53,9 @@ const About = createGlobalStyle`
     .social-wrapper {
       margin-top: ${sizes.margin*1.5}px;
       a {
-        width: 44px;
-        height: 44px;
-        border-radius: 22px;
+        width: ${sizes.social.size};
+        height: ${sizes.social.size};
+        border-radius: calc(${sizes.social.size}/2);
         background-color: ${colors.darkBeige};
         display: inline-block;
         margin-right: ${sizes.margin*0.8}px; 

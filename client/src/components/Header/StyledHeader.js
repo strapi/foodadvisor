@@ -108,7 +108,6 @@ const StyledHeader = styled.div`
       .collapse,
       ul {
         height: 100%;
-        margin: auto;
       }
     }
     .navbar-brand,

@@ -30,6 +30,9 @@ const GET_RESTAURANT = gql`
         created_at
         author {
           username
+          picture {
+            url
+          }
         }
       }
       website

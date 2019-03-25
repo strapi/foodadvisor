@@ -6,7 +6,7 @@ import fonts from '../../assets/styles/fonts';
 
 const StyledReviews = createGlobalStyle`
   .reviews-main {
-    padding: ${sizes.margin * 1.5}px 0;
+    padding-top: ${sizes.margin * 1.8}px;
     p {
       text-align: center;
       line-height: normal;
@@ -30,20 +30,20 @@ const StyledReviews = createGlobalStyle`
       margin: 0 auto;
     }
     .reviews-gauges {
-      margin-bottom: ${sizes.margin * 3}px;
       ul {
-        padding-top: ${sizes.margin}px;
+        padding-top: ${sizes.margin*1.1}px;
+        padding-bottom: ${sizes.margin * 2.1}px;
       }
       li {
         margin-top: ${sizes.margin * 0.4}px;
       }
       p {
-        width: 35%;
+        width: 36%;
         text-align: right;
         font-size: 12px;
       }
       .progress-wrapper {
-        width: 65%;
+        width: 64%;
         height: 8px;
         max-width: 259px;
         padding-left: ${sizes.margin * 1.5}px;
@@ -85,7 +85,7 @@ const StyledReviews = createGlobalStyle`
     .reviews-list {
       width: 60%;
       padding-top: ${sizes.margin * 0.2}px;
-      padding-left: ${sizes.margin * 3}px;
+      padding-left: ${sizes.margin * 3.4}px;
       .reviews-title {
         margin-bottom: ${sizes.margin * 0.8}px;
       }
