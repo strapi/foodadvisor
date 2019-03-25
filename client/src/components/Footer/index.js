@@ -4,9 +4,9 @@
  *
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { NavbarBrand, Nav } from 'reactstrap';
+import { Nav } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import Input from '../Input';
@@ -16,15 +16,18 @@ import arrow from '../../assets/img/icon_arrow_right.png';
 import StyledFooter from './StyledFooter';
 import logo from '../../assets/img/logo.svg';
 
-function Footer({ links, onChange, onSubmit }) {
+function Footer({ links, onSubmit }) {
+  const [email, setValue] = useState('');
+  
   return (
     <StyledFooter>
       <div className="container">
-        <Nav navbar>
-          <NavbarBrand href="/">
+        <div className="navbar-brand">
+          <Link to='/'>
             <img src={logo} alt="logo" />
-          </NavbarBrand>
-
+          </Link>
+        </div>
+        <Nav navbar>
           <div className="nav-list">
             {links.map(link => {
               return (
@@ -50,8 +53,8 @@ function Footer({ links, onChange, onSubmit }) {
               <Input
                 placeholder="Your email"
                 name="newsletter"
-                onChange={onChange}
-                value=""
+                onChange={e => setValue(e.target.value)}
+                value={email}
               />
               <button type="submit">
                 <Img src={arrow} alt="arrow" />
@@ -69,12 +72,10 @@ function Footer({ links, onChange, onSubmit }) {
 
 Footer.defaultProps = {
   links: [],
-  onChange: () => {},
   onSubmit: e => e.preventDefault()
 };
 Footer.propTypes = {
   links: PropTypes.array,
-  onChange: PropTypes.func,
   onSubmit: PropTypes.func
 };
 

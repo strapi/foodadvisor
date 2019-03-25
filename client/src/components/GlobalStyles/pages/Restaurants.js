@@ -58,6 +58,7 @@ const Restaurants = createGlobalStyle`
       }
     }
     @media (min-width: ${sizes.desktop}) {
+      padding-bottom: ${sizes.margin * 3.8}px;
       .navbar-toggler {
         display: none;
       }
@@ -72,7 +73,7 @@ const Restaurants = createGlobalStyle`
         }
         ul:not(.pagination) {
           li.column {
-            padding-bottom: ${sizes.margin * 7.9}px;
+            padding-bottom: ${sizes.margin * 8.1}px;
           }
         }
       }

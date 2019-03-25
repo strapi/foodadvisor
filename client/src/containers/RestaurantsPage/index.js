@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'reactstrap';
 import { set } from 'lodash';
+
 import { GET_RESTAURANTS } from '../../queries';
 import Query from '../../components/Query';
 
@@ -21,7 +22,7 @@ function RestaurantsPage({ location, history }) {
   const { search } = location;
   const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
   const orderby = getQueryParameters(search, 'orderby') || 'name';
-  const range = 15;
+  const range = 5;
 
   const getWhereParams = () => {
     const category = getQueryParameters(search, 'category') || 'all';
@@ -49,22 +50,17 @@ function RestaurantsPage({ location, history }) {
   const handleChange = ({ target }) => {
     const where = getWhereParams();
     set(where, target.name, target.value);
-
-    history.push({
-      search: `?category=${where.category}&district=${where.district}`
-    });
+    setSearch(where, 0);
   };
 
-  const handlePageChange = ({ target }) => {
-    let searchPath = `?start=${target.value}`;
+  const setSearch = (where, start) => {
+    history.push({
+      search: `?category=${where.category}&district=${where.district}&start=${start}`
+    });
+  }
 
-    if (
-      !!history.location.search &&
-      getQueryParameters(search, 'start') !== target.value
-    ) {
-      searchPath = `${search}&start=${target.value}`;
-    }
-    history.push({ searchPath });
+  const handlePageChange = ({ target }) => {
+    setSearch(getWhereParams(), target.value);
   };
 
   const renderFilters = ({ categories }) => {
@@ -94,6 +90,7 @@ function RestaurantsPage({ location, history }) {
   };
 
   const renderView = ({ restaurants, ...rest }) => {
+    
     return (
       <>
         {renderFilters(rest)}

@@ -12,7 +12,7 @@ import StyledPaging from './StyledPaging';
 /* eslint-disable react/no-array-index-key */
 
 function Paging({ count, page, onChange, range }) {
-  const pagesCount = Math.round(count / range);
+  const pagesCount = Math.ceil(count / range);
 
   return (
     <>

@@ -11,7 +11,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem
 } from 'reactstrap';
@@ -27,9 +26,11 @@ function Header({ links }) {
     <StyledHeader>
       <Navbar expand="md">
         <div className="container">
-          <NavbarBrand href="/">
-            <img src={logo} alt="logo" />
-          </NavbarBrand>
+          <div className="navbar-brand">
+            <Link url='/'>
+              <img src={logo} alt="logo" />
+            </Link>
+          </div>
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
               {links.map(link => {

@@ -62,7 +62,7 @@ const Restaurant = createGlobalStyle`
         margin-top: ${sizes.margin * 0.3}px;
       }
       .informations-wrapper {
-        padding: ${sizes.margin * 10}px 0 0 0;
+        padding: ${sizes.margin * 10}px 0 ${sizes.margin * 0.3}px 0;
         h1 {
           padding: ${sizes.margin * 2}px 0 ${sizes.margin *
   2.8}px calc(40% + ${sizes.margin * 3}px);
