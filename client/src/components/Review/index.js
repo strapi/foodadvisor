@@ -16,13 +16,10 @@ import Img from '../Img';
 
 function Review({
   created_at,
-  author,
+  author : { username, picture: { url } },
   note,
   content
 }) {
-
-  const author1 = author || { username: 'user', picture: { url: '/uploads/7360be631cfa47179e444a4573f5859f.jpg' }};
-  const { username, picture: {url} } =  author1;
 
   return (
     <StyledReview>

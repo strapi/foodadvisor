@@ -16,6 +16,7 @@ const StyledFooter = styled.div`
   background-color: ${colors.lightBeige};
   .navbar-brand {
     width: fit-content;
+    display: block;
     margin-bottom: ${sizes.margin * 2.2}px;
   }
   .nav-list a,
@@ -40,8 +41,8 @@ const StyledFooter = styled.div`
   .newsletter {
     padding-bottom: ${sizes.margin}px;
     .newsletter-lbl {
-      line-height: 1;
-      margin-bottom: ${sizes.margin * 1.6}px;
+      line-height: 2.67;
+      margin-bottom: ${sizes.margin * 1.7}px;
     }
     .input-wrapper {
       position: relative;
@@ -53,6 +54,7 @@ const StyledFooter = styled.div`
         height: ${sizes.input.height};
         background-color: ${colors.darkBlue};
         display: flex;
+        border: 0;
         img {
           width: 8px;
           height: 8px;
@@ -71,6 +73,7 @@ const StyledFooter = styled.div`
   }
 
   @media (min-width: ${sizes.tablet}) {
+    padding-top: ${sizes.margin * 5.8}px;
     .nav-list {
       margin-bottom: ${sizes.margin * 2}px;
       a {
@@ -81,7 +84,7 @@ const StyledFooter = styled.div`
     .newsletter {
       display: inline-block;
       width: 50%;
-      vertical-align: bottom;
+      vertical-align: top;
     }
   }
 
@@ -91,8 +94,6 @@ const StyledFooter = styled.div`
         width: calc(100% / 3);
       }
       .main-link {
-        font-size: 16px;
-        line-height: 2.5;
         float: right;
         clear: both;
       }

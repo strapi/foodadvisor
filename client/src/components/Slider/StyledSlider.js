@@ -25,7 +25,7 @@ const StyledSlider = createGlobalStyle`
       right: 0;
       top: 0;
       width: ${sizes.slider.indicators.size};
-      padding-inline-start: 0;
+      padding: 0;
       margin-bottom: 0;
       li {
         display: block;

@@ -46,7 +46,7 @@ function App() {
         <Route path="/:id/:content" component={RestaurantPage} exact />
         <Route component={NotFound} />
       </Switch>
-      <Footer links={footerUrls} />
+      <Footer links={footerUrls}/>
     </div>
   );
 }
