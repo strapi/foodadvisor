@@ -34,7 +34,7 @@ function Card({ restaurant, onClick }) {
 }
 
 Card.defaultProps = {
-  restaurant: restaurantDefaultShape,
+  ...restaurantDefaultShape,
 };
 
 Card.propTypes = {

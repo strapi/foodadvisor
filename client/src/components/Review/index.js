@@ -14,21 +14,24 @@ import StyledReview from './StyledReview';
 import Rate from '../Rate';
 import Img from '../Img';
 
-function Review({
-  created_at,
-  author,
-  note,
-  content
-}) {
-
-  const author1 = author || { username: 'user', picture: { url: '/uploads/7360be631cfa47179e444a4573f5859f.jpg' }};
-  const { username, picture: {url} } =  author1;
+function Review({ created_at, author, note, content }) {
+  const author1 = author || {
+    username: 'user',
+    picture: { url: '/uploads/7360be631cfa47179e444a4573f5859f.jpg' },
+  };
+  const {
+    username,
+    picture: { url },
+  } = author1;
 
   return (
     <StyledReview>
       <div className="review-wrapper">
         <div className="img-wrapper">
-          <Img src={`${process.env.REACT_APP_BACKEND_URL}${url}`} alt={username} />
+          <Img
+            src={`${process.env.REACT_APP_BACKEND_URL}${url}`}
+            alt={username}
+          />
         </div>
         <div className="infos-wrapper">
           <p className="username">{username}</p>
@@ -51,18 +54,24 @@ Review.defaultProps = {
   content: null,
   created_at: null,
   author: {
-    username: null
+    username: '',
+    picture: {
+      url: null,
+    },
   },
-  note: null
+  note: null,
 };
 
 Review.propTypes = {
   content: PropTypes.string,
   created_at: PropTypes.number,
   author: PropTypes.shape({
-    username: PropTypes.string
+    username: PropTypes.string,
+    picture: PropTypes.shape({
+      url: PropTypes.string,
+    }),
   }),
-  note: PropTypes.number
+  note: PropTypes.number,
 };
 
 export default Review;

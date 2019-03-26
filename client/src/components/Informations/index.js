@@ -16,6 +16,8 @@ import H1 from '../H1';
 import NotePaper from '../NotePaper';
 import Grid from '../Grid';
 
+/* eslint-disable camelcase */
+
 function Informations({ restaurant }) {
   const {
     address,
@@ -25,6 +27,7 @@ function Informations({ restaurant }) {
     phone,
     website,
   } = restaurant;
+
   const infos = [
     {
       type: 'html',
