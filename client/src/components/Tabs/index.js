@@ -22,54 +22,49 @@ import StyledTabs from './StyledTabs';
 import Informations from '../Informations';
 import Reviews from '../Reviews';
 
-function Tabs({ restaurant, selected, toggleTab }) {
+function Tabs({ 
+  restaurant, 
+  selected, 
+  toggleTab,
+  tabs,
+ }) {
+
   return (
     <>
       <StyledTabs />
       <div className="tabs-wrapper">
         <Nav tabs>
           <Container>
-            <NavItem>
-              <NavLink
-                className={classnames({ active: selected === 1 })}
-                onClick={() => {
-                  toggleTab(1);
-                }}
-              >
-                <span title="Informations">Informations</span>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                className={classnames({ active: selected === 2 })}
-                onClick={() => {
-                  toggleTab(2);
-                }}
-              >
-                <span title="Reviews">Reviews</span>
-              </NavLink>
-            </NavItem>
+            {tabs.map(tab => {
+              return (
+                <NavItem key={tab}>
+                  <NavLink
+                    className={classnames({ active: selected === tab })}
+                    onClick={() => {
+                      toggleTab(tab);
+                    }}
+                  >
+                    <span title={tab}>{tab}</span>
+                  </NavLink>
+                </NavItem>
+              )
+            })}
           </Container>
         </Nav>
         <TabContent activeTab={`${selected}`} id="tab-content">
-          <TabPane tabId="1" className="informations-pane">
-            <Container>
-              <Row>
-                <Col sm="12">
-                  <Informations restaurant={restaurant} />
-                </Col>
-              </Row>
-            </Container>
-          </TabPane>
-          <TabPane tabId="2" className="reviews-pane">
-            <Container>
-              <Row>
-                <Col sm="12">
-                  <Reviews restaurant={restaurant} />
-                </Col>
-              </Row>
-            </Container>
-          </TabPane>
+          {tabs.map(tab => {
+            return (
+              <TabPane tabId={tab} className={`${tab}-pane`} key={tab}>
+                <Container>
+                  <Row>
+                    <Col sm="12">
+                      {tab === 'informations' ? <Informations restaurant={restaurant} /> : <Reviews restaurant={restaurant} />}
+                    </Col>
+                  </Row>
+                </Container>
+              </TabPane>
+            )
+          })}
         </TabContent>
       </div>
     </>
@@ -78,15 +73,16 @@ function Tabs({ restaurant, selected, toggleTab }) {
 
 Tabs.defaultProps = {
   restaurant: {},
-  selected: 1,
-  toggleTab: () => {}
+  selected: 'informations',
+  toggleTab: () => {},
+  tabs: [],
 };
 
 Tabs.propTypes = {
-  // history: PropTypes.object.isRequired,
   restaurant: PropTypes.object,
-  selected: PropTypes.number,
-  toggleTab: PropTypes.func
+  selected: PropTypes.string,
+  toggleTab: PropTypes.func,
+  tabs: PropTypes.array,
 };
 
 export default Tabs;

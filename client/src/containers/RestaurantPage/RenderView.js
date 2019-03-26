@@ -6,40 +6,19 @@ import CardSection from '../../components/CardSection';
 import Slider from '../../components/Slider';
 import Tabs from '../../components/Tabs';
 
-const RenderView = ({ restaurant, rest, history }) => {
+const RenderView = ({ 
+  restaurant, 
+  rest: { reviewsConnection: { aggregate: { count } } }, 
+  history,
+  match: { params: { content, id }},
+}) => {
   const { cover } = restaurant;
-  const {
-    reviewsConnection: {
-      aggregate: { count }
-    }
-  } = rest;
 
-  const tabs = [
-    {
-      id: 1,
-      name: 'informations'
-    },
-    {
-      id: 2,
-      name: 'reviews'
-    }
-  ];
-
-  const getCurrentContainer = () =>
-    tabs.find(
-      i =>
-        i.name ===
-        history.location.pathname
-          .split('/')
-          .pop()
-          .trim()
-    ).id;
+  const tabs = ['informations', 'reviews'];
 
   const toggle = tab => {
-    if (getCurrentContainer() !== tab) {
-      const { id } = restaurant;
-      const currTab = tabs.find(i => i.id === tab);
-      history.push(`/${id}/${currTab.name}`);
+    if (content !== tab) {
+      history.push(`/${id}/${tab}`);
     }
   };
 
@@ -62,9 +41,9 @@ const RenderView = ({ restaurant, rest, history }) => {
       <div className="informations-wrapper">
         <Tabs
           restaurant={{ ...restaurant, count }}
-          history={history}
           toggleTab={toggle}
-          selected={getCurrentContainer()}
+          selected={content}
+          tabs={tabs}
         />
       </div>
     </div>
@@ -75,7 +54,7 @@ RenderView.defaultProps = {
   restaurant: {
     cover: [],
     district: null,
-    price: null
+    price: null,
   }
 };
 
@@ -83,9 +62,9 @@ RenderView.propTypes = {
   restaurant: PropTypes.shape({
     cover: PropTypes.array,
     district: PropTypes.string,
-    price: PropTypes.string
+    price: PropTypes.string,
   }),
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
 };
 
 export default RenderView;

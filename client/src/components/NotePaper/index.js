@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import parse from 'html-react-parser';
 
 import H4 from '../H4';
 import StyledNotePaper from './StyledNotePaper';
@@ -15,7 +16,6 @@ function NotePaper({ informations }) {
   return (
     <StyledNotePaper>
       <H4>{title}</H4>
-
       {type === 'list' && (
         <ul>
           {infos.map(info => (
@@ -26,12 +26,10 @@ function NotePaper({ informations }) {
           ))}
         </ul>
       )}
-      {type === 'html' && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: '<li><p>Tue - Sat</p><p>7:30 PM - 10:00 PM</p></li>'
-          }}
-        />
+      {type === 'html' && ( 
+        <ul>
+          {parse(infos)}
+        </ul>
       )}
     </StyledNotePaper>
   );
@@ -49,7 +47,17 @@ NotePaper.defaultProps = {
 };
 
 NotePaper.propTypes = {
-  informations: PropTypes.object
+  informations: PropTypes.shape({
+    title: PropTypes.string,
+    infos: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.shape({
+        subtitle: PropTypes.string,
+        text: PropTypes.string,
+      })),
+    ]),
+    type: PropTypes.string,
+  })
 };
 
 export default NotePaper;

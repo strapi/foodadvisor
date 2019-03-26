@@ -84,7 +84,7 @@ const Restaurants = createGlobalStyle`
         padding-top: ${sizes.margin * 7.3}px;
         .filters-wrapper {
           padding-right: ${sizes.margin * 3}px;
-          border-right: 1px solid ${colors.lightGrey};
+          border-right: 1px solid ${colors.greyBorder};
         }
         h1 {
           &, & + hr {
