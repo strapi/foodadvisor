@@ -17,11 +17,10 @@ function RestaurantPage(props) {
     match: {
       params: { id }
     },
-    history
   } = props;
 
   const renderView = ({ restaurant, ...rest }) => {
-    return <RenderView restaurant={restaurant} rest={rest} history={history} />;
+    return <RenderView restaurant={restaurant} rest={rest} {...props} />;
   };
 
   return (
@@ -34,7 +33,6 @@ function RestaurantPage(props) {
 RestaurantPage.defaultProps = {};
 RestaurantPage.propTypes = {
   match: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
 };
 
 export default RestaurantPage;

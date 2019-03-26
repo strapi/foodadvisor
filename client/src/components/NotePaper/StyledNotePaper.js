@@ -30,6 +30,9 @@ const StyledNotePaper = styled.div`
     &:hover {
       box-shadow: 0 2px 4px 0 rgba(243, 222, 212, 0.34);
     }
+    p {
+      font-size: 16px;
+    }
   }
 `;
 

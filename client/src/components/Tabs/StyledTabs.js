@@ -30,6 +30,7 @@ const StyledTabs = createGlobalStyle`
           padding: ${sizes.margin * 3}px 0 ${sizes.margin *
   3}px ${sizes.margin * 2}px;
           border-bottom: 2px solid transparent;
+          text-transform: capitalize;
           &:before {
             display: block;
             content: attr(title);
@@ -50,6 +51,7 @@ const StyledTabs = createGlobalStyle`
           }
         }
         &.active, &:hover {
+          background-color: transparent;
           span {
             opacity: 1;
             ${fonts.bold};

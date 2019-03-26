@@ -18,11 +18,13 @@ import getQueryParameters from '../../utils/getQueryParameters';
 import RenderView from './RenderView';
 import Filters from '../../components/Filters';
 
-function RestaurantsPage({ location, history }) {
-  const { search } = location;
+function RestaurantsPage({ 
+  location: { search }, 
+  history,
+}) {
   const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
   const orderby = getQueryParameters(search, 'orderby') || 'name';
-  const range = 5;
+  const range = 15;
 
   const getWhereParams = () => {
     const category = getQueryParameters(search, 'category') || 'all';
@@ -127,7 +129,9 @@ function RestaurantsPage({ location, history }) {
 RestaurantsPage.defaultProps = {};
 RestaurantsPage.propTypes = {
   history: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired,
+  }),
 };
 
 export default RestaurantsPage;

@@ -124,7 +124,7 @@ const StyledHeader = styled.div`
       left: inherit;
       width: inherit;
       padding: 0;
-      border-left: 1px solid ${colors.lightGrey};
+      border-left: 1px solid ${colors.greyBorder};
       li {
         display: table-cell;
         padding: 0 ${sizes.margin * 6}px;

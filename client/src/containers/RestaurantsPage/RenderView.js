@@ -13,15 +13,10 @@ const RenderView = ({
   onClick,
   onPagingChange,
   restaurants,
-  rest,
+  rest : { restaurantsConnection : { aggregate : { count } } },
   start,
   range
 }) => {
-  const {
-    restaurantsConnection: {
-      aggregate: { count }
-    }
-  } = rest;
 
   const renderPagination = () => {
     return (

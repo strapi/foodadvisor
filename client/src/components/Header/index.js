@@ -35,7 +35,13 @@ function Header({ links }) {
             <Nav navbar>
               {links.map(link => {
                 return (
-                  <NavItem key={link.to} onClick={() => toggleIsOpen(!isOpen)}>
+                  <NavItem 
+                    key={link.to} 
+                    onClick={() => {
+                      if (window.innerWidth < 768) {
+                        toggleIsOpen(!isOpen);
+                      }
+                    }}>
                     <Link
                       url={link.to}
                       active={window.location.pathname === link.to}
