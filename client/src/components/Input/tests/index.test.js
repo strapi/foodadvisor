@@ -1,11 +1,10 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import Input from '../index';
+import Input from '../index';
 
 describe('<Input />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(true);
+  it('should not crash', () => {
+    shallow(<Input name="test" />);
   });
 });

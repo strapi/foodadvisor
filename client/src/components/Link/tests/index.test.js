@@ -14,8 +14,8 @@ const renderComponent = properties =>
           <Link {...props} />
         </Router>
       ),
-      properties
-    )
+      properties,
+    ),
   );
 
 describe('<Link />', () => {
@@ -23,43 +23,16 @@ describe('<Link />', () => {
     renderComponent();
   });
 
-  it('should render a prop message if given', () => {
-    const message = 'some message';
-    const wrapper = renderComponent({ message });
-    const renderedComponent = enzymeFind(wrapper, StyledLink);
-
-    expect(renderedComponent.contains(message)).toBe(true);
-
-    wrapper.unmount();
-  });
-
   it('should render its children', () => {
     const children = 'some child';
     const wrapper = mount(
       <Router>
-        <Link>{children}</Link>
-      </Router>
+        <Link to="">{children}</Link>
+      </Router>,
     );
     const renderedComponent = enzymeFind(wrapper, StyledLink);
 
     expect(renderedComponent.contains(children)).toBe(true);
-
-    wrapper.unmount();
-  });
-
-  it('should render its message props if both a message and a child is given', () => {
-    const message = 'some message';
-    const children = 'some child';
-    const wrapper = mount(
-      <Router>
-        <Link message={message}>{children}</Link>
-      </Router>
-    );
-
-    const renderedComponent = enzymeFind(wrapper, StyledLink);
-
-    expect(renderedComponent.contains(message)).toBe(true);
-    expect(renderedComponent.contains(children)).toBe(false);
 
     wrapper.unmount();
   });

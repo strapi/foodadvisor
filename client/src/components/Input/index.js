@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+import { inputShape, inputDefaultShape } from '../../shapes/input';
 
 import StyledInput from './StyledInput';
 
@@ -14,21 +14,11 @@ function Input(props) {
 }
 
 Input.defaultProps = {
-  autoFocus: false,
-  id: null,
-  onChange: () => {},
-  placeholder: null,
-  tabIndex: '0',
-  value: null
+  ...inputDefaultShape,
 };
+
 Input.propTypes = {
-  autoFocus: PropTypes.bool,
-  id: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  placeholder: PropTypes.string,
-  tabIndex: PropTypes.string,
-  value: PropTypes.string
+  ...inputShape,
 };
 
 export default Input;
