@@ -5,7 +5,12 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+
+import {
+  restaurantDefaultShape,
+  restaurantShape,
+} from '../../shapes/restaurant';
 
 import H1 from '../H1';
 import NotePaper from '../NotePaper';
@@ -18,14 +23,13 @@ function Informations({ restaurant }) {
     district,
     opening_hours,
     phone,
-    website
+    website,
   } = restaurant;
-
   const infos = [
     {
       type: 'html',
       title: 'Opening hours',
-      infos: opening_hours
+      infos: opening_hours,
     },
     {
       type: 'list',
@@ -34,9 +38,9 @@ function Informations({ restaurant }) {
         { subtitle: 'Cooking', text: category.name },
         {
           subtitle: 'Neighborhood',
-          text: district.includes('_') ? district.replace('_', '') : district
-        }
-      ]
+          text: district.includes('_') ? district.replace('_', '') : district,
+        },
+      ],
     },
     {
       type: 'list',
@@ -44,12 +48,12 @@ function Informations({ restaurant }) {
       infos: [
         {
           subtitle: address,
-          multipleLine: true
+          multipleLine: true,
         },
         { subtitle: 'Website', text: website },
-        { subtitle: 'Phone number', text: phone }
-      ]
-    }
+        { subtitle: 'Phone number', text: phone },
+      ],
+    },
   ];
 
   return (
@@ -67,18 +71,11 @@ function Informations({ restaurant }) {
 }
 
 Informations.defaultProps = {
-  restaurant: {
-    address: null,
-    category: null,
-    district: null,
-    opening_hours: null,
-    phone: null,
-    website: null
-  }
+  restaurant: restaurantDefaultShape,
 };
 
 Informations.propTypes = {
-  restaurant: PropTypes.object
+  ...restaurantShape,
 };
 
 export default Informations;

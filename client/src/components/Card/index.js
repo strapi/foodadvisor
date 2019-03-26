@@ -7,6 +7,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {
+  restaurantDefaultShape,
+  restaurantShape,
+} from '../../shapes/restaurant';
+
 import StyledCard from './StyledCard';
 import CardSection from '../CardSection';
 import Img from '../Img';
@@ -29,13 +34,12 @@ function Card({ restaurant, onClick }) {
 }
 
 Card.defaultProps = {
-  restaurant: {
-    cover: []
-  }
+  restaurant: restaurantDefaultShape,
 };
 
 Card.propTypes = {
-  restaurant: PropTypes.object
+  onClick: PropTypes.func.isRequired,
+  ...restaurantShape,
 };
 
 export default Card;

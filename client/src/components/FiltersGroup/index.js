@@ -38,7 +38,7 @@ FiltersGroup.defaultProps = {
   name: '',
   onChange: () => {},
   options: [],
-  value: null
+  value: null,
 };
 
 FiltersGroup.propTypes = {
@@ -46,7 +46,7 @@ FiltersGroup.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.array,
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 export default FiltersGroup;
