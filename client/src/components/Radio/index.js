@@ -8,13 +8,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledRadio from './StyledRadio';
 
+/* eslint-disable jsx-a11y/label-has-for */
 function Radio({ checked, id, message, name, onChange, value, ...rest }) {
   const handleChange = () => {
     const target = {
       name,
       value,
       type: 'radio',
-      checked: !checked
+      checked: !checked,
     };
 
     onChange({ target });
@@ -41,9 +42,9 @@ function Radio({ checked, id, message, name, onChange, value, ...rest }) {
 Radio.defaultProps = {
   checked: false,
   id: null,
-  message: null,
+  message: '',
   onChange: () => {},
-  value: ''
+  value: '',
 };
 
 Radio.propTypes = {
@@ -52,7 +53,7 @@ Radio.propTypes = {
   message: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 export default Radio;

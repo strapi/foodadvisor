@@ -50,13 +50,15 @@ function Paging({ count, page, onChange, range }) {
 Paging.defaultProps = {
   count: 0,
   onChange: () => {},
-  range: 15
+  page: 0,
+  range: 15,
 };
 
 Paging.propTypes = {
   count: PropTypes.number,
   range: PropTypes.number,
-  onChange: PropTypes.func
+  page: PropTypes.number,
+  onChange: PropTypes.func,
 };
 
 export default Paging;

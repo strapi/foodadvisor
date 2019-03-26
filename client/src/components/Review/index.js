@@ -16,16 +16,21 @@ import Img from '../Img';
 
 function Review({
   created_at,
-  author : { username, picture: { url } },
+  author: {
+    username,
+    picture: { url },
+  },
   note,
-  content
+  content,
 }) {
-
   return (
     <StyledReview>
       <div className="review-wrapper">
         <div className="img-wrapper">
-          <Img src={`${process.env.REACT_APP_BACKEND_URL}${url}`} alt={username} />
+          <Img
+            src={`${process.env.REACT_APP_BACKEND_URL}${url}`}
+            alt={username}
+          />
         </div>
         <div className="infos-wrapper">
           <p className="username">{username}</p>
@@ -48,18 +53,24 @@ Review.defaultProps = {
   content: null,
   created_at: null,
   author: {
-    username: null
+    username: '',
+    picture: {
+      url: null,
+    },
   },
-  note: null
+  note: null,
 };
 
 Review.propTypes = {
   content: PropTypes.string,
   created_at: PropTypes.number,
   author: PropTypes.shape({
-    username: PropTypes.string
+    username: PropTypes.string,
+    picture: PropTypes.shape({
+      url: PropTypes.string,
+    }),
   }),
-  note: PropTypes.number
+  note: PropTypes.number,
 };
 
 export default Review;
