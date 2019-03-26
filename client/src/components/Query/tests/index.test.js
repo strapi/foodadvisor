@@ -9,14 +9,14 @@ import Query from '../index';
 const variables = {
   limit: 1,
   start: 0,
-  sort: 'name:ASC'
+  sort: 'name:ASC',
 };
 const props = { query: GET_RESTAURANTS, variables, render: null };
 const mocks = [
   {
     request: {
       query: GET_RESTAURANTS,
-      variables
+      variables,
     },
     result: {
       data: {
@@ -25,21 +25,30 @@ const mocks = [
             id: '1',
             name: 'restaurant',
             description: 'A cool restaurant',
+            district: '_9th',
             cover: {
-              url: '/uploads/5002461eee1c4c87b2e6eb558eead789.png'
+              url: '/uploads/5002461eee1c4c87b2e6eb558eead789.png',
             },
             reviews: {
-              note: 0,
-              content: 'cool stuff usefull'
+              note: 4,
+              content: 'cool stuff usefull',
             },
             category: {
-              name: 'cool category'
-            }
-          }
-        ]
-      }
-    }
-  }
+              name: 'cool category',
+            },
+            note: 4,
+            price: '_4',
+          },
+        ],
+        categories: [{ id: '1', name: 'test' }],
+        restaurantsConnection: {
+          aggregate: {
+            count: 29,
+          },
+        },
+      },
+    },
+  },
 ];
 
 describe('<Query />', () => {
@@ -47,7 +56,7 @@ describe('<Query />', () => {
     const component = renderer.create(
       <MockedProvider mocks={[]}>
         <Query {...props} />
-      </MockedProvider>
+      </MockedProvider>,
     );
     const tree = component.toJSON();
 
@@ -59,7 +68,7 @@ describe('<Query />', () => {
     renderer.create(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Query {...props} render={render} />
-      </MockedProvider>
+      </MockedProvider>,
     );
 
     await wait(0); // wait for response
@@ -71,7 +80,7 @@ describe('<Query />', () => {
     const component = renderer.create(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Query {...props} />
-      </MockedProvider>
+      </MockedProvider>,
     );
 
     await wait(0); // wait for response
@@ -88,16 +97,16 @@ describe('<Query />', () => {
         variables: {
           limit: 1,
           start: 0,
-          sort: 'name:ASC'
-        }
+          sort: 'name:ASC',
+        },
       },
-      error: new Error('aw shucks')
+      error: new Error('aw shucks'),
     };
 
     const component = renderer.create(
       <MockedProvider mocks={[restaurantsMock]} addTypename={false}>
         <Query {...props} />
-      </MockedProvider>
+      </MockedProvider>,
     );
 
     await wait(0); // wait for response

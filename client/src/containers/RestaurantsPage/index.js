@@ -18,13 +18,18 @@ import getQueryParameters from '../../utils/getQueryParameters';
 import RenderView from './RenderView';
 import Filters from '../../components/Filters';
 
-function RestaurantsPage({ 
-  location: { search }, 
-  history,
-}) {
+function RestaurantsPage({ location: { search }, history }) {
   const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
   const orderby = getQueryParameters(search, 'orderby') || 'name';
   const range = 15;
+
+  const setSearch = (where, nextStart) => {
+    history.push({
+      search: `?category=${where.category}&district=${
+        where.district
+      }&start=${nextStart}`,
+    });
+  };
 
   const getWhereParams = () => {
     const category = getQueryParameters(search, 'category') || 'all';
@@ -32,7 +37,7 @@ function RestaurantsPage({
 
     return {
       category,
-      district
+      district,
     };
   };
 
@@ -55,12 +60,6 @@ function RestaurantsPage({
     setSearch(where, 0);
   };
 
-  const setSearch = (where, start) => {
-    history.push({
-      search: `?category=${where.category}&district=${where.district}&start=${start}`
-    });
-  }
-
   const handlePageChange = ({ target }) => {
     setSearch(getWhereParams(), target.value);
   };
@@ -78,21 +77,20 @@ function RestaurantsPage({
         title: 'Categories',
         name: 'category',
         options: [{ id: 'all', name: 'all' }, ...categories],
-        value: getQueryParameters(search, 'category') || 'all'
+        value: getQueryParameters(search, 'category') || 'all',
       },
       {
         title: 'Neighborhood',
         name: 'district',
         options: data.districts,
-        value: getQueryParameters(search, 'district') || '_all'
-      }
+        value: getQueryParameters(search, 'district') || '_all',
+      },
     ];
 
     return <Filters filters={filters} onChange={handleChange} range={range} />;
   };
 
   const renderView = ({ restaurants, ...rest }) => {
-    
     return (
       <>
         {renderFilters(rest)}
@@ -118,7 +116,7 @@ function RestaurantsPage({
             limit: range,
             start,
             sort: `${orderby}:ASC`,
-            where: prepareWhereParams()
+            where: prepareWhereParams(),
           }}
         />
       </Container>
@@ -126,7 +124,13 @@ function RestaurantsPage({
   );
 }
 
-RestaurantsPage.defaultProps = {};
+RestaurantsPage.defaultProps = {
+  location: {
+    pathname: null,
+    search: null,
+  },
+};
+
 RestaurantsPage.propTypes = {
   history: PropTypes.object.isRequired,
   location: PropTypes.shape({

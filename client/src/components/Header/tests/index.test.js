@@ -14,8 +14,8 @@ const renderComponent = properties =>
           <Header {...props} />
         </Router>
       ),
-      properties
-    )
+      properties,
+    ),
   );
 
 describe('<Header />', () => {
@@ -41,11 +41,11 @@ describe('<Header />', () => {
     const links = [
       { name: 'Restaurants', to: '/' },
       { name: 'about us', to: '/about' },
-      { name: 'Blog', to: '/blog' }
+      { name: 'Blog', to: '/blog' },
     ];
 
     const wrapper = renderComponent({ links });
-    const navItem = wrapper.find(Link).first();
+    const navItem = wrapper.find(Link).at(1);
 
     expect(navItem.prop('active')).toBe(true);
   });
