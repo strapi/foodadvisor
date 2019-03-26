@@ -15,10 +15,11 @@ import RenderView from './RenderView';
 function RestaurantPage(props) {
   const {
     match: {
-      params: { id }
+      params: { id },
     },
   } = props;
 
+  /* istanbul ignore next */
   const renderView = ({ restaurant, ...rest }) => {
     return <RenderView restaurant={restaurant} rest={rest} {...props} />;
   };

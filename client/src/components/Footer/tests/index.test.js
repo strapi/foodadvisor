@@ -21,7 +21,7 @@ describe('<Footer />', () => {
     const wrapper = shallow(<Footer {...props} />);
     const links = wrapper.find(Link);
 
-    expect(links).toHaveLength(1);
+    expect(links).toHaveLength(2);
   });
 
   it('should add a "main-link" className if the link name is Favorites', () => {
@@ -40,17 +40,15 @@ describe('<Footer />', () => {
     const wrapper = shallow(<Footer {...props} />);
     const links = wrapper.find(Link);
 
-    expect(links).toHaveLength(2);
+    expect(links).toHaveLength(3);
     expect(links.last().prop('className')).toContain('main-link');
   });
 
   it('should use the defaultProps', () => {
     const {
-      defaultProps: { onChange, onSubmit },
+      defaultProps: { onSubmit },
     } = Footer;
 
-    expect(onChange).toBeDefined();
-    expect(onChange()).toBe(undefined);
     expect(onSubmit).toBeDefined();
     expect(onSubmit({ preventDefault: jest.fn() })).toBe(undefined);
   });

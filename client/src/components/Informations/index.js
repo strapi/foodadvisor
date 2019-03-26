@@ -16,15 +16,9 @@ import H1 from '../H1';
 import NotePaper from '../NotePaper';
 import Grid from '../Grid';
 
-function Informations({ 
-  restaurant: {
-    address,
-    category,
-    district,
-    opening_hours,
-    phone,
-    website,
-  }
+/* eslint-disable camelcase */
+function Informations({
+  restaurant: { address, category, district, opening_hours, phone, website },
 }) {
   const infos = [
     {

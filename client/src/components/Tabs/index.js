@@ -14,7 +14,7 @@ import {
   NavItem,
   NavLink,
   Row,
-  Col
+  Col,
 } from 'reactstrap';
 import classnames from 'classnames';
 
@@ -22,13 +22,7 @@ import StyledTabs from './StyledTabs';
 import Informations from '../Informations';
 import Reviews from '../Reviews';
 
-function Tabs({ 
-  restaurant, 
-  selected, 
-  toggleTab,
-  tabs,
- }) {
-
+function Tabs({ restaurant, selected, toggleTab, tabs }) {
   return (
     <>
       <StyledTabs />
@@ -47,7 +41,7 @@ function Tabs({
                     <span title={tab}>{tab}</span>
                   </NavLink>
                 </NavItem>
-              )
+              );
             })}
           </Container>
         </Nav>
@@ -58,12 +52,16 @@ function Tabs({
                 <Container>
                   <Row>
                     <Col sm="12">
-                      {tab === 'informations' ? <Informations restaurant={restaurant} /> : <Reviews restaurant={restaurant} />}
+                      {tab === 'informations' ? (
+                        <Informations restaurant={restaurant} />
+                      ) : (
+                        <Reviews restaurant={restaurant} />
+                      )}
                     </Col>
                   </Row>
                 </Container>
               </TabPane>
-            )
+            );
           })}
         </TabContent>
       </div>
