@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import H4 from '../H4';
 import StyledNotePaper from './StyledNotePaper';
 
+/* istanbul ignore next */
 function NotePaper({ informations }) {
   const { title, infos, type } = informations;
   return (
@@ -29,7 +30,7 @@ function NotePaper({ informations }) {
       {type === 'html' && (
         <div
           dangerouslySetInnerHTML={{
-            __html: '<li><p>Tue - Sat</p><p>7:30 PM - 10:00 PM</p></li>'
+            __html: '<li><p>Tue - Sat</p><p>7:30 PM - 10:00 PM</p></li>',
           }}
         />
       )}
@@ -42,14 +43,14 @@ NotePaper.defaultProps = {
     title: null,
     infos: {
       subtitle: null,
-      text: null
+      text: null,
     },
-    type: null
-  }
+    type: null,
+  },
 };
 
 NotePaper.propTypes = {
-  informations: PropTypes.object
+  informations: PropTypes.object,
 };
 
 export default NotePaper;

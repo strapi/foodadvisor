@@ -15,11 +15,12 @@ import RenderView from './RenderView';
 function RestaurantPage(props) {
   const {
     match: {
-      params: { id }
+      params: { id },
     },
-    history
+    history,
   } = props;
 
+  /* istanbul ignore next */
   const renderView = ({ restaurant, ...rest }) => {
     return <RenderView restaurant={restaurant} rest={rest} history={history} />;
   };
@@ -34,7 +35,7 @@ function RestaurantPage(props) {
 RestaurantPage.defaultProps = {};
 RestaurantPage.propTypes = {
   match: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
 };
 
 export default RestaurantPage;
