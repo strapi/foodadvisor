@@ -7,6 +7,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {
+  restaurantDefaultShape,
+  restaurantShape,
+} from '../../shapes/restaurant';
+
 import H1 from '../H1';
 import H4 from '../H4';
 import Price from '../Price';
@@ -17,6 +22,7 @@ import StyledCardSection from './StyledCardSection';
 function CardSection({ restaurant, hasLink, history }) {
   const { category, district, id, name, note, price } = restaurant;
 
+  /* istanbul ignore next */
   const goToReviews = () => {
     history.push(`/${id}/reviews`);
     const element = document.getElementById('tab-content');
@@ -51,20 +57,13 @@ function CardSection({ restaurant, hasLink, history }) {
 }
 
 CardSection.defaultProps = {
-  restaurant: {
-    name: null,
-    price: null,
-    district: null,
-    note: null,
-    reviews: [],
-    category: null
-  },
-  hasLink: false
+  restaurant: restaurantDefaultShape,
+  hasLink: false,
 };
 
 CardSection.propTypes = {
-  restaurant: PropTypes.object,
-  hasLink: PropTypes.bool
+  restaurant: PropTypes.shape(restaurantShape),
+  hasLink: PropTypes.bool,
 };
 
 export default CardSection;

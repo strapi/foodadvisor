@@ -63,6 +63,8 @@
     "plop": "^2.2.0",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.10.0",
+    "react-hooks-testing-library": "^0.3.8",
+    "react-testing-library": "^6.0.2",
     "waait": "^1.0.4"
   },
   "jest": {
