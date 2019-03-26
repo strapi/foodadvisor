@@ -15,20 +15,20 @@ import ProgressBar from '../ProgressBar';
 
 const notes = [
   {
-    title: 'Excellent'
+    title: 'Excellent',
   },
   {
-    title: 'Good'
+    title: 'Good',
   },
   {
-    title: 'Average'
+    title: 'Average',
   },
   {
-    title: 'Bellow Average'
+    title: 'Bellow Average',
   },
   {
-    title: 'Poor'
-  }
+    title: 'Poor',
+  },
 ];
 
 export const renderNotes = (noteDetails, count) => {
@@ -84,7 +84,7 @@ function Reviews(props) {
 Reviews.defaultProps = {};
 
 Reviews.propTypes = {
-  restaurant: PropTypes.object.isRequired
+  restaurant: PropTypes.object.isRequired,
 };
 
 export default Reviews;

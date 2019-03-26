@@ -14,7 +14,7 @@ import {
   NavItem,
   NavLink,
   Row,
-  Col
+  Col,
 } from 'reactstrap';
 import classnames from 'classnames';
 
@@ -22,6 +22,7 @@ import StyledTabs from './StyledTabs';
 import Informations from '../Informations';
 import Reviews from '../Reviews';
 
+/* istanbul ignore next */
 function Tabs({ restaurant, selected, toggleTab }) {
   return (
     <>
@@ -79,14 +80,14 @@ function Tabs({ restaurant, selected, toggleTab }) {
 Tabs.defaultProps = {
   restaurant: {},
   selected: 1,
-  toggleTab: () => {}
+  toggleTab: () => {},
 };
 
 Tabs.propTypes = {
   // history: PropTypes.object.isRequired,
   restaurant: PropTypes.object,
   selected: PropTypes.number,
-  toggleTab: PropTypes.func
+  toggleTab: PropTypes.func,
 };
 
 export default Tabs;
