@@ -31,7 +31,7 @@ const StyledReviews = createGlobalStyle`
     }
     .reviews-gauges {
       ul {
-        padding-top: ${sizes.margin*1.1}px;
+        padding-top: ${sizes.margin * 1.1}px;
         padding-bottom: ${sizes.margin * 2.1}px;
       }
       li {
@@ -54,7 +54,7 @@ const StyledReviews = createGlobalStyle`
         }
       }
       .progress-wrapper, p {
-        display: inline-block;
+        display: inline-table;
         vertical-align: middle;
       }
     }
@@ -72,13 +72,14 @@ const StyledReviews = createGlobalStyle`
       padding-top: 0;
       background-color: ${colors.greyBkdg};
       .reviews-title {
-        margin-bottom: ${sizes.margin * 1.2}px;
+        margin-bottom: ${sizes.margin * 3.2}px;
       }
       .reviews-value {
-        margin-top: ${sizes.margin * 2}px;
+        margin-top: ${sizes.margin * 2.8}px;
       }
       .reviews-count {
-        margin-top: ${sizes.margin * 0.4}px;
+        font-size: 16px;
+        margin-top: ${sizes.margin * 1.6}px;
         margin-bottom: ${sizes.margin * 2.4}px;
       }
     }
@@ -88,6 +89,32 @@ const StyledReviews = createGlobalStyle`
       padding-left: ${sizes.margin * 3.4}px;
       .reviews-title {
         margin-bottom: ${sizes.margin * 0.8}px;
+      }
+    }
+  }
+  @media (min-width: ${sizes.desktop}) {
+    .reviews-main {
+      .reviews-gauges {
+        ul {
+          width: fit-content;
+          overflow: auto;
+          margin: 0 auto;
+          li {
+            overflow: auto;
+            display: table;
+            float: right;
+            clear: both;
+            p, .progress-wrapper {
+              vertical-align: middle;
+            }
+            p {
+              width: fit-content;
+            }
+            .progress-wrapper  {
+              width: 259px;
+            }
+          }
+        }
       }
     }
   }

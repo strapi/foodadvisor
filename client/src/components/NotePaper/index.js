@@ -14,7 +14,9 @@ import StyledNotePaper from './StyledNotePaper';
 function NotePaper({ informations: { title, infos, type } }) {
   return (
     <StyledNotePaper>
-      <H4>{title}</H4>
+      <H4>
+        <span title={title}>{title}</span>
+      </H4>
       <ul>
         {type === 'list' &&
           infos.map(info => (
