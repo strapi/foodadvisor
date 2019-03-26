@@ -13,7 +13,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem
+  NavItem,
 } from 'reactstrap';
 
 import StyledHeader from './StyledHeader';
@@ -61,10 +61,10 @@ function Header({ links }) {
 }
 
 Header.defaultProps = {
-  links: []
+  links: [],
 };
 Header.propTypes = {
-  links: PropTypes.array
+  links: PropTypes.array,
 };
 
 export default Header;
