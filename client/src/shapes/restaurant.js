@@ -11,6 +11,7 @@ const restaurantDefaultShape = {
   id: null,
   name: null,
   note: null,
+  opening_hours: null,
   price: null,
   reviews: [reviewDefaultShape],
   __typename: 'Restaurant',
@@ -29,6 +30,13 @@ const restaurantShape = {
   id: PropTypes.string,
   name: PropTypes.string,
   note: PropTypes.number,
+  opening_hours: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.shape({
+      subtitle: PropTypes.string,
+      text: PropTypes.string,
+    })),
+  ]),
   price: PropTypes.string,
   reviews: PropTypes.arrayOf(PropTypes.shape(reviewShape)),
   __typename: PropTypes.string,
