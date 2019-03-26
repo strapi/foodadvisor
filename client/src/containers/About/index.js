@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 import H1 from '../../components/H1';
 import H4 from '../../components/H4';
@@ -17,6 +16,31 @@ import twitter from '../../assets/img/icon_twitter.png';
 import slack from '../../assets/img/icon_slack.png';
 
 function About() {
+  const functionnalities = [
+    'List of products',
+    'Filters',
+    'Reviews',
+    'Votes',
+    'Comments',
+    'Static Page',
+    'Image Management',
+  ];
+
+  const networks = {
+    facebook: {
+      img: fb,
+      href: 'https://www.facebook.com/strapijs'
+    },
+    twitter: {
+      img: twitter,
+      href: 'https://twitter.com/strapijs?lang=en'
+    },
+    slack: {
+      img: slack,
+      href: 'https://slack.strapi.io'
+    }
+  };
+
   return (
     <div className="page-wrapper" id="about-page">
       <div className="cover-wrapper">
@@ -25,7 +49,6 @@ function About() {
           alt="cover"
         />
       </div>
-
       <div className="informations-wrapper">
         <div className="container">
           <H1>About us</H1>
@@ -41,7 +64,6 @@ function About() {
               so come be our friend and see if we mean it.
             </p>
           </div>
-
           <H4>Our Mission</H4>
           <div className="text-section">
             <p>
@@ -52,30 +74,15 @@ function About() {
               FoodAdvisor displays functionalities like :
             </p>
             <ul>
-              <li>
-                <p>Listing of products</p>
-              </li>
-              <li>
-                <p>Filters</p>
-              </li>
-              <li>
-                <p>Reviews</p>
-              </li>
-              <li>
-                <p>Votes</p>
-              </li>
-              <li>
-                <p>Comments</p>
-              </li>
-              <li>
-                <p>Static Page</p>
-              </li>
-              <li>
-                <p>Image Management</p>
-              </li>
+              {functionnalities.map(functionnality => {
+                return (
+                  <li key={functionnality}>
+                    <p>{functionnality}</p>
+                  </li>
+                )
+              })}
             </ul>
           </div>
-
           <H4>Say Hello</H4>
           <div className="text-section">
             <p>
@@ -93,32 +100,22 @@ function About() {
             </p>
             <div className="social-wrapper">
               <div className="social-wrapper">
-                <a href="https://www.facebook.com/strapijs">
-                  <div>
-                    <Img src={fb} alt="facebook" />
-                  </div>
-                </a>
-                <a href="https://twitter.com/strapijs?lang=en">
-                  <div>
-                    <Img src={twitter} alt="twitter" />
-                  </div>
-                </a>
-                <a href="https://slack.strapi.io">
-                  <div>
-                    <Img src={slack} alt="slack" />
-                  </div>
-                </a>
+                {Object.keys(networks).map(key => {
+                  return (
+                    <a href={networks[key].href} key={key}>
+                      <div>
+                        <Img src={networks[key].img} alt={key} />
+                      </div>
+                    </a>
+                  )
+                })}
               </div>
             </div>
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
-
-About.defaultProps = {};
-About.propTypes = {};
 
 export default About;

@@ -11,26 +11,25 @@ import parse from 'html-react-parser';
 import H4 from '../H4';
 import StyledNotePaper from './StyledNotePaper';
 
-function NotePaper({ informations }) {
-  const { title, infos, type } = informations;
+function NotePaper({ 
+  informations: { title, infos, type },
+}) {
   return (
     <StyledNotePaper>
       <H4>{title}</H4>
-      {type === 'list' && (
-        <ul>
-          {infos.map(info => (
+      <ul>
+        {type === 'list' && (
+          infos.map(info => (
             <li key={info.subtitle}>
               <p>{info.subtitle}</p>
               <p>{info.text}</p>
             </li>
-          ))}
-        </ul>
-      )}
-      {type === 'html' && ( 
-        <ul>
-          {parse(infos)}
-        </ul>
-      )}
+          ))
+        )}
+        {type === 'html' && ( 
+          parse(infos)
+        )}
+      </ul>
     </StyledNotePaper>
   );
 }
@@ -42,7 +41,7 @@ NotePaper.defaultProps = {
       subtitle: null,
       text: null
     },
-    type: null
+    type: null,
   }
 };
 

@@ -9,7 +9,13 @@ import PropTypes from 'prop-types';
 
 import Radio from '../Radio';
 
-function FiltersGroup({ title, name, options, value, onChange }) {
+function FiltersGroup({ 
+  title, 
+  name, 
+  options, 
+  value, 
+  onChange 
+}) {
   return (
     <div>
       <p>{title}</p>
