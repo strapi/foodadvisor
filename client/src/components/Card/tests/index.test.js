@@ -16,17 +16,19 @@ describe('<Card />', () => {
         id: '1',
         cover: [{ url: '/test.png' }],
         category: { name: null },
-        reviews: []
-      }
+        district: '_1st',
+        reviews: [],
+      },
     };
   });
 
   it('should not crash', () => {
-    mount(<Card />);
+    mount(<Card {...props} />);
   });
 
   it('the <Img /> component should have the src props equals to `undefined` if no cover is given', () => {
-    const wrapper = mount(<Card />);
+    props.restaurant.cover = [];
+    const wrapper = mount(<Card {...props} />);
     const img = wrapper.find(Img);
 
     expect(img.prop('src')).toBe(`${process.env.REACT_APP_BACKEND_URL}`);
@@ -37,7 +39,7 @@ describe('<Card />', () => {
     const img = wrapper.find(Img);
 
     expect(img.prop('src')).toBe(
-      `${process.env.REACT_APP_BACKEND_URL}/test.png`
+      `${process.env.REACT_APP_BACKEND_URL}/test.png`,
     );
   });
 
