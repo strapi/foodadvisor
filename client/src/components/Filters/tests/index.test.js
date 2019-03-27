@@ -24,8 +24,9 @@ describe('<Filters />', () => {
     expect(collapse.prop('isOpen')).toBeFalsy();
   });
 
-  it('should toggle the state', () => {
+  it('should toggle the state on mobile size', () => {
     wrapper = mount(<Filters />);
+    global.innerWidth = 500;
 
     const navbar = wrapper.find(NavbarToggler);
 
@@ -34,6 +35,20 @@ describe('<Filters />', () => {
     const collapse = wrapper.find(Collapse);
 
     expect(collapse.prop('isOpen')).toBeTruthy();
+  });
+
+  it('should toggle the state on desktop size', () => {
+    wrapper = mount(<Filters />);
+    global.innerWidth = 1024;
+
+    const navbar = wrapper.find(NavbarToggler);
+    const collapse = wrapper.find(Collapse);
+
+    expect(collapse.prop('isOpen')).toBeFalsy();
+
+    navbar.simulate('click');
+
+    expect(collapse.prop('isOpen')).toBeFalsy();
   });
 
   it('should render some filters', () => {
@@ -47,5 +62,16 @@ describe('<Filters />', () => {
     const filtersGroup = wrapper.find(FiltersGroup);
 
     expect(filtersGroup).toHaveLength(1);
+  });
+
+  it('should use the defaultProps', () => {
+    const {
+      defaultProps: { onChange },
+    } = Filters;
+
+    wrapper = mount(<Filters />);
+
+    expect(onChange).toBeDefined();
+    expect(onChange()).toBe(undefined);
   });
 });

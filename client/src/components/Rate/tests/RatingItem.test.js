@@ -12,12 +12,21 @@ describe('<RatingItem />', () => {
       htmlFor: 'input',
       onChange: jest.fn(),
       value: 0,
-      clickable: true
+      clickable: true,
     };
   });
 
   it('should not crash', () => {
     mount(<RatingItem />);
+  });
+
+  it('should use the defaultProps', () => {
+    const {
+      defaultProps: { onChange },
+    } = RatingItem;
+
+    expect(onChange).toBeDefined();
+    expect(onChange({ preventDefault: jest.fn() })).toBe(undefined);
   });
 
   it('should handle the onClick prop correctly', () => {

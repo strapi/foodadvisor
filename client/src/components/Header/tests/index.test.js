@@ -23,7 +23,8 @@ describe('<Header />', () => {
     renderComponent();
   });
 
-  it('should change the state correctly', () => {
+  it('should change the state correctly on mobile size', () => {
+    global.innerWidth = 500;
     const wrapper = renderComponent();
     const navBar = wrapper.find(NavbarToggler);
     const collapse = wrapper.find(Collapse);
@@ -35,6 +36,21 @@ describe('<Header />', () => {
     const updatedCollapse = wrapper.find(Collapse);
 
     expect(updatedCollapse.prop('isOpen')).toBe(true);
+  });
+
+  it('should change the state correctly on desktop size', () => {
+    global.innerWidth = 1024;
+    const wrapper = renderComponent();
+    const navBar = wrapper.find(NavbarToggler);
+    const collapse = wrapper.find(Collapse);
+
+    expect(navBar.exists()).toBe(true);
+    expect(collapse.prop('isOpen')).toBe(false);
+
+    navBar.simulate('click');
+    const updatedCollapse = wrapper.find(Collapse);
+
+    expect(updatedCollapse.prop('isOpen')).toBe(false);
   });
 
   it('the StyledHeader should set a custom style if the activeLink is > -1', () => {

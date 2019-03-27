@@ -53,6 +53,7 @@ const General = createGlobalStyle`
   }
   .navbar-brand {
     font-size: 0;
+    padding: 0;
     img {
       width: ${sizes.header.logoWidth.small};
       height: auto;
