@@ -34,11 +34,13 @@ function NotePaper({ informations: { title, infos, type } }) {
 NotePaper.defaultProps = {
   informations: {
     title: null,
-    infos: {
-      subtitle: null,
-      text: null,
-    },
-    type: null,
+    infos: [
+      {
+        subtitle: null,
+        text: null,
+      },
+    ],
+    type: 'list',
   },
 };
 

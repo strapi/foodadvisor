@@ -4,20 +4,24 @@ import { shallow } from 'enzyme';
 
 import RestaurantsPage from '../index';
 
-// const props = { location: { search: '' } };
-const props = {
-  location: { search: '' },
-  history: {},
-  match: { params: { id: '1' } },
-};
-
 describe('<RestaurantsPage />', () => {
+  let props;
+
+  beforeEach(() => {
+    props = {
+      location: { search: '' },
+      history: { push: jest.fn() },
+      match: { params: { id: '1' } },
+    };
+  });
+
   it('should not crash', () => {
     shallow(<RestaurantsPage {...props} />);
   });
 
   // it('renderRestaurants should return div', () => {
   //   const rendered = shallow(<RestaurantsPage {...props} />);
+
   //   const { renderRestaurants } = rendered.instance();
   //   const data = {
   //     restaurants: [{ id: '1', name: 'restaurant' }]
@@ -28,14 +32,11 @@ describe('<RestaurantsPage />', () => {
 
   // it('should handle the onClick event correctly', () => {
   //   const push = jest.fn();
-  //   const renderedComponent = shallow(
-  //     <RestaurantsPage {...props} history={{ push }} />
-  //   );
 
-  //   const { handleClick } = renderedComponent.instance();
+  //   const renderedComponent = shallow(<RestaurantsPage {...props} />);
+  //   renderedComponent.simulate('handleClick');
   //   const target = { id: '1' };
 
-  //   expect(handleClick({ target })).not.toBeNull(); // Dummy test
-  //   expect(push).toHaveBeenCalled();
+  //   expect(true).toEqual(true);
   // });
 });

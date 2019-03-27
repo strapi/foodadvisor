@@ -35,7 +35,6 @@ function Filters({ filters, onChange }) {
                   if (window.innerWidth < 768) {
                     toggleIsOpen(!isOpen);
                   }
-
                   /* istanbul ignore next */
                   onChange(e);
                 }}

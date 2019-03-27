@@ -11,6 +11,15 @@ describe('<Radio />', () => {
     expect(label.text()).toBe('test');
   });
 
+  it('should use the defaultProps', () => {
+    const {
+      defaultProps: { onChange },
+    } = Radio;
+
+    expect(onChange).toBeDefined();
+    expect(onChange({ preventDefault: jest.fn() })).toBe(undefined);
+  });
+
   it('should call the onChange prop with the correct data', () => {
     const props = {
       checked: false,

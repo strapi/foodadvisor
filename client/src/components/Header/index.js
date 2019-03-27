@@ -7,13 +7,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  Nav,
-  NavItem,
-} from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 
 import StyledHeader from './StyledHeader';
 import Link from '../Link';
@@ -22,12 +16,18 @@ import logo from '../../assets/img/logo.svg';
 function Header({ links }) {
   const [isOpen, toggleIsOpen] = useState(false);
 
+  const toggleCollapse = () => {
+    if (window.innerWidth < 768) {
+      toggleIsOpen(!isOpen);
+    }
+  };
+
   return (
     <StyledHeader>
       <Navbar expand="md">
         <div className="container">
           <div className="navbar-brand">
-            <Link url='/'>
+            <Link url="/">
               <img src={logo} alt="logo" />
             </Link>
           </div>
@@ -35,13 +35,7 @@ function Header({ links }) {
             <Nav navbar>
               {links.map(link => {
                 return (
-                  <NavItem 
-                    key={link.to} 
-                    onClick={() => {
-                      if (window.innerWidth < 768) {
-                        toggleIsOpen(!isOpen);
-                      }
-                    }}>
+                  <NavItem key={link.to} onClick={toggleCollapse}>
                     <Link
                       url={link.to}
                       active={window.location.pathname === link.to}
@@ -53,7 +47,7 @@ function Header({ links }) {
               })}
             </Nav>
           </Collapse>
-          <NavbarToggler onClick={() => toggleIsOpen(!isOpen)}>
+          <NavbarToggler onClick={toggleCollapse}>
             <div className="nav-icon">
               <span />
               <span />
