@@ -12,6 +12,10 @@ It install all dependencies to make this project work.
 
 It setup all plugins to make this project work.
 
+### `npm run seed`
+
+It seed demo data.
+
 **You need to run this command before starting your project**
 
 ### `npm start`
