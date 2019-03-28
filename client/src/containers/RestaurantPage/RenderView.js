@@ -6,14 +6,19 @@ import CardSection from '../../components/CardSection';
 import Slider from '../../components/Slider';
 import Tabs from '../../components/Tabs';
 
-const RenderView = ({ 
-  restaurant, 
-  rest: { reviewsConnection: { aggregate: { count } } }, 
+const RenderView = ({
+  restaurant,
+  rest: {
+    reviewsConnection: {
+      aggregate: { count },
+    },
+  },
   history,
-  match: { params: { content, id }},
+  match: {
+    params: { content, id },
+  },
 }) => {
   const { cover } = restaurant;
-
   const tabs = ['informations', 'reviews'];
 
   const toggle = tab => {
@@ -55,7 +60,7 @@ RenderView.defaultProps = {
     cover: [],
     district: null,
     price: null,
-  }
+  },
 };
 
 RenderView.propTypes = {

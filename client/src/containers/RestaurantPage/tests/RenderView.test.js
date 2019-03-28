@@ -12,6 +12,12 @@ describe('<RenderView />', () => {
       history: { push: jest.fn() },
       match: { params: { id: '1', content: 'informations' } },
       rest: { reviewsConnection: { aggregate: { count: 1 } } },
+      restaurant: {
+        cover: [],
+        district: '_1',
+        price: null,
+        category: { name: 'test' },
+      },
     };
   });
 
