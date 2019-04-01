@@ -14,7 +14,7 @@ It setup all plugins to make this project work.
 
 ### `npm run seed`
 
-It seed demo data.
+It seeds the database with some data.
 
 **You need to run this command before starting your project**
 
