@@ -13,31 +13,27 @@ import sizes from '../../assets/styles/sizes';
 const StyledInput = styled.input`
   width: 100%;
   height: ${sizes.input.height};
-  padding: ${sizes.margin * 1.6}px ${sizes.margin * 5.7}px ${sizes.margin *
-  1.6}px ${sizes.margin * 1.2}px;
+  padding: ${sizes.margin * 1.6}px ${sizes.margin * 5.7}px
+    ${sizes.margin * 1.6}px ${sizes.margin * 1.2}px;
   ${fonts.reg};
   font-size: 12px;
   cursor: pointer;
   outline: 0;
   border: 0;
-  //border-radius: ${sizes.radius};
   color: ${colors.darkBlue};
   background-color: white;
-  
+
   &::-webkit-input-placeholder {
     color: ${colors.darkGrey};
   }
-  // &:focus {
-  //   border-color: ${colors.blueBorder};
-  // }
 `;
 
 StyledInput.defaultProps = {
-  type: 'text'
+  type: 'text',
 };
 
 StyledInput.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.string,
 };
 
 export default StyledInput;
