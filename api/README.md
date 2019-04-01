@@ -8,6 +8,14 @@ In the project directory, you can run:
 
 It install all dependencies to make this project work.
 
+### `npm run setup --plugins`
+
+It setup all plugins to make this project work.
+
+### `npm run seed`
+
+It seeds the database with some data.
+
 **You need to run this command before starting your project**
 
 ### `npm start`

@@ -19,8 +19,8 @@ module.exports = {
       choices: () => [
         'Stateless Function',
         'React.PureComponent',
-        'React.Component',
-      ],
+        'React.Component'
+      ]
     },
     {
       type: 'input',
@@ -35,8 +35,8 @@ module.exports = {
         }
 
         return 'The name is required';
-      },
-    },
+      }
+    }
   ],
   actions: data => {
     // Generate {{properCase name}}.js index.js and {{properCase name}}.test.js
@@ -57,21 +57,39 @@ module.exports = {
         type: 'add',
         path: '../../src/containers/{{properCase name}}/index.js',
         templateFile: containerTemplate,
-        abortOnFail: true,
+        abortOnFail: true
       },
       {
         type: 'add',
-        path: '../../src/containers/{{properCase name}}/tests/{{properCase name}}.test.js',
+        path: '../../src/containers/{{properCase name}}/tests/index.test.js',
         templateFile: './container/test.js.hbs',
-        abortOnFail: true,
-      },
+        abortOnFail: true
+      }
     ];
+
+    if (data.type === 'Stateless function') {
+      actions.push(
+        {
+          type: 'add',
+          path: '../../src/containers/{{properCase name}}/RenderView.js',
+          templateFile: './container/RenderView.js',
+          abortOnFail: true
+        },
+        {
+          type: 'add',
+          path:
+            '../../src/containers/{{properCase name}}/tests/RenderView.test.js',
+          templateFile: './container/RenderView.test.js',
+          abortOnFail: true
+        }
+      );
+    }
 
     actions.push({
       type: 'prettify',
-      path: '/containers/',
+      path: '/containers/'
     });
 
     return actions;
-  },
+  }
 };
