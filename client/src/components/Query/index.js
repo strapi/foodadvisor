@@ -40,13 +40,13 @@ class Query extends React.Component {
 
 Query.defaultProps = {
   render: null,
-  variables: {}
+  variables: {},
 };
 
 Query.propTypes = {
   query: PropTypes.object.isRequired,
   render: PropTypes.func,
-  variables: PropTypes.object
+  variables: PropTypes.object,
 };
 
 export default Query;

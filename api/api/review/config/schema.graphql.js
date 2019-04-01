@@ -15,19 +15,19 @@ module.exports = {
     Query: {
       reviewsConnection(_, args) {
         return args;
-      },
+      }
     },
     ReviewsConnection: {
       aggregate(args) {
         return args;
-      },
+      }
     },
     ReviewsAggregate: {
       count(args) {
         return strapi.controllers.review.count({
-          query: args.where || {},
+          query: args.where || {}
         });
-      },
-    },
-  },
+      }
+    }
+  }
 };

@@ -19,8 +19,8 @@ module.exports = {
       choices: () => [
         'Stateless Function',
         'React.PureComponent',
-        'React.Component',
-      ],
+        'React.Component'
+      ]
     },
     {
       type: 'input',
@@ -35,8 +35,8 @@ module.exports = {
         }
 
         return 'The name is required';
-      },
-    },
+      }
+    }
   ],
   actions: data => {
     // Generate {{properCase name}}.js index.js and {{properCase name}}.test.js
@@ -57,21 +57,21 @@ module.exports = {
         type: 'add',
         path: '../../src/components/{{properCase name}}/index.js',
         templateFile: componentTemplate,
-        abortOnFail: true,
+        abortOnFail: true
       },
       {
         type: 'add',
-        path: '../../src/components/{{properCase name}}/tests/{{properCase name}}.test.js',
+        path: '../../src/components/{{properCase name}}/tests/index.test.js',
         templateFile: './component/test.js.hbs',
-        abortOnFail: true,
-      },
+        abortOnFail: true
+      }
     ];
 
     actions.push({
       type: 'prettify',
-      path: '/components/',
+      path: '/components/'
     });
 
     return actions;
-  },
+  }
 };

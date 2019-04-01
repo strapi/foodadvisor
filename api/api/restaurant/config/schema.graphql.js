@@ -26,19 +26,19 @@ module.exports = {
     Query: {
       restaurantsConnection(_, args) {
         return args;
-      },
+      }
     },
     RestaurantsConnection: {
       aggregate(args) {
         return args;
-      },
+      }
     },
     RestaurantsAggregate: {
       count(args) {
         return strapi.controllers.restaurant.count({
-          query: args.where || {},
+          query: args.where || {}
         });
-      },
-    },
-  },
+      }
+    }
+  }
 };

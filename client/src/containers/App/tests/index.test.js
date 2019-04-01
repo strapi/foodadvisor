@@ -9,4 +9,3 @@ describe('<App />', () => {
     shallow(<App />);
   });
 });
-

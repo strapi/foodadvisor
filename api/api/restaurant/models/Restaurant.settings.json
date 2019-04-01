@@ -44,12 +44,7 @@
     "price": {
       "default": "",
       "type": "enumeration",
-      "enum": [
-        "_1",
-        "_2",
-        "_3",
-        "_4"
-      ]
+      "enum": ["_1", "_2", "_3", "_4"]
     },
     "district": {
       "default": "",
