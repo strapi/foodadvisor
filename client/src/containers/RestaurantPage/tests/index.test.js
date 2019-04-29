@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
 
 import RestaurantPage from '../index';
 
