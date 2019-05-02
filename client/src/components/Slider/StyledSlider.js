@@ -7,9 +7,7 @@ import LeftArrow from '../../assets/img/icon_arrow_left.png';
 import RightArrow from '../../assets/img/icon_arrow_right.png';
 
 const StyledSlider = createGlobalStyle`
-
   .slider-wrapper {
-    position: relative;
     .indicators, .carousel-controls {
       display: none;
     }
