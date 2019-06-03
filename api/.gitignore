@@ -107,3 +107,11 @@ coverage
 # Custom
 
 !data.zip
+
+############################
+# Strapi
+############################
+
+exports
+.cache
+build
