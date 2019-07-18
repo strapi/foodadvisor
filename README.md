@@ -2,12 +2,12 @@
 
 ## Client
 
-Run `cd client && npm install && npm start`
+Run `cd client && yarn start`
 
 You will find more information in the [**client** README](./client)
 
 ## API
 
-Run `cd api && npm install && npm start`
+Run `cd api && yarn && yarn run seed && yarn develop`
 
 You will find more information in the [**api** README](./api)

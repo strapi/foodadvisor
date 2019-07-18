@@ -4,21 +4,17 @@
 
 In the project directory, you can run:
 
-### `npm install`
+### `yarn install`
 
-`npm install` installs all dependencies to make this project work.
+`yarn install` installs all dependencies to make this project work.
 
-### `npm run setup --plugins`
+### `yarn run seed`
 
-`npm run setup --plugins` sets up all plugins to make this project work.
-
-### `npm run seed`
-
-`npm run seed` seeds demo data.
+`yarn run seed` seeds demo data.
 
 **You need to run this command before starting your project**
 
-### `npm start`
+### `yarn run develop`
 
-`npm start` starts the server in developement environment.
+`yarn develop` starts the server in developement environment and builds the administration panel.
 Open [http://localhost:1337/admin](http://localhost:1337/admin) to view it in the browser.
