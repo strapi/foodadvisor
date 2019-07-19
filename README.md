@@ -31,7 +31,7 @@ You will find more information and options in the [**api** README](./api).
 Run the following from your command line:
 
 ```
-cd client && yarn start
+cd client && yarn install && yarn start
 ```
 
 You will find more information and options in the [**client** README](./client).
