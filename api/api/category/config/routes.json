@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/categories/:id",
-      "handler": "Category.destroy",
+      "handler": "Category.delete",
       "config": {
         "policies": []
       }

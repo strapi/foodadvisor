@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/likes/:id",
-      "handler": "Like.destroy",
+      "handler": "Like.delete",
       "config": {
         "policies": []
       }
