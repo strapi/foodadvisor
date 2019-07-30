@@ -1,26 +1,11 @@
-'use strict';
-
-/**
- * Restaurant.js controller
- *
- * @description: A set of functions called "actions" for managing `Restaurant`.
- */
-
 module.exports = {
-
-  /**
-   * Retrieve restaurant records.
-   *
-   * @return {Object|Array}
-   */
-
   find: async (ctx) => {
     let restaurants;
 
     if (ctx.query._q) {
-      restaurants = await strapi.services.restaurant.search(ctx.query);
+      restaurants = await strapi.api.restaurant.services.restaurant.search(ctx.query);
     } else {
-      restaurants = await strapi.services.restaurant.fetchAll(ctx.query);
+      restaurants = await strapi.api.restaurant.services.restaurant.find(ctx.query);
     }
 
     restaurants = restaurants.toJSON();
@@ -37,15 +22,8 @@ module.exports = {
 
     return restaurants;
   },
-
-  /**
-   * Retrieve a restaurant record.
-   *
-   * @return {Object}
-   */
-
   findOne: async (ctx) => {
-    let restaurant = await strapi.services.restaurant.fetch(ctx.params);
+    let restaurant = await strapi.api.restaurant.services.restaurant.findOne(ctx.params);
 
     restaurant = restaurant.toJSON();
 
@@ -91,45 +69,5 @@ module.exports = {
     }
 
     return restaurant;
-  },
-
-  /**
-   * Count restaurant records.
-   *
-   * @return {Number}
-   */
-
-  count: async (ctx) => {
-    return strapi.services.restaurant.count(ctx.query);
-  },
-
-  /**
-   * Create a/an restaurant record.
-   *
-   * @return {Object}
-   */
-
-  create: async (ctx) => {
-    return strapi.services.restaurant.add(ctx.request.body);
-  },
-
-  /**
-   * Update a/an restaurant record.
-   *
-   * @return {Object}
-   */
-
-  update: async (ctx, next) => {
-    return strapi.services.restaurant.edit(ctx.params, ctx.request.body) ;
-  },
-
-  /**
-   * Destroy a/an restaurant record.
-   *
-   * @return {Object}
-   */
-
-  destroy: async (ctx, next) => {
-    return strapi.services.restaurant.remove(ctx.params);
   }
 };
