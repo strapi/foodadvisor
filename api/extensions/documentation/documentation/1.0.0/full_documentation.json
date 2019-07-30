@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/31/2019 7:26:01 PM"
+    "x-generation-date": "07/30/2019 12:29:23 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -36,7 +36,7 @@
   ],
   "externalDocs": {
     "description": "Find out more",
-    "url": "https://strapi.io/documentation/3.x.x/"
+    "url": "https://strapi.io/documentation/3.0.0-beta.x/"
   },
   "security": [
     {
@@ -3877,7 +3877,7 @@
     "/users/me": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the logged in user informations",
+        "description": "Retrieve the logged in user information",
         "responses": {
           "200": {
             "description": "response",
@@ -3927,7 +3927,7 @@
         "parameters": []
       }
     },
-    "/users/{_id}": {
+    "/users/{id}": {
       "get": {
         "deprecated": false,
         "description": "Retrieve a single user depending on his id",
@@ -3979,7 +3979,7 @@
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -4041,7 +4041,7 @@
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -4118,7 +4118,7 @@
         ],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,

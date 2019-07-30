@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/restaurants/:id",
-      "handler": "Restaurant.destroy",
+      "handler": "Restaurant.delete",
       "config": {
         "policies": []
       }

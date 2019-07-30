@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/reviews/:id",
-      "handler": "Review.destroy",
+      "handler": "Review.delete",
       "config": {
         "policies": []
       }
