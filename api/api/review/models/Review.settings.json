@@ -25,13 +25,13 @@
       "via": "reviews",
       "plugin": "users-permissions"
     },
-    "restaurant": {
-      "model": "restaurant",
-      "via": "reviews"
-    },
     "likes": {
       "collection": "like",
       "via": "review"
+    },
+    "restaurant": {
+      "model": "restaurant",
+      "via": "reviews"
     }
   }
 }
