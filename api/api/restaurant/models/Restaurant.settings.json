@@ -7,25 +7,20 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": ["created_at", "updated_at"],
     "comment": ""
   },
   "attributes": {
     "cover": {
       "collection": "file",
       "via": "related",
-      "plugin": "upload",
-      "required": false
+      "plugin": "upload"
     },
     "name": {
       "default": "",
       "type": "string"
     },
     "description": {
-      "default": "",
-      "type": "text"
-    },
-    "opening_hours": {
       "default": "",
       "type": "text"
     },
@@ -79,6 +74,13 @@
     "category": {
       "model": "category",
       "via": "restaurants"
+    },
+    "opening_hours": {
+      "group": "opening_hours",
+      "min": 1,
+      "repeatable": true,
+      "required": true,
+      "type": "group"
     }
   }
 }

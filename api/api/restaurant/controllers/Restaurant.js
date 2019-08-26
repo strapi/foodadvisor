@@ -1,62 +1,63 @@
 module.exports = {
-  find: async (ctx) => {
+  find: async ctx => {
     let restaurants;
 
     if (ctx.query._q) {
-      restaurants = await strapi.api.restaurant.services.restaurant.search(ctx.query);
+      restaurants = await strapi.api.restaurant.services.restaurant.search(
+        ctx.query
+      );
     } else {
-      restaurants = await strapi.api.restaurant.services.restaurant.find(ctx.query);
+      restaurants = await strapi.api.restaurant.services.restaurant.find(
+        ctx.query
+      );
     }
 
-    restaurants = restaurants.toJSON();
+    restaurants = await Promise.all(
+      restaurants.map(async restaurant => {
+        restaurant.note = await strapi.api.review.services.review.average(
+          restaurant.id
+        );
 
-    restaurants = await Promise.all(restaurants.map(async (restaurant) => {
-      let note = await strapi.api.review.services.review.average(restaurant.id);
-
-      note = note.toJSON();
-
-      restaurant.note = note['avg(`note`)'];
-
-      return restaurant;
-    }));
+        return restaurant;
+      })
+    );
 
     return restaurants;
   },
-  findOne: async (ctx) => {
-    let restaurant = await strapi.api.restaurant.services.restaurant.findOne(ctx.params);
 
-    restaurant = restaurant.toJSON();
+  findOne: async ctx => {
+    let restaurant = await strapi.api.restaurant.services.restaurant.findOne(
+      ctx.params
+    );
 
     if (!restaurant) {
       return ctx.notFound();
     }
 
-    let note = await strapi.api.review.services.review.average(restaurant.id);
-
-    note = note.toJSON();
-
-    restaurant.note = note['avg(`note`)'];
+    restaurant.note = await strapi.api.review.services.review.average(
+      restaurant.id
+    );
 
     let noteDetails = await Review.query(function(qb) {
-      qb.where('restaurant', '=', restaurant.id);
-      qb.groupBy('note');
-      qb.select('note');
+      qb.where("restaurant", "=", restaurant.id);
+      qb.groupBy("note");
+      qb.select("note");
       qb.count();
-    }).fetchAll();
-
-    noteDetails = noteDetails.toJSON();
+    })
+      .fetchAll()
+      .then(res => res.toJSON());
 
     restaurant.noteDetails = [];
 
-    for (let i = 1; i <= 5; i++) {
-      let detail = noteDetails.find((detail) => {
+    for (let i = 5; i > 0; i--) {
+      let detail = noteDetails.find(detail => {
         return detail.note === i;
       });
 
       if (detail) {
         detail = {
           note: detail.note,
-          count: detail['count(*)']
+          count: detail["count(*)"]
         };
       } else {
         detail = {
