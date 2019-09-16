@@ -26,7 +26,11 @@ function RestaurantPage(props) {
 
   return (
     <div className="page-wrapper" id="restaurant-page">
-      <Query query={GET_RESTAURANT} render={renderView} variables={{ id }} />
+      <Query
+        query={GET_RESTAURANT}
+        render={renderView}
+        variables={{ id, reviewsFilter: { restaurant: id } }}
+      />
     </div>
   );
 }

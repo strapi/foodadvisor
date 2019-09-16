@@ -2,7 +2,7 @@
 import gql from 'graphql-tag';
 
 const GET_RESTAURANT = gql`
-  query restaurant($id: ID!) {
+  query restaurant($id: ID!, $reviewsFilter: JSON) {
     restaurant(id: $id) {
       id
       address
@@ -17,7 +17,12 @@ const GET_RESTAURANT = gql`
       }
       name
       note
-      opening_hours
+      opening_hours {
+        id
+        day_interval
+        opening_hour
+        closing_hour
+      }
       phone
       noteDetails {
         note
@@ -37,7 +42,7 @@ const GET_RESTAURANT = gql`
       }
       website
     }
-    reviewsConnection(where: { restaurant: $id }) {
+    reviewsConnection(where: $reviewsFilter) {
       aggregate {
         count
       }

@@ -63,7 +63,7 @@ Review.defaultProps = {
 
 Review.propTypes = {
   content: PropTypes.string,
-  created_at: PropTypes.number,
+  created_at: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   author: PropTypes.shape({
     username: PropTypes.string,
     picture: PropTypes.shape({

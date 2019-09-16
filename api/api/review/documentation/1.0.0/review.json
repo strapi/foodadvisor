@@ -50,9 +50,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": [
           {
             "name": "_limit",
@@ -232,9 +230,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -299,9 +295,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": []
       }
     },
@@ -352,9 +346,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": [
           {
             "name": "id",
@@ -414,9 +406,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -488,9 +478,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": [
           {
             "name": "id",
@@ -509,9 +497,7 @@
   "components": {
     "schemas": {
       "Review": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -525,11 +511,7 @@
             "default": ""
           },
           "author": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
+            "required": ["id", "username", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -575,10 +557,25 @@
               }
             }
           },
+          "likes": {
+            "type": "array",
+            "items": {
+              "required": ["id"],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "review": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "restaurant": {
-            "required": [
-              "id"
-            ],
+            "required": ["id", "opening_hours"],
             "properties": {
               "id": {
                 "type": "string"
@@ -593,9 +590,6 @@
                 "type": "string"
               },
               "description": {
-                "type": "string"
-              },
-              "opening_hours": {
                 "type": "string"
               },
               "address": {
@@ -621,25 +615,9 @@
               },
               "category": {
                 "type": "string"
-              }
-            }
-          },
-          "likes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "author": {
-                  "type": "string"
-                },
-                "review": {
-                  "type": "string"
-                }
+              },
+              "opening_hours": {
+                "type": "group"
               }
             }
           }
@@ -658,14 +636,14 @@
           "author": {
             "type": "string"
           },
-          "restaurant": {
-            "type": "string"
-          },
           "likes": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "restaurant": {
+            "type": "string"
           }
         }
       }

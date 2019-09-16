@@ -50,9 +50,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Like"
-        ],
+        "tags": ["Like"],
         "parameters": [
           {
             "name": "_limit",
@@ -232,9 +230,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Like"
-        ],
+        "tags": ["Like"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -299,9 +295,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Like"
-        ],
+        "tags": ["Like"],
         "parameters": []
       }
     },
@@ -352,9 +346,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Like"
-        ],
+        "tags": ["Like"],
         "parameters": [
           {
             "name": "id",
@@ -414,9 +406,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Like"
-        ],
+        "tags": ["Like"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -488,9 +478,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Like"
-        ],
+        "tags": ["Like"],
         "parameters": [
           {
             "name": "id",
@@ -509,19 +497,13 @@
   "components": {
     "schemas": {
       "Like": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
           },
           "author": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
+            "required": ["id", "username", "email"],
             "properties": {
               "id": {
                 "type": "string"
@@ -568,9 +550,7 @@
             }
           },
           "review": {
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -584,14 +564,14 @@
               "author": {
                 "type": "string"
               },
-              "restaurant": {
-                "type": "string"
-              },
               "likes": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "restaurant": {
+                "type": "string"
               }
             }
           }

@@ -14,6 +14,7 @@ import {
 
 import H1 from '../H1';
 import NotePaper from '../NotePaper';
+import OpeningHours from '../OpeningHours';
 import Grid from '../Grid';
 
 /* eslint-disable camelcase */
@@ -21,11 +22,6 @@ function Informations({
   restaurant: { address, category, district, opening_hours, phone, website },
 }) {
   const infos = [
-    {
-      type: 'html',
-      title: 'Opening hours',
-      infos: opening_hours,
-    },
     {
       type: 'list',
       title: 'Details',
@@ -55,6 +51,9 @@ function Informations({
     <>
       <H1>Informations</H1>
       <Grid>
+        <li className="column informations-card">
+          <OpeningHours openingHours={opening_hours} />
+        </li>
         {infos.map(info => (
           <li key={info.title} className="column informations-card">
             <NotePaper informations={info} />
