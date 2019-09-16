@@ -51,9 +51,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -122,9 +120,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
@@ -179,13 +175,11 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
-    "/upload/files/{_id}": {
+    "/upload/files/{id}": {
       "get": {
         "deprecated": false,
         "description": "Retrieve a single file depending on its id",
@@ -236,12 +230,10 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -302,12 +294,10 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
-            "name": "_id",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -370,9 +360,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",

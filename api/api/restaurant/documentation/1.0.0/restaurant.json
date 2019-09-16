@@ -50,9 +50,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": [
           {
             "name": "_limit",
@@ -232,9 +230,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -299,9 +295,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": []
       }
     },
@@ -352,9 +346,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": [
           {
             "name": "id",
@@ -414,9 +406,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -488,9 +478,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": [
           {
             "name": "id",
@@ -509,9 +497,7 @@
   "components": {
     "schemas": {
       "Restaurant": {
-        "required": [
-          "id"
-        ],
+        "required": ["id", "opening_hours"],
         "properties": {
           "id": {
             "type": "string"
@@ -573,10 +559,6 @@
             "type": "string",
             "default": ""
           },
-          "opening_hours": {
-            "type": "string",
-            "default": ""
-          },
           "address": {
             "type": "string",
             "default": ""
@@ -592,12 +574,7 @@
           "price": {
             "type": "string",
             "default": "",
-            "enum": [
-              "_1",
-              "_2",
-              "_3",
-              "_4"
-            ]
+            "enum": ["_1", "_2", "_3", "_4"]
           },
           "district": {
             "type": "string",
@@ -628,9 +605,7 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -644,22 +619,20 @@
                 "author": {
                   "type": "string"
                 },
-                "restaurant": {
-                  "type": "string"
-                },
                 "likes": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
+                },
+                "restaurant": {
+                  "type": "string"
                 }
               }
             }
           },
           "category": {
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -674,20 +647,20 @@
                 }
               }
             }
+          },
+          "opening_hours": {
+            "type": "group"
           }
         }
       },
       "NewRestaurant": {
+        "required": ["opening_hours"],
         "properties": {
           "name": {
             "type": "string",
             "default": ""
           },
           "description": {
-            "type": "string",
-            "default": ""
-          },
-          "opening_hours": {
             "type": "string",
             "default": ""
           },
@@ -706,12 +679,7 @@
           "price": {
             "type": "string",
             "default": "",
-            "enum": [
-              "_1",
-              "_2",
-              "_3",
-              "_4"
-            ]
+            "enum": ["_1", "_2", "_3", "_4"]
           },
           "district": {
             "type": "string",
@@ -747,6 +715,9 @@
           },
           "category": {
             "type": "string"
+          },
+          "opening_hours": {
+            "type": "group"
           }
         }
       }
