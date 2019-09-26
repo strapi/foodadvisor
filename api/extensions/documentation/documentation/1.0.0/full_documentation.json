@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/26/2019 4:11:07 PM"
+    "x-generation-date": "09/26/2019 8:27:40 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -94,7 +94,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -274,7 +276,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -339,7 +343,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": []
       }
     },
@@ -390,7 +396,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -450,7 +458,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -522,7 +532,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -587,7 +599,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -767,7 +781,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -832,7 +848,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": []
       }
     },
@@ -883,7 +901,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -943,7 +963,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1015,7 +1037,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1080,7 +1104,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1260,7 +1286,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1325,7 +1353,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": []
       }
     },
@@ -1376,7 +1406,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1436,7 +1468,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1508,7 +1542,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1573,7 +1609,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1753,7 +1791,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1818,7 +1858,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": []
       }
     },
@@ -1869,7 +1911,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1929,7 +1973,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2001,7 +2047,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2067,7 +2115,9 @@
           }
         },
         "summary": "",
-        "tags": ["Email - Email"],
+        "tags": [
+          "Email - Email"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2136,7 +2186,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2205,7 +2257,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": []
       }
     },
@@ -2260,7 +2314,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": []
       }
     },
@@ -2315,7 +2371,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2379,7 +2437,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2445,7 +2505,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2511,7 +2573,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - Role"],
+        "tags": [
+          "Users-Permissions - Role"
+        ],
         "parameters": []
       }
     },
@@ -2562,7 +2626,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - Role"],
+        "tags": [
+          "Users-Permissions - Role"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2627,7 +2693,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - Role"],
+        "tags": [
+          "Users-Permissions - Role"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -2807,7 +2875,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - Role"],
+        "tags": [
+          "Users-Permissions - Role"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2868,7 +2938,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - Role"],
+        "tags": [
+          "Users-Permissions - Role"
+        ],
         "parameters": [
           {
             "name": "role",
@@ -2943,7 +3015,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - Role"],
+        "tags": [
+          "Users-Permissions - Role"
+        ],
         "parameters": [
           {
             "name": "role",
@@ -3008,7 +3082,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3204,7 +3280,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": []
       }
     },
@@ -3259,7 +3337,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3324,7 +3404,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3389,7 +3471,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "provider",
@@ -3455,7 +3539,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3524,7 +3610,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3593,7 +3681,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": []
       }
     },
@@ -3647,7 +3737,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -3829,7 +3921,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": []
       }
     },
@@ -3880,7 +3974,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3940,7 +4036,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -4015,7 +4113,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -4034,7 +4134,9 @@
   "components": {
     "schemas": {
       "Category": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -4046,7 +4148,10 @@
           "restaurants": {
             "type": "array",
             "items": {
-              "required": ["id", "opening_hours"],
+              "required": [
+                "id",
+                "opening_hours"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -4110,13 +4215,19 @@
         }
       },
       "Like": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
           },
           "author": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -4163,7 +4274,9 @@
             }
           },
           "review": {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -4201,7 +4314,10 @@
         }
       },
       "Restaurant": {
-        "required": ["id", "opening_hours"],
+        "required": [
+          "id",
+          "opening_hours"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -4278,7 +4394,12 @@
           "price": {
             "type": "string",
             "default": "",
-            "enum": ["_1", "_2", "_3", "_4"]
+            "enum": [
+              "_1",
+              "_2",
+              "_3",
+              "_4"
+            ]
           },
           "district": {
             "type": "string",
@@ -4309,7 +4430,9 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -4336,7 +4459,9 @@
             }
           },
           "category": {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -4353,12 +4478,36 @@
             }
           },
           "opening_hours": {
-            "type": "group"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "day_interval"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "day_interval": {
+                  "type": "string"
+                },
+                "opening_hour": {
+                  "type": "string"
+                },
+                "closing_hour": {
+                  "type": "string"
+                }
+              }
+            },
+            "minItems": 1
           }
         }
       },
       "NewRestaurant": {
-        "required": ["opening_hours"],
+        "required": [
+          "opening_hours"
+        ],
         "properties": {
           "name": {
             "type": "string",
@@ -4383,7 +4532,12 @@
           "price": {
             "type": "string",
             "default": "",
-            "enum": ["_1", "_2", "_3", "_4"]
+            "enum": [
+              "_1",
+              "_2",
+              "_3",
+              "_4"
+            ]
           },
           "district": {
             "type": "string",
@@ -4421,12 +4575,36 @@
             "type": "string"
           },
           "opening_hours": {
-            "type": "group"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "day_interval"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "day_interval": {
+                  "type": "string"
+                },
+                "opening_hour": {
+                  "type": "string"
+                },
+                "closing_hour": {
+                  "type": "string"
+                }
+              }
+            },
+            "minItems": 1
           }
         }
       },
       "Review": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -4440,7 +4618,11 @@
             "default": ""
           },
           "author": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -4489,7 +4671,9 @@
           "likes": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -4504,7 +4688,10 @@
             }
           },
           "restaurant": {
-            "required": ["id", "opening_hours"],
+            "required": [
+              "id",
+              "opening_hours"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -4577,7 +4764,10 @@
         }
       },
       "Users-PermissionsRole": {
-        "required": ["id", "name"],
+        "required": [
+          "id",
+          "name"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -4595,7 +4785,13 @@
           "permissions": {
             "type": "array",
             "items": {
-              "required": ["id", "type", "controller", "action", "enabled"],
+              "required": [
+                "id",
+                "type",
+                "controller",
+                "action",
+                "enabled"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -4624,7 +4820,11 @@
           "users": {
             "type": "array",
             "items": {
-              "required": ["id", "username", "email"],
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -4674,7 +4874,9 @@
         }
       },
       "NewUsers-PermissionsRole": {
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string",
@@ -4701,7 +4903,11 @@
         }
       },
       "Users-PermissionsUser": {
-        "required": ["id", "username", "email"],
+        "required": [
+          "id",
+          "username",
+          "email"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -4726,7 +4932,10 @@
             "default": false
           },
           "role": {
-            "required": ["id", "name"],
+            "required": [
+              "id",
+              "name"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -4757,7 +4966,9 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -4786,7 +4997,9 @@
           "likes": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -4849,7 +5062,10 @@
         }
       },
       "NewUsers-PermissionsUser": {
-        "required": ["username", "email"],
+        "required": [
+          "username",
+          "email"
+        ],
         "properties": {
           "username": {
             "type": "string",
@@ -4895,7 +5111,10 @@
         }
       },
       "Error": {
-        "required": ["code", "message"],
+        "required": [
+          "code",
+          "message"
+        ],
         "properties": {
           "code": {
             "type": "integer",

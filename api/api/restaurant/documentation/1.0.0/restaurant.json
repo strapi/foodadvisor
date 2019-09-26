@@ -50,7 +50,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -230,7 +232,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -295,7 +299,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": []
       }
     },
@@ -346,7 +352,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -406,7 +414,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -478,7 +488,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -497,7 +509,10 @@
   "components": {
     "schemas": {
       "Restaurant": {
-        "required": ["id", "opening_hours"],
+        "required": [
+          "id",
+          "opening_hours"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -574,7 +589,12 @@
           "price": {
             "type": "string",
             "default": "",
-            "enum": ["_1", "_2", "_3", "_4"]
+            "enum": [
+              "_1",
+              "_2",
+              "_3",
+              "_4"
+            ]
           },
           "district": {
             "type": "string",
@@ -605,7 +625,9 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -632,7 +654,9 @@
             }
           },
           "category": {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -649,12 +673,36 @@
             }
           },
           "opening_hours": {
-            "type": "group"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "day_interval"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "day_interval": {
+                  "type": "string"
+                },
+                "opening_hour": {
+                  "type": "string"
+                },
+                "closing_hour": {
+                  "type": "string"
+                }
+              }
+            },
+            "minItems": 1
           }
         }
       },
       "NewRestaurant": {
-        "required": ["opening_hours"],
+        "required": [
+          "opening_hours"
+        ],
         "properties": {
           "name": {
             "type": "string",
@@ -679,7 +727,12 @@
           "price": {
             "type": "string",
             "default": "",
-            "enum": ["_1", "_2", "_3", "_4"]
+            "enum": [
+              "_1",
+              "_2",
+              "_3",
+              "_4"
+            ]
           },
           "district": {
             "type": "string",
@@ -717,7 +770,29 @@
             "type": "string"
           },
           "opening_hours": {
-            "type": "group"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "day_interval"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "day_interval": {
+                  "type": "string"
+                },
+                "opening_hour": {
+                  "type": "string"
+                },
+                "closing_hour": {
+                  "type": "string"
+                }
+              }
+            },
+            "minItems": 1
           }
         }
       }
