@@ -50,7 +50,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -246,7 +248,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": []
       }
     },
@@ -301,7 +305,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -366,7 +372,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -431,7 +439,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "provider",
@@ -497,7 +507,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -566,7 +578,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -635,7 +649,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": []
       }
     },
@@ -689,7 +705,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -871,7 +889,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": []
       }
     },
@@ -922,7 +942,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -982,7 +1004,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1057,7 +1081,9 @@
           }
         },
         "summary": "",
-        "tags": ["Users-Permissions - User"],
+        "tags": [
+          "Users-Permissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1076,7 +1102,11 @@
   "components": {
     "schemas": {
       "Users-PermissionsUser": {
-        "required": ["id", "username", "email"],
+        "required": [
+          "id",
+          "username",
+          "email"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -1101,7 +1131,10 @@
             "default": false
           },
           "role": {
-            "required": ["id", "name"],
+            "required": [
+              "id",
+              "name"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -1132,7 +1165,9 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -1161,7 +1196,9 @@
           "likes": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -1213,8 +1250,8 @@
               "provider": {
                 "type": "string"
               },
-              "public_id": {
-                "type": "string"
+              "provider_metadata": {
+                "type": "object"
               },
               "related": {
                 "type": "string"
@@ -1224,7 +1261,10 @@
         }
       },
       "NewUsers-PermissionsUser": {
-        "required": ["username", "email"],
+        "required": [
+          "username",
+          "email"
+        ],
         "properties": {
           "username": {
             "type": "string",

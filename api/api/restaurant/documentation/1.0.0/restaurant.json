@@ -557,8 +557,8 @@
                 "provider": {
                   "type": "string"
                 },
-                "public_id": {
-                  "type": "string"
+                "provider_metadata": {
+                  "type": "object"
                 },
                 "related": {
                   "type": "string"
