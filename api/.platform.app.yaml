@@ -12,10 +12,9 @@ type: nodejs:10
 # The hooks that will be triggered when the package is deployed.
 hooks:
     # Build hooks can modify the application files on disk but not access any services like databases.
-    build: |
-      yarn
-      yarn run seed
-      yarn develop
+    build: !include
+      type: string
+      path: build.sh
 
 # The relationships of the application with services or other applications.
 #
@@ -25,10 +24,6 @@ hooks:
 relationships:
   database: "db:mysql"
 
-# The configuration of app when it is exposed to the web.
-web:
-  commands:
-   start: "node index.js"
 
 # The size of the persistent disk of the application (in MB).
 disk: 512
