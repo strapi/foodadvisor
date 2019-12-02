@@ -11,4 +11,3 @@ export PATH="$PATH:yarn-v$YARN_VERSION/bin"
 
 yarn
 yarn run seed
-yarn develop

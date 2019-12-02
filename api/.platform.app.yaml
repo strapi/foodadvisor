@@ -24,6 +24,11 @@ hooks:
 relationships:
   database: "db:mysql"
 
+# The configuration of app when it is exposed to the web.
+web:
+  commands:
+   start: "yarn develop"
+
 
 # The size of the persistent disk of the application (in MB).
 disk: 512

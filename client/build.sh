@@ -10,4 +10,3 @@ rm yarn-v$YARN_VERSION.tar.gz
 export PATH="$PATH:yarn-v$YARN_VERSION/bin"
 
 yarn install
-yarn start
