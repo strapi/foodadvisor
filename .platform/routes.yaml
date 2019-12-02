@@ -5,8 +5,16 @@
 
 "https://www.{default}/":
     type: upstream
-    upstream: "app:http"
+    upstream: "client:http"
 
 "https://{default}/":
+    type: redirect
+    to: "https://www.{default}/"
+
+"https://www.api.{default}/":
+    type: upstream
+    upstream: "api:http"
+
+"https://api.{default}/":
     type: redirect
     to: "https://www.{default}/"
