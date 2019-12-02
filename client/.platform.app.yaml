@@ -23,6 +23,7 @@ hooks:
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
   database: "db:mysql"
+  
 
 # The size of the persistent disk of the application (in MB).
 disk: 512
