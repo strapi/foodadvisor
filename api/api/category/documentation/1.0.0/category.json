@@ -50,7 +50,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -230,7 +232,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -295,7 +299,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": []
       }
     },
@@ -346,7 +352,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -406,7 +414,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -478,7 +488,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -497,7 +509,9 @@
   "components": {
     "schemas": {
       "Category": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -509,7 +523,10 @@
           "restaurants": {
             "type": "array",
             "items": {
-              "required": ["id", "opening_hours"],
+              "required": [
+                "id",
+                "opening_hours"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -551,7 +568,7 @@
                   "type": "string"
                 },
                 "opening_hours": {
-                  "type": "group"
+                  "type": "component"
                 }
               }
             }
