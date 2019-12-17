@@ -4,7 +4,7 @@
     "description": ""
   },
   "connection": "default",
-  "collectionName": "groups_opening_hours",
+  "collectionName": "components_opening_hours",
   "attributes": {
     "day_interval": {
       "required": true,
