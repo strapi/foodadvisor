@@ -76,11 +76,11 @@
       "via": "restaurants"
     },
     "opening_hours": {
-      "group": "opening_hours",
+      "type": "component",
+      "component": "restaurant.opening-hours",
       "min": 1,
       "repeatable": true,
-      "required": true,
-      "type": "group"
+      "required": true
     }
   }
 }
