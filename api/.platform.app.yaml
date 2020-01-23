@@ -1,0 +1,51 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+#
+# See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
+
+# The name of this app. Must be unique within a project.
+name: api
+
+# The runtime the application uses.
+type: nodejs:12
+
+# The hooks that will be triggered when the package is deployed.
+hooks:
+    # Build hooks can modify the application files on disk but not access any services like databases.
+    build: !include
+      type: string
+      path: scripts/build.sh
+    deploy: !include
+      type: string
+      path: scripts/deploy.sh
+    post_deploy: !include
+      type: string
+      path: scripts/post_deploy.sh
+
+# The configuration of app when it is exposed to the web.
+web:
+  commands:
+    start: npm run develop
+
+# The size of the persistent disk of the application (in MB).
+disk: 1024
+
+mounts:
+    '/.cache':
+        source: local
+        source_path: cache
+    'data':
+        source: local
+        source_path: data
+    'api':
+        source: local
+        source_path: api
+    'components':
+        source: local
+        source_path: components
+    'public/uploads':
+        source: local
+        source_path: uploads
+    '/.tmp':
+        source: local
+        source_path: tmp
