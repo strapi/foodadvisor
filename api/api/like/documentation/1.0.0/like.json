@@ -50,7 +50,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -168,7 +170,10 @@
             "required": false,
             "description": "Get records that matches any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           },
@@ -178,7 +183,10 @@
             "required": false,
             "description": "Get records that doesn't match any value in the array of values",
             "schema": {
-              "type": "array"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             },
             "deprecated": false
           }
@@ -230,7 +238,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -295,7 +305,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": []
       }
     },
@@ -346,7 +358,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -406,7 +420,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -478,7 +494,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -497,13 +515,19 @@
   "components": {
     "schemas": {
       "Like": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
           },
           "author": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -550,7 +574,9 @@
             }
           },
           "review": {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
