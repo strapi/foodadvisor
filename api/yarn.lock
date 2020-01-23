@@ -9444,7 +9444,7 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^1.6.0"
 
-strapi-admin@^3.0.0-beta.18:
+strapi-admin@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-admin/-/strapi-admin-3.0.0-beta.18.6.tgz#26c53f9b6c256808d69ead094cda4abff9fe2ff9"
   integrity sha512-So9yBOVWrjtgL716ET6WuDtP3pAN0gi0dyWM40iOUmYyNF6HLmsm6wooByf3H9+MTN6rwRtbCDl8EEmird4HLQ==
@@ -9530,7 +9530,7 @@ strapi-admin@^3.0.0-beta.18:
     webpackbar "^3.2.0"
     yup "^0.27.0"
 
-strapi-connector-bookshelf@^3.0.0-beta.18:
+strapi-connector-bookshelf@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-connector-bookshelf/-/strapi-connector-bookshelf-3.0.0-beta.18.6.tgz#30980ea6dcc32d0c0c91a6b637eec23933d7b7eb"
   integrity sha512-TJ6iaU8aL80pS3IJEq6ybbr56RJ5L8/KjYQ0+n3/vCDL80oSnS100oGAJ3EZL7rpx9YI8oMN85qRwWTXPn0BzA==
@@ -9643,7 +9643,7 @@ strapi-helper-plugin@3.0.0-beta.18.6:
     styled-components "^4.3.1"
     whatwg-fetch "^2.0.3"
 
-strapi-plugin-content-manager@^3.0.0-beta.18:
+strapi-plugin-content-manager@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.0.0-beta.18.6.tgz#2316f22edb73350365411df6739d6c3117906e36"
   integrity sha512-E/XEfUSAF5AnRKjiy/HepZ1FGEK6iCzjn0uBkiTY63Cj3IGs7lM2gOPBRh7mKzMODjLtPWq2TZWRL9jefUx3Hw==
@@ -9673,7 +9673,7 @@ strapi-plugin-content-manager@^3.0.0-beta.18:
     styled-components "^4.2.0"
     yup "^0.27.0"
 
-strapi-plugin-content-type-builder@^3.0.0-beta.18:
+strapi-plugin-content-type-builder@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-plugin-content-type-builder/-/strapi-plugin-content-type-builder-3.0.0-beta.18.6.tgz#50050534c12d6a4f5787eb5b47cf91c83fcc802b"
   integrity sha512-vFUtkeCxRqVPQ0qPRpw8TyDVTgqrXpC2E4EIPlq6S6BfpLZ9iXIpRXtOvHxLMvYlcqv3cj3nl0vPbwmneqoUgg==
@@ -9701,7 +9701,7 @@ strapi-plugin-content-type-builder@^3.0.0-beta.18:
     strapi-helper-plugin "3.0.0-beta.18.6"
     yup "^0.27.0"
 
-strapi-plugin-documentation@^3.0.0-beta.18:
+strapi-plugin-documentation@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-plugin-documentation/-/strapi-plugin-documentation-3.0.0-beta.18.6.tgz#854ba94163d51f27da397f7afd25151a5d2cdea8"
   integrity sha512-kqmIGDDmuLq7G8UTsNir8vg1NJhuj/RD54LqrRqf2FD5N4qBvwvvND78J2jbZd3umH8rws4ZcPjYKdluWzxtZQ==
@@ -9730,7 +9730,7 @@ strapi-plugin-documentation@^3.0.0-beta.18:
     strapi-helper-plugin "3.0.0-beta.18.6"
     swagger-ui-dist "3.24.3"
 
-strapi-plugin-email@^3.0.0-beta.18:
+strapi-plugin-email@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-plugin-email/-/strapi-plugin-email-3.0.0-beta.18.6.tgz#51e0936088f43375178e8220159bacbc2814564c"
   integrity sha512-lZJjmD7XxpEY7I7XHZEQ9kV5HEEgL4XL2t7trtIoSwf6laYVt749yrauw5roCanZ2J2sKY0y+8/0hINJue3Heg==
@@ -9738,7 +9738,7 @@ strapi-plugin-email@^3.0.0-beta.18:
     strapi-provider-email-sendmail "3.0.0-beta.18.6"
     strapi-utils "3.0.0-beta.18.6"
 
-strapi-plugin-graphql@^3.0.0-beta.18:
+strapi-plugin-graphql@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-plugin-graphql/-/strapi-plugin-graphql-3.0.0-beta.18.6.tgz#a84a80c9ab8217d9cb3080c7175e882b9fd08f4f"
   integrity sha512-cweuYexJD26FlNStoilx4OFgC/ld9wSZiUpuRxUYXOejdzZ3XE5S0L2WZg2Q3mGSdPFyYU1il8HFXldu4DvH6A==
@@ -9757,7 +9757,7 @@ strapi-plugin-graphql@^3.0.0-beta.18:
     pluralize "^7.0.0"
     strapi-utils "3.0.0-beta.18.6"
 
-strapi-plugin-upload@^3.0.0-beta.18:
+strapi-plugin-upload@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-plugin-upload/-/strapi-plugin-upload-3.0.0-beta.18.6.tgz#5e584884793fc81f6cee4e051bd40aae2ebf925b"
   integrity sha512-v0nVJ/t1mjJJrMpBuJzIdVkB2icr0vhJcQpuhv98KagGhRJeL3hQySyJBZzWqVd8vaaTNJ3zbH9QDWWQk3u8lg==
@@ -9780,7 +9780,7 @@ strapi-plugin-upload@^3.0.0-beta.18:
     stream-to-array "^2.3.0"
     uuid "^3.2.1"
 
-strapi-plugin-users-permissions@^3.0.0-beta.18:
+strapi-plugin-users-permissions@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-plugin-users-permissions/-/strapi-plugin-users-permissions-3.0.0-beta.18.6.tgz#ab1e505c77a9078939a8b27f0c56bebcdca04f16"
   integrity sha512-RgaaZcZtroTOnvkj1tXsF/6dBZnlGB4brTEpor5n/8miT7iTk3BsUhlevKtVEs3FIOHhgsnEc583SLTu+BRNVw==
@@ -9822,7 +9822,7 @@ strapi-provider-upload-local@3.0.0-beta.18.6:
   resolved "https://registry.yarnpkg.com/strapi-provider-upload-local/-/strapi-provider-upload-local-3.0.0-beta.18.6.tgz#b50eb23f175ed6c0f7782811395b1e0c20326bae"
   integrity sha512-AdpAFrNL9XFKAELSaAffb8EWsrWghfMD9A+/vbbfhJtTzJ+X/8Vjorq35JJAxwxTnyRMw8HFC9P6wPmBaYVGUg==
 
-strapi-utils@3.0.0-beta.18.6, strapi-utils@^3.0.0-beta.18:
+strapi-utils@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi-utils/-/strapi-utils-3.0.0-beta.18.6.tgz#ba08481f6e2b2d6ab5bbf487adcbabe3e2a6f6bd"
   integrity sha512-ulR1UX/GSpK7Enu6/dZRYWAy7zmW2K6T4WIOWhTUC78iMPoJK9WOohPTkf1rBgjACRToLRDlEADdejq9Rnv8Qw==
@@ -9835,7 +9835,7 @@ strapi-utils@3.0.0-beta.18.6, strapi-utils@^3.0.0-beta.18:
     shelljs "^0.8.3"
     yup "^0.28.0"
 
-strapi@^3.0.0-beta.18:
+strapi@3.0.0-beta.18.6:
   version "3.0.0-beta.18.6"
   resolved "https://registry.yarnpkg.com/strapi/-/strapi-3.0.0-beta.18.6.tgz#878f6afe048ed221066a08f4831043d7045575b1"
   integrity sha512-kR+lrzl2UeUmpcyIyo5l6neagx7NMK3chjgBpCgIoQ3CHtAPZbVUyhZRr3e2vtMVK1yTYs+6YjpD4m7n7yQtyQ==
