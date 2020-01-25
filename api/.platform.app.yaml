@@ -43,6 +43,9 @@ mounts:
     'components':
         source: local
         source_path: components
+    'exports':
+        source: local
+        source_path: exports
     'public/uploads':
         source: local
         source_path: uploads
