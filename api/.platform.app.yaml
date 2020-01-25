@@ -46,6 +46,9 @@ mounts:
     'exports':
         source: local
         source_path: exports
+    'extensions/documentation':
+        source: local
+        source_path: extensions/documentation
     'public/uploads':
         source: local
         source_path: uploads
