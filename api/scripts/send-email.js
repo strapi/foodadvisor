@@ -2,7 +2,7 @@ const config = require('platformsh-config').config();
 const http = require('http');
 
 // Platform.sh
-const projectUrl = `${config.getPrimaryRoute().url}admin`;
+const projectUrl = `${config.getPrimaryRoute().url}`;
 const email = config.branch;
 
 // HubSpot
