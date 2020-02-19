@@ -3,7 +3,7 @@ const http = require('http');
 
 // Platform.sh
 const projectUrl = `${config.getPrimaryRoute().url}`;
-const email = config.variablesDef.EMAIL;
+const email = config.variablesDefconfig && config.variablesDef.EMAIL;
 
 // HubSpot
 const hubSpotProjectId = '6893032';
