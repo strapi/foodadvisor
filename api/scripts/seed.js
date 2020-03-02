@@ -1,8 +1,6 @@
-const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
-
-const rimraf = require('rimraf');
+const util = require('util');
+const fse = require('fs-extra');
 const unzip = require('unzip-stream');
 
 const zipPath = path.resolve('data.zip');
@@ -12,41 +10,32 @@ const uploadDataPath = path.join(dataPath, 'uploads');
 const uploadPath = path.join('public', 'uploads');
 const tmpPath = path.resolve('.tmp');
 
-function dumpSqlite() {
-  return new Promise((resolve, reject) => {
-    exec(
-      'cat data/dump.sql | sqlite3 .tmp/data.db',
-      (error, stdout, stderr) => {
-        if (error) {
-          return reject(error);
-        }
+const sqlite = require('sqlite3').verbose();
 
-        if (stderr) {
-          return reject(stderr);
-        }
+async function dumpSqlite() {
+  const db = new sqlite.Database('.tmp/data.db');
+  const sql = fse.readFileSync('./data/dump.sql').toString();
 
-        resolve(stdout);
-      }
-    );
-  });
+  await util.promisify(db.exec).bind(db)(sql);
+  await util.promisify(db.close).bind(db);
 }
 
 async function seed() {
   try {
-    rimraf.sync(tmpPath);
-    fs.mkdirSync(tmpPath);
+    await fse.emptyDir(tmpPath);
   } catch (err) {
     console.log(`Fail to remove ${tmpPath}`);
   }
 
   try {
-    rimraf.sync(uploadPath);
+    await fse.emptyDir(uploadPath);
   } catch (err) {
     console.log(`Fail to remove ${uploadPath}`);
   }
 
   await new Promise(resolve => {
-    fs.createReadStream(zipPath)
+    fse
+      .createReadStream(zipPath)
       .pipe(unzip.Extract({ path: '.' }))
       .on('close', resolve);
   });
@@ -58,13 +47,13 @@ async function seed() {
   }
 
   try {
-    fs.renameSync(uploadDataPath, uploadPath);
+    await fse.rename(uploadDataPath, uploadPath);
   } catch (err) {
     console.log(`Fail move ${uploadDataPath} to  ${uploadPath}`);
   }
 
   try {
-    rimraf.sync(dataPath);
+    await fse.remove(dataPath);
   } catch (err) {
     console.log(`Fail to remove ${dataPath}`);
   }
