@@ -38,12 +38,14 @@ module.exports = {
       restaurant.id
     );
 
-    let noteDetails = await Review.query(function(qb) {
-      qb.where("restaurant", "=", restaurant.id);
-      qb.groupBy("note");
-      qb.select("note");
-      qb.count();
-    })
+    let noteDetails = await strapi
+      .query('review')
+      .model.query(function(qb) {
+        qb.where('restaurant', '=', restaurant.id);
+        qb.groupBy('note');
+        qb.select('note');
+        qb.count();
+      })
       .fetchAll()
       .then(res => res.toJSON());
 
@@ -57,12 +59,12 @@ module.exports = {
       if (detail) {
         detail = {
           note: detail.note,
-          count: detail["count(*)"]
+          count: detail['count(*)'],
         };
       } else {
         detail = {
           note: i,
-          count: 0
+          count: 0,
         };
       }
 
@@ -70,5 +72,5 @@ module.exports = {
     }
 
     return restaurant;
-  }
+  },
 };

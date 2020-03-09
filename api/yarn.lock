@@ -6485,6 +6485,11 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+lodash-es@^4.17.11:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
+  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
+
 lodash.deburr@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/lodash.deburr/-/lodash.deburr-4.1.0.tgz#ddb1bbb3ef07458c0177ba07de14422cb033ff9b"
@@ -9552,10 +9557,10 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^1.6.0"
 
-strapi-admin@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-admin/-/strapi-admin-3.0.0-beta.19.1.tgz#95be09f4d11383175415ace4e2e2db2c1b301c2f"
-  integrity sha512-UN77HnHUyWSqIV4JfPnAEE2lN4jXemWVdLIN92tO7x2we+odZu6ir1Pdfh5WhDzawycGanApQOOu++SxgKwZDA==
+strapi-admin@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-admin/-/strapi-admin-3.0.0-beta.19.3.tgz#875edea332b9f8c4ffda2a51135728add4545d6c"
+  integrity sha512-T26U/BIRO0g5oname06Vx6Au4x73oshZ1fIt05EC08kQ6JMj0tMcVkMvU56UYnd5pIKDtU7tstQ9tINFminhGw==
   dependencies:
     "@babel/core" "^7.4.3"
     "@babel/plugin-proposal-async-generator-functions" "^7.2.0"
@@ -9630,8 +9635,8 @@ strapi-admin@3.0.0-beta.19.1:
     reselect "^3.0.1"
     sanitize.css "^4.1.0"
     shelljs "^0.7.8"
-    strapi-helper-plugin "3.0.0-beta.19.1"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-helper-plugin "3.0.0-beta.19.3"
+    strapi-utils "3.0.0-beta.19.3"
     style-loader "^0.23.1"
     styled-components "^5.0.0"
     terser-webpack-plugin "^1.2.3"
@@ -9643,10 +9648,10 @@ strapi-admin@3.0.0-beta.19.1:
     webpackbar "^3.2.0"
     yup "^0.27.0"
 
-strapi-connector-bookshelf@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-connector-bookshelf/-/strapi-connector-bookshelf-3.0.0-beta.19.1.tgz#c6b782d438041aa19ab3fc75f4f5b88d2f740f54"
-  integrity sha512-R2kLz4xGh15HeNFmN8XZB4e/5JOlmWf0inHfBC9yUUCHoJHKbphBpQgFXz11ze+LrN1zaEQwkpcg0d9fnpT4ew==
+strapi-connector-bookshelf@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-connector-bookshelf/-/strapi-connector-bookshelf-3.0.0-beta.19.3.tgz#35aa1806e1c359b8a70eff89c03f08c52d16c399"
+  integrity sha512-bY0VKl0rRYvntJvVKrZLb1rtt720r+o3iVkvI05OEKGFvCZY8mupfpSuxAXAnGHiZnwY106i2nu3n2TjlKKUTg==
   dependencies:
     bookshelf "^1.0.1"
     date-fns "^2.8.1"
@@ -9654,43 +9659,43 @@ strapi-connector-bookshelf@3.0.0-beta.19.1:
     lodash "^4.17.11"
     pluralize "^7.0.0"
     rimraf "3.0.0"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-utils "3.0.0-beta.19.3"
 
-strapi-database@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-database/-/strapi-database-3.0.0-beta.19.1.tgz#a611f90a893af9e989a641baf3ca75467382bd1a"
-  integrity sha512-BU2aQZLep6Etsy7Ak8pMH17YQ5TrW0zbIGytSKT3z/YDyC7bADlmroW3EdPpiqkvqTHdMP0e0rMxbRgwTbBDcQ==
+strapi-database@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-database/-/strapi-database-3.0.0-beta.19.3.tgz#95b2a996d655fb0c3198b3693605abfc517dd789"
+  integrity sha512-By9MkLrs+DXQkQIZG8+dPtj8XpuRa6LjKM5M1bWjcmGMJiFtm4Gb4q9MwpfHZqs3TplS981WxSsCSEWmLU9+gQ==
   dependencies:
     lodash "^4.17.11"
     verror "^1.10.0"
 
-strapi-generate-api@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate-api/-/strapi-generate-api-3.0.0-beta.19.1.tgz#43b036b35f2b462d7597dd23249fca94fca78f12"
-  integrity sha512-2KEuuQ7dp9LFxqyUE1qvCJEKwfxL9kcNVyvK3JMAvusaldlsxtgbKXqNO+203Lz6lsbXlfwuGMDx/M4RWdp37Q==
+strapi-generate-api@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate-api/-/strapi-generate-api-3.0.0-beta.19.3.tgz#0acda15d35b4aac075307af24f97e262e473d213"
+  integrity sha512-MCaz+WktkVgD/xUceHjiC7BAn29GcfxQ4QB4204rzj/7gLBuvJhsGhkQVFBDaZV3p9lTL9q4M2kvgi1y7bqPYw==
   dependencies:
     lodash "^4.17.11"
     pluralize "^7.0.0"
 
-strapi-generate-controller@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate-controller/-/strapi-generate-controller-3.0.0-beta.19.1.tgz#5a31e226187959904aade931d55c2ca3f21493e6"
-  integrity sha512-rUPcupIOxg1KsrBayMSZaTrZWOecyexATe3B6i/wVSnOirKQulDnX/65IVhQXZZfFaWZEhBhaEE3EXNpOR4ccA==
+strapi-generate-controller@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate-controller/-/strapi-generate-controller-3.0.0-beta.19.3.tgz#3384d5a3d18d3c690ab2fb9f2e0d7633a4055bc0"
+  integrity sha512-jPKnTHAS869gZFaLwwJF/rzAVyBFJuQQAVG9L9clRl5XvBbdMsssado2Ug055IW8PiefOvqkmLrY+PqxDHxH/g==
   dependencies:
     lodash "^4.17.11"
 
-strapi-generate-model@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate-model/-/strapi-generate-model-3.0.0-beta.19.1.tgz#58a5f87e8c42afc4499f380027271593084cbae3"
-  integrity sha512-eTWBW2oNxBwPElX7WVz+wV1Chn+N8qIc77ZZ7BSa130o0TX94UfN/eoeYzcwOn2fLbLGPpg7H6XvsiijHy2/NA==
+strapi-generate-model@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate-model/-/strapi-generate-model-3.0.0-beta.19.3.tgz#5cff7b888a4e66c1450633a676c51e953b976375"
+  integrity sha512-i9thUGtz03fTxx4t46YUw7RKBwChzXwDEXBji8Vtr9LQWwGwjwQLLD4aeg83XlKORlWHnhaSBVA+Jzz7XVtjIw==
   dependencies:
     lodash "^4.17.11"
     pluralize "^7.0.0"
 
-strapi-generate-new@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate-new/-/strapi-generate-new-3.0.0-beta.19.1.tgz#a21520d3e6efb217aef49978daf3033c1147dd18"
-  integrity sha512-lmjTMrGSPJrRWTUgRQyT1xKP78RqYoGKHlGP3WC6G0eqlYbruJBRfgWUKqfF5XW6DjGPaXE3g87Sq94gsTSszA==
+strapi-generate-new@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate-new/-/strapi-generate-new-3.0.0-beta.19.3.tgz#41e2b61675b56e96b1742455ee8afd637687581f"
+  integrity sha512-SBNSfIJrcqUQt+ghWwAXC7r95m/iAzR0TRHlC6xsG5k5c3aEHJXpcRMuqsM1OGGz71ov7gfoRuUb8jgZYBbtQg==
   dependencies:
     "@sentry/node" "^5.7.1"
     chalk "^2.4.2"
@@ -9703,43 +9708,43 @@ strapi-generate-new@3.0.0-beta.19.1:
     ora "^3.4.0"
     uuid "^3.3.2"
 
-strapi-generate-plugin@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate-plugin/-/strapi-generate-plugin-3.0.0-beta.19.1.tgz#a9b6ae6261387d3be459948592994eeadbdcb678"
-  integrity sha512-xGO4lHECtAmfyxzubFH0YuK4C5AXmYrbQbP69zkYp6sc5jfcqaPg58qu0cKjGBQmlMfHuE+beg7KT9hHP5KtHg==
+strapi-generate-plugin@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate-plugin/-/strapi-generate-plugin-3.0.0-beta.19.3.tgz#3a15602d403fd5f0de0e5c205c3f2cf008391031"
+  integrity sha512-aBZr93pNIHb+RB9fulSPtQqk+GHUbFi4L2hOINjISBoQRpjklNZSlmTr6Yj5dsMtQvta5rl7/Ae4TJ3t6QuVSg==
   dependencies:
     fs-extra "^8.0.1"
     lodash "^4.17.11"
 
-strapi-generate-policy@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate-policy/-/strapi-generate-policy-3.0.0-beta.19.1.tgz#f9e603ea3ec5ea2040ff8abe4863d0bdadf2c896"
-  integrity sha512-EGDV30gPpDMmfeVcJVRwfPwBEk3UDWrfbu003Haq8QZEXUwmPF7I/zWIswYeSp6RpgVdbebC//prFykSVX8NxA==
+strapi-generate-policy@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate-policy/-/strapi-generate-policy-3.0.0-beta.19.3.tgz#27fbecc01b414ccdc60ed7440dba9dbcf3c8b91d"
+  integrity sha512-1IZ/sIiv9/17kqolpQ9mcNlF7RXp9ghnittXNGmu70z/2j6p3Hz9w609f2YQRBKdw9QO9J2v2SmfxTPhLuH53w==
   dependencies:
     lodash "^4.17.11"
 
-strapi-generate-service@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate-service/-/strapi-generate-service-3.0.0-beta.19.1.tgz#8521f8e5f520871171d58ce2aaf314c438510170"
-  integrity sha512-HCiN0d9LjXaV0X8xgdbH5i5CTUbeZuPuww+Xcsc6eAscgU03roKIKaDXlLgzsR3CSMUXyKXtYq3DDA5EveOc1Q==
+strapi-generate-service@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate-service/-/strapi-generate-service-3.0.0-beta.19.3.tgz#4f5adad56ceb3c2816ba910786d12f2d7a708c88"
+  integrity sha512-KI5OjfgtlTAugLDr8lVOk30nJTTiY9pep1rpGet3cOqbH1bqVxvHqXX3FGIlExuaKGbnHHiYRzE3UlIBOMUpoA==
   dependencies:
     lodash "^4.17.11"
 
-strapi-generate@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-generate/-/strapi-generate-3.0.0-beta.19.1.tgz#0657d498e78881b5febd9eff3958532e52047131"
-  integrity sha512-+YkjUYJmZu9ECjnS9lhFw0aLUEIb8q32W1VNKulM2T15uU0OJxOtzP/WdbDrAJTEgqwATG/M8xIUFg+DZICaAg==
+strapi-generate@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-generate/-/strapi-generate-3.0.0-beta.19.3.tgz#5097506518ff09a9270427159e23130b6a16be4e"
+  integrity sha512-XEprl5eHMnfvBkW5TpBx9Wv2bsLYN8h5VMdrvBmLneYx5uXdo8TrrmzcqC5NDeWn1G0lSipUvvaRAEVX4nLEbw==
   dependencies:
     async "^2.6.2"
     fs-extra "^8.0.1"
     lodash "^4.17.11"
     reportback "^2.0.2"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-utils "3.0.0-beta.19.3"
 
-strapi-helper-plugin@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-helper-plugin/-/strapi-helper-plugin-3.0.0-beta.19.1.tgz#f8eb75e7e4ae253ff9f82aad61061cd95df193f0"
-  integrity sha512-+3QvZX9ZhHB+MY25q7wXCtYEenPR4Nyz7umrcEIfVWGmLWqrP/DoB89sSI0SJ41V8h0nJQH0A2E1new8qwc4HQ==
+strapi-helper-plugin@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-helper-plugin/-/strapi-helper-plugin-3.0.0-beta.19.3.tgz#f35c93b8f4e89c1e486b153f89e3e741df4681eb"
+  integrity sha512-lpx8klaqpycG8OsyZ2WP5y1l1jiIzgLBnve1k+BxtT+hoyiw1E0iHrx9kPNYy1peLIhsqB4q8UMVkrJLeJVWUA==
   dependencies:
     bootstrap "^4.3.1"
     classnames "^2.2.5"
@@ -9757,10 +9762,10 @@ strapi-helper-plugin@3.0.0-beta.19.1:
     styled-components "^5.0.0"
     whatwg-fetch "^2.0.3"
 
-strapi-plugin-content-manager@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.0.0-beta.19.1.tgz#9a89e41248b4a5ce10053db7c79db2e8eec9e56c"
-  integrity sha512-TVDrQDlGX1bVcUKRiUH6iedve8WlKPTNmR9ZURnMqfpVE09R+eNbw3zfFwhDR3jjRYfPk/Ipgtjh0boVt8Rrtg==
+strapi-plugin-content-manager@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.0.0-beta.19.3.tgz#a6fe080bac0a4379c1da98b1a23abb0c73a49f1b"
+  integrity sha512-zxFMQQiHu87qI+VgyumNmV1mbbNf7Unl1eCq0ayemGzWHyzmYOdwNXE/AFzPzXhvol3Gbw5vyCO9HsfBqOOLNw==
   dependencies:
     "@sindresorhus/slugify" "0.9.1"
     classnames "^2.2.6"
@@ -9783,14 +9788,14 @@ strapi-plugin-content-manager@3.0.0-beta.19.1:
     redux-immutable "^4.0.0"
     reselect "^3.0.1"
     showdown "^1.9.0"
-    strapi-helper-plugin "3.0.0-beta.19.1"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-helper-plugin "3.0.0-beta.19.3"
+    strapi-utils "3.0.0-beta.19.3"
     yup "^0.27.0"
 
-strapi-plugin-content-type-builder@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-content-type-builder/-/strapi-plugin-content-type-builder-3.0.0-beta.19.1.tgz#991d22223614430153aa1e169ad67d04fc6a0d79"
-  integrity sha512-CZE7LHkcuWeSxQdx+UCncm5KOWzzUsu9oGzCLTJLb99SAJ5TWWuFXdjIeE8SvxaJfSStgmfaXqULw7nowmc+mw==
+strapi-plugin-content-type-builder@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-content-type-builder/-/strapi-plugin-content-type-builder-3.0.0-beta.19.3.tgz#d28f5c58fddf1a29e3a3bb7ccae7ce5ee104b097"
+  integrity sha512-1ypRf2/XldJYiDvzWWiuJji+mUrMMmD4iaq0YxmWz6wxuQeK0430cdWSw02wIHp/LZPRCT7ygenJbrAzjgepbQ==
   dependencies:
     "@sindresorhus/slugify" "0.9.1"
     classnames "^2.2.6"
@@ -9810,16 +9815,16 @@ strapi-plugin-content-type-builder@3.0.0-beta.19.1:
     redux "^4.0.1"
     redux-immutable "^4.0.0"
     reselect "^3.0.1"
-    strapi-generate "3.0.0-beta.19.1"
-    strapi-generate-api "3.0.0-beta.19.1"
-    strapi-helper-plugin "3.0.0-beta.19.1"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-generate "3.0.0-beta.19.3"
+    strapi-generate-api "3.0.0-beta.19.3"
+    strapi-helper-plugin "3.0.0-beta.19.3"
+    strapi-utils "3.0.0-beta.19.3"
     yup "^0.27.0"
 
-strapi-plugin-documentation@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-documentation/-/strapi-plugin-documentation-3.0.0-beta.19.1.tgz#0f657b90c6f6e6ee9c95e1cb9685ada56d76adba"
-  integrity sha512-PIoSEhIoT2yTxOVOX73EH61zsSh9ZX6P3Q9hOjDHHCr2uz/xFHiTE3KkYiLuHmmvdDt1bh+rvIQt5zpar+N0fA==
+strapi-plugin-documentation@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-documentation/-/strapi-plugin-documentation-3.0.0-beta.19.3.tgz#811bcc946f8f7768e09dd617b8c1ab188802a014"
+  integrity sha512-tyG/mBR05fQhl4miHEGYbXFKU7BMw1H73yMKoyd4rEOSg3/jGG1Q/YGJqa8PHfpP4GVeYhbhxbbkGTkcb2ic/A==
   dependencies:
     cheerio "^1.0.0-rc.3"
     classnames "^2.2.6"
@@ -9842,22 +9847,22 @@ strapi-plugin-documentation@3.0.0-beta.19.1:
     redux "^4.0.1"
     redux-immutable "^4.0.0"
     reselect "^4.0.0"
-    strapi-helper-plugin "3.0.0-beta.19.1"
+    strapi-helper-plugin "3.0.0-beta.19.3"
     swagger-ui-dist "3.24.3"
 
-strapi-plugin-email@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-email/-/strapi-plugin-email-3.0.0-beta.19.1.tgz#887f498e8a564efab46d0966f03525d7b03cb87c"
-  integrity sha512-nM8HY+sSN+xCWoV0JYQcwlYQGXU6NcGzwR2WaGc/XGCUpQUgxC5rUfp1YQbaBuli7tdggYjW21tehQnwzWaalw==
+strapi-plugin-email@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-email/-/strapi-plugin-email-3.0.0-beta.19.3.tgz#87890a4e193eb987efd9b386407421d958a500af"
+  integrity sha512-5SXy2lcNDXaLBGhEJuJIU7o81LxfISEmnreXPCJFZwRSObkhRiFIyejYEH7MZ19BpnEtaG9kZMa37yKzdtWUSQ==
   dependencies:
     lodash "^4.17.11"
-    strapi-provider-email-sendmail "3.0.0-beta.19.1"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-provider-email-sendmail "3.0.0-beta.19.3"
+    strapi-utils "3.0.0-beta.19.3"
 
-strapi-plugin-graphql@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-graphql/-/strapi-plugin-graphql-3.0.0-beta.19.1.tgz#46e798a3faf0a937375fa336c30a4a0abb03ae09"
-  integrity sha512-3KoRXvjtZ+elju/p/7Jt9dzNaIVpM02qrag4bpbO08B1EJNeUAxtybcE1pU0uXX71qXQqO+FPArlHh7zn4QDWA==
+strapi-plugin-graphql@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-graphql/-/strapi-plugin-graphql-3.0.0-beta.19.3.tgz#cbc888399e86906909a39b2c129db7504ba9ede3"
+  integrity sha512-bbdT/hLdaykmjam6Qn4uWC1hXCR7cZTtWha8+ZXjH6M62Ur1copF5e+RcbZX/Faxx7lIHjIw16jyD0su8TP1qA==
   dependencies:
     apollo-server-koa "2.9.12"
     dataloader "^1.4.0"
@@ -9872,12 +9877,12 @@ strapi-plugin-graphql@3.0.0-beta.19.1:
     koa-compose "^4.1.0"
     lodash "4.17.11"
     pluralize "^7.0.0"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-utils "3.0.0-beta.19.3"
 
-strapi-plugin-upload@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-upload/-/strapi-plugin-upload-3.0.0-beta.19.1.tgz#6c42e2c719b9fa198aca3f5558ae50039db9bbb0"
-  integrity sha512-xf0Kz/7MKUXuVAsNny1EJbkyZsaOWT/yuUSoMwLyH2KKfLHt1bkPYfxdTaBfMpJDqQUHZXVpNOwVWe/N7QVWfQ==
+strapi-plugin-upload@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-upload/-/strapi-plugin-upload-3.0.0-beta.19.3.tgz#07b3258c6818de5f4df0f73edb8d440cf182a65e"
+  integrity sha512-dg4Wfr2e5MqOlCPEIxsFx6ddC519vEELAJnX69YbNpojFFPsqVS4BX/6QbgpDIg2IXYJPJFphC8dDSETwNXzDA==
   dependencies:
     immutable "^3.8.2"
     invariant "^2.2.1"
@@ -9891,16 +9896,16 @@ strapi-plugin-upload@3.0.0-beta.19.1:
     react-router-dom "^5.0.0"
     react-transition-group "^2.5.0"
     reactstrap "^5.0.0"
-    strapi-helper-plugin "3.0.0-beta.19.1"
-    strapi-provider-upload-local "3.0.0-beta.19.1"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-helper-plugin "3.0.0-beta.19.3"
+    strapi-provider-upload-local "3.0.0-beta.19.3"
+    strapi-utils "3.0.0-beta.19.3"
     stream-to-array "^2.3.0"
     uuid "^3.2.1"
 
-strapi-plugin-users-permissions@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-users-permissions/-/strapi-plugin-users-permissions-3.0.0-beta.19.1.tgz#5fe085082fc9c9173086e8a38cca8bfdd759672e"
-  integrity sha512-z3RHAHv8IxC26UnwKEsUFogMcwYC0r3b+A1NnF7ll43maCqfdU4oe1idUqWjrOtAr4nkP6ARC1t2034VCSHcCA==
+strapi-plugin-users-permissions@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-users-permissions/-/strapi-plugin-users-permissions-3.0.0-beta.19.3.tgz#fb0b4454e03dcb88da66535c50048f2088e59eff"
+  integrity sha512-o9iMWdP5pyEuadsJILlbWVEJJ5cclHu3VamgbXfMaPUl5XUfA/3CjNEywfgydkD+3UV+zA/yYBPxytkoo51htA==
   dependencies:
     "@purest/providers" "^1.0.1"
     bcryptjs "^2.4.3"
@@ -9922,39 +9927,39 @@ strapi-plugin-users-permissions@3.0.0-beta.19.1:
     reactstrap "^5.0.0"
     redux-saga "^0.16.0"
     request "^2.83.0"
-    strapi-helper-plugin "3.0.0-beta.19.1"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-helper-plugin "3.0.0-beta.19.3"
+    strapi-utils "3.0.0-beta.19.3"
     uuid "^3.1.0"
 
-strapi-provider-email-sendmail@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-provider-email-sendmail/-/strapi-provider-email-sendmail-3.0.0-beta.19.1.tgz#7409ed24a4ad4b880f8b6f8f54fc4026cd79d8c1"
-  integrity sha512-Ou0k/MkrarmPGNOG7D2XEg+MDd5Y7qxd3F4oO+M1CsoayxT5qYhfhh01+SoK142cDTEeqiB3iSpLRLt1uRR2Cg==
+strapi-provider-email-sendmail@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-provider-email-sendmail/-/strapi-provider-email-sendmail-3.0.0-beta.19.3.tgz#615fbe932d71431cb0be9fbe458188186eebda73"
+  integrity sha512-KhjDvL66XbVlgWDjRLBjwYr0DMsD7GEVurohsPvJK5v9hxtdunXoIJQ+9vszTLhM9JSh34Z3oFiLlPXYPLzOYg==
   dependencies:
     lodash "^4.17.11"
     sendmail "^1.2.0"
 
-strapi-provider-upload-local@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-provider-upload-local/-/strapi-provider-upload-local-3.0.0-beta.19.1.tgz#7987f9570730f09c667ba8d18ff822289f638cc8"
-  integrity sha512-o5likUGT6jq5kkmXNriOKX/hcKIlVInPet7B0+2pTRXPnqwpLcYTkJFcCzWreE2J0ysuszg0ADD8RX0FyXgHwQ==
+strapi-provider-upload-local@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-provider-upload-local/-/strapi-provider-upload-local-3.0.0-beta.19.3.tgz#9af19fb31240111139dfe0f8a686c2fc7fe2f7bc"
+  integrity sha512-MTD22ZtppindYeD8ZZnJVOpPSmrY9215IvLDdS9+KJeVoPImOOTpzHiwcaZFs6sXB2vzJx8CQanoT+J05mUvPA==
 
-strapi-utils@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi-utils/-/strapi-utils-3.0.0-beta.19.1.tgz#fc2df3e43dcda6d3ee123a9256c224055fde3152"
-  integrity sha512-/L8Ps3MfHBvB052skcMM9hn34mseynZ9Tw6Q6vwBzljD4iWZJp9itPtxf9cG1I2w2ntTBCxJS3jsWP/UMcZdvw==
+strapi-utils@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi-utils/-/strapi-utils-3.0.0-beta.19.3.tgz#fe22cd42fe7fc2e82be28d107d3afec88a310e39"
+  integrity sha512-/9zqsmcA/94cjNvwEH5E6GXMbBrWu4YYle+nHtKz/KAJMEpeODFMLKFsvglD2ix/lcVkeOvamRgAMtQzaXSq3g==
   dependencies:
     date-fns "^2.8.1"
     lodash "4.17.11"
     pino "^4.7.1"
     pluralize "^7.0.0"
     shelljs "^0.8.3"
-    yup "^0.28.0"
+    yup "0.28.1"
 
-strapi@3.0.0-beta.19.1:
-  version "3.0.0-beta.19.1"
-  resolved "https://registry.yarnpkg.com/strapi/-/strapi-3.0.0-beta.19.1.tgz#f03e79451c894c49d6aa6d2b8a4d71ce164d2c61"
-  integrity sha512-8cyLc+pYWmlgXhBQva78fvTyalLOR/QRMCvHOOAl8oJdiCqxvOKYZp4dl2R5NczI8q7hPZeINsdxkSOMyoSWvQ==
+strapi@3.0.0-beta.19.3:
+  version "3.0.0-beta.19.3"
+  resolved "https://registry.yarnpkg.com/strapi/-/strapi-3.0.0-beta.19.3.tgz#45a7997d7881f9f05c8c050d2a53eb99b2a58f22"
+  integrity sha512-tQEIT0aU4iWwb/j37RvI51wl4hgfiwq+J3zjMm+5zKUxPx9NcHQ1mEHHsorF+RonZW/5iF4F44kDKRmqS4qGgg==
   dependencies:
     "@koa/cors" "^3.0.0"
     async "^2.1.2"
@@ -9994,16 +9999,16 @@ strapi@3.0.0-beta.19.1:
     resolve-cwd "^3.0.0"
     rimraf "^2.6.2"
     shelljs "^0.8.3"
-    strapi-database "3.0.0-beta.19.1"
-    strapi-generate "3.0.0-beta.19.1"
-    strapi-generate-api "3.0.0-beta.19.1"
-    strapi-generate-controller "3.0.0-beta.19.1"
-    strapi-generate-model "3.0.0-beta.19.1"
-    strapi-generate-new "3.0.0-beta.19.1"
-    strapi-generate-plugin "3.0.0-beta.19.1"
-    strapi-generate-policy "3.0.0-beta.19.1"
-    strapi-generate-service "3.0.0-beta.19.1"
-    strapi-utils "3.0.0-beta.19.1"
+    strapi-database "3.0.0-beta.19.3"
+    strapi-generate "3.0.0-beta.19.3"
+    strapi-generate-api "3.0.0-beta.19.3"
+    strapi-generate-controller "3.0.0-beta.19.3"
+    strapi-generate-model "3.0.0-beta.19.3"
+    strapi-generate-new "3.0.0-beta.19.3"
+    strapi-generate-plugin "3.0.0-beta.19.3"
+    strapi-generate-policy "3.0.0-beta.19.3"
+    strapi-generate-service "3.0.0-beta.19.3"
+    strapi-utils "3.0.0-beta.19.3"
 
 stream-browserify@^2.0.1:
   version "2.0.2"
@@ -11120,22 +11125,23 @@ ylru@^1.2.0:
   resolved "https://registry.yarnpkg.com/ylru/-/ylru-1.2.1.tgz#f576b63341547989c1de7ba288760923b27fe84f"
   integrity sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
 
-yup@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.27.0.tgz#f8cb198c8e7dd2124beddc2457571329096b06e7"
-  integrity sha512-v1yFnE4+u9za42gG/b/081E7uNW9mUj3qtkmelLbW5YPROZzSH/KUUyJu9Wt8vxFJcT9otL/eZopS0YK1L5yPQ==
+yup@0.28.1:
+  version "0.28.1"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.28.1.tgz#60c0725be7057ed7a9ae61561333809332a63d47"
+  integrity sha512-xSHMZA7UyecSG/CCTDCtnYZMjBrYDR/C7hu0fMsZ6UcS/ngko4qCVFbw+CAmNtHlbItKkvQ3YXITODeTj/dUkw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fn-name "~2.0.1"
     lodash "^4.17.11"
+    lodash-es "^4.17.11"
     property-expr "^1.5.0"
     synchronous-promise "^2.0.6"
     toposort "^2.0.2"
 
-yup@^0.28.0:
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.28.0.tgz#fdc04d1a495465c83d3757a80c47616884baeddc"
-  integrity sha512-9ZmsB/PT6/m+oUKF8rT9lWhMMGfx5s/aNCCf8pMu/GEQA0Ro2tLOc+aX12GjfL67Vif5a3c7eZVuxGFqFScnJQ==
+yup@^0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.27.0.tgz#f8cb198c8e7dd2124beddc2457571329096b06e7"
+  integrity sha512-v1yFnE4+u9za42gG/b/081E7uNW9mUj3qtkmelLbW5YPROZzSH/KUUyJu9Wt8vxFJcT9otL/eZopS0YK1L5yPQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     fn-name "~2.0.1"
