@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -249,7 +249,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -306,7 +306,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -335,7 +335,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -373,7 +373,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -381,7 +381,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -440,7 +440,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -579,7 +579,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -650,7 +650,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -707,7 +707,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "requestBody": {
           "description": "",
@@ -738,7 +738,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Users-PermissionsUser"
+                    "$ref": "#/components/schemas/UsersPermissionsUser"
                   }
                 }
               }
@@ -777,7 +777,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -923,7 +923,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -961,7 +961,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": []
       }
@@ -976,7 +976,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -1014,7 +1014,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -1038,7 +1038,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Users-PermissionsUser"
+                  "$ref": "#/components/schemas/UsersPermissionsUser"
                 }
               }
             }
@@ -1076,7 +1076,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -1096,7 +1096,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsers-PermissionsUser"
+                "$ref": "#/components/schemas/NewUsersPermissionsUser"
               }
             }
           }
@@ -1153,7 +1153,7 @@
         },
         "summary": "",
         "tags": [
-          "Users-Permissions - User"
+          "UsersPermissions - User"
         ],
         "parameters": [
           {
@@ -1172,7 +1172,7 @@
   },
   "components": {
     "schemas": {
-      "Users-PermissionsUser": {
+      "UsersPermissionsUser": {
         "required": [
           "id",
           "username",
@@ -1300,10 +1300,22 @@
               "name": {
                 "type": "string"
               },
-              "hash": {
+              "alternativeText": {
                 "type": "string"
               },
-              "sha256": {
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
                 "type": "string"
               },
               "ext": {
@@ -1316,6 +1328,9 @@
                 "type": "number"
               },
               "url": {
+                "type": "string"
+              },
+              "previewUrl": {
                 "type": "string"
               },
               "provider": {
@@ -1331,7 +1346,7 @@
           }
         }
       },
-      "NewUsers-PermissionsUser": {
+      "NewUsersPermissionsUser": {
         "required": [
           "username",
           "email"
@@ -1384,7 +1399,7 @@
   },
   "tags": [
     {
-      "name": "Users-Permissions - User"
+      "name": "UsersPermissions - User"
     }
   ]
 }
