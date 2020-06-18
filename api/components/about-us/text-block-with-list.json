@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_us_text_block_with_lists",
+  "info": {
+    "name": "text-block-with-list",
+    "icon": "list-ul"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.list"
+    }
+  }
+}

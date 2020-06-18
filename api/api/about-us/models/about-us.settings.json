@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "name": "about-us"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.header",
+      "required": true
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "about-us.text-block",
+        "about-us.text-block-with-title",
+        "about-us.text-block-with-list"
+      ]
+    }
+  }
+}

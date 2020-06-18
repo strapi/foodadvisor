@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_us_text_block_with_titles",
+  "info": {
+    "name": "text-block-with-title",
+    "icon": "bookmark"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
