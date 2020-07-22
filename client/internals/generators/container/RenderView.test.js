@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-/* eslint-disable import/no-unresolved */
+/* eslint-disable  */
 
 import RenderView from '../RenderView';
 

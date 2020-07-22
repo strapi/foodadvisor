@@ -12,7 +12,7 @@ import { set } from 'lodash';
 import { GET_RESTAURANTS } from '../../queries';
 import Query from '../../components/Query';
 
-import data from '../../assets/utils/data';
+import data from '../../assets/utils/data.json';
 import getQueryParameters from '../../utils/getQueryParameters';
 
 import RenderView from './RenderView';
@@ -25,9 +25,7 @@ function RestaurantsPage({ location: { search }, history }) {
 
   const setSearch = (where, nextStart) => {
     history.push({
-      search: `?category=${where.category}&district=${
-        where.district
-      }&start=${nextStart}`,
+      search: `?category=${where.category}&district=${where.district}&start=${nextStart}`,
     });
   };
 
