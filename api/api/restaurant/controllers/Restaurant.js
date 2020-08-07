@@ -1,22 +1,16 @@
 module.exports = {
-  find: async ctx => {
+  find: async (ctx) => {
     let restaurants;
 
     if (ctx.query._q) {
-      restaurants = await strapi.api.restaurant.services.restaurant.search(
-        ctx.query
-      );
+      restaurants = await strapi.api.restaurant.services.restaurant.search(ctx.query);
     } else {
-      restaurants = await strapi.api.restaurant.services.restaurant.find(
-        ctx.query
-      );
+      restaurants = await strapi.api.restaurant.services.restaurant.find(ctx.query);
     }
 
     restaurants = await Promise.all(
-      restaurants.map(async restaurant => {
-        restaurant.note = await strapi.api.review.services.review.average(
-          restaurant.id
-        );
+      restaurants.map(async (restaurant) => {
+        restaurant.note = await strapi.api.review.services.review.average(restaurant.id);
 
         return restaurant;
       })
@@ -25,34 +19,31 @@ module.exports = {
     return restaurants;
   },
 
-  findOne: async ctx => {
-    let restaurant = await strapi.api.restaurant.services.restaurant.findOne(
-      ctx.params
-    );
+  findOne: async (ctx) => {
+    const { id } = ctx.params;
+    let restaurant = await strapi.api.restaurant.services.restaurant.findOne({ id });
 
     if (!restaurant) {
       return ctx.notFound();
     }
 
-    restaurant.note = await strapi.api.review.services.review.average(
-      restaurant.id
-    );
+    restaurant.note = await strapi.api.review.services.review.average(restaurant.id);
 
     let noteDetails = await strapi
       .query('review')
-      .model.query(function(qb) {
+      .model.query(function (qb) {
         qb.where('restaurant', '=', restaurant.id);
         qb.groupBy('note');
         qb.select('note');
         qb.count();
       })
       .fetchAll()
-      .then(res => res.toJSON());
+      .then((res) => res.toJSON());
 
     restaurant.noteDetails = [];
 
     for (let i = 5; i > 0; i--) {
-      let detail = noteDetails.find(detail => {
+      let detail = noteDetails.find((detail) => {
         return detail.note === i;
       });
 
