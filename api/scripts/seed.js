@@ -2,6 +2,7 @@ const path = require('path');
 const util = require('util');
 const fse = require('fs-extra');
 const unzip = require('unzip-stream');
+const crypto = require('crypto');
 
 const zipPath = path.resolve('data.zip');
 const dataPath = path.resolve('data');
@@ -9,6 +10,8 @@ const uploadDataPath = path.join(dataPath, 'uploads');
 
 const uploadPath = path.join('public', 'uploads');
 const tmpPath = path.resolve('.tmp');
+
+const dotEnv = path.resolve('.env');
 
 const sqlite = require('sqlite3').verbose();
 
@@ -56,6 +59,16 @@ async function seed() {
     await fse.remove(dataPath);
   } catch (err) {
     console.log(`Fail to remove ${dataPath}`);
+  }
+
+  try {
+    await fse.ensureFile(dotEnv);
+    await fse.writeFile(
+      dotEnv,
+      `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}`
+    );
+  } catch (err) {
+    console.log(`Fail to create ${dotEnv}`);
   }
 }
 
