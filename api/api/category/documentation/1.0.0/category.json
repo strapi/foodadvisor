@@ -531,7 +531,8 @@
             "items": {
               "required": [
                 "id",
-                "opening_hours"
+                "opening_hours",
+                "seo"
               ],
               "properties": {
                 "id": {
@@ -575,6 +576,21 @@
                 },
                 "opening_hours": {
                   "type": "component"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "published_at": {
+                  "type": "datetime"
+                },
+                "_previous": {
+                  "type": "object"
+                },
+                "_author": {
+                  "type": "object"
                 },
                 "created_by": {
                   "type": "string"

@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "components_seo",
+  "info": {
+    "name": "seo",
+    "description": "",
+    "icon": "anchor"
+  },
+  "attributes": {
+    "title": {
+      "required": true,
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "meta": {
+      "type": "component",
+      "component": "restaurant.meta",
+      "repeatable": true
+    }
+  }
+}

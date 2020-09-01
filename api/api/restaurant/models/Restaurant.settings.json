@@ -81,6 +81,35 @@
       "min": 1,
       "repeatable": true,
       "required": true
+    },
+    "status": {
+      "default": "draft",
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "published",
+        "archived"
+
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "restaurant.seo",
+      "required": true
+    },
+    "published_at": {
+      "default": "",
+      "type": "datetime"
+    },
+    "_previous": {
+      "default": "",
+      "private": true,
+      "type": "json"
+    },
+    "_author": {
+      "default": "",
+      "private": true,
+      "type": "json"
     }
   }
 }

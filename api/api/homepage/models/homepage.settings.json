@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "name": "homepage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "restaurant.seo",
+      "required": true
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "restaurant.slider",
+        "restaurant.text"
+      ]
+    }
+  }
+}

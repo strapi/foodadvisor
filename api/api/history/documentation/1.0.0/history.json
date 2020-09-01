@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/reviews": {
+    "/histories": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Review"
+                    "$ref": "#/components/schemas/History"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "History"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Review"
+                  "$ref": "#/components/schemas/History"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "History"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewReview"
+                "$ref": "#/components/schemas/NewHistory"
               }
             }
           }
         }
       }
     },
-    "/reviews/count": {
+    "/histories/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "History"
         ],
         "parameters": []
       }
     },
-    "/reviews/{id}": {
+    "/histories/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Review"
+                  "$ref": "#/components/schemas/History"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "History"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Review"
+                  "$ref": "#/components/schemas/History"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "History"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewReview"
+                "$ref": "#/components/schemas/NewHistory"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "History"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Review": {
+      "History": {
         "required": [
           "id"
         ],
@@ -522,167 +522,20 @@
           "id": {
             "type": "string"
           },
-          "content": {
-            "type": "string",
-            "default": ""
+          "action": {
+            "type": "string"
           },
-          "note": {
-            "type": "integer",
-            "default": ""
+          "contenttype": {
+            "type": "string"
           },
           "author": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "reviews": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "likes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "picture": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+            "type": "object"
           },
-          "likes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "author": {
-                  "type": "string"
-                },
-                "review": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "before": {
+            "type": "object"
           },
-          "restaurant": {
-            "required": [
-              "id",
-              "opening_hours",
-              "seo"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "cover": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "address": {
-                "type": "string"
-              },
-              "website": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "district": {
-                "type": "string"
-              },
-              "reviews": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "category": {
-                "type": "string"
-              },
-              "opening_hours": {
-                "type": "component"
-              },
-              "status": {
-                "type": "string"
-              },
-              "seo": {
-                "type": "component"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "_previous": {
-                "type": "object"
-              },
-              "_author": {
-                "type": "object"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "after": {
+            "type": "object"
           },
           "created_by": {
             "required": [
@@ -774,27 +627,22 @@
           }
         }
       },
-      "NewReview": {
+      "NewHistory": {
         "properties": {
-          "content": {
-            "type": "string",
-            "default": ""
+          "action": {
+            "type": "string"
           },
-          "note": {
-            "type": "integer",
-            "default": ""
+          "contenttype": {
+            "type": "string"
           },
           "author": {
-            "type": "string"
+            "type": "object"
           },
-          "likes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "before": {
+            "type": "object"
           },
-          "restaurant": {
-            "type": "string"
+          "after": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"
@@ -808,7 +656,7 @@
   },
   "tags": [
     {
-      "name": "Review"
+      "name": "History"
     }
   ]
 }

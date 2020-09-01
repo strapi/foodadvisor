@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_restaurant_sliders",
+  "info": {
+    "name": "slider",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

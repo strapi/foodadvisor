@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/reviews": {
+    "/homepage": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the homepage's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve homepage document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Review"
+                    "$ref": "#/components/schemas/Homepage"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Homepage"
         ],
         "parameters": [
           {
@@ -192,198 +192,16 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Review"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Review"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewReview"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/reviews/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Review"
-        ],
-        "parameters": []
-      }
-    },
-    "/reviews/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Review"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Review"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single homepage record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve homepage document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Review"
+                  "$ref": "#/components/schemas/Homepage"
                 }
               }
             }
@@ -421,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Homepage"
         ],
         "requestBody": {
           "description": "",
@@ -429,30 +247,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewReview"
+                "$ref": "#/components/schemas/NewHomepage"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single homepage record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single homepage based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,193 +302,185 @@
         },
         "summary": "",
         "tags": [
-          "Review"
+          "Homepage"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     }
   },
   "components": {
     "schemas": {
-      "Review": {
+      "Homepage": {
         "required": [
-          "id"
+          "id",
+          "seo"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "content": {
-            "type": "string",
-            "default": ""
+          "title": {
+            "type": "string"
           },
-          "note": {
-            "type": "integer",
-            "default": ""
-          },
-          "author": {
+          "seo": {
+            "type": "object",
             "required": [
               "id",
-              "username",
-              "email"
+              "title",
+              "description"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "reviews": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "likes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "picture": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "likes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "author": {
-                  "type": "string"
-                },
-                "review": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "restaurant": {
-            "required": [
-              "id",
-              "opening_hours",
-              "seo"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "cover": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "name": {
+              "title": {
                 "type": "string"
               },
               "description": {
                 "type": "string"
               },
-              "address": {
-                "type": "string"
-              },
-              "website": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "district": {
-                "type": "string"
-              },
-              "reviews": {
+              "meta": {
                 "type": "array",
                 "items": {
-                  "type": "string"
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
                 }
-              },
-              "category": {
-                "type": "string"
-              },
-              "opening_hours": {
-                "type": "component"
-              },
-              "status": {
-                "type": "string"
-              },
-              "seo": {
-                "type": "component"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "_previous": {
-                "type": "object"
-              },
-              "_author": {
-                "type": "object"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
+            }
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "restaurant.slider",
+                        "restaurant.text"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "hash",
+                          "mime",
+                          "size",
+                          "url",
+                          "provider"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "alternativeText": {
+                            "type": "string"
+                          },
+                          "caption": {
+                            "type": "string"
+                          },
+                          "width": {
+                            "type": "integer"
+                          },
+                          "height": {
+                            "type": "integer"
+                          },
+                          "formats": {
+                            "type": "object"
+                          },
+                          "hash": {
+                            "type": "string"
+                          },
+                          "ext": {
+                            "type": "string"
+                          },
+                          "mime": {
+                            "type": "string"
+                          },
+                          "size": {
+                            "type": "number"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "previewUrl": {
+                            "type": "string"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "provider_metadata": {
+                            "type": "object"
+                          },
+                          "related": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "restaurant.slider",
+                        "restaurant.text"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
             }
           },
           "created_by": {
@@ -774,27 +573,174 @@
           }
         }
       },
-      "NewReview": {
+      "NewHomepage": {
+        "required": [
+          "seo"
+        ],
         "properties": {
-          "content": {
-            "type": "string",
-            "default": ""
-          },
-          "note": {
-            "type": "integer",
-            "default": ""
-          },
-          "author": {
+          "title": {
             "type": "string"
           },
-          "likes": {
-            "type": "array",
-            "items": {
-              "type": "string"
+          "seo": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "meta": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
             }
           },
-          "restaurant": {
-            "type": "string"
+          "body": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "restaurant.slider",
+                        "restaurant.text"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "hash",
+                          "mime",
+                          "size",
+                          "url",
+                          "provider"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "alternativeText": {
+                            "type": "string"
+                          },
+                          "caption": {
+                            "type": "string"
+                          },
+                          "width": {
+                            "type": "integer"
+                          },
+                          "height": {
+                            "type": "integer"
+                          },
+                          "formats": {
+                            "type": "object"
+                          },
+                          "hash": {
+                            "type": "string"
+                          },
+                          "ext": {
+                            "type": "string"
+                          },
+                          "mime": {
+                            "type": "string"
+                          },
+                          "size": {
+                            "type": "number"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "previewUrl": {
+                            "type": "string"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "provider_metadata": {
+                            "type": "object"
+                          },
+                          "related": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "restaurant.slider",
+                        "restaurant.text"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
           },
           "created_by": {
             "type": "string"
@@ -808,7 +754,7 @@
   },
   "tags": [
     {
-      "name": "Review"
+      "name": "Homepage"
     }
   ]
 }

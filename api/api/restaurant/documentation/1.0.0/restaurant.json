@@ -517,7 +517,8 @@
       "Restaurant": {
         "required": [
           "id",
-          "opening_hours"
+          "opening_hours",
+          "seo"
         ],
         "properties": {
           "id": {
@@ -736,6 +737,60 @@
             },
             "minItems": 1
           },
+          "status": {
+            "type": "string",
+            "default": "draft",
+            "enum": [
+              "draft",
+              "published",
+              "archived"
+            ]
+          },
+          "seo": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "meta": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "published_at": {
+            "type": "datetime",
+            "default": ""
+          },
           "created_by": {
             "required": [
               "id",
@@ -828,7 +883,8 @@
       },
       "NewRestaurant": {
         "required": [
-          "opening_hours"
+          "opening_hours",
+          "seo"
         ],
         "properties": {
           "name": {
@@ -920,6 +976,68 @@
               }
             },
             "minItems": 1
+          },
+          "status": {
+            "type": "string",
+            "default": "draft",
+            "enum": [
+              "draft",
+              "published",
+              "archived"
+            ]
+          },
+          "seo": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "meta": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "published_at": {
+            "type": "datetime",
+            "default": ""
+          },
+          "_previous": {
+            "type": "object",
+            "default": ""
+          },
+          "_author": {
+            "type": "object",
+            "default": ""
           },
           "created_by": {
             "type": "string"

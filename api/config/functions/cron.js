@@ -9,13 +9,16 @@
  */
 
 module.exports = {
+  '*/1 * * * *': async () => {
+    const draftRestaurants = await strapi.services.restaurant.find({
+      status: 'draft',
+      published_at_lt: new Date(),
+    });
 
-  /**
-   * Simple example.
-   * Every monday at 1am.
-   */
-
-  // '0 1 * * 1': () => {
-  //
-  // }
+    draftRestaurants.forEach(restaurant => {
+      strapi.services.restaurant.update({id: restaurant.id}, {
+        status: 'published'
+      })
+    });
+  }
 };

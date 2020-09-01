@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "components_meta",
+  "info": {
+    "name": "meta",
+    "description": "",
+    "icon": "address-book"
+  },
+  "attributes": {
+    "name": {
+      "required": true,
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
