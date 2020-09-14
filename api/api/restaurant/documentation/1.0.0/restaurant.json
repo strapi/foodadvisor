@@ -788,8 +788,7 @@
             }
           },
           "published_at": {
-            "type": "datetime",
-            "default": ""
+            "type": "datetime"
           },
           "created_by": {
             "required": [
@@ -1028,16 +1027,13 @@
             }
           },
           "published_at": {
-            "type": "datetime",
-            "default": ""
+            "type": "datetime"
           },
           "_previous": {
-            "type": "object",
-            "default": ""
+            "type": "object"
           },
           "_author": {
-            "type": "object",
-            "default": ""
+            "type": "object"
           },
           "created_by": {
             "type": "string"

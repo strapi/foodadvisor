@@ -98,16 +98,13 @@
       "required": true
     },
     "published_at": {
-      "default": "",
       "type": "datetime"
     },
     "_previous": {
-      "default": "",
       "private": true,
       "type": "json"
     },
     "_author": {
-      "default": "",
       "private": true,
       "type": "json"
     }
