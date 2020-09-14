@@ -27,13 +27,13 @@ async function seed() {
   try {
     await fse.emptyDir(tmpPath);
   } catch (err) {
-    console.log(`Fail to remove ${tmpPath}`);
+    console.log(`Failed to remove ${tmpPath}`);
   }
 
   try {
     await fse.emptyDir(uploadPath);
   } catch (err) {
-    console.log(`Fail to remove ${uploadPath}`);
+    console.log(`Failed to remove ${uploadPath}`);
   }
 
   await new Promise(resolve => {
@@ -52,13 +52,13 @@ async function seed() {
   try {
     await fse.rename(uploadDataPath, uploadPath);
   } catch (err) {
-    console.log(`Fail move ${uploadDataPath} to  ${uploadPath}`);
+    console.log(`Failed to move ${uploadDataPath} to  ${uploadPath}`);
   }
 
   try {
     await fse.remove(dataPath);
   } catch (err) {
-    console.log(`Fail to remove ${dataPath}`);
+    console.log(`Failed to remove ${dataPath}`);
   }
 
   try {
@@ -68,7 +68,7 @@ async function seed() {
       `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}`
     );
   } catch (err) {
-    console.log(`Fail to create ${dotEnv}`);
+    console.log(`Failed to create ${dotEnv}`);
   }
 }
 
