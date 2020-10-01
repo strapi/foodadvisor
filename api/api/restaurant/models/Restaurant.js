@@ -7,25 +7,24 @@
 module.exports = {
   lifecycles: {
     afterCreate(result, data) {
-      console.log(data);
       strapi.services.history.create({
         action: 'create',
         contenttype: 'restaurant',
-        author: data._author,
+        author: data.author_,
         before: {},
         after: result
       });
     },
     async beforeUpdate(params, data){
-      const _previous = await strapi.services.restaurant.find(params);
-      data._previous = _previous;
+      const [previous_] = await strapi.services.restaurant.find(params);
+      data.previous_ = previous_;
     },
     afterUpdate(result, params, data){
       strapi.services.history.create({
         action: 'update',
         contenttype: 'restaurant',
-        author: data._author,
-        before: data._previous,
+        author: data.author_,
+        before: data.previous_,
         after: result
       });
     }

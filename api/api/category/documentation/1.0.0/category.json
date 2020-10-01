@@ -523,8 +523,7 @@
             "type": "string"
           },
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "restaurants": {
             "type": "array",
@@ -577,20 +576,17 @@
                 "opening_hours": {
                   "type": "component"
                 },
-                "status": {
-                  "type": "string"
-                },
                 "seo": {
                   "type": "component"
                 },
+                "previous_": {
+                  "type": "object"
+                },
+                "author_": {
+                  "type": "object"
+                },
                 "published_at": {
                   "type": "datetime"
-                },
-                "_previous": {
-                  "type": "object"
-                },
-                "_author": {
-                  "type": "object"
                 },
                 "created_by": {
                   "type": "string"
@@ -694,14 +690,19 @@
       "NewCategory": {
         "properties": {
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "restaurants": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "previous_": {
+            "type": "object"
+          },
+          "author_": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"

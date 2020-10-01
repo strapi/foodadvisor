@@ -19,7 +19,7 @@ module.exports = strapi => {
       if (strapi.plugins) {
         _.forEach(strapi.plugins, plugin => {
           _.forEach(plugin.config.routes, value => {
-            if (_.get(value.config, 'policies')) {
+            if (_.get(value.config, 'policies') && value.path.includes('/explorer/')) {
               value.config.policies.splice(1, 0, 'global::history');
             }
           });

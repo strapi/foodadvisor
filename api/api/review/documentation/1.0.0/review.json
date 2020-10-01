@@ -661,20 +661,17 @@
               "opening_hours": {
                 "type": "component"
               },
-              "status": {
-                "type": "string"
-              },
               "seo": {
                 "type": "component"
               },
+              "previous_": {
+                "type": "object"
+              },
+              "author_": {
+                "type": "object"
+              },
               "published_at": {
                 "type": "datetime"
-              },
-              "_previous": {
-                "type": "object"
-              },
-              "_author": {
-                "type": "object"
               },
               "created_by": {
                 "type": "string"

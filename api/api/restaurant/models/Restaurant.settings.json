@@ -1,4 +1,5 @@
 {
+  "kind": "collectionType",
   "connection": "default",
   "collectionName": "restaurants",
   "info": {
@@ -7,42 +8,45 @@
   },
   "options": {
     "increments": true,
-    "timestamps": ["created_at", "updated_at"],
-    "comment": ""
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": "",
+    "draftAndPublish": true
   },
   "attributes": {
     "cover": {
       "collection": "file",
       "via": "related",
-      "plugin": "upload"
+      "plugin": "upload",
+      "required": false
     },
     "name": {
-      "default": "",
       "type": "string"
     },
     "description": {
-      "default": "",
       "type": "text"
     },
     "address": {
-      "default": "",
       "type": "string"
     },
     "website": {
-      "default": "",
       "type": "string"
     },
     "phone": {
-      "default": "",
       "type": "string"
     },
     "price": {
-      "default": "",
       "type": "enumeration",
-      "enum": ["_1", "_2", "_3", "_4"]
+      "enum": [
+        "_1",
+        "_2",
+        "_3",
+        "_4"
+      ]
     },
     "district": {
-      "default": "",
       "type": "enumeration",
       "enum": [
         "_1st",
@@ -72,8 +76,8 @@
       "via": "restaurant"
     },
     "category": {
-      "model": "category",
-      "via": "restaurants"
+      "via": "restaurants",
+      "model": "category"
     },
     "opening_hours": {
       "type": "component",
@@ -82,29 +86,16 @@
       "repeatable": true,
       "required": true
     },
-    "status": {
-      "default": "draft",
-      "type": "enumeration",
-      "enum": [
-        "draft",
-        "published",
-        "archived"
-
-      ]
-    },
     "seo": {
       "type": "component",
       "component": "restaurant.seo",
       "required": true
     },
-    "published_at": {
-      "type": "datetime"
-    },
-    "_previous": {
+    "previous_": {
       "private": true,
       "type": "json"
     },
-    "_author": {
+    "author_": {
       "private": true,
       "type": "json"
     }

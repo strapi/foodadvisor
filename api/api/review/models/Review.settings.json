@@ -1,4 +1,5 @@
 {
+  "kind": "collectionType",
   "connection": "default",
   "collectionName": "reviews",
   "info": {
@@ -30,8 +31,8 @@
       "via": "review"
     },
     "restaurant": {
-      "model": "restaurant",
-      "via": "reviews"
+      "via": "reviews",
+      "model": "restaurant"
     }
   }
 }

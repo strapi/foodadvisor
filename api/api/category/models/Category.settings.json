@@ -8,16 +8,24 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "comment": ""
+    "comment": "",
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
-      "default": "",
       "type": "string"
     },
     "restaurants": {
       "collection": "restaurant",
       "via": "category"
+    },
+    "previous_": {
+      "private": true,
+      "type": "json"
+    },
+    "author_": {
+      "private": true,
+      "type": "json"
     }
   }
 }

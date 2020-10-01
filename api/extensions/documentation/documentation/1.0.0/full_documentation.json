@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/14/2020 3:52:11 PM"
+    "x-generation-date": "10/01/2020 5:26:38 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5017,8 +5017,7 @@
             "type": "string"
           },
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "restaurants": {
             "type": "array",
@@ -5071,20 +5070,17 @@
                 "opening_hours": {
                   "type": "component"
                 },
-                "status": {
-                  "type": "string"
-                },
                 "seo": {
                   "type": "component"
                 },
+                "previous_": {
+                  "type": "object"
+                },
+                "author_": {
+                  "type": "object"
+                },
                 "published_at": {
                   "type": "datetime"
-                },
-                "_previous": {
-                  "type": "object"
-                },
-                "_author": {
-                  "type": "object"
                 },
                 "created_by": {
                   "type": "string"
@@ -5188,14 +5184,19 @@
       "NewCategory": {
         "properties": {
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "restaurants": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "previous_": {
+            "type": "object"
+          },
+          "author_": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"
@@ -6069,28 +6070,22 @@
             }
           },
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "address": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "website": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "phone": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "price": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1",
               "_2",
@@ -6100,7 +6095,6 @@
           },
           "district": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1st",
               "_2nd",
@@ -6178,6 +6172,12 @@
                   "type": "string"
                 }
               },
+              "previous_": {
+                "type": "object"
+              },
+              "author_": {
+                "type": "object"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -6210,15 +6210,6 @@
               }
             },
             "minItems": 1
-          },
-          "status": {
-            "type": "string",
-            "default": "draft",
-            "enum": [
-              "draft",
-              "published",
-              "archived"
-            ]
           },
           "seo": {
             "type": "object",
@@ -6361,28 +6352,22 @@
         ],
         "properties": {
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "address": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "website": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "phone": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "price": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1",
               "_2",
@@ -6392,7 +6377,6 @@
           },
           "district": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1st",
               "_2nd",
@@ -6450,15 +6434,6 @@
             },
             "minItems": 1
           },
-          "status": {
-            "type": "string",
-            "default": "draft",
-            "enum": [
-              "draft",
-              "published",
-              "archived"
-            ]
-          },
           "seo": {
             "type": "object",
             "required": [
@@ -6500,14 +6475,14 @@
               }
             }
           },
+          "previous_": {
+            "type": "object"
+          },
+          "author_": {
+            "type": "object"
+          },
           "published_at": {
             "type": "datetime"
-          },
-          "_previous": {
-            "type": "object"
-          },
-          "_author": {
-            "type": "object"
           },
           "created_by": {
             "type": "string"
@@ -6664,20 +6639,17 @@
               "opening_hours": {
                 "type": "component"
               },
-              "status": {
-                "type": "string"
-              },
               "seo": {
                 "type": "component"
               },
+              "previous_": {
+                "type": "object"
+              },
+              "author_": {
+                "type": "object"
+              },
               "published_at": {
                 "type": "datetime"
-              },
-              "_previous": {
-                "type": "object"
-              },
-              "_author": {
-                "type": "object"
               },
               "created_by": {
                 "type": "string"
