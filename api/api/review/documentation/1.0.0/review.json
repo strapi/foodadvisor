@@ -615,8 +615,7 @@
           "restaurant": {
             "required": [
               "id",
-              "opening_hours",
-              "seo"
+              "opening_hours"
             ],
             "properties": {
               "id": {
@@ -647,6 +646,9 @@
                 "type": "string"
               },
               "district": {
+                "type": "string"
+              },
+              "publish_at": {
                 "type": "string"
               },
               "reviews": {

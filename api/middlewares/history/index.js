@@ -4,12 +4,6 @@ const _ = require('lodash');
 module.exports = strapi => {
   return {
     initialize() {
-      _.forEach(strapi.admin.config.routes, value => {
-        if (_.get(value.config, 'policies')) {
-          value.config.policies.splice(1, 0, 'global::history');
-        }
-      });
-
       _.forEach(strapi.config.routes, value => {
         if (_.get(value.config, 'policies')) {
           value.config.policies.splice(1, 0, 'global::history');

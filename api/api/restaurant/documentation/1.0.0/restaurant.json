@@ -517,8 +517,7 @@
       "Restaurant": {
         "required": [
           "id",
-          "opening_hours",
-          "seo"
+          "opening_hours"
         ],
         "properties": {
           "id": {
@@ -642,6 +641,10 @@
               "_19th",
               "_20th"
             ]
+          },
+          "publish_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "reviews": {
             "type": "array",
@@ -785,8 +788,7 @@
       },
       "NewRestaurant": {
         "required": [
-          "opening_hours",
-          "seo"
+          "opening_hours"
         ],
         "properties": {
           "name": {
@@ -837,6 +839,10 @@
               "_19th",
               "_20th"
             ]
+          },
+          "publish_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "reviews": {
             "type": "array",

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/29/2020 2:27:42 PM"
+    "x-generation-date": "10/29/2020 3:28:46 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5024,8 +5024,7 @@
             "items": {
               "required": [
                 "id",
-                "opening_hours",
-                "seo"
+                "opening_hours"
               ],
               "properties": {
                 "id": {
@@ -5056,6 +5055,9 @@
                   "type": "string"
                 },
                 "district": {
+                  "type": "string"
+                },
+                "publish_at": {
                   "type": "string"
                 },
                 "reviews": {
@@ -5640,8 +5642,7 @@
       "Restaurant": {
         "required": [
           "id",
-          "opening_hours",
-          "seo"
+          "opening_hours"
         ],
         "properties": {
           "id": {
@@ -5765,6 +5766,10 @@
               "_19th",
               "_20th"
             ]
+          },
+          "publish_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "reviews": {
             "type": "array",
@@ -5908,8 +5913,7 @@
       },
       "NewRestaurant": {
         "required": [
-          "opening_hours",
-          "seo"
+          "opening_hours"
         ],
         "properties": {
           "name": {
@@ -5960,6 +5964,10 @@
               "_19th",
               "_20th"
             ]
+          },
+          "publish_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "reviews": {
             "type": "array",
@@ -6155,8 +6163,7 @@
           "restaurant": {
             "required": [
               "id",
-              "opening_hours",
-              "seo"
+              "opening_hours"
             ],
             "properties": {
               "id": {
@@ -6187,6 +6194,9 @@
                 "type": "string"
               },
               "district": {
+                "type": "string"
+              },
+              "publish_at": {
                 "type": "string"
               },
               "reviews": {

@@ -16,8 +16,8 @@
       "type": "string"
     },
     "restaurants": {
-      "collection": "restaurant",
-      "via": "category"
+      "via": "category",
+      "collection": "restaurant"
     },
     "previous_": {
       "private": true,

@@ -71,13 +71,16 @@
         "_20th"
       ]
     },
+    "publish_at": {
+      "type": "datetime"
+    },
     "reviews": {
       "collection": "review",
       "via": "restaurant"
     },
     "category": {
-      "via": "restaurants",
-      "model": "category"
+      "model": "category",
+      "via": "restaurants"
     },
     "opening_hours": {
       "type": "component",
@@ -89,7 +92,8 @@
     "seo": {
       "type": "component",
       "component": "restaurant.seo",
-      "required": true
+      "required": false,
+      "repeatable": false
     },
     "previous_": {
       "private": true,
