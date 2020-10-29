@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_restaurant_texts",
+  "info": {
+    "name": "text",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

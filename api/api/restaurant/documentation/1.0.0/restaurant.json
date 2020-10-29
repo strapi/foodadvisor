@@ -594,28 +594,22 @@
             }
           },
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "address": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "website": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "phone": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "price": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1",
               "_2",
@@ -625,7 +619,6 @@
           },
           "district": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1st",
               "_2nd",
@@ -648,6 +641,10 @@
               "_19th",
               "_20th"
             ]
+          },
+          "publish_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "reviews": {
             "type": "array",
@@ -703,6 +700,12 @@
                   "type": "string"
                 }
               },
+              "previous_": {
+                "type": "object"
+              },
+              "author_": {
+                "type": "object"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -736,93 +739,50 @@
             },
             "minItems": 1
           },
-          "created_by": {
+          "seo": {
+            "type": "object",
             "required": [
               "id",
-              "email"
+              "title",
+              "description"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "firstname": {
+              "title": {
                 "type": "string"
               },
-              "lastname": {
+              "description": {
                 "type": "string"
               },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
+              "meta": {
                 "type": "array",
                 "items": {
-                  "type": "string"
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
                 }
-              },
-              "blocked": {
-                "type": "boolean"
               }
             }
           },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -832,28 +792,22 @@
         ],
         "properties": {
           "name": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "address": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "website": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "phone": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "price": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1",
               "_2",
@@ -863,7 +817,6 @@
           },
           "district": {
             "type": "string",
-            "default": "",
             "enum": [
               "_1st",
               "_2nd",
@@ -886,6 +839,10 @@
               "_19th",
               "_20th"
             ]
+          },
+          "publish_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "reviews": {
             "type": "array",
@@ -920,6 +877,57 @@
               }
             },
             "minItems": 1
+          },
+          "seo": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "meta": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "previous_": {
+            "type": "object"
+          },
+          "author_": {
+            "type": "object"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"

@@ -1,4 +1,5 @@
 {
+  "kind": "collectionType",
   "connection": "default",
   "collectionName": "restaurants",
   "info": {
@@ -7,42 +8,45 @@
   },
   "options": {
     "increments": true,
-    "timestamps": ["created_at", "updated_at"],
-    "comment": ""
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": "",
+    "draftAndPublish": true
   },
   "attributes": {
     "cover": {
       "collection": "file",
       "via": "related",
-      "plugin": "upload"
+      "plugin": "upload",
+      "required": false
     },
     "name": {
-      "default": "",
       "type": "string"
     },
     "description": {
-      "default": "",
       "type": "text"
     },
     "address": {
-      "default": "",
       "type": "string"
     },
     "website": {
-      "default": "",
       "type": "string"
     },
     "phone": {
-      "default": "",
       "type": "string"
     },
     "price": {
-      "default": "",
       "type": "enumeration",
-      "enum": ["_1", "_2", "_3", "_4"]
+      "enum": [
+        "_1",
+        "_2",
+        "_3",
+        "_4"
+      ]
     },
     "district": {
-      "default": "",
       "type": "enumeration",
       "enum": [
         "_1st",
@@ -67,6 +71,9 @@
         "_20th"
       ]
     },
+    "publish_at": {
+      "type": "datetime"
+    },
     "reviews": {
       "collection": "review",
       "via": "restaurant"
@@ -81,6 +88,20 @@
       "min": 1,
       "repeatable": true,
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "restaurant.seo",
+      "required": false,
+      "repeatable": false
+    },
+    "previous_": {
+      "private": true,
+      "type": "json"
+    },
+    "author_": {
+      "private": true,
+      "type": "json"
     }
   }
 }
