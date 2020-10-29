@@ -671,101 +671,13 @@
                 "type": "object"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
               },
               "updated_by": {
                 "type": "string"
-              }
-            }
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
               }
             }
           }

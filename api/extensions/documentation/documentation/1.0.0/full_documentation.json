@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/01/2020 5:26:38 PM"
+    "x-generation-date": "10/29/2020 2:27:42 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5080,7 +5080,7 @@
                   "type": "object"
                 },
                 "published_at": {
-                  "type": "datetime"
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -5088,94 +5088,6 @@
                 "updated_by": {
                   "type": "string"
                 }
-              }
-            }
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
               }
             }
           }
@@ -5228,94 +5140,6 @@
           },
           "after": {
             "type": "object"
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
           }
         }
       },
@@ -5515,94 +5339,6 @@
                   ]
                 }
               ]
-            }
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
             }
           }
         }
@@ -5880,94 +5616,6 @@
               },
               "updated_by": {
                 "type": "string"
-              }
-            }
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
               }
             }
           }
@@ -6253,95 +5901,8 @@
             }
           },
           "published_at": {
-            "type": "datetime"
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -6482,7 +6043,8 @@
             "type": "object"
           },
           "published_at": {
-            "type": "datetime"
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -6649,101 +6211,13 @@
                 "type": "object"
               },
               "published_at": {
-                "type": "datetime"
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
               },
               "updated_by": {
                 "type": "string"
-              }
-            }
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
               }
             }
           }
@@ -6896,94 +6370,6 @@
                 "updated_by": {
                   "type": "string"
                 }
-              }
-            }
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
               }
             }
           }
@@ -7219,94 +6605,6 @@
                 "type": "string"
               }
             }
-          },
-          "created_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
           }
         }
       },
@@ -7329,6 +6627,7 @@
           },
           "password": {
             "type": "string",
+            "format": "password",
             "minLength": 6
           },
           "resetPasswordToken": {
