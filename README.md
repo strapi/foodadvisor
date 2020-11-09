@@ -17,7 +17,7 @@ git clone https://github.com/strapi/foodadvisor.git
 Run the following from your command line:
 
 ```
-cd api && yarn && yarn run seed && yarn develop
+yarn && yarn run seed && yarn develop
 ```
 
 Then, follow [Step 3. Create an admin user](https://strapi.io/documentation/3.0.0-beta.x/getting-started/quick-start-tutorial.html#_3-create-an-admin-user) to create an `Administrator`.
