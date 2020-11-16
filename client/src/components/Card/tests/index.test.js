@@ -31,7 +31,7 @@ describe('<Card />', () => {
     const wrapper = mount(<Card {...props} />);
     const img = wrapper.find(Img);
 
-    expect(img.prop('src')).toBe(`${process.env.REACT_APP_BACKEND_URL}`);
+    expect(img.prop('src')).toBe(`${window.BACKEND_URL}`);
   });
 
   it('the <Img /> component should have the src props equals to `undefined/test.png` if a cover prop is given', () => {
@@ -39,7 +39,7 @@ describe('<Card />', () => {
     const img = wrapper.find(Img);
 
     expect(img.prop('src')).toBe(
-      `${process.env.REACT_APP_BACKEND_URL}/test.png`,
+      `${window.BACKEND_URL}/test.png`,
     );
   });
 

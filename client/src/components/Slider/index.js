@@ -70,7 +70,7 @@ class Slider extends Component {
           key={item.url}
         >
           <Img
-            src={`${process.env.REACT_APP_BACKEND_URL}${item.url}`}
+            src={`${window.BACKEND_URL}${item.url}`}
             alt={`slide_${index}`}
           />
         </CarouselItem>
@@ -86,7 +86,7 @@ class Slider extends Component {
           key={item.url}
         >
           <Img
-            src={`${process.env.REACT_APP_BACKEND_URL}${item.url}`}
+            src={`${window.BACKEND_URL}${item.url}`}
             alt={`slide_${index}`}
           />
         </li>

@@ -28,7 +28,7 @@ function Review({
       <div className="review-wrapper">
         <div className="img-wrapper">
           <Img
-            src={`${process.env.REACT_APP_BACKEND_URL}${url}`}
+            src={`${window.BACKEND_URL}${url}`}
             alt={username}
           />
         </div>

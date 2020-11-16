@@ -24,7 +24,7 @@ function Card({ restaurant, onClick }) {
     <StyledCard onClick={() => onClick(id)} className="clickable-card">
       <div className="img-wrapper">
         <Img
-          src={`${process.env.REACT_APP_BACKEND_URL}${coverURL}`}
+          src={`${window.BACKEND_URL}${coverURL}`}
           alt="cover"
         />
       </div>

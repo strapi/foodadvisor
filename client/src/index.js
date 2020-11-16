@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom';
+import './defineUrl';
 import App from './containers/App';
 import client from './apolloClient';
 import * as serviceWorker from './serviceWorker';
