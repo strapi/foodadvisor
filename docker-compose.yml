@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  backend:
+    build:
+      context: api
+    image: registry.gitlab.com/strapi/demo/foodadvisor/api:latest
+    ports:
+    - "1337:1337"
+  frontend:
+    build:
+      context: client
+    image: registry.gitlab.com/strapi/demo/foodadvisor/client:latest
+    ports:
+      - "8080:80"
+    environment:
+      BACKEND_URL: "http://localhost:1337"
