@@ -1,0 +1,30 @@
+variables:
+  API_REGISTRY_IMAGE: $CI_REGISTRY_IMAGE/api
+  CLIENT_REGISTRY_IMAGE: $CI_REGISTRY_IMAGE/client
+  CURRENT_TAG: v1.1.0
+  DOCKER_TLS_CERTDIR: "/certs"
+
+services:
+  - docker:19.03.13-dind
+
+image: docker:19.03.13
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+# Build API server for demo usage
+build-api:
+  stage: build
+  script:
+    - docker build -t $API_REGISTRY_IMAGE:$CURRENT_TAG --build-arg STRAPI_LICENSE=$STRAPI_LICENSE api
+    - docker push $API_REGISTRY_IMAGE:$CURRENT_TAG
+  only:
+    - master
+
+# Build Frontend Client server for demo usage
+build-client:
+  stage: build
+  script:
+    - docker build -t $CLIENT_REGISTRY_IMAGE:$CURRENT_TAG --build-arg STRAPI_LICENSE=$STRAPI_LICENSE client
+    - docker push $CLIENT_REGISTRY_IMAGE:$CURRENT_TAG
+  only:
+    - master
