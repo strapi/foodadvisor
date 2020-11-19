@@ -10,28 +10,30 @@ Clone FoodAdvisor
 git clone https://github.com/strapi/foodadvisor.git
 ```
 
-## 2. Start Strapi from the ./api folder
+Navigate to your `./my-projects/foodadvisor` folder by running `cd foodadvisor` from your command line.
 
-`Path: ./my-projects/foodadvisor/api`:
+## 2. Start Strapi
 
-Run the following from your command line:
+Naviagte to your `./my-projects/foodadvisor/api` folder by running `cd api` from your command line.
+
+In `./my-projects/foodadvisor/api`, run the following from your command line:
 
 ```
-cd api && yarn && yarn run seed && yarn develop
+yarn && yarn run seed && yarn develop
 ```
 
-Then, follow [Step 3. Create an admin user](https://strapi.io/documentation/3.0.0-beta.x/getting-started/quick-start-tutorial.html#_3-create-an-admin-user) to create an `Administrator`.
+Then, follow [Step 2. Create an admin user](https://strapi.io/documentation/v3.x/getting-started/quick-start.html#_2-create-an-administrator-user) to create an `Administrator`.
 
 You will find more information and options in the [**api** README](./api).
 
-## 3. Start the front-end from the ./client folder
+## 3. Start the front-end 
 
-`Path: ./my-projects/foodadvisor/client`:
+Naviagte to your `./my-projects/foodadvisor/client` folder by running `cd client` from your command line.
 
-Run the following from your command line:
+In `./my-projects/foodadvisor/client`, run the following from your command line:
 
 ```
-cd client && yarn install && yarn start
+yarn && yarn start
 ```
 
 You will find more information and options in the [**client** README](./client).
