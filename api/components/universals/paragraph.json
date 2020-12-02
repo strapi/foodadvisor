@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_universals_paragraphs",
+  "info": {
+    "name": "paragraph",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    }
+  }
+}
