@@ -16,6 +16,7 @@ import Blog from '../Blog';
 import RestaurantsPage from '../RestaurantsPage';
 import RestaurantPage from '../RestaurantPage';
 import NotFound from '../NotFound';
+import UniversalPage from '../UniversalPage'
 
 const headerUrls = [
   { name: 'Restaurants', to: '/' },
@@ -44,6 +45,7 @@ function App() {
         <Route path="/about" component={About} exact />
         <Route path="/blog" component={Blog} exact />
         <Route path="/:id/:content" component={RestaurantPage} exact />
+        <Route path="/:title" component={UniversalPage} exact />
         <Route component={NotFound} />
       </Switch>
       <Footer links={footerUrls}/>
