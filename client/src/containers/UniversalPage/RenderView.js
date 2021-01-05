@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown'
 import PropTypes from 'prop-types';
 
 import H1 from '../../components/H1';
@@ -58,9 +59,7 @@ const RenderView = ({
           {universals.slices.map(slices => (
           <div className="column" key={slices.id}>
           <div className="text-section">
-            <p>
-              {slices.body}
-            </p>
+            <ReactMarkdown source={slices.body} />
           </div>
           </div>
         ))}
