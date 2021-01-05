@@ -13,11 +13,11 @@ import RenderView from './RenderView';
 
 function UniversalPage(props) {
 
-  const renderView = ({ universals }) => {
+  const renderView = ({ universalBySlug }) => {
     return (
       <>
         <RenderView
-          universals={universals}
+          universals={universalBySlug}
         />
       </>
     );
@@ -27,7 +27,7 @@ function UniversalPage(props) {
         <Query
           query={GET_PAGE}
           render={renderView}
-          variables={{page: props.match.params.slug}}
+          variables={{slug: props.match.params.slug}}
         />
     </div>
   );

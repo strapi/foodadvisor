@@ -2,11 +2,8 @@
 import gql from 'graphql-tag';
 
 const GET_PAGE = gql`
-query page($page: String!){
-  universals(where:
-  {
-    slug: $page
-  }) {
+query universalBySlug($slug: String!) {
+  universalBySlug(slug: $slug) {
     Title
     slug
     seo {

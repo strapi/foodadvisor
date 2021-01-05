@@ -41,52 +41,48 @@ const RenderView = ({
       </div>
       <div className="informations-wrapper">
         <div className="container">
-        {universals.map(universals => (
-          <div className="column" key={universals.id}>
-            <H1>{universals.Title}</H1>
-          <div className="text-section">
-            <p>
-              {universals.seo.description}
+            <div className="column">
+              <H1>{universals.Title}</H1>
+              <div className="text-section">
+                <p>
+                  {universals.seo.description}
+                </p>
+              </div>
+              <H4>{universals.seo.title}</H4>
+              <div className="text-section">
+                <p>
+                  {universals.seo.description}
+                </p>
+              </div>
+              <div>
+                {universals.slices.map(slices => (
+                  <div className="column" key={slices.id}>
+                    <div className="text-section">
+                      <ReactMarkdown source={slices.body} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <H4>Follow</H4>
+              <div className="text-section">
+                <p>
+                  Stay up to date on upcoming events, new features and random musings.
             </p>
-          </div>
-          <H4>{universals.seo.title}</H4>
-          <div className="text-section">
-          <p>
-              {universals.seo.description}
-            </p>
-          </div>
-          <div>
-          {universals.slices.map(slices => (
-          <div className="column" key={slices.id}>
-          <div className="text-section">
-            <ReactMarkdown source={slices.body} />
-          </div>
-          </div>
-        ))}
-            </div>
-          <H4>Follow</H4>
-          <div className="text-section">
-            <p>
-              Stay up to date on upcoming events, new features and random musings.
-            </p>
-            <div className="social-wrapper">
-              <div className="social-wrapper">
-                {Object.keys(networks).map(key => {
-                  return (
-                    <a href={networks[key].href} key={key}>
-                      <div>
-                        <Img src={networks[key].img} alt={key} />
-                      </div>
-                    </a>
-                  )
-                })}
+                <div className="social-wrapper">
+                  <div className="social-wrapper">
+                    {Object.keys(networks).map(key => {
+                      return (
+                        <a href={networks[key].href} key={key}>
+                          <div>
+                            <Img src={networks[key].img} alt={key} />
+                          </div>
+                        </a>
+                      )
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
-        ))}
-          
-        
         </div>
       </div>
     </div>
