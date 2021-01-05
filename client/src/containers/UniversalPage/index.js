@@ -27,7 +27,7 @@ function UniversalPage(props) {
         <Query
           query={GET_PAGE}
           render={renderView}
-          variables={{page: props.match.params.title}}
+          variables={{page: props.match.params.slug}}
         />
     </div>
   );

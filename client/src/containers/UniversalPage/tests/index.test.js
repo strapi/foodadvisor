@@ -6,6 +6,6 @@ import UniversalPage from '../index';
 
 describe('<UniversalPage />', () => {
   it('should not crash', () => {
-    shallow(<UniversalPage />);
+    shallow(<UniversalPage match={{ params: { slug: 'foo' } }} />);
   });
 });

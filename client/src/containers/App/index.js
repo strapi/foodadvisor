@@ -45,7 +45,7 @@ function App() {
         <Route path="/about" component={About} exact />
         <Route path="/blog" component={Blog} exact />
         <Route path="/:id/:content" component={RestaurantPage} exact />
-        <Route path="/:title" component={UniversalPage} exact />
+        <Route path="/:slug" component={UniversalPage} exact />
         <Route component={NotFound} />
       </Switch>
       <Footer links={footerUrls}/>
