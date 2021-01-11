@@ -335,6 +335,38 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "universal": {
+                  "required": [
+                    "id",
+                    "Title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "seo": {
+                      "type": "component"
+                    },
+                    "slices": {
+                      "type": "dynamiczone"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -356,6 +388,38 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "universal": {
+                  "required": [
+                    "id",
+                    "Title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "seo": {
+                      "type": "component"
+                    },
+                    "slices": {
+                      "type": "dynamiczone"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -377,6 +441,38 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "universal": {
+                  "required": [
+                    "id",
+                    "Title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "seo": {
+                      "type": "component"
+                    },
+                    "slices": {
+                      "type": "dynamiczone"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -406,6 +502,38 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "universal": {
+                  "required": [
+                    "id",
+                    "Title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "seo": {
+                      "type": "component"
+                    },
+                    "slices": {
+                      "type": "dynamiczone"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -427,6 +555,38 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "universal": {
+                  "required": [
+                    "id",
+                    "Title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "seo": {
+                      "type": "component"
+                    },
+                    "slices": {
+                      "type": "dynamiczone"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -448,6 +608,38 @@
                 },
                 "url": {
                   "type": "string"
+                },
+                "universal": {
+                  "required": [
+                    "id",
+                    "Title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "Title": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "seo": {
+                      "type": "component"
+                    },
+                    "slices": {
+                      "type": "dynamiczone"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }

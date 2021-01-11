@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "new_footers",
+  "info": {
+    "name": "new footer",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "column": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.column",
+      "max": 4,
+      "required": true
+    }
+  }
+}

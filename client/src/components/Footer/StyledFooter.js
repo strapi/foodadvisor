@@ -99,6 +99,7 @@ const StyledFooter = styled.div`
       }
     }
     .navbar-nav {
+      flex-direction: row;
       width: 51.3%;
     }
     .newsletter {

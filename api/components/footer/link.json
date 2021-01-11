@@ -2,7 +2,8 @@
   "collectionName": "components_footer_links",
   "info": {
     "name": "link",
-    "icon": "link"
+    "icon": "link",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,6 +13,9 @@
     },
     "url": {
       "type": "string"
+    },
+    "universal": {
+      "model": "universal"
     }
   }
 }
