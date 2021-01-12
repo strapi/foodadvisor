@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "footers",
   "info": {
-    "name": "Footer"
+    "name": "Footer",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,20 +11,12 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "column1": {
+    "columns": {
       "type": "component",
       "repeatable": true,
-      "component": "footer.link"
-    },
-    "column2": {
-      "type": "component",
-      "repeatable": true,
-      "component": "footer.link"
-    },
-    "column3": {
-      "type": "component",
-      "repeatable": true,
-      "component": "footer.link"
+      "component": "footer.columns",
+      "required": true,
+      "max": 3
     }
   }
 }

@@ -312,74 +312,83 @@
     "schemas": {
       "Footer": {
         "required": [
-          "id"
+          "id",
+          "columns"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "column1": {
+          "columns": {
             "type": "array",
             "items": {
               "type": "object",
               "required": [
                 "id",
-                "label"
+                "link"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "label": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
+                "link": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "label"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "universal": {
+                        "required": [
+                          "id",
+                          "Title"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "Title": {
+                            "type": "string"
+                          },
+                          "slug": {
+                            "type": "uid"
+                          },
+                          "seo": {
+                            "type": "component"
+                          },
+                          "slices": {
+                            "type": "dynamiczone"
+                          },
+                          "published_at": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "minItems": 1,
+                  "maxItems": 4
                 }
               }
-            }
-          },
-          "column2": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "label"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "column3": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "label"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              }
-            }
+            },
+            "maxItems": 3
           },
           "published_at": {
             "type": "string",
@@ -388,69 +397,80 @@
         }
       },
       "NewFooter": {
+        "required": [
+          "columns"
+        ],
         "properties": {
-          "column1": {
+          "columns": {
             "type": "array",
             "items": {
               "type": "object",
               "required": [
                 "id",
-                "label"
+                "link"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "label": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
+                "link": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "label"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "universal": {
+                        "required": [
+                          "id",
+                          "Title"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "Title": {
+                            "type": "string"
+                          },
+                          "slug": {
+                            "type": "uid"
+                          },
+                          "seo": {
+                            "type": "component"
+                          },
+                          "slices": {
+                            "type": "dynamiczone"
+                          },
+                          "published_at": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "minItems": 1,
+                  "maxItems": 4
                 }
               }
-            }
-          },
-          "column2": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "label"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "column3": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "label"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              }
-            }
+            },
+            "maxItems": 3
           },
           "published_at": {
             "type": "string",
