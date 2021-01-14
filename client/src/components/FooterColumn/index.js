@@ -9,15 +9,15 @@ import { Nav } from 'reactstrap';
 import Column from './Column';
 
 function FooterColumn({ columns }) {
-  const links = columns.reduce((acc, current) => {
-    const subLinks = current.link.reduce((accumulator, curr) => {
-      let to = curr.url;
+  columns.reduce((acc, curr) => {
+    const subLinks = curr.link.reduce((accumulator, current) => {
+      let to = current.url;
 
-      if (curr.universal) {
-        to = `/${curr.universal.slug}`;
+      if (current.universal) {
+        to = `/${current.universal.slug}`;
       }
 
-      accumulator.push({ name: curr.label, to });
+      accumulator.push({ name: current.label, to });
 
       return accumulator;
     }, []);
@@ -27,8 +27,8 @@ function FooterColumn({ columns }) {
 
   return (
     <Nav navbar>
-      {columns.map((column, key) => (
-        <Column links={column.link} key={key} />
+      {columns.map(column => (
+        <Column links={column.link} key={column.link.label} />
       ))}
     </Nav>
   );

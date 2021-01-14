@@ -19,7 +19,7 @@ const Column = ({ links }) => {
       {formattedLinks.map(link => {
         if (link.to.startsWith('https')) {
           return (
-            <a href={link.to} target="_blank" key={link.to}>
+            <a href={link.to} target="_blank" rel="noreferrer" key={link.to}>
               {link.name}
             </a>
           );

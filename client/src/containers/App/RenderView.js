@@ -18,7 +18,6 @@ const headerUrls = [
 ];
 
 const RenderView = ({ footer: { columns } }) => {
-  console.log({ columns });
   return (
     <div>
       <GlobalStyles />
