@@ -28,7 +28,7 @@ You will find more information and options in the [**api** README](./api).
 
 ## 3. Start the front-end 
 
-Naviagte to your `./my-projects/foodadvisor/client` folder by running `cd client` from your command line.
+Navigate to your `./my-projects/foodadvisor/client` folder by running `cd client` from your command line.
 
 In `./my-projects/foodadvisor/client`, run the following from your command line:
 
