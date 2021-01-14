@@ -7,7 +7,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RenderView from './RenderView';
-import { GET_FOOTER, GET_PAGE } from '../../queries';
+import { GET_FOOTER } from '../../queries';
 import Query from '../../components/Query';
 
 function App() {
