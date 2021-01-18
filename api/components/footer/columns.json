@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "link": {
+    "links": {
       "type": "component",
       "repeatable": true,
       "component": "footer.link",

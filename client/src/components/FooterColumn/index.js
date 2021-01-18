@@ -7,10 +7,12 @@
 import React from 'react';
 import { Nav } from 'reactstrap';
 import Column from './Column';
+import PropTypes from 'prop-types';
+
 
 function FooterColumn({ columns }) {
   columns.reduce((acc, curr) => {
-    const subLinks = curr.link.reduce((accumulator, current) => {
+    const subLinks = curr.links.reduce((accumulator, current) => {
       let to = current.url;
 
       if (current.universal) {
@@ -27,14 +29,16 @@ function FooterColumn({ columns }) {
 
   return (
     <Nav navbar>
-      {columns.map(column => (
-        <Column links={column.link} key={column.link.label} />
+      {columns.map((column, key) => (
+        <Column links={column.links} key={key} />
       ))}
     </Nav>
   );
 }
 
 FooterColumn.defaultProps = {};
-FooterColumn.propTypes = {};
+FooterColumn.propTypes = {
+  column: PropTypes.shape({ links: PropTypes.array }),
+};
 
 export default FooterColumn;

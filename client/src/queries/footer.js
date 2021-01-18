@@ -2,10 +2,10 @@
 import gql from 'graphql-tag';
 
 const GET_FOOTER = gql`
-query newFooter {
+query footer {
     footer {
       columns {
-        link {
+        links {
           label
           url
           universal {

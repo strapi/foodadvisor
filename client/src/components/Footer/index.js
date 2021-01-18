@@ -52,6 +52,7 @@ function Footer({ columns, onSubmit }) {
 }
 
 Footer.defaultProps = {
+  columns: [],
   onSubmit: e => e.preventDefault(),
 };
 Footer.propTypes = {
