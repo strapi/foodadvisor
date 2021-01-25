@@ -6,8 +6,9 @@
 
 import React from 'react';
 import { Nav } from 'reactstrap';
-import Column from './Column';
 import PropTypes from 'prop-types';
+
+import Column from './Column';
 
 
 function FooterColumn({ columns }) {
@@ -30,13 +31,15 @@ function FooterColumn({ columns }) {
   return (
     <Nav navbar>
       {columns.map((column, key) => (
-        <Column links={column.links} key={key} />
+        <Column links={column.links} key={key.id} />
       ))}
     </Nav>
   );
 }
 
-FooterColumn.defaultProps = {};
+FooterColumn.defaultProps = {
+  column:[],
+};
 FooterColumn.propTypes = {
   column: PropTypes.shape({ links: PropTypes.array }),
 };

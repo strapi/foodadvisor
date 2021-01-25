@@ -43,6 +43,9 @@ function Column({ links }){
     </div>
   );
 };
+Column.defaultProps = {
+  links: [],
+};
 Column.propTypes = {
   links: PropTypes.array,
 };

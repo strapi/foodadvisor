@@ -57,6 +57,7 @@ Footer.defaultProps = {
 };
 Footer.propTypes = {
   onSubmit: PropTypes.func,
+  columns: PropTypes.array,
 };
 
 export default Footer;
