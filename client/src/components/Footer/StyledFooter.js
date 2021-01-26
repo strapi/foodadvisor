@@ -26,7 +26,7 @@ const StyledFooter = styled.div`
     color: ${colors.darkGrey};
   }
   .nav-list {
-    margin-bottom: ${sizes.margin * 5}px;
+    margin-bottom: ${sizes.margin * 1}px;
     a {
       display: inline-block;
       width: 50%;
@@ -75,7 +75,7 @@ const StyledFooter = styled.div`
   @media (min-width: ${sizes.tablet}) {
     padding-top: ${sizes.margin * 5.8}px;
     .nav-list {
-      margin-bottom: ${sizes.margin * 2}px;
+      margin-bottom: ${sizes.margin * 1}px;
       a {
         margin-bottom: ${sizes.margin * 0.4}px;
       }
