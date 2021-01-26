@@ -52,12 +52,11 @@ function Footer({ columns, onSubmit }) {
 }
 
 Footer.defaultProps = {
-  columns: [],
   onSubmit: e => e.preventDefault(),
 };
 Footer.propTypes = {
   onSubmit: PropTypes.func,
-  columns: PropTypes.array,
+  columns: PropTypes.array.isRequired,
 };
 
 export default Footer;

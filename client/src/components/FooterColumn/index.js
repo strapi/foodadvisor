@@ -38,10 +38,10 @@ function FooterColumn({ columns }) {
 }
 
 FooterColumn.defaultProps = {
-  column:[],
+  columns:[],
 };
 FooterColumn.propTypes = {
-  column: PropTypes.shape({ links: PropTypes.array }),
+  columns: PropTypes.shape({ links: PropTypes.array }),
 };
 
 export default FooterColumn;
