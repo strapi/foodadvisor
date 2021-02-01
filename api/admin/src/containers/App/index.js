@@ -1,0 +1,139 @@
+/**
+ *
+ * App.js
+ *
+ * This component is the skeleton around the actual pages, and should only
+ * contain code that should be seen on all pages. (e.g. navigation bar)
+ *
+ * NOTE: while this component should technically be a stateless functional
+ * component (SFC), hot reloading does not currently support SFCs. If hot
+ * reloading is not a neccessity for you then you can refactor it and remove
+ * the linting exception.
+ */
+
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators, compose } from 'redux';
+import { LoadingIndicatorPage, auth, request } from 'strapi-helper-plugin';
+import GlobalStyle from '../../components/GlobalStyle';
+import Admin from '../Admin';
+import AuthPage from '../AuthPage';
+import NotFoundPage from '../NotFoundPage';
+// eslint-disable-next-line import/no-cycle
+import NotificationProvider from '../NotificationProvider';
+import PrivateRoute from '../PrivateRoute';
+import Theme from '../Theme';
+import { Content, Wrapper } from './components';
+import { getDataSucceeded } from './actions';
+import { Button } from '@buffetjs/core';
+import Tour from './Tour';
+
+function App(props) {
+  const getDataRef = useRef();
+  const [{ isLoading, hasAdmin }, setState] = useState({ isLoading: true, hasAdmin: false });
+
+  getDataRef.current = props.getDataSucceeded;
+
+  const [isTourOpen, setIsTourOpen] = useState(true)
+
+  const openTour = () => {
+    setIsTourOpen(true)
+  };
+
+  const closeTour = () => {
+    setIsTourOpen(false)
+  };
+
+  useEffect(() => {
+    const getData = async () => {
+      const currentToken = auth.getToken();
+
+      if (currentToken) {
+        try {
+          const {
+            data: { token },
+          } = await request('/admin/renew-token', {
+            method: 'POST',
+            body: { token: currentToken },
+          });
+          auth.updateToken(token);
+        } catch (err) {
+          // Refresh app
+          auth.clearAppStorage();
+          window.location.reload();
+        }
+      }
+
+      try {
+        const { data } = await request('/admin/init', { method: 'GET' });
+
+        const { uuid } = data;
+
+        if (uuid) {
+          try {
+            fetch('https://analytics.strapi.io/track', {
+              method: 'POST',
+              body: JSON.stringify({
+                event: 'didInitializeAdministration',
+                uuid,
+              }),
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+          } catch (e) {
+            // Silent.
+          }
+        }
+
+        getDataRef.current(data);
+        setState({ isLoading: false, hasAdmin: data.hasAdmin });
+      } catch (err) {
+        strapi.notification.error('app.containers.App.notification.error.init');
+      }
+    };
+
+    getData();
+  }, [getDataRef]);
+
+  if (isLoading) {
+    return <LoadingIndicatorPage />;
+  }
+
+  return (
+    <Theme>
+      <Wrapper>
+        <GlobalStyle />
+        <NotificationProvider />
+        <Content>
+        <Tour isOpen={isTourOpen} closeTour={closeTour} style={{right: '15px'}} />
+          <Switch>
+            <Route
+              path="/auth/:authType"
+              render={routerProps => <AuthPage {...routerProps} hasAdmin={hasAdmin} />}
+              exact
+            />
+            <PrivateRoute path="/" component={Admin} />
+            <Route path="" component={NotFoundPage} />
+          </Switch>
+        </Content>
+      </Wrapper>
+      <Button onClick={openTour} color="primary" style={{ right: '70px', bottom: '15px', position: 'fixed', height: '37px'}}>Guided Tour</Button>
+    </Theme>
+  );
+}
+
+App.propTypes = {
+  getDataSucceeded: PropTypes.func.isRequired,
+};
+
+export function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getDataSucceeded }, dispatch);
+}
+
+const withConnect = connect(null, mapDispatchToProps);
+
+export default compose(withConnect)(App);
+export { App };
