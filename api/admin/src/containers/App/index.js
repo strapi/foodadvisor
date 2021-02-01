@@ -108,7 +108,6 @@ function App(props) {
         <GlobalStyle />
         <NotificationProvider />
         <Content>
-        <Tour isOpen={isTourOpen} closeTour={closeTour} style={{right: '15px'}} />
           <Switch>
             <Route
               path="/auth/:authType"
@@ -120,6 +119,7 @@ function App(props) {
           </Switch>
         </Content>
       </Wrapper>
+      <Tour isOpen={isTourOpen} closeTour={closeTour} style={{right: '15px'}} />
       <Button onClick={openTour} color="primary" style={{ right: '70px', bottom: '15px', position: 'fixed', height: '37px'}}>Guided Tour</Button>
     </Theme>
   );
