@@ -7,7 +7,9 @@
     "icon": "plug",
     "description": "Description of guided-tour plugin."
   },
-  "dependencies": {},
+  "dependencies": {
+    "reactour": "^1.18.0"
+  },
   "author": {
     "name": "A Strapi developer",
     "email": "",
