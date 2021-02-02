@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useReducer, useMemo } from 'react';
+import React, { memo, useEffect, useCallback, useReducer, useMemo } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import ReactTour from 'reactour';
 import { get } from 'lodash';
@@ -10,9 +10,16 @@ const Tour = () => {
   const match = useRouteMatch('/plugins/:pluginId');
   const adminMatch = useRouteMatch('/:adminSlug');
   const pluginId = get(match, ['params', 'pluginId'], null);
+  // TODO check if needed
   const adminEndpoint = get(adminMatch, ['params', 'adminSlug'], null);
 
   console.log({ adminEndpoint, pluginId });
+
+  useEffect(() => {
+    if (!isOpen) {
+      dispatch({ type: 'SET_TOUR', tourId: pluginId || 'admin' });
+    }
+  }, [pluginId, isOpen]);
 
   const handleClick = useCallback(() => {
     dispatch({ type: 'TOGGLE_IS_OPEN' });

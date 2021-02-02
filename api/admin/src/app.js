@@ -1,16 +1,4 @@
-/**
- *
- * app.js
- *
- * Entry point of the application
- */
-
-// NOTE TO PLUGINS DEVELOPERS:
-// If you modify this file by adding new options to a plugin entry point
-// Here's the file: strapi/docs/3.0.0-beta.x/plugin-development/frontend-field-api.md
-// Here's the file: strapi/docs/3.0.0-beta.x/guides/registering-a-field-in-admin.md
-// Also the strapi-generate-plugins/files/admin/src/index.js needs to be updated
-// IF THE DOC IS NOT UPDATED THE PULL REQUEST WILL NOT BE MERGED
+// TODO: remove this file when we migrate the app to the version that has i18n
 
 /* eslint-disable */
 

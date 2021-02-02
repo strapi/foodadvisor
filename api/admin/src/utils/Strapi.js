@@ -1,11 +1,14 @@
 import ComponentApi from './ComponentApi';
 import FieldApi from './FieldApi';
+import MiddlewareApi from './MiddlewareApi';
 import PluginHandler from './Plugin';
 
 class Strapi {
   componentApi = ComponentApi();
 
   fieldApi = FieldApi();
+
+  middlewares = MiddlewareApi();
 
   plugins = {
     admin: PluginHandler({
