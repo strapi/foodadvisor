@@ -1,28 +1,21 @@
 import React, { memo, useEffect, useCallback, useReducer, useMemo } from 'react';
+import reducer, { initialState } from './reducer';
 import { useRouteMatch } from 'react-router-dom';
+import { Button } from '@buffetjs/core';
 import ReactTour from 'reactour';
 import { get } from 'lodash';
-import { Button } from '@buffetjs/core';
-import reducer, { initialState } from './reducer';
 
 const Tour = () => {
-  const [{ isOpen, tour }, dispatch] = useReducer(reducer, initialState);
   const match = useRouteMatch('/plugins/:pluginId');
-  const adminMatch = useRouteMatch('/:adminSlug');
-  const pluginId = get(match, ['params', 'pluginId'], null);
-  // TODO check if needed
-  const adminEndpoint = get(adminMatch, ['params', 'adminSlug'], null);
+  const pluginId = get(match, ['params', 'pluginId'], 'admin');
 
-  console.log({ adminEndpoint, pluginId });
-
-  useEffect(() => {
-    if (!isOpen) {
-      dispatch({ type: 'SET_TOUR', tourId: pluginId || 'admin' });
-    }
-  }, [pluginId, isOpen]);
+  const [{ isOpen, tour, actualPlugin, currentStep, totalLength }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
   const handleClick = useCallback(() => {
-    dispatch({ type: 'TOGGLE_IS_OPEN' });
+    dispatch({ type: 'TOGGLE_IS_OPEN', pluginId });
   }, []);
 
   const steps = useMemo(() => {
@@ -31,16 +24,48 @@ const Tour = () => {
     }, []);
   }, [tour]);
 
+  useEffect(() => {
+    let totalSteps = 0;
+    const keys = Object.keys(tour);
+    const previousPlugins = keys.slice(0, keys.indexOf(pluginId));
+    if (previousPlugins.length > 0) {
+      previousPlugins.forEach((plugin, i) => {
+        totalSteps += tour[plugin].steps.length;
+      });
+    }
+    if (tour[pluginId] && pluginId !== actualPlugin)
+      dispatch({ type: 'SETUP', pluginId, totalSteps });
+  });
+
+  const handleNextStep = () => {
+    if (tour[pluginId] && currentStep === totalLength - 1 && totalLength > 0) {
+      return;
+    } else if (tour[pluginId]) {
+      dispatch({ type: 'NEXT_STEP', length: tour[pluginId].steps.length });
+    }
+  };
+
   return (
     <>
-      <Button
-        onClick={handleClick}
-        color="primary"
-        style={{ right: '70px', bottom: '15px', position: 'fixed', height: '37px' }}
-      >
-        Guided Tour
-      </Button>
-      <ReactTour isOpen={isOpen} onRequestClose={handleClick} steps={steps} />
+      {tour[pluginId] && (
+        <Button
+          onClick={handleClick}
+          color="primary"
+          style={{ right: '70px', bottom: '15px', position: 'fixed', height: '37px' }}
+        >
+          Guided Tour
+        </Button>
+      )}
+      <ReactTour
+        isOpen={tour[pluginId] ? isOpen : false}
+        onRequestClose={handleClick}
+        steps={steps}
+        startAt={currentStep}
+        goToStep={currentStep}
+        nextStep={handleNextStep}
+        prevStep={() => dispatch({ type: 'PREV_STEP' })}
+        rounded={1}
+      />
     </>
   );
 };

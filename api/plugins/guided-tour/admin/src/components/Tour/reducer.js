@@ -3,23 +3,34 @@ import { isEmpty, pick } from 'lodash';
 import tour from './utils/tour';
 
 const initialState = {
-  isOpen: false,
   tour,
+  isOpen: true,
+  totalLength: 0,
+  currentStep: 0,
+  actualPlugin: null
 };
 
 const reducer = (state, action) =>
-  produce(state, (draftState) => {
+  produce(state, draftState => {
     switch (action.type) {
-      case 'SET_TOUR': {
-        const nextTour = pick(tour, action.tourId);
-
-        if (!isEmpty(nextTour)) {
-          draftState.tour = nextTour;
-        }
-        break;
-      }
       case 'TOGGLE_IS_OPEN': {
         draftState.isOpen = !state.isOpen;
+        draftState.currentStep = state.currentStep;
+        break;
+      }
+      case 'SETUP': {
+        draftState.currentStep = action.totalSteps;
+        draftState.actualPlugin = action.pluginId;
+        draftState.totalLength = action.totalSteps + tour[action.pluginId].steps.length
+        break;
+      }
+      case 'PREV_STEP': {
+        draftState.currentStep = state.currentStep > 0 ? state.currentStep - 1 : state.currentStep;
+        break;
+      }
+      case 'NEXT_STEP': {
+        draftState.currentStep =
+          state.currentStep < state.totalLength - 1 ? state.currentStep + 1 : state.currentStep;
         break;
       }
       default:
