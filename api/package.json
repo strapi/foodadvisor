@@ -23,6 +23,7 @@
     "fs-extra": "8.1.0",
     "knex": "0.16.3",
     "lodash": "^4.17.5",
+    "reactour": "^1.18.0",
     "sqlite3": "^4.0.6",
     "strapi": "3.4.4",
     "strapi-admin": "3.4.4",
