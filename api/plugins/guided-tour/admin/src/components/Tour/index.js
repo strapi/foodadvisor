@@ -64,7 +64,8 @@ const Tour = () => {
         goToStep={currentStep}
         nextStep={handleNextStep}
         prevStep={() => dispatch({ type: 'PREV_STEP' })}
-        rounded={1}
+        showNavigation={false}
+        rounded={2}
       />
     </>
   );
