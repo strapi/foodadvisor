@@ -35,7 +35,7 @@ const Tour = () => {
     }
     if (tour[pluginId] && pluginId !== actualPlugin)
       dispatch({ type: 'SETUP', pluginId, totalSteps });
-  });
+  }, [tour, pluginId, actualPlugin]);
 
   const handleNextStep = () => {
     if (tour[pluginId] && currentStep === totalLength - 1 && totalLength > 0) {
