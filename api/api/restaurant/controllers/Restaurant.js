@@ -2,6 +2,8 @@ module.exports = {
   find: async (ctx) => {
     let restaurants;
 
+    throw new Error('Mamamia, no can do');
+
     if (ctx.query._q) {
       restaurants = await strapi.api.restaurant.services.restaurant.search(ctx.query);
     } else {
