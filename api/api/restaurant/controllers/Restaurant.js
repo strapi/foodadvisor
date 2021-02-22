@@ -1,7 +1,7 @@
 module.exports = {
   find: async (ctx) => {
     let restaurants;
-
+    undefinedFunctionAgain();
     undefinedFunctionButWorse('last test 2');
 
     if (ctx.query._q) {
