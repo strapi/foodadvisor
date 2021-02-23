@@ -102,6 +102,11 @@
     "author_": {
       "private": true,
       "type": "json"
+    },
+    "owner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "restaurant.owner"
     }
   }
 }

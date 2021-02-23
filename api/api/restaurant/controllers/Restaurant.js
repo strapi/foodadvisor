@@ -1,8 +1,6 @@
 module.exports = {
   find: async (ctx) => {
     let restaurants;
-    undefinedFunctionAgain();
-    undefinedFunctionButWorse('last test 2');
 
     if (ctx.query._q) {
       restaurants = await strapi.api.restaurant.services.restaurant.search(ctx.query);
@@ -63,6 +61,15 @@ module.exports = {
 
       restaurant.noteDetails.push(detail);
     }
+
+    // Notify the restaurant by email that their profile was visited
+    console.log('About to send an email');
+    await strapi.plugins['email'].services.email.send({
+      from: 'test@strapi.io',
+      to: restaurant.owner.email,
+      subject: `${restaurant.name} just got a visit 👀`,
+      text: `You just got a visit on FoodAdvisor! Expect a new client soon`,
+    });
 
     return restaurant;
   }

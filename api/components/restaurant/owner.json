@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_restaurant_owners",
+  "info": {
+    "name": "owner",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

@@ -50,7 +50,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -236,7 +238,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -301,7 +305,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": []
       }
     },
@@ -352,7 +358,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -412,7 +420,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -484,7 +494,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -503,7 +515,9 @@
   "components": {
     "schemas": {
       "Review": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -517,7 +531,11 @@
             "default": ""
           },
           "author": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -572,7 +590,9 @@
           "likes": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -593,7 +613,10 @@
             }
           },
           "restaurant": {
-            "required": ["id", "opening_hours"],
+            "required": [
+              "id",
+              "opening_hours"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -621,7 +644,12 @@
               },
               "price": {
                 "type": "string",
-                "enum": ["_1", "_2", "_3", "_4"]
+                "enum": [
+                  "_1",
+                  "_2",
+                  "_3",
+                  "_4"
+                ]
               },
               "district": {
                 "type": "string",
@@ -671,6 +699,9 @@
               },
               "author_": {
                 "type": "object"
+              },
+              "owner": {
+                "type": "component"
               },
               "published_at": {
                 "type": "string"
