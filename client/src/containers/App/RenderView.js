@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import GlobalStyles from '../../components/GlobalStyles';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import About from '../About';
 import Blog from '../Blog';
 import RestaurantsPage from '../RestaurantsPage';
 import RestaurantPage from '../RestaurantPage';
@@ -12,7 +11,7 @@ import UniversalPage from '../UniversalPage';
 
 const headerUrls = [
   { name: 'Restaurants', to: '/' },
-  { name: 'about us', to: '/about' },
+  { name: 'about Foodadvisor', to: '/about-foodadvisor' },
   // Uncomment when available
   // { name: 'Blog', to: '/blog' }
 ];
@@ -24,7 +23,6 @@ const RenderView = ({ footer: { columns } }) => {
       <Header links={headerUrls} />
       <Switch>
         <Route path="/" component={RestaurantsPage} exact />
-        <Route path="/about" component={About} exact />
         <Route path="/blog" component={Blog} exact />
         <Route path="/:slug" component={UniversalPage} exact />
         <Route path="/:id/:content" component={RestaurantPage} exact />
