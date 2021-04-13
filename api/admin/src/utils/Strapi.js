@@ -13,7 +13,7 @@ class Strapi {
   plugins = {
     admin: PluginHandler({
       id: 'admin',
-      injectedComponents: {
+      injectionZones: {
         admin: {
           onboarding: [
             // { name: 'test', Component: () => 'coming soon' }
