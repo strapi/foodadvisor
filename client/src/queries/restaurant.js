@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import gql from 'graphql-tag';
 
 const GET_RESTAURANT = gql`
@@ -17,6 +16,11 @@ const GET_RESTAURANT = gql`
       }
       name
       note
+      locale
+      localizations {
+        id
+        locale
+      }
       opening_hours {
         id
         day_interval

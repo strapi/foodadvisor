@@ -33,6 +33,7 @@
     "strapi-plugin-documentation": "3.6.0-beta.2",
     "strapi-plugin-email": "3.6.0-beta.2",
     "strapi-plugin-graphql": "3.6.0-beta.2",
+    "strapi-plugin-i18n": "^3.6.0-beta.2",
     "strapi-plugin-upload": "3.6.0-beta.2",
     "strapi-plugin-users-permissions": "3.6.0-beta.2",
     "strapi-utils": "3.6.0-beta.2",

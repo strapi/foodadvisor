@@ -21,21 +21,24 @@ import Filters from '../../components/Filters';
 function RestaurantsPage({ location: { search }, history }) {
   const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
   const orderby = getQueryParameters(search, 'orderby') || 'name';
+  const locale = getQueryParameters(search, 'locale') || 'en';
   const range = 15;
 
   const setSearch = (where, nextStart) => {
     history.push({
-      search: `?category=${where.category}&district=${where.district}&start=${nextStart}`,
+      search: `?category=${where.category}&district=${where.district}&locale=${where.locale}&start=${nextStart}`,
     });
   };
 
   const getWhereParams = () => {
     const category = getQueryParameters(search, 'category') || 'all';
     const district = getQueryParameters(search, 'district') || '_all';
+    const locale = getQueryParameters(search, 'locale') || 'en';
 
     return {
       category,
       district,
+      locale,
     };
   };
 
@@ -83,6 +86,12 @@ function RestaurantsPage({ location: { search }, history }) {
         options: data.districts,
         value: getQueryParameters(search, 'district') || '_all',
       },
+      {
+        title: 'Language',
+        name: 'locale',
+        options: ['en', 'fr'],
+        value: getQueryParameters(search, 'locale') || 'en',
+      },
     ];
 
     return <Filters filters={filters} onChange={handleChange} range={range} />;
@@ -99,11 +108,19 @@ function RestaurantsPage({ location: { search }, history }) {
           rest={rest}
           start={start}
           range={range}
+          locale={locale}
         />
       </>
     );
   };
 
+  console.log({
+    limit: range,
+    start,
+    sort: `${orderby}:ASC`,
+    locale: locale,
+    where: prepareWhereParams(),
+  });
   return (
     <div className="page-wrapper" id="restaurants-page">
       <Container>
@@ -114,6 +131,7 @@ function RestaurantsPage({ location: { search }, history }) {
             limit: range,
             start,
             sort: `${orderby}:ASC`,
+            locale: locale,
             where: prepareWhereParams(),
           }}
         />

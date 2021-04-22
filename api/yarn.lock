@@ -8787,7 +8787,7 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
-pluralize@^8.0.0:
+pluralize@8.0.0, pluralize@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
@@ -11007,6 +11007,16 @@ strapi-plugin-graphql@3.6.0-beta.2:
     koa-compose "^4.1.0"
     lodash "4.17.21"
     pluralize "^8.0.0"
+    strapi-utils "3.6.0-beta.2"
+
+strapi-plugin-i18n@^3.6.0-beta.2:
+  version "3.6.0-beta.2"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-i18n/-/strapi-plugin-i18n-3.6.0-beta.2.tgz#efed0659043812158d1ad2a538cc7fe36cb26c6a"
+  integrity sha512-As/Qur2W13VHiPEVPvafy6c/UPqop4IJ6k6fzMv6dHBiMwQtPSliI9fuaQbGmlt6xynQv+d9f4XVnjozSfqe6A==
+  dependencies:
+    lodash "4.17.20"
+    p-map "4.0.0"
+    pluralize "8.0.0"
     strapi-utils "3.6.0-beta.2"
 
 strapi-plugin-upload@3.6.0-beta.2:

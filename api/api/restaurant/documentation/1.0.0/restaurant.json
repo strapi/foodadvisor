@@ -50,9 +50,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": [
           {
             "name": "_limit",
@@ -238,9 +236,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -305,9 +301,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": []
       }
     },
@@ -358,9 +352,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": [
           {
             "name": "id",
@@ -420,9 +412,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -494,9 +484,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Restaurant"
-        ],
+        "tags": ["Restaurant"],
         "parameters": [
           {
             "name": "id",
@@ -515,10 +503,7 @@
   "components": {
     "schemas": {
       "Restaurant": {
-        "required": [
-          "id",
-          "opening_hours"
-        ],
+        "required": ["id", "opening_hours"],
         "properties": {
           "id": {
             "type": "string"
@@ -526,15 +511,7 @@
           "cover": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
+              "required": ["id", "name", "hash", "mime", "size", "url", "provider"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -610,12 +587,7 @@
           },
           "price": {
             "type": "string",
-            "enum": [
-              "_1",
-              "_2",
-              "_3",
-              "_4"
-            ]
+            "enum": ["_1", "_2", "_3", "_4"]
           },
           "district": {
             "type": "string",
@@ -649,9 +621,7 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": [
-                "id"
-              ],
+              "required": ["id"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -674,6 +644,15 @@
                 "restaurant": {
                   "type": "string"
                 },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -684,9 +663,7 @@
             }
           },
           "category": {
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -706,6 +683,9 @@
               "author_": {
                 "type": "object"
               },
+              "slug": {
+                "type": "uid"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -718,10 +698,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id",
-                "day_interval"
-              ],
+              "required": ["id", "day_interval"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -741,11 +718,7 @@
           },
           "seo": {
             "type": "object",
-            "required": [
-              "id",
-              "title",
-              "description"
-            ],
+            "required": ["id", "title", "description"],
             "properties": {
               "id": {
                 "type": "string"
@@ -760,11 +733,7 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": [
-                    "id",
-                    "name",
-                    "content"
-                  ],
+                  "required": ["id", "name", "content"],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -780,6 +749,118 @@
               }
             }
           },
+          "slug": {
+            "type": "uid"
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "required": ["id", "opening_hours"],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "cover": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "website": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string",
+                  "enum": ["_1", "_2", "_3", "_4"]
+                },
+                "district": {
+                  "type": "string",
+                  "enum": [
+                    "_1st",
+                    "_2nd",
+                    "_3rd",
+                    "_4th",
+                    "_5th",
+                    "_6th",
+                    "_7th",
+                    "_8th",
+                    "_9th",
+                    "_10th",
+                    "_11th",
+                    "_12th",
+                    "_13th",
+                    "_14th",
+                    "_15th",
+                    "_16th",
+                    "_17th",
+                    "_18th",
+                    "_19th",
+                    "_20th"
+                  ]
+                },
+                "publish_at": {
+                  "type": "string"
+                },
+                "reviews": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "category": {
+                  "type": "string"
+                },
+                "opening_hours": {
+                  "type": "component"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "previous_": {
+                  "type": "object"
+                },
+                "author_": {
+                  "type": "object"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -787,9 +868,7 @@
         }
       },
       "NewRestaurant": {
-        "required": [
-          "opening_hours"
-        ],
+        "required": ["opening_hours"],
         "properties": {
           "name": {
             "type": "string"
@@ -808,12 +887,7 @@
           },
           "price": {
             "type": "string",
-            "enum": [
-              "_1",
-              "_2",
-              "_3",
-              "_4"
-            ]
+            "enum": ["_1", "_2", "_3", "_4"]
           },
           "district": {
             "type": "string",
@@ -857,10 +931,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": [
-                "id",
-                "day_interval"
-              ],
+              "required": ["id", "day_interval"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -880,11 +951,7 @@
           },
           "seo": {
             "type": "object",
-            "required": [
-              "id",
-              "title",
-              "description"
-            ],
+            "required": ["id", "title", "description"],
             "properties": {
               "id": {
                 "type": "string"
@@ -899,11 +966,7 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": [
-                    "id",
-                    "name",
-                    "content"
-                  ],
+                  "required": ["id", "name", "content"],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -924,6 +987,18 @@
           },
           "author_": {
             "type": "object"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locale": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

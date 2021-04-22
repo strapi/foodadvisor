@@ -12,8 +12,7 @@ import sizes from '../../assets/styles/sizes';
 import fonts from '../../assets/styles/fonts';
 
 const StyledLink = styled(Link)`
-  display: block;
-  padding: ${sizes.margin * 2}px 0;
+  padding: ${sizes.margin * 2}px 0px 19px 3px;
   color: ${colors.mediumGrey};
   text-transform: uppercase;
   font-size: 12px;
