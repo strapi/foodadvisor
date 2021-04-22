@@ -46,9 +46,9 @@ function CardSection({ restaurant, hasLink, history }) {
         <Rate value={Math.floor(note)} clickable={false} />
         {hasLink && (
           <div className="link-wrapper">
-            <a onClick={goToReviews} className="link" role="navigation">
+            <button type="button" onClick={goToReviews} className="link" role="navigation">
               <p>See all reviews</p>
-            </a>
+            </button>
           </div>
         )}
       </div>

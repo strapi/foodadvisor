@@ -116,7 +116,7 @@ const tour = {
         ),
       },
       {
-        selector: 'a[href="/admin/plugins/content-manager/collectionType/application::restaurant.restaurant"]',
+        selector: 'a[href="/admin/plugins/content-manager/collectionType/application::restaurant.restaurant?page=1&pageSize=10&_sort=name:ASC&plugins[i18n][locale]=en"]',
         content: () => (
           <div>
           <h1>Content Manager</h1><br />
@@ -205,7 +205,31 @@ const tour = {
         ),
       },
       {
-        selector: 'a[href="/admin/plugins/content-manager/collectionType/application::category.category"]',
+        selector: 'div.col-md-12.col-lg-3',
+        content: () => (
+          <div>
+          <h1>Internationalization</h1><br />
+          The Internationalization (i18n) feature has been activated for this collection-type (Content-Types Builder - Edit Restaurant - Advanced settings), which allows you to create the same entry but for a different locale.<br />
+          The one by default here is <strong>English (en)</strong> but a french version of this entry also exists.<br /><br />
+          <ul>
+            <li>
+              Feel free to exit the guided tour and browse the entry in french.
+            </li>
+          </ul>
+          </div>
+        ),
+      },
+      {
+        selector: 'div.col-md-12.col-lg-3',
+        content: () => (
+          <div>
+          <h1>Internationalization</h1><br />
+          Create all your locales in the global settings of this application.<br />
+          </div>
+        ),
+      },
+      {
+        selector: 'a[href="/admin/plugins/content-manager/collectionType/application::category.category?page=1&pageSize=10&_sort=name:ASC"]',
         content: () => (
           <div>
           <h1>Collection Types</h1><br />

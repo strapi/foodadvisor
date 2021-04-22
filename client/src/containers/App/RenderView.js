@@ -16,13 +16,13 @@ const headerUrls = [
   // { name: 'Blog', to: '/blog' }
 ];
 
-const RenderView = ({ footer: { columns } }) => {
+const RenderView = ({ footer: { columns }, i18nlocales }) => {
   return (
     <div>
       <GlobalStyles />
       <Header links={headerUrls} />
       <Switch>
-        <Route path="/" component={RestaurantsPage} exact />
+        <Route path="/" render={props => <RestaurantsPage {...props} locales={i18nlocales} />} exact />
         <Route path="/blog" component={Blog} exact />
         <Route path="/:slug" component={UniversalPage} exact />
         <Route path="/:id/:content" component={RestaurantPage} exact />

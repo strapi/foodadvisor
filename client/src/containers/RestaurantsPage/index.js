@@ -10,6 +10,7 @@ import { Container } from 'reactstrap';
 import { set } from 'lodash';
 
 import { GET_RESTAURANTS } from '../../queries';
+
 import Query from '../../components/Query';
 
 import data from '../../assets/utils/data.json';
@@ -18,10 +19,9 @@ import getQueryParameters from '../../utils/getQueryParameters';
 import RenderView from './RenderView';
 import Filters from '../../components/Filters';
 
-function RestaurantsPage({ location: { search }, history }) {
+function RestaurantsPage({ location: { search }, history, locales }) {
   const start = parseInt(getQueryParameters(search, 'start'), 10) || 0;
   const orderby = getQueryParameters(search, 'orderby') || 'name';
-  const locale = getQueryParameters(search, 'locale') || 'en';
   const range = 15;
 
   const setSearch = (where, nextStart) => {
@@ -38,7 +38,7 @@ function RestaurantsPage({ location: { search }, history }) {
     return {
       category,
       district,
-      locale,
+      locale
     };
   };
 
@@ -89,7 +89,7 @@ function RestaurantsPage({ location: { search }, history }) {
       {
         title: 'Language',
         name: 'locale',
-        options: ['en', 'fr'],
+        options: locales.map(x => x.code),
         value: getQueryParameters(search, 'locale') || 'en',
       },
     ];
@@ -98,6 +98,7 @@ function RestaurantsPage({ location: { search }, history }) {
   };
 
   const renderView = ({ restaurants, ...rest }) => {
+
     return (
       <>
         {renderFilters(rest)}
@@ -108,19 +109,11 @@ function RestaurantsPage({ location: { search }, history }) {
           rest={rest}
           start={start}
           range={range}
-          locale={locale}
         />
       </>
     );
   };
 
-  console.log({
-    limit: range,
-    start,
-    sort: `${orderby}:ASC`,
-    locale: locale,
-    where: prepareWhereParams(),
-  });
   return (
     <div className="page-wrapper" id="restaurants-page">
       <Container>
@@ -131,7 +124,7 @@ function RestaurantsPage({ location: { search }, history }) {
             limit: range,
             start,
             sort: `${orderby}:ASC`,
-            locale: locale,
+            locale: prepareWhereParams().locale,
             where: prepareWhereParams(),
           }}
         />
@@ -152,6 +145,7 @@ RestaurantsPage.propTypes = {
   location: PropTypes.shape({
     search: PropTypes.string.isRequired,
   }),
+  locales: PropTypes.object.isRequired,
 };
 
 export default RestaurantsPage;
