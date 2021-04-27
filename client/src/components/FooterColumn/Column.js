@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-
-function Column({ links }){
+function Column({ links }) {
   const formattedLinks = links.reduce((accumulator, curr) => {
     let to = curr.url;
 
@@ -17,11 +16,11 @@ function Column({ links }){
   }, []);
 
   return (
-    <div className="nav-list">
+    <div className="nav-list" key={links.name}>
       {formattedLinks.map(link => {
         if (link.to.startsWith('https')) {
           return (
-            <a href={link.to} target="_blank" rel="noreferrer" key={link.to}>
+            <a href={link.to} target="_blank" rel="noreferrer" key={link.name}>
               {link.name}
             </a>
           );
@@ -42,7 +41,7 @@ function Column({ links }){
       })}
     </div>
   );
-};
+}
 Column.defaultProps = {
   links: [],
 };

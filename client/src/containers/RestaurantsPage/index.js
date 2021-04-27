@@ -38,7 +38,7 @@ function RestaurantsPage({ location: { search }, history, locales }) {
     return {
       category,
       district,
-      locale
+      locale,
     };
   };
 
@@ -98,7 +98,6 @@ function RestaurantsPage({ location: { search }, history, locales }) {
   };
 
   const renderView = ({ restaurants, ...rest }) => {
-
     return (
       <>
         {renderFilters(rest)}
@@ -145,7 +144,7 @@ RestaurantsPage.propTypes = {
   location: PropTypes.shape({
     search: PropTypes.string.isRequired,
   }),
-  locales: PropTypes.object.isRequired,
+  locales: PropTypes.array.isRequired,
 };
 
 export default RestaurantsPage;
