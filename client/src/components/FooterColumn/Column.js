@@ -16,11 +16,11 @@ function Column({ links }) {
   }, []);
 
   return (
-    <div className="nav-list" key={links.name}>
+    <div className="nav-list">
       {formattedLinks.map(link => {
         if (link.to.startsWith('https')) {
           return (
-            <a href={link.to} target="_blank" rel="noreferrer" key={link.name}>
+            <a href={link.to} target="_blank" rel="noreferrer" key={link.to}>
               {link.name}
             </a>
           );
