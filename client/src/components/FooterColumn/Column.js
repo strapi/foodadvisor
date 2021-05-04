@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-
-function Column({ links }){
+function Column({ links }) {
   const formattedLinks = links.reduce((accumulator, curr) => {
     let to = curr.url;
 
@@ -42,7 +41,7 @@ function Column({ links }){
       })}
     </div>
   );
-};
+}
 Column.defaultProps = {
   links: [],
 };

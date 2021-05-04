@@ -17,6 +17,11 @@ const GET_RESTAURANT = gql`
       }
       name
       note
+      locale
+      localizations {
+        id
+        locale
+      }
       opening_hours {
         id
         day_interval

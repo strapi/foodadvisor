@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/18/2021 5:34:50 PM"
+    "x-generation-date": "04/22/2021 3:04:19 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -37,7 +37,7 @@
   ],
   "externalDocs": {
     "description": "Find out more",
-    "url": "https://strapi.io/documentation/developer-docs/latest/"
+    "url": "https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html"
   },
   "security": [
     {
@@ -95,7 +95,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -281,7 +283,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -346,7 +350,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": []
       }
     },
@@ -397,7 +403,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -457,7 +465,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -529,7 +539,9 @@
           }
         },
         "summary": "",
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -594,7 +606,9 @@
           }
         },
         "summary": "",
-        "tags": ["Footer"],
+        "tags": [
+          "Footer"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -780,7 +794,9 @@
           }
         },
         "summary": "",
-        "tags": ["Footer"],
+        "tags": [
+          "Footer"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -841,7 +857,9 @@
           }
         },
         "summary": "",
-        "tags": ["Footer"],
+        "tags": [
+          "Footer"
+        ],
         "parameters": []
       }
     },
@@ -895,7 +913,9 @@
           }
         },
         "summary": "",
-        "tags": ["History"],
+        "tags": [
+          "History"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1081,7 +1101,9 @@
           }
         },
         "summary": "",
-        "tags": ["History"],
+        "tags": [
+          "History"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1146,7 +1168,9 @@
           }
         },
         "summary": "",
-        "tags": ["History"],
+        "tags": [
+          "History"
+        ],
         "parameters": []
       }
     },
@@ -1197,7 +1221,9 @@
           }
         },
         "summary": "",
-        "tags": ["History"],
+        "tags": [
+          "History"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1257,7 +1283,9 @@
           }
         },
         "summary": "",
-        "tags": ["History"],
+        "tags": [
+          "History"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1329,7 +1357,9 @@
           }
         },
         "summary": "",
-        "tags": ["History"],
+        "tags": [
+          "History"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1394,7 +1424,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1580,7 +1612,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1645,7 +1679,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": []
       }
     },
@@ -1696,7 +1732,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1756,7 +1794,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1828,7 +1868,9 @@
           }
         },
         "summary": "",
-        "tags": ["Like"],
+        "tags": [
+          "Like"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1893,7 +1935,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -2079,7 +2123,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2144,7 +2190,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": []
       }
     },
@@ -2195,7 +2243,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2255,7 +2305,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2327,7 +2379,9 @@
           }
         },
         "summary": "",
-        "tags": ["Restaurant"],
+        "tags": [
+          "Restaurant"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2392,7 +2446,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -2578,7 +2634,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2643,7 +2701,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": []
       }
     },
@@ -2694,7 +2754,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2754,7 +2816,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2826,7 +2890,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2891,7 +2957,9 @@
           }
         },
         "summary": "",
-        "tags": ["Universal"],
+        "tags": [
+          "Universal"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -3077,7 +3145,9 @@
           }
         },
         "summary": "",
-        "tags": ["Universal"],
+        "tags": [
+          "Universal"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3142,7 +3212,9 @@
           }
         },
         "summary": "",
-        "tags": ["Universal"],
+        "tags": [
+          "Universal"
+        ],
         "parameters": []
       }
     },
@@ -3193,7 +3265,9 @@
           }
         },
         "summary": "",
-        "tags": ["Universal"],
+        "tags": [
+          "Universal"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3253,7 +3327,9 @@
           }
         },
         "summary": "",
-        "tags": ["Universal"],
+        "tags": [
+          "Universal"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3325,7 +3401,9 @@
           }
         },
         "summary": "",
-        "tags": ["Universal"],
+        "tags": [
+          "Universal"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3391,7 +3469,9 @@
           }
         },
         "summary": "",
-        "tags": ["Email - Email"],
+        "tags": [
+          "Email - Email"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3407,6 +3487,134 @@
             }
           }
         }
+      }
+    },
+    "/email/test": {
+      "post": {
+        "deprecated": false,
+        "description": "Send an test email",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Email - Email"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/email/settings": {
+      "get": {
+        "deprecated": false,
+        "description": "Get the email settings",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Email - Email"
+        ],
+        "parameters": []
       }
     },
     "/upload/": {
@@ -3460,7 +3668,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -3529,7 +3739,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": []
       }
     },
@@ -3584,7 +3796,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": []
       }
     },
@@ -3639,7 +3853,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3703,7 +3919,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3769,7 +3987,9 @@
           }
         },
         "summary": "",
-        "tags": ["Upload - File"],
+        "tags": [
+          "Upload - File"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3831,7 +4051,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -3896,7 +4118,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -4082,7 +4306,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4143,7 +4369,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "role",
@@ -4218,7 +4446,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - Role"],
+        "tags": [
+          "UsersPermissions - Role"
+        ],
         "parameters": [
           {
             "name": "role",
@@ -4283,7 +4513,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -4485,7 +4717,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": []
       }
     },
@@ -4540,7 +4774,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4605,7 +4841,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4670,7 +4908,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "provider",
@@ -4736,7 +4976,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4805,7 +5047,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4874,7 +5118,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": []
       }
     },
@@ -4929,7 +5175,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -4997,7 +5245,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -5185,7 +5435,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": []
       }
     },
@@ -5236,7 +5488,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5296,7 +5550,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5371,7 +5627,9 @@
           }
         },
         "summary": "",
-        "tags": ["UsersPermissions - User"],
+        "tags": [
+          "UsersPermissions - User"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -5390,7 +5648,9 @@
   "components": {
     "schemas": {
       "Category": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -5401,7 +5661,10 @@
           "restaurants": {
             "type": "array",
             "items": {
-              "required": ["id", "opening_hours"],
+              "required": [
+                "id",
+                "opening_hours"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -5429,7 +5692,12 @@
                 },
                 "price": {
                   "type": "string",
-                  "enum": ["_1", "_2", "_3", "_4"]
+                  "enum": [
+                    "_1",
+                    "_2",
+                    "_3",
+                    "_4"
+                  ]
                 },
                 "district": {
                   "type": "string",
@@ -5480,6 +5748,18 @@
                 "author_": {
                   "type": "object"
                 },
+                "slug": {
+                  "type": "uid"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -5491,6 +5771,9 @@
                 }
               }
             }
+          },
+          "slug": {
+            "type": "uid"
           }
         }
       },
@@ -5511,6 +5794,9 @@
           "author_": {
             "type": "object"
           },
+          "slug": {
+            "type": "uid"
+          },
           "created_by": {
             "type": "string"
           },
@@ -5520,7 +5806,10 @@
         }
       },
       "Footer": {
-        "required": ["id", "columns"],
+        "required": [
+          "id",
+          "columns"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -5529,7 +5818,10 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id", "links"],
+              "required": [
+                "id",
+                "links"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -5538,7 +5830,10 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "required": ["id", "label"],
+                    "required": [
+                      "id",
+                      "label"
+                    ],
                     "properties": {
                       "id": {
                         "type": "string"
@@ -5550,7 +5845,10 @@
                         "type": "string"
                       },
                       "universal": {
-                        "required": ["id", "Title"],
+                        "required": [
+                          "id",
+                          "Title"
+                        ],
                         "properties": {
                           "id": {
                             "type": "string"
@@ -5594,13 +5892,18 @@
         }
       },
       "NewFooter": {
-        "required": ["columns"],
+        "required": [
+          "columns"
+        ],
         "properties": {
           "columns": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id", "links"],
+              "required": [
+                "id",
+                "links"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -5609,7 +5912,10 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "required": ["id", "label"],
+                    "required": [
+                      "id",
+                      "label"
+                    ],
                     "properties": {
                       "id": {
                         "type": "string"
@@ -5621,7 +5927,10 @@
                         "type": "string"
                       },
                       "universal": {
-                        "required": ["id", "Title"],
+                        "required": [
+                          "id",
+                          "Title"
+                        ],
                         "properties": {
                           "id": {
                             "type": "string"
@@ -5671,7 +5980,9 @@
         }
       },
       "History": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -5719,13 +6030,19 @@
         }
       },
       "Like": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
           },
           "author": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -5778,7 +6095,9 @@
             }
           },
           "review": {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -5799,6 +6118,15 @@
                 }
               },
               "restaurant": {
+                "type": "string"
+              },
+              "localizations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "locale": {
                 "type": "string"
               },
               "created_by": {
@@ -5828,7 +6156,10 @@
         }
       },
       "Restaurant": {
-        "required": ["id", "opening_hours"],
+        "required": [
+          "id",
+          "opening_hours"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -5836,7 +6167,15 @@
           "cover": {
             "type": "array",
             "items": {
-              "required": ["id", "name", "hash", "mime", "size", "url", "provider"],
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -5912,7 +6251,12 @@
           },
           "price": {
             "type": "string",
-            "enum": ["_1", "_2", "_3", "_4"]
+            "enum": [
+              "_1",
+              "_2",
+              "_3",
+              "_4"
+            ]
           },
           "district": {
             "type": "string",
@@ -5946,7 +6290,9 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -5969,6 +6315,15 @@
                 "restaurant": {
                   "type": "string"
                 },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -5979,7 +6334,9 @@
             }
           },
           "category": {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -5999,6 +6356,9 @@
               "author_": {
                 "type": "object"
               },
+              "slug": {
+                "type": "uid"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -6011,7 +6371,10 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id", "day_interval"],
+              "required": [
+                "id",
+                "day_interval"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6031,7 +6394,11 @@
           },
           "seo": {
             "type": "object",
-            "required": ["id", "title", "description"],
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6046,7 +6413,11 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["id", "name", "content"],
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -6062,6 +6433,126 @@
               }
             }
           },
+          "slug": {
+            "type": "uid"
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "opening_hours"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "cover": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "website": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string",
+                  "enum": [
+                    "_1",
+                    "_2",
+                    "_3",
+                    "_4"
+                  ]
+                },
+                "district": {
+                  "type": "string",
+                  "enum": [
+                    "_1st",
+                    "_2nd",
+                    "_3rd",
+                    "_4th",
+                    "_5th",
+                    "_6th",
+                    "_7th",
+                    "_8th",
+                    "_9th",
+                    "_10th",
+                    "_11th",
+                    "_12th",
+                    "_13th",
+                    "_14th",
+                    "_15th",
+                    "_16th",
+                    "_17th",
+                    "_18th",
+                    "_19th",
+                    "_20th"
+                  ]
+                },
+                "publish_at": {
+                  "type": "string"
+                },
+                "reviews": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "category": {
+                  "type": "string"
+                },
+                "opening_hours": {
+                  "type": "component"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "previous_": {
+                  "type": "object"
+                },
+                "author_": {
+                  "type": "object"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6069,7 +6560,9 @@
         }
       },
       "NewRestaurant": {
-        "required": ["opening_hours"],
+        "required": [
+          "opening_hours"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -6088,7 +6581,12 @@
           },
           "price": {
             "type": "string",
-            "enum": ["_1", "_2", "_3", "_4"]
+            "enum": [
+              "_1",
+              "_2",
+              "_3",
+              "_4"
+            ]
           },
           "district": {
             "type": "string",
@@ -6132,7 +6630,10 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["id", "day_interval"],
+              "required": [
+                "id",
+                "day_interval"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6152,7 +6653,11 @@
           },
           "seo": {
             "type": "object",
-            "required": ["id", "title", "description"],
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6167,7 +6672,11 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["id", "name", "content"],
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -6189,6 +6698,18 @@
           "author_": {
             "type": "object"
           },
+          "slug": {
+            "type": "uid"
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -6202,21 +6723,25 @@
         }
       },
       "Review": {
-        "required": ["id"],
+        "required": [
+          "id"
+        ],
         "properties": {
           "id": {
             "type": "string"
           },
           "content": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "note": {
-            "type": "integer",
-            "default": ""
+            "type": "integer"
           },
           "author": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6271,7 +6796,9 @@
           "likes": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6292,7 +6819,10 @@
             }
           },
           "restaurant": {
-            "required": ["id", "opening_hours"],
+            "required": [
+              "id",
+              "opening_hours"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6320,7 +6850,12 @@
               },
               "price": {
                 "type": "string",
-                "enum": ["_1", "_2", "_3", "_4"]
+                "enum": [
+                  "_1",
+                  "_2",
+                  "_3",
+                  "_4"
+                ]
               },
               "district": {
                 "type": "string",
@@ -6371,6 +6906,18 @@
               "author_": {
                 "type": "object"
               },
+              "slug": {
+                "type": "uid"
+              },
+              "localizations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "locale": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -6381,18 +6928,65 @@
                 "type": "string"
               }
             }
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "integer"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "likes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "restaurant": {
+                  "type": "string"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
           }
         }
       },
       "NewReview": {
         "properties": {
           "content": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "note": {
-            "type": "integer",
-            "default": ""
+            "type": "integer"
           },
           "author": {
             "type": "string"
@@ -6406,6 +7000,15 @@
           "restaurant": {
             "type": "string"
           },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
           "created_by": {
             "type": "string"
           },
@@ -6415,7 +7018,10 @@
         }
       },
       "Universal": {
-        "required": ["id", "Title"],
+        "required": [
+          "id",
+          "Title"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -6428,7 +7034,11 @@
           },
           "seo": {
             "type": "object",
-            "required": ["id", "title", "description"],
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6443,7 +7053,11 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["id", "name", "content"],
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -6467,7 +7081,9 @@
                   "properties": {
                     "__component": {
                       "type": "string",
-                      "enum": ["universals.paragraph"]
+                      "enum": [
+                        "universals.paragraph"
+                      ]
                     },
                     "id": {
                       "type": "string"
@@ -6476,7 +7092,9 @@
                       "type": "string"
                     }
                   },
-                  "required": ["id"]
+                  "required": [
+                    "id"
+                  ]
                 }
               ]
             }
@@ -6488,7 +7106,9 @@
         }
       },
       "NewUniversal": {
-        "required": ["Title"],
+        "required": [
+          "Title"
+        ],
         "properties": {
           "Title": {
             "type": "string"
@@ -6498,7 +7118,11 @@
           },
           "seo": {
             "type": "object",
-            "required": ["id", "title", "description"],
+            "required": [
+              "id",
+              "title",
+              "description"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6513,7 +7137,11 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "required": ["id", "name", "content"],
+                  "required": [
+                    "id",
+                    "name",
+                    "content"
+                  ],
                   "properties": {
                     "id": {
                       "type": "string"
@@ -6537,7 +7165,9 @@
                   "properties": {
                     "__component": {
                       "type": "string",
-                      "enum": ["universals.paragraph"]
+                      "enum": [
+                        "universals.paragraph"
+                      ]
                     },
                     "id": {
                       "type": "string"
@@ -6546,7 +7176,9 @@
                       "type": "string"
                     }
                   },
-                  "required": ["id"]
+                  "required": [
+                    "id"
+                  ]
                 }
               ]
             }
@@ -6564,7 +7196,10 @@
         }
       },
       "UsersPermissionsRole": {
-        "required": ["id", "name"],
+        "required": [
+          "id",
+          "name"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -6582,7 +7217,13 @@
           "permissions": {
             "type": "array",
             "items": {
-              "required": ["id", "type", "controller", "action", "enabled"],
+              "required": [
+                "id",
+                "type",
+                "controller",
+                "action",
+                "enabled"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6617,7 +7258,11 @@
           "users": {
             "type": "array",
             "items": {
-              "required": ["id", "username", "email"],
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6673,7 +7318,9 @@
         }
       },
       "NewUsersPermissionsRole": {
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string",
@@ -6706,7 +7353,11 @@
         }
       },
       "UsersPermissionsUser": {
-        "required": ["id", "username", "email"],
+        "required": [
+          "id",
+          "username",
+          "email"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -6731,7 +7382,10 @@
             "default": false
           },
           "role": {
-            "required": ["id", "name"],
+            "required": [
+              "id",
+              "name"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6768,7 +7422,9 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6791,6 +7447,15 @@
                 "restaurant": {
                   "type": "string"
                 },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -6803,7 +7468,9 @@
           "likes": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -6824,7 +7491,15 @@
             }
           },
           "picture": {
-            "required": ["id", "name", "hash", "mime", "size", "url", "provider"],
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -6885,7 +7560,10 @@
         }
       },
       "NewUsersPermissionsUser": {
-        "required": ["username", "email"],
+        "required": [
+          "username",
+          "email"
+        ],
         "properties": {
           "username": {
             "type": "string",
@@ -6938,7 +7616,10 @@
         }
       },
       "Error": {
-        "required": ["code", "message"],
+        "required": [
+          "code",
+          "message"
+        ],
         "properties": {
           "code": {
             "type": "integer",

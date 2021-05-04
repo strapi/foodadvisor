@@ -26,6 +26,10 @@
     "author_": {
       "private": true,
       "type": "json"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }

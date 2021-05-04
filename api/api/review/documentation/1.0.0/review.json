@@ -509,12 +509,10 @@
             "type": "string"
           },
           "content": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "note": {
-            "type": "integer",
-            "default": ""
+            "type": "integer"
           },
           "author": {
             "required": ["id", "username", "email"],
@@ -672,6 +670,18 @@
               "author_": {
                 "type": "object"
               },
+              "slug": {
+                "type": "uid"
+              },
+              "localizations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "locale": {
+                "type": "string"
+              },
               "published_at": {
                 "type": "string"
               },
@@ -682,18 +692,63 @@
                 "type": "string"
               }
             }
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "required": ["id"],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "integer"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "likes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "restaurant": {
+                  "type": "string"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
           }
         }
       },
       "NewReview": {
         "properties": {
           "content": {
-            "type": "string",
-            "default": ""
+            "type": "string"
           },
           "note": {
-            "type": "integer",
-            "default": ""
+            "type": "integer"
           },
           "author": {
             "type": "string"
@@ -705,6 +760,15 @@
             }
           },
           "restaurant": {
+            "type": "string"
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locale": {
             "type": "string"
           },
           "created_by": {

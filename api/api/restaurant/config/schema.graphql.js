@@ -4,7 +4,6 @@ module.exports = {
       note: Float
       noteDetails: [RestaurantNote!]!
     }
-
     type RestaurantNote {
       note: Int
       count: Int

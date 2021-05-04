@@ -3,13 +3,13 @@
  * FooterColumn
  *
  */
+/* eslint-disable react/no-array-index-key */
 
 import React from 'react';
 import { Nav } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import Column from './Column';
-
 
 function FooterColumn({ columns }) {
   columns.reduce((acc, curr) => {
@@ -31,17 +31,17 @@ function FooterColumn({ columns }) {
   return (
     <Nav navbar>
       {columns.map((column, key) => (
-        <Column links={column.links} key={key.id} />
+        <Column links={column.links} key={key} />
       ))}
     </Nav>
   );
 }
 
 FooterColumn.defaultProps = {
-  columns:[],
+  columns: [],
 };
 FooterColumn.propTypes = {
-  columns: PropTypes.shape({ links: PropTypes.array }),
+  columns: PropTypes.array,
 };
 
 export default FooterColumn;

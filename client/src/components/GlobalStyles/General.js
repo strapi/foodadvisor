@@ -11,6 +11,8 @@ const General = createGlobalStyle`
     a, button, button:focus {
       cursor: pointer;
       outline: 0;
+      border: none;
+      background: none;
     }
     p, h1, h2, h3, h4, h5 {
       margin-bottom: 0;

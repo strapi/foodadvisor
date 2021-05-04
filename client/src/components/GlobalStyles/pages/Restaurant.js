@@ -20,6 +20,10 @@ const Restaurant = createGlobalStyle`
         }
       }
     }
+    .description {
+      margin: 0px 10px 50px 1px;
+      max-width: 50%;
+    }
     .slider-wrapper {
       position: absolute;
       top: 0;

@@ -1,8 +1,14 @@
 {
+  "kind": "collectionType",
   "connection": "default",
+  "collectionName": "users-permissions_user",
   "info": {
     "name": "user",
     "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
   },
   "attributes": {
     "username": {
@@ -50,8 +56,8 @@
       "configurable": false
     },
     "reviews": {
-      "collection": "review",
-      "via": "author"
+      "via": "author",
+      "collection": "review"
     },
     "likes": {
       "collection": "like",
@@ -63,6 +69,5 @@
       "plugin": "upload",
       "required": false
     }
-  },
-  "collectionName": "users-permissions_user"
+  }
 }

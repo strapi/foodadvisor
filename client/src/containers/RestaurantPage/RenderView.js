@@ -5,6 +5,7 @@ import Grid from '../../components/Grid';
 import CardSection from '../../components/CardSection';
 import Slider from '../../components/Slider';
 import Tabs from '../../components/Tabs';
+import Link from '../../components/Link';
 
 const RenderView = ({
   restaurant,
@@ -18,7 +19,7 @@ const RenderView = ({
     params: { content, id },
   },
 }) => {
-  const { cover } = restaurant;
+  const { cover, localizations } = restaurant;
   const tabs = ['informations', 'reviews'];
 
   const toggle = tab => {
@@ -38,8 +39,22 @@ const RenderView = ({
               history={history}
             />
           </li>
+          <li style={{ float: 'right' }}>
+            {localizations &&
+              localizations.map(locale => {
+                return (
+                  <Link
+                    className="localeLinks"
+                    url={`/${locale.id}/informations`}
+                  >
+                    {locale.locale}
+                  </Link>
+                );
+              })}
+          </li>
         </Grid>
       </div>
+
       <div className="slider-wrapper">
         <Slider slides={cover} />
       </div>

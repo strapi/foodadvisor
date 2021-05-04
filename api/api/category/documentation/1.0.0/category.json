@@ -593,6 +593,18 @@
                 "author_": {
                   "type": "object"
                 },
+                "slug": {
+                  "type": "uid"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -604,6 +616,9 @@
                 }
               }
             }
+          },
+          "slug": {
+            "type": "uid"
           }
         }
       },
@@ -623,6 +638,9 @@
           },
           "author_": {
             "type": "object"
+          },
+          "slug": {
+            "type": "uid"
           },
           "created_by": {
             "type": "string"

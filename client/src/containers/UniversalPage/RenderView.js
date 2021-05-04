@@ -90,11 +90,11 @@ const RenderView = ({
 };
 
 RenderView.defaultProps = {
-  universals: [],
+  universals: {},
 };
 
 RenderView.propTypes = {
-  universals: PropTypes.array,
+  universals: PropTypes.object,
 };
 
 export default RenderView;

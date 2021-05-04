@@ -19,7 +19,15 @@ import Grid from '../Grid';
 
 /* eslint-disable camelcase */
 function Informations({
-  restaurant: { address, category, district, opening_hours, phone, website },
+  restaurant: {
+    address,
+    category,
+    district,
+    opening_hours,
+    phone,
+    website,
+    description,
+  },
 }) {
   const infos = [
     {
@@ -50,6 +58,7 @@ function Informations({
   return (
     <>
       <H1>Informations</H1>
+      <p className="description">{description}</p>
       <Grid>
         <li className="column informations-card">
           <OpeningHours openingHours={opening_hours} />
