@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_cards",
+  "info": {
+    "name": "card",
+    "icon": "sim-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}

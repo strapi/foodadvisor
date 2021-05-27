@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_article_related_articles",
+  "info": {
+    "name": "relatedArticles",
+    "icon": "caret-square-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "articles": {
+      "collection": "article"
+    }
+  }
+}

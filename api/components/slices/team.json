@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_slices_teams",
+  "info": {
+    "name": "team",
+    "icon": "people-carry"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "teamCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team-card"
+    }
+  }
+}

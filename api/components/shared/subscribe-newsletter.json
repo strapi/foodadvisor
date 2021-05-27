@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_subscribe_newsletters",
+  "info": {
+    "name": "subscribeNewsletter",
+    "icon": "angle-double-up"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
+    }
+  }
+}

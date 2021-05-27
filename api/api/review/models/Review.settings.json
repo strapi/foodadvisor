@@ -40,10 +40,6 @@
       "model": "user",
       "via": "reviews"
     },
-    "likes": {
-      "collection": "like",
-      "via": "review"
-    },
     "restaurant": {
       "via": "reviews",
       "model": "restaurant"

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_faqs",
+  "info": {
+    "name": "faq",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.question-answer"
+    }
+  }
+}

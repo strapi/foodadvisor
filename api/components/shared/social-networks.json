@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_social_networks",
+  "info": {
+    "name": "socialNetworks",
+    "icon": "network-wired"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

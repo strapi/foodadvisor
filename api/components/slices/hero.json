@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_slices_heroes",
+  "info": {
+    "name": "hero",
+    "icon": "pizza-slice"
+  },
+  "options": {},
+  "attributes": {
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.edito"
+    }
+  }
+}

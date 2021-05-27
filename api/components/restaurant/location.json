@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_restaurant_locations",
+  "info": {
+    "name": "location",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}

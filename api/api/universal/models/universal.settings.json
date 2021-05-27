@@ -2,31 +2,39 @@
   "kind": "collectionType",
   "collectionName": "universals",
   "info": {
-    "name": "Universal"
+    "name": "Page",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "Title"
+      "targetField": "title"
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "restaurant.seo"
+      "component": "shared.seo"
     },
     "slices": {
       "type": "dynamiczone",
       "components": [
-        "universals.paragraph"
+        "slices.hero",
+        "slices.features",
+        "slices.testimonial",
+        "slices.features-with-images",
+        "slices.faq",
+        "slices.team",
+        "slices.cta"
       ]
     }
   }

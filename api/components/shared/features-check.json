@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_features_checks",
+  "info": {
+    "name": "featuresCheck",
+    "icon": "check-double",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

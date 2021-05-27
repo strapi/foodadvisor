@@ -59,10 +59,6 @@
       "via": "author",
       "collection": "review"
     },
-    "likes": {
-      "collection": "like",
-      "via": "author"
-    },
     "picture": {
       "model": "file",
       "via": "related",

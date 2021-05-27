@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_restaurant_related_restaurants",
+  "info": {
+    "name": "relatedRestaurants",
+    "icon": "copy"
+  },
+  "options": {},
+  "attributes": {
+    "restaurants": {
+      "collection": "restaurant"
+    }
+  }
+}

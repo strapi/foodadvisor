@@ -3,6 +3,7 @@ const util = require('util');
 const fse = require('fs-extra');
 const unzip = require('unzip-stream');
 const crypto = require('crypto');
+const uuid = require('uuid-v4')
 
 const zipPath = path.resolve('data.zip');
 const dataPath = path.resolve('data');
@@ -23,7 +24,35 @@ async function dumpSqlite() {
   await util.promisify(db.close).bind(db);
 }
 
+async function updateUid() {
+  const filePath = `./package.json`;
+
+  try {
+    if (fse.existsSync(filePath)) {
+      const rawFile = fse.readFileSync(filePath);
+      const packageJSON = JSON.parse(rawFile);
+
+      if (packageJSON.strapi.uuid.includes("FOODADVISOR"))
+        return null
+
+      packageJSON.strapi.uuid = `FOODADVISOR-LOCAL-` + uuid();
+
+      const data = JSON.stringify(packageJSON, null, 2);
+      fse.writeFileSync(filePath, data);
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 async function seed() {
+
+  try {
+    await updateUid();
+  } catch (error) {
+    console.log(error);    
+  }
+
   try {
     await fse.emptyDir(tmpPath);
   } catch (err) {
