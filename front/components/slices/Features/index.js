@@ -1,6 +1,6 @@
 const Features = ({ header, card }) => {
   return (
-    <div className="bg-gray-50 mt-40">
+    <div className="bg-gray-50 pb-24">
       <div className="text-center pt-24">
         {header && (
           <h2

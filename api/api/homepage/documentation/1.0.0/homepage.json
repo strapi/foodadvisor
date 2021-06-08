@@ -312,7 +312,8 @@
     "schemas": {
       "Homepage": {
         "required": [
-          "id"
+          "id",
+          "slug"
         ],
         "properties": {
           "id": {
@@ -746,6 +747,15 @@
                     "title": {
                       "type": "string"
                     },
+                    "theme": {
+                      "type": "string",
+                      "default": "muted",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
                     "faq": {
                       "type": "array",
                       "items": {
@@ -1331,6 +1341,53 @@
               ]
             }
           },
+          "slug": {
+            "type": "string"
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "slug"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "slices": {
+                  "type": "dynamiczone"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1338,6 +1395,9 @@
         }
       },
       "NewHomepage": {
+        "required": [
+          "slug"
+        ],
         "properties": {
           "seo": {
             "type": "object",
@@ -1767,6 +1827,15 @@
                     "title": {
                       "type": "string"
                     },
+                    "theme": {
+                      "type": "string",
+                      "default": "muted",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
                     "faq": {
                       "type": "array",
                       "items": {
@@ -2351,6 +2420,18 @@
                 }
               ]
             }
+          },
+          "slug": {
+            "type": "string"
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locale": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

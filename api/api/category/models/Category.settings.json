@@ -23,6 +23,10 @@
     "restaurants": {
       "via": "category",
       "collection": "restaurant"
+    },
+    "articles": {
+      "via": "category",
+      "collection": "article"
     }
   }
 }

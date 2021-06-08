@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Cta = ({ title, text, buttons }) => {
   return (
-    <div className="bg-primary mt-40">
+    <div className="bg-gradient-to-r from-secondary">
       <div className="lg:flex lg:items-center lg:justify-between w-2/3 mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
         <h2 className="text-3xl font-extrabold text-black sm:text-4xl">
           {title && <span className="block">{title}</span>}

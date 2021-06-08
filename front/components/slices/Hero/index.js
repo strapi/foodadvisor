@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { getStrapiMedia } from '../../../utils/media';
+import { getStrapiMedia } from '../../../utils';
 
 const Hero = ({ intro }) => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font pb-40">
       <div className="container mr-auto flex pr-5 py-24 md:flex-row flex-col items-center">
         {intro && (
           <div className="float-left lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">

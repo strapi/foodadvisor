@@ -11,6 +11,15 @@
       "type": "string",
       "required": true
     },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "muted"
+    },
     "faq": {
       "type": "component",
       "repeatable": true,

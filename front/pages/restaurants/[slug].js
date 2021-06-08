@@ -1,5 +1,6 @@
 import delve from 'dlv';
 import { getDataDependencies } from '../services/api';
+import { getStrapiURL } from '../../utils';
 
 import SliceManager from '../../components/shared/SliceManager';
 import RestaurantContent from '../../components/pages/restaurant/RestaurantContent';
@@ -8,16 +9,15 @@ const Restaurant = ({ pageData }) => {
   const slices = delve(pageData, 'slices');
   return (
     <>
-      <RestaurantContent data={pageData} />
+      <RestaurantContent {...pageData} />
       {slices && <SliceManager slices={slices} />}
     </>
   );
 };
 
-// This gets called on every request
 export async function getServerSideProps(context) {
   const res = await fetch(
-    `${process.env.API_URL}/restaurants?slug=${context.params.slug}`
+    getStrapiURL(`/restaurants?slug=${context.params.slug}`)
   );
   const json = await res.json();
 

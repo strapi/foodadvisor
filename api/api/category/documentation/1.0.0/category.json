@@ -607,6 +607,61 @@
                 }
               }
             }
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "content",
+                "image"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "slices": {
+                  "type": "dynamiczone"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -622,6 +677,12 @@
             "type": "uid"
           },
           "restaurants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "articles": {
             "type": "array",
             "items": {
               "type": "string"

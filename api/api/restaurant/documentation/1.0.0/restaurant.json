@@ -1040,6 +1040,15 @@
                     "title": {
                       "type": "string"
                     },
+                    "theme": {
+                      "type": "string",
+                      "default": "muted",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
                     "faq": {
                       "type": "array",
                       "items": {
@@ -1127,6 +1136,12 @@
                 "type": "uid"
               },
               "restaurants": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "articles": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -1707,6 +1722,15 @@
                     },
                     "title": {
                       "type": "string"
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "muted",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
                     },
                     "faq": {
                       "type": "array",

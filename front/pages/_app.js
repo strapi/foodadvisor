@@ -1,39 +1,35 @@
 import App from 'next/app';
-import ErrorPage from 'next/error';
 import 'tailwindcss/tailwind.css';
-import { QueryClientProvider, QueryClient } from 'react-query'
-
-import Navigation from '../components/shared/Navigation';
-import Footer from '../components/global/Footer';
+import ErrorPage from 'next/error';
+import { getStrapiURL, getLocalizedParams } from '../utils';
+import { QueryClientProvider, QueryClient } from 'react-query';
 
 const queryClient = new QueryClient();
 
-function MyApp({ Component, pageProps, globalData }) {
-  if (globalData === null) {
+function MyApp({ Component, pageProps }) {
+  const { global } = pageProps;
+  if (global === null) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <>
-      {globalData.navigation && (
-        <Navigation navigation={globalData.navigation} />
-      )}
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
       </QueryClientProvider>
-      {globalData.footer && <Footer footer={globalData.footer} />}
     </>
   );
 }
 
 MyApp.getInitialProps = async (appContext) => {
+  const { locale } = getLocalizedParams(appContext.ctx.query, 'global');
+
   const appProps = await App.getInitialProps(appContext);
 
-  const res = await fetch(`${process.env.API_URL}/global`);
+  const res = await fetch(getStrapiURL(`/global?_locale=${locale}`));
   const globalData = await res.json();
 
-  return { ...appProps, globalData };
+  return { ...appProps, pageProps: { global: globalData } };
 };
 
 export default MyApp;
-
-/* // TODO: Customize Navbar & Footer*/

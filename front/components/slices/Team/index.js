@@ -1,8 +1,8 @@
-import { getStrapiMedia } from '../../../utils/media';
+import { getStrapiMedia } from '../../../utils';
 
 const Team = ({ header, teamCards }) => {
   return (
-    <div className="p-8 bg-white mt-24 rounded-lg">
+    <div className="p-8 bg-white py-24 rounded-lg">
       {header && (
         <h2
           className={`text-primary text-center font-extrabold tracking-wide uppercase`}
@@ -15,7 +15,7 @@ const Team = ({ header, teamCards }) => {
           {header.title}
         </p>
       )}
-      <div className="flex items-center flex-col md:flex-row justify mt-20 evenly">
+      <div className="sm:flex flex-wrap justify-center items-center text-center gap-8 pt-16 pb-12">
         {teamCards &&
           teamCards.map((person, index) => (
             <div className="p-10" key={`team-${index}`}>

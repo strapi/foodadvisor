@@ -2,6 +2,7 @@ import Cta from '../../slices/Cta';
 import Faq from '../../slices/Faq';
 import Hero from '../../slices/Hero';
 import Team from '../../slices/Team';
+import Pricing from '../../slices/Pricing';
 import Features from '../../slices/Features';
 import Testimonial from '../../slices/Testimonial';
 import FeaturesWithImages from '../../slices/FeaturesWithImages';
@@ -30,6 +31,9 @@ const getSliceComponent = ({ __component, ...rest }, index) => {
       break;
     case 'slices.cta':
       Slice = Cta;
+      break;
+    case 'slices.pricing':
+      Slice = Pricing;
       break;
   }
 

@@ -527,7 +527,7 @@
             "type": "string"
           },
           "slug": {
-            "type": "uid"
+            "type": "string"
           },
           "seo": {
             "type": "object",
@@ -667,7 +667,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -862,7 +863,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -941,7 +943,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -1042,7 +1045,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -1251,7 +1255,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -1259,6 +1264,15 @@
                     },
                     "title": {
                       "type": "string"
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "muted",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
                     },
                     "faq": {
                       "type": "array",
@@ -1299,7 +1313,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -1464,7 +1479,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -1538,9 +1554,154 @@
                   "required": [
                     "id"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "slices.hero",
+                        "slices.features",
+                        "slices.testimonial",
+                        "slices.features-with-images",
+                        "slices.faq",
+                        "slices.team",
+                        "slices.cta",
+                        "slices.pricing"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "header": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "theme",
+                        "title"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "theme": {
+                          "type": "string",
+                          "default": "primary",
+                          "enum": [
+                            "primary",
+                            "secondary",
+                            "muted"
+                          ]
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "pricingCards": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "title",
+                          "price"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "integer"
+                          },
+                          "perks": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "id",
+                                "name",
+                                "included"
+                              ],
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "included": {
+                                  "type": "boolean"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
                 }
               ]
             }
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "slices": {
+                  "type": "dynamiczone"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "locale": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -1557,7 +1718,7 @@
             "type": "string"
           },
           "slug": {
-            "type": "uid"
+            "type": "string"
           },
           "seo": {
             "type": "object",
@@ -1697,7 +1858,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -1892,7 +2054,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -1971,7 +2134,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -2072,7 +2236,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -2281,7 +2446,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -2289,6 +2455,15 @@
                     },
                     "title": {
                       "type": "string"
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "muted",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
                     },
                     "faq": {
                       "type": "array",
@@ -2329,7 +2504,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -2494,7 +2670,8 @@
                         "slices.features-with-images",
                         "slices.faq",
                         "slices.team",
-                        "slices.cta"
+                        "slices.cta",
+                        "slices.pricing"
                       ]
                     },
                     "id": {
@@ -2568,9 +2745,116 @@
                   "required": [
                     "id"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "slices.hero",
+                        "slices.features",
+                        "slices.testimonial",
+                        "slices.features-with-images",
+                        "slices.faq",
+                        "slices.team",
+                        "slices.cta",
+                        "slices.pricing"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "header": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "theme",
+                        "title"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "theme": {
+                          "type": "string",
+                          "default": "primary",
+                          "enum": [
+                            "primary",
+                            "secondary",
+                            "muted"
+                          ]
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "pricingCards": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id",
+                          "title",
+                          "price"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "integer"
+                          },
+                          "perks": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "id",
+                                "name",
+                                "included"
+                              ],
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "included": {
+                                  "type": "boolean"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
                 }
               ]
             }
+          },
+          "localizations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locale": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

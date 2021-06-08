@@ -1,6 +1,6 @@
 const Faq = ({ title, faq }) => {
   return (
-    <div className="bg-gray-100 mt-60 py-20 px-4">
+    <div className="bg-gradient-to-t from-gray-200 py-40 px-4">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row">
         {title && (
           <h2 className="mr-8 w-full md:w-1/3 text-3xl font-extrabold leading-9">
