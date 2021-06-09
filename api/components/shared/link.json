@@ -20,6 +20,11 @@
       "enum": [
         "_blank"
       ]
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

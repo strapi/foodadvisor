@@ -1,48 +1,38 @@
+import delve from 'dlv';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Logo from './Logo';
-import { useState, useRef, useEffect } from 'react';
-import delve from 'dlv';
 
-import { parseCookies } from '../../../utils/parse-cookie';
+import { useState, useRef, useEffect } from 'react';
+
 import {
   localizePath,
-  getLocalizedPage,
+  getLocalizedData,
   listLocalizedPaths,
 } from '../../../utils/localize';
-import Cookies from 'js-cookie';
 
-const Navigation = ({ global, pageData, type }) => {
-  const navigation = delve(global, 'navigation');
+import { useOnClickOutside } from '../../../utils/hooks';
 
+import Logo from './logo';
+import Nav from './nav';
+
+const Navigation = ({ navigation, pageData, type }) => {
   const router = useRouter();
+  const lang = delve(router.query, 'lang');
   const isMounted = useRef(false);
+  const select = useRef();
   const [locale, setLocale] = useState(pageData.locale);
   const [showing, setShowing] = useState(false);
   const [localizedPaths, setLocalizedPaths] = useState();
 
-  const handleLocaleChange = async (selectedLocale) => {
-    Cookies.set('STRAPI_LOCALE', selectedLocale);
-    setLocale(selectedLocale);
-  };
+  useOnClickOutside(select, () => setShowing(false));
 
   useEffect(() => {
     const changeLocale = async () => {
-      if (
-        !isMounted.current &&
-        cookies.STRAPI_LOCALE &&
-        cookies.STRAPI_LOCALE !== pageData.locale
-      ) {
-        // Redirect to locale page if locale mismatch
-        const localePage = await getLocalizedPage(
-          cookies.STRAPI_LOCALE,
-          pageData,
-          type
-        );
-        router.push(
-          `${localizePath(localePage, pageData.locale)}`,
-          { locale: localePage.locale }
-        );
+      if (!isMounted.current && lang && lang !== pageData.locale) {
+        const localePage = await getLocalizedData(lang, pageData, type);
+        router.push(`${localizePath(localePage, pageData.locale)}`, {
+          locale: localePage.locale,
+        });
       }
 
       setShowing(false);
@@ -50,8 +40,7 @@ const Navigation = ({ global, pageData, type }) => {
       setLocalizedPaths(localizations);
     };
 
-    const cookies = parseCookies();
-    setLocale(cookies.STRAPI_LOCALE);
+    setLocale(lang);
     changeLocale();
 
     return () => {
@@ -62,43 +51,33 @@ const Navigation = ({ global, pageData, type }) => {
   return (
     <header className="text-gray-600 bg-white body-font border-b-2">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        {navigation && navigation.leftButton && (
-          <Logo button={navigation.leftButton} locale={`${pageData.locale}`} />
-        )}
+        <Logo
+          button={delve(navigation, 'leftButton')}
+          locale={delve(pageData, 'locale')}
+        />
 
-        <nav className="md:ml-auto md:mr-auto md:mt-1 sm:mt-3 flex flex-wrap items-center text-xl justify-center">
-          {navigation &&
-            navigation.links &&
-            navigation.links.map((link, index) => (
-              <Link
-                href={`${link.href}?lang=${pageData.locale}`}
-                locale={locale}
-                key={`navigationLink-${index}`}
-              >
-                <a className="mr-10 hover:text-gray-900" key={`link-${index}`}>
-                  {link.label}
-                </a>
-              </Link>
-            ))}
-        </nav>
+        <Nav
+          links={delve(navigation, 'links')}
+          locale={delve(pageData, 'locale')}
+        />
 
         {navigation && navigation.rightButton && (
           <div className="flex">
             <button
               type="button"
-              className="py-4 px-6 bg-primary hover:bg-primary-light text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md hover:shadow-xl rounded-full invisible lg:visible"
+              className="py-4 px-6 bg-primary hover:bg-primary-light text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md hover:shadow-xl rounded-full hidden lg:block"
             >
-              <Link href={navigation.rightButton.href}>
-                <a target={navigation.rightButton.target}>
-                  {navigation.rightButton.label}
+              <Link href={delve(navigation, 'rightButton.href')}>
+                <a target={delve(navigation, 'rightButton.target')}>
+                  {delve(navigation, 'rightButton.label')}
                 </a>
               </Link>
             </button>
 
-            <div className="inline-block text-left">
+            <div className="inline-block text-left" ref={select}>
               <div>
                 <button
-                  className="mt-4 hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-50 focus:text-primary-600 focus:outline-none flex items-center justify-between pl-8 cursor-pointer rounded-md"
+                  className="md:mt-4 hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-50 focus:text-primary-600 focus:outline-none flex items-center justify-between md:pl-8 cursor-pointer rounded-md"
                   onClick={() => setShowing(!showing)}
                 >
                   <div className="w-6 h-6">
@@ -134,7 +113,7 @@ const Navigation = ({ global, pageData, type }) => {
                         role="menuitem"
                       >
                         <span className="flex flex-col">
-                          <span onClick={() => handleLocaleChange(locale)}>
+                          <span onClick={() => setLocale(locale)}>
                             {locale}
                           </span>
                         </span>

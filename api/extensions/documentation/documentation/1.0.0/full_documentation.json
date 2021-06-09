@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/08/2021 5:31:31 PM"
+    "x-generation-date": "06/09/2021 12:42:38 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6656,7 +6656,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -6673,6 +6674,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }
@@ -7133,7 +7138,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -7150,6 +7156,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }
@@ -7611,7 +7621,8 @@
                   "required": [
                     "id",
                     "href",
-                    "label"
+                    "label",
+                    "isExternal"
                   ],
                   "properties": {
                     "id": {
@@ -7628,6 +7639,10 @@
                       "enum": [
                         "_blank"
                       ]
+                    },
+                    "isExternal": {
+                      "type": "boolean",
+                      "default": false
                     }
                   }
                 }
@@ -7637,7 +7652,8 @@
                 "required": [
                   "id",
                   "href",
-                  "label"
+                  "label",
+                  "isExternal"
                 ],
                 "properties": {
                   "id": {
@@ -7654,6 +7670,10 @@
                     "enum": [
                       "_blank"
                     ]
+                  },
+                  "isExternal": {
+                    "type": "boolean",
+                    "default": false
                   }
                 }
               },
@@ -7662,7 +7682,8 @@
                 "required": [
                   "id",
                   "href",
-                  "label"
+                  "label",
+                  "isExternal"
                 ],
                 "properties": {
                   "id": {
@@ -7679,6 +7700,10 @@
                     "enum": [
                       "_blank"
                     ]
+                  },
+                  "isExternal": {
+                    "type": "boolean",
+                    "default": false
                   }
                 }
               }
@@ -7715,7 +7740,8 @@
                         "required": [
                           "id",
                           "href",
-                          "label"
+                          "label",
+                          "isExternal"
                         ],
                         "properties": {
                           "id": {
@@ -7732,6 +7758,10 @@
                             "enum": [
                               "_blank"
                             ]
+                          },
+                          "isExternal": {
+                            "type": "boolean",
+                            "default": false
                           }
                         }
                       }
@@ -7785,7 +7815,8 @@
                     "required": [
                       "id",
                       "href",
-                      "label"
+                      "label",
+                      "isExternal"
                     ],
                     "properties": {
                       "id": {
@@ -7802,6 +7833,10 @@
                         "enum": [
                           "_blank"
                         ]
+                      },
+                      "isExternal": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -7876,7 +7911,8 @@
                   "required": [
                     "id",
                     "href",
-                    "label"
+                    "label",
+                    "isExternal"
                   ],
                   "properties": {
                     "id": {
@@ -7893,6 +7929,10 @@
                       "enum": [
                         "_blank"
                       ]
+                    },
+                    "isExternal": {
+                      "type": "boolean",
+                      "default": false
                     }
                   }
                 }
@@ -7902,7 +7942,8 @@
                 "required": [
                   "id",
                   "href",
-                  "label"
+                  "label",
+                  "isExternal"
                 ],
                 "properties": {
                   "id": {
@@ -7919,6 +7960,10 @@
                     "enum": [
                       "_blank"
                     ]
+                  },
+                  "isExternal": {
+                    "type": "boolean",
+                    "default": false
                   }
                 }
               },
@@ -7927,7 +7972,8 @@
                 "required": [
                   "id",
                   "href",
-                  "label"
+                  "label",
+                  "isExternal"
                 ],
                 "properties": {
                   "id": {
@@ -7944,6 +7990,10 @@
                     "enum": [
                       "_blank"
                     ]
+                  },
+                  "isExternal": {
+                    "type": "boolean",
+                    "default": false
                   }
                 }
               }
@@ -7980,7 +8030,8 @@
                         "required": [
                           "id",
                           "href",
-                          "label"
+                          "label",
+                          "isExternal"
                         ],
                         "properties": {
                           "id": {
@@ -7997,6 +8048,10 @@
                             "enum": [
                               "_blank"
                             ]
+                          },
+                          "isExternal": {
+                            "type": "boolean",
+                            "default": false
                           }
                         }
                       }
@@ -8050,7 +8105,8 @@
                     "required": [
                       "id",
                       "href",
-                      "label"
+                      "label",
+                      "isExternal"
                     ],
                     "properties": {
                       "id": {
@@ -8067,6 +8123,10 @@
                         "enum": [
                           "_blank"
                         ]
+                      },
+                      "isExternal": {
+                        "type": "boolean",
+                        "default": false
                       }
                     }
                   }
@@ -8292,7 +8352,8 @@
                             "required": [
                               "id",
                               "href",
-                              "label"
+                              "label",
+                              "isExternal"
                             ],
                             "properties": {
                               "id": {
@@ -8309,6 +8370,10 @@
                                 "enum": [
                                   "_blank"
                                 ]
+                              },
+                              "isExternal": {
+                                "type": "boolean",
+                                "default": false
                               }
                             }
                           }
@@ -8485,7 +8550,8 @@
                                 "required": [
                                   "id",
                                   "href",
-                                  "label"
+                                  "label",
+                                  "isExternal"
                                 ],
                                 "properties": {
                                   "id": {
@@ -8502,6 +8568,10 @@
                                     "enum": [
                                       "_blank"
                                     ]
+                                  },
+                                  "isExternal": {
+                                    "type": "boolean",
+                                    "default": false
                                   }
                                 }
                               }
@@ -9372,7 +9442,8 @@
                             "required": [
                               "id",
                               "href",
-                              "label"
+                              "label",
+                              "isExternal"
                             ],
                             "properties": {
                               "id": {
@@ -9389,6 +9460,10 @@
                                 "enum": [
                                   "_blank"
                                 ]
+                              },
+                              "isExternal": {
+                                "type": "boolean",
+                                "default": false
                               }
                             }
                           }
@@ -9565,7 +9640,8 @@
                                 "required": [
                                   "id",
                                   "href",
-                                  "label"
+                                  "label",
+                                  "isExternal"
                                 ],
                                 "properties": {
                                   "id": {
@@ -9582,6 +9658,10 @@
                                     "enum": [
                                       "_blank"
                                     ]
+                                  },
+                                  "isExternal": {
+                                    "type": "boolean",
+                                    "default": false
                                   }
                                 }
                               }
@@ -10419,7 +10499,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -10436,6 +10517,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }
@@ -10655,7 +10740,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -10672,6 +10758,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }
@@ -11098,7 +11188,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -11115,6 +11206,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }
@@ -11781,7 +11876,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -11798,6 +11894,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }
@@ -12524,7 +12624,8 @@
                                 "required": [
                                   "id",
                                   "href",
-                                  "label"
+                                  "label",
+                                  "isExternal"
                                 ],
                                 "properties": {
                                   "id": {
@@ -12541,6 +12642,10 @@
                                     "enum": [
                                       "_blank"
                                     ]
+                                  },
+                                  "isExternal": {
+                                    "type": "boolean",
+                                    "default": false
                                   }
                                 }
                               }
@@ -13229,7 +13334,8 @@
                             "required": [
                               "id",
                               "href",
-                              "label"
+                              "label",
+                              "isExternal"
                             ],
                             "properties": {
                               "id": {
@@ -13246,6 +13352,10 @@
                                 "enum": [
                                   "_blank"
                                 ]
+                              },
+                              "isExternal": {
+                                "type": "boolean",
+                                "default": false
                               }
                             }
                           }
@@ -13715,7 +13825,8 @@
                                 "required": [
                                   "id",
                                   "href",
-                                  "label"
+                                  "label",
+                                  "isExternal"
                                 ],
                                 "properties": {
                                   "id": {
@@ -13732,6 +13843,10 @@
                                     "enum": [
                                       "_blank"
                                     ]
+                                  },
+                                  "isExternal": {
+                                    "type": "boolean",
+                                    "default": false
                                   }
                                 }
                               }
@@ -14420,7 +14535,8 @@
                             "required": [
                               "id",
                               "href",
-                              "label"
+                              "label",
+                              "isExternal"
                             ],
                             "properties": {
                               "id": {
@@ -14437,6 +14553,10 @@
                                 "enum": [
                                   "_blank"
                                 ]
+                              },
+                              "isExternal": {
+                                "type": "boolean",
+                                "default": false
                               }
                             }
                           }

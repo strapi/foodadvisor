@@ -163,7 +163,7 @@ const Restaurants = ({ global, initialData, categories, districts, locale }) => 
 
 // This gets called on every request
 export async function getServerSideProps(context) {
-  const { locale } = getLocalizedParams(context.query, 'retaurants');
+  const { locale } = getLocalizedParams(context.query);
 
   const resRestaurants = await fetch(
     getStrapiURL(`/restaurants?_limit=1&_locale=${locale}`)

@@ -1,8 +1,11 @@
 import App from 'next/app';
-import 'tailwindcss/tailwind.css';
 import ErrorPage from 'next/error';
-import { getStrapiURL, getLocalizedParams } from '../utils';
+
+import 'tailwindcss/tailwind.css';
+
 import { QueryClientProvider, QueryClient } from 'react-query';
+import { getStrapiURL } from '../utils';
+import { getLocalizedParams } from '../utils/localize';
 
 const queryClient = new QueryClient();
 
@@ -22,7 +25,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 MyApp.getInitialProps = async (appContext) => {
-  const { locale } = getLocalizedParams(appContext.ctx.query, 'global');
+  const { locale } = getLocalizedParams(appContext.ctx.query);
 
   const appProps = await App.getInitialProps(appContext);
 

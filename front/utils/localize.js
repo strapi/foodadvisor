@@ -1,25 +1,30 @@
+import delve from 'dlv';
 import { getStrapiURL } from '.';
+
+export function getLocalizedParams(query) {
+  const lang = delve(query, 'lang');
+  const slug = delve(query, 'slug');
+
+  return { slug: slug || '', locale: lang || 'en' };
+}
 
 export function localizePath(localePage, currentLocale) {
   const { locale, slug } = localePage;
 
-  if (locale === currentLocale) {
-    // The default locale is not prefixed
-    return `/${slug}`;
-  }
-
-  // The slug should have a localePrefix
-  return `/${slug}?lang=${locale}`;
+  return locale === currentLocale ? `/${slug}` : `/${slug}?lang=${locale}`;
 }
 
-export async function getLocalizedPage(targetLocale, pageData, type) {
+function getUrl(type, localization, targetLocale) {
+  return type == 'universals'
+    ? `/universals/${localization.id}`
+    : `/${type}?_locale=${targetLocale}`;
+}
+
+export async function getLocalizedData(targetLocale, pageData, type) {
   const localization = pageData.localizations.find(
     (localization) => localization.locale === targetLocale
   );
-  let url = `/universals/${localization.id}`;
-  if (type != 'universals') {
-    url = `/${type}?_locale=${targetLocale}`;
-  }
+  const url = getUrl(type, localization, targetLocale);
   const res = await fetch(getStrapiURL(url));
   const localePage = await res.json();
   return localePage;
@@ -33,10 +38,7 @@ export async function listLocalizedPaths(pageData, type) {
 
   const paths = await Promise.all(
     pageData.localizations.map(async (localization) => {
-      let url = `/universals/${localization.id}`;
-      if (type != 'universals') {
-        url = `/${type}?_locale=${localization.locale}`;
-      }
+      const url = getUrl(type, localization, localization.locale);
       const res = await fetch(getStrapiURL(url));
       const localePage = await res.json();
       const page = { ...pageData, ...localePage };

@@ -705,7 +705,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -722,6 +723,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }
@@ -1182,7 +1187,8 @@
                       "required": [
                         "id",
                         "href",
-                        "label"
+                        "label",
+                        "isExternal"
                       ],
                       "properties": {
                         "id": {
@@ -1199,6 +1205,10 @@
                           "enum": [
                             "_blank"
                           ]
+                        },
+                        "isExternal": {
+                          "type": "boolean",
+                          "default": false
                         }
                       }
                     }

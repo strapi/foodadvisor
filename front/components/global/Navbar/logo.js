@@ -1,8 +1,9 @@
+import delve from 'dlv';
 import Link from 'next/link';
 
 const Logo = ({ button, locale }) => {
   return (
-    <Link href={`${button.href}?lang=${locale}`}>
+    <Link href={`${delve(button, 'href')}?lang=${locale || 'en'}`}>
       <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +16,7 @@ const Logo = ({ button, locale }) => {
           viewBox="0 0 24 24"
         ></svg>
         {/* FILL SVG */}
-        <span className="ml-3 text-3xl">{button.label}</span>
+        <span className="ml-3 text-3xl">{delve(button, 'label')}</span>
       </a>
     </Link>
   );
