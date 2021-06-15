@@ -5,13 +5,13 @@ import { getStrapiURL, handleRedirection } from '../utils';
 import { getLocalizedParams } from '../utils/localize';
 
 import Layout from '../components/layout';
-import SliceManager from '../components/shared/SliceManager';
+import BlockManager from '../components/shared/BlockManager';
 
 const Universals = ({ global, pageData }) => {
-  const slices = delve(pageData, 'slices');
+  const blocks = delve(pageData, 'blocks');
   return (
     <Layout global={global} pageData={pageData} type="universals">
-      {slices && <SliceManager slices={slices} />}
+      {blocks && <BlockManager blocks={blocks} />}
     </Layout>
   );
 };

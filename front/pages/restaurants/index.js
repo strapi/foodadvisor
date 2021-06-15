@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 
+import { getLocalizedParams } from '../../utils/localize'
 import {
   getStrapiMedia,
   getStrapiURL,
   getRestaurants,
-  getLocalizedParams,
 } from '../../utils';
 
 import Container from '../../components/shared/Container';

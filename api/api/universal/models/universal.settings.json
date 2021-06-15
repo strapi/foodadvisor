@@ -44,17 +44,17 @@
         }
       }
     },
-    "slices": {
+    "blocks": {
       "type": "dynamiczone",
       "components": [
-        "slices.hero",
-        "slices.features",
-        "slices.testimonial",
-        "slices.features-with-images",
-        "slices.faq",
-        "slices.team",
-        "slices.cta",
-        "slices.pricing"
+        "blocks.hero",
+        "blocks.features",
+        "blocks.testimonial",
+        "blocks.features-with-images",
+        "blocks.faq",
+        "blocks.team",
+        "blocks.cta",
+        "blocks.pricing"
       ],
       "pluginOptions": {
         "i18n": {

@@ -652,7 +652,7 @@
               }
             }
           },
-          "slices": {
+          "blocks": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -661,14 +661,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -862,14 +862,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -942,14 +942,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -1044,14 +1044,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -1254,14 +1254,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -1312,14 +1312,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -1478,14 +1478,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -1570,14 +1570,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -1686,7 +1686,7 @@
                 "seo": {
                   "type": "component"
                 },
-                "slices": {
+                "blocks": {
                   "type": "dynamiczone"
                 },
                 "localizations": {
@@ -1853,7 +1853,7 @@
               }
             }
           },
-          "slices": {
+          "blocks": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -1862,14 +1862,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -2063,14 +2063,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -2143,14 +2143,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -2245,14 +2245,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -2455,14 +2455,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -2513,14 +2513,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -2679,14 +2679,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {
@@ -2771,14 +2771,14 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "slices.hero",
-                        "slices.features",
-                        "slices.testimonial",
-                        "slices.features-with-images",
-                        "slices.faq",
-                        "slices.team",
-                        "slices.cta",
-                        "slices.pricing"
+                        "blocks.hero",
+                        "blocks.features",
+                        "blocks.testimonial",
+                        "blocks.features-with-images",
+                        "blocks.faq",
+                        "blocks.team",
+                        "blocks.cta",
+                        "blocks.pricing"
                       ]
                     },
                     "id": {

@@ -29,13 +29,13 @@
     "slices": {
       "type": "dynamiczone",
       "components": [
-        "slices.cta",
-        "slices.hero",
-        "slices.faq",
-        "slices.features",
-        "slices.team",
-        "slices.testimonial",
-        "slices.features-with-images"
+        "blocks.cta",
+        "blocks.hero",
+        "blocks.faq",
+        "blocks.features",
+        "blocks.team",
+        "blocks.testimonial",
+        "blocks.features-with-images"
       ],
       "pluginOptions": {
         "i18n": {
