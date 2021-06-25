@@ -14,7 +14,7 @@ Navigate to your `./my-projects/foodadvisor` folder by running `cd foodadvisor` 
 
 ## 2. Start Strapi
 
-Naviagte to your `./my-projects/foodadvisor/api` folder by running `cd api` from your command line.
+Navigate to your `./my-projects/foodadvisor/api` folder by running `cd api` from your command line.
 
 In `./my-projects/foodadvisor/api`, run the following from your command line:
 
