@@ -7,9 +7,9 @@
   },
   "options": {},
   "attributes": {
-    "image": {
+    "images": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "shared.image"
     },
     "header": {

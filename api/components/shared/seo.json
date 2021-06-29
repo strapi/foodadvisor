@@ -24,6 +24,11 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.image"
+    },
+    "preventIndexing": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }

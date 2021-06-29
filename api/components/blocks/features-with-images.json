@@ -7,18 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "images": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
     "header": {
       "type": "component",
       "repeatable": false,
@@ -32,6 +20,21 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.features-check"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "required": false,
+      "default": "primary"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
     }
   }
 }

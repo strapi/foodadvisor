@@ -16,12 +16,12 @@ export function getStrapiURL(path) {
 
 export async function getRestaurants(key) {
   const categoryId = key.queryKey[1].category;
-  const districtId = key.queryKey[2].district;
+  const placeId = key.queryKey[2].place;
   const localeCode = key.queryKey[3].locale;
   const pageNumber = key.queryKey[4].page;
-  const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * 1;
+  const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * 12;
 
-  let baseUrl = getStrapiURL(`/restaurants?_limit=1&_start=${start}`);
+  let baseUrl = getStrapiURL(`/restaurants?_limit=12&_start=${start}`);
   let countUrl = getStrapiURL(`/restaurants/count`);
 
   if (categoryId) {
@@ -29,17 +29,17 @@ export async function getRestaurants(key) {
     countUrl = `${countUrl}?category.id=${categoryId}`;
   }
 
-  if (districtId) {
-    baseUrl = `${baseUrl}&district.id=${districtId}`;
+  if (placeId) {
+    baseUrl = `${baseUrl}&place.id=${placeId}`;
     countUrl = categoryId
-      ? `${countUrl}&district.id=${districtId}`
-      : `${countUrl}?district.id=${districtId}`;
+      ? `${countUrl}&place.id=${placeId}`
+      : `${countUrl}?place.id=${placeId}`;
   }
 
   if (localeCode) {
     baseUrl = `${baseUrl}&_locale=${localeCode}`;
     countUrl =
-      districtId || categoryId
+      placeId || categoryId
         ? `${countUrl}&_locale=${localeCode}`
         : `${countUrl}?_locale=${localeCode}`;
   }
@@ -55,23 +55,15 @@ export async function getRestaurants(key) {
 
 export async function getArticles(key) {
   const categoryId = key.queryKey[1].category;
-  const localeCode = key.queryKey[2].locale;
-  const pageNumber = key.queryKey[3].page;
-  const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * 1;
+  const pageNumber = key.queryKey[2].page;
+  const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * 12;
 
-  let baseUrl = getStrapiURL(`/articles?_limit=1&_start=${start}`);
+  let baseUrl = getStrapiURL(`/articles?_limit=12&_start=${start}`);
   let countUrl = getStrapiURL(`/articles/count`);
 
   if (categoryId) {
     baseUrl = `${baseUrl}&category.id=${categoryId}`;
     countUrl = `${countUrl}?category.id=${categoryId}`;
-  }
-
-  if (localeCode) {
-    baseUrl = `${baseUrl}&_locale=${localeCode}`;
-    countUrl = categoryId
-      ? `${countUrl}&_locale=${localeCode}`
-      : `${countUrl}?_locale=${localeCode}`;
   }
 
   const resCountFilteredArticles = await fetch(countUrl);

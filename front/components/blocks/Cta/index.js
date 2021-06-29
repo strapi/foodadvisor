@@ -1,3 +1,5 @@
+import delve from 'dlv';
+
 import Link from 'next/link';
 
 const Cta = ({ title, text, buttons }) => {
@@ -12,15 +14,30 @@ const Cta = ({ title, text, buttons }) => {
           {buttons &&
             buttons.map((button, index) => (
               <div
-                className="inline-flex rounded-md shadow"
+                className="mt-4 md:mt-0 inline-flex rounded-md shadow"
                 key={`ctaButton-${index}`}
               >
                 <button
                   type="button"
-                  className={`py-4 px-6 bg-${button.theme} hover:bg-${button.theme}-darker focus:ring-${button.theme}-lighter text-${button.theme}-text w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg`}
+                  className={`py-4 px-6 bg-${delve(
+                    button,
+                    'theme'
+                  )} hover:bg-${delve(
+                    button,
+                    'theme'
+                  )}-darker focus:ring-${delve(
+                    button,
+                    'theme'
+                  )}-lighter text-${delve(
+                    button,
+                    'theme'
+                  )}-text w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg`}
                 >
-                  <Link href={button.link.href} key={`cta-button-${index}`}>
-                    <a>{button.link.label}</a>
+                  <Link
+                    href={delve(button, 'link.href')}
+                    key={`cta-button-${index}`}
+                  >
+                    <a>{delve(button, 'link.label')}</a>
                   </Link>
                 </button>
               </div>

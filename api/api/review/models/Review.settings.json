@@ -26,23 +26,25 @@
         }
       }
     },
-    "note": {
-      "type": "integer",
-      "max": 5,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "author": {
+      "via": "reviews",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "reviews"
+      "model": "user"
     },
     "restaurant": {
       "via": "reviews",
       "model": "restaurant"
+    },
+    "note": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": 1
     }
   }
 }

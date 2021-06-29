@@ -8,16 +8,9 @@
   "options": {},
   "attributes": {
     "avatar": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
     },
     "fullname": {
       "type": "string",
@@ -31,7 +24,7 @@
       "type": "string",
       "required": true
     },
-    "socialNetwork": {
+    "socialNetworks": {
       "type": "component",
       "repeatable": true,
       "component": "shared.social-networks"

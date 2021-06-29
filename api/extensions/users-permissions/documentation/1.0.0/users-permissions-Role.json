@@ -528,7 +528,9 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "job",
+                "description"
               ],
               "properties": {
                 "id": {
@@ -565,6 +567,18 @@
                   }
                 },
                 "picture": {
+                  "type": "string"
+                },
+                "articles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "job": {
+                  "type": "string"
+                },
+                "description": {
                   "type": "string"
                 },
                 "created_by": {

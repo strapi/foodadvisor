@@ -439,6 +439,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -463,12 +467,6 @@
                     "id": {
                       "type": "string"
                     },
-                    "title": {
-                      "type": "string"
-                    },
-                    "text": {
-                      "type": "string"
-                    },
                     "theme": {
                       "type": "string",
                       "default": "muted",
@@ -477,6 +475,12 @@
                         "secondary",
                         "muted"
                       ]
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
                     },
                     "buttons": {
                       "type": "array",
@@ -563,83 +567,86 @@
                         "id": {
                           "type": "string"
                         },
-                        "image": {
-                          "type": "object",
-                          "required": [
-                            "id",
-                            "alt"
-                          ],
-                          "properties": {
-                            "id": {
-                              "type": "string"
-                            },
-                            "alt": {
-                              "type": "string"
-                            },
-                            "media": {
-                              "required": [
-                                "id",
-                                "name",
-                                "hash",
-                                "mime",
-                                "size",
-                                "url",
-                                "provider"
-                              ],
-                              "properties": {
-                                "id": {
-                                  "type": "string"
-                                },
-                                "name": {
-                                  "type": "string"
-                                },
-                                "alternativeText": {
-                                  "type": "string"
-                                },
-                                "caption": {
-                                  "type": "string"
-                                },
-                                "width": {
-                                  "type": "integer"
-                                },
-                                "height": {
-                                  "type": "integer"
-                                },
-                                "formats": {
-                                  "type": "object"
-                                },
-                                "hash": {
-                                  "type": "string"
-                                },
-                                "ext": {
-                                  "type": "string"
-                                },
-                                "mime": {
-                                  "type": "string"
-                                },
-                                "size": {
-                                  "type": "number"
-                                },
-                                "url": {
-                                  "type": "string"
-                                },
-                                "previewUrl": {
-                                  "type": "string"
-                                },
-                                "provider": {
-                                  "type": "string"
-                                },
-                                "provider_metadata": {
-                                  "type": "object"
-                                },
-                                "related": {
-                                  "type": "string"
-                                },
-                                "created_by": {
-                                  "type": "string"
-                                },
-                                "updated_by": {
-                                  "type": "string"
+                        "images": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "id",
+                              "alt"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              },
+                              "media": {
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "hash",
+                                  "mime",
+                                  "size",
+                                  "url",
+                                  "provider"
+                                ],
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "alternativeText": {
+                                    "type": "string"
+                                  },
+                                  "caption": {
+                                    "type": "string"
+                                  },
+                                  "width": {
+                                    "type": "integer"
+                                  },
+                                  "height": {
+                                    "type": "integer"
+                                  },
+                                  "formats": {
+                                    "type": "object"
+                                  },
+                                  "hash": {
+                                    "type": "string"
+                                  },
+                                  "ext": {
+                                    "type": "string"
+                                  },
+                                  "mime": {
+                                    "type": "string"
+                                  },
+                                  "size": {
+                                    "type": "number"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "previewUrl": {
+                                    "type": "string"
+                                  },
+                                  "provider": {
+                                    "type": "string"
+                                  },
+                                  "provider_metadata": {
+                                    "type": "object"
+                                  },
+                                  "related": {
+                                    "type": "string"
+                                  },
+                                  "created_by": {
+                                    "type": "string"
+                                  },
+                                  "updated_by": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -811,6 +818,15 @@
                     "id": {
                       "type": "string"
                     },
+                    "theme": {
+                      "type": "string",
+                      "default": "secondary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
                     "header": {
                       "type": "object",
                       "required": [
@@ -839,16 +855,7 @@
                         }
                       }
                     },
-                    "theme": {
-                      "type": "string",
-                      "default": "secondary",
-                      "enum": [
-                        "primary",
-                        "secondary",
-                        "muted"
-                      ]
-                    },
-                    "card": {
+                    "cards": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -864,6 +871,88 @@
                           },
                           "text": {
                             "type": "string"
+                          },
+                          "image": {
+                            "type": "object",
+                            "required": [
+                              "id",
+                              "alt"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              },
+                              "media": {
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "hash",
+                                  "mime",
+                                  "size",
+                                  "url",
+                                  "provider"
+                                ],
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "alternativeText": {
+                                    "type": "string"
+                                  },
+                                  "caption": {
+                                    "type": "string"
+                                  },
+                                  "width": {
+                                    "type": "integer"
+                                  },
+                                  "height": {
+                                    "type": "integer"
+                                  },
+                                  "formats": {
+                                    "type": "object"
+                                  },
+                                  "hash": {
+                                    "type": "string"
+                                  },
+                                  "ext": {
+                                    "type": "string"
+                                  },
+                                  "mime": {
+                                    "type": "string"
+                                  },
+                                  "size": {
+                                    "type": "number"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "previewUrl": {
+                                    "type": "string"
+                                  },
+                                  "provider": {
+                                    "type": "string"
+                                  },
+                                  "provider_metadata": {
+                                    "type": "object"
+                                  },
+                                  "related": {
+                                    "type": "string"
+                                  },
+                                  "created_by": {
+                                    "type": "string"
+                                  },
+                                  "updated_by": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
                           }
                         }
                       }
@@ -933,69 +1022,84 @@
                             "type": "string"
                           },
                           "avatar": {
+                            "type": "object",
                             "required": [
                               "id",
-                              "name",
-                              "hash",
-                              "mime",
-                              "size",
-                              "url",
-                              "provider"
+                              "alt"
                             ],
                             "properties": {
                               "id": {
                                 "type": "string"
                               },
-                              "name": {
+                              "alt": {
                                 "type": "string"
                               },
-                              "alternativeText": {
-                                "type": "string"
-                              },
-                              "caption": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "integer"
-                              },
-                              "height": {
-                                "type": "integer"
-                              },
-                              "formats": {
-                                "type": "object"
-                              },
-                              "hash": {
-                                "type": "string"
-                              },
-                              "ext": {
-                                "type": "string"
-                              },
-                              "mime": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "number"
-                              },
-                              "url": {
-                                "type": "string"
-                              },
-                              "previewUrl": {
-                                "type": "string"
-                              },
-                              "provider": {
-                                "type": "string"
-                              },
-                              "provider_metadata": {
-                                "type": "object"
-                              },
-                              "related": {
-                                "type": "string"
-                              },
-                              "created_by": {
-                                "type": "string"
-                              },
-                              "updated_by": {
-                                "type": "string"
+                              "media": {
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "hash",
+                                  "mime",
+                                  "size",
+                                  "url",
+                                  "provider"
+                                ],
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "alternativeText": {
+                                    "type": "string"
+                                  },
+                                  "caption": {
+                                    "type": "string"
+                                  },
+                                  "width": {
+                                    "type": "integer"
+                                  },
+                                  "height": {
+                                    "type": "integer"
+                                  },
+                                  "formats": {
+                                    "type": "object"
+                                  },
+                                  "hash": {
+                                    "type": "string"
+                                  },
+                                  "ext": {
+                                    "type": "string"
+                                  },
+                                  "mime": {
+                                    "type": "string"
+                                  },
+                                  "size": {
+                                    "type": "number"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "previewUrl": {
+                                    "type": "string"
+                                  },
+                                  "provider": {
+                                    "type": "string"
+                                  },
+                                  "provider_metadata": {
+                                    "type": "object"
+                                  },
+                                  "related": {
+                                    "type": "string"
+                                  },
+                                  "created_by": {
+                                    "type": "string"
+                                  },
+                                  "updated_by": {
+                                    "type": "string"
+                                  }
+                                }
                               }
                             }
                           },
@@ -1008,20 +1112,16 @@
                           "description": {
                             "type": "string"
                           },
-                          "socialNetwork": {
+                          "socialNetworks": {
                             "type": "array",
                             "items": {
                               "type": "object",
                               "required": [
                                 "id",
-                                "name",
                                 "url"
                               ],
                               "properties": {
                                 "id": {
-                                  "type": "string"
-                                },
-                                "name": {
                                   "type": "string"
                                 },
                                 "url": {
@@ -1059,68 +1159,60 @@
                       "type": "string"
                     },
                     "author": {
-                      "type": "string"
-                    },
-                    "job": {
-                      "type": "string"
-                    },
-                    "avatar": {
                       "required": [
                         "id",
-                        "name",
-                        "hash",
-                        "mime",
-                        "size",
-                        "url",
-                        "provider"
+                        "username",
+                        "email",
+                        "job",
+                        "description"
                       ],
                       "properties": {
                         "id": {
                           "type": "string"
                         },
-                        "name": {
+                        "username": {
                           "type": "string"
                         },
-                        "alternativeText": {
-                          "type": "string"
-                        },
-                        "caption": {
-                          "type": "string"
-                        },
-                        "width": {
-                          "type": "integer"
-                        },
-                        "height": {
-                          "type": "integer"
-                        },
-                        "formats": {
-                          "type": "object"
-                        },
-                        "hash": {
-                          "type": "string"
-                        },
-                        "ext": {
-                          "type": "string"
-                        },
-                        "mime": {
-                          "type": "string"
-                        },
-                        "size": {
-                          "type": "number"
-                        },
-                        "url": {
-                          "type": "string"
-                        },
-                        "previewUrl": {
+                        "email": {
                           "type": "string"
                         },
                         "provider": {
                           "type": "string"
                         },
-                        "provider_metadata": {
-                          "type": "object"
+                        "password": {
+                          "type": "string"
                         },
-                        "related": {
+                        "resetPasswordToken": {
+                          "type": "string"
+                        },
+                        "confirmed": {
+                          "type": "boolean"
+                        },
+                        "blocked": {
+                          "type": "boolean"
+                        },
+                        "role": {
+                          "type": "string"
+                        },
+                        "reviews": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "picture": {
+                          "type": "string"
+                        },
+                        "articles": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "job": {
+                          "type": "string"
+                        },
+                        "description": {
                           "type": "string"
                         },
                         "created_by": {
@@ -1130,13 +1222,20 @@
                           "type": "string"
                         }
                       }
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "primary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
                     }
                   },
                   "required": [
                     "id",
-                    "text",
-                    "author",
-                    "job"
+                    "text"
                   ]
                 },
                 {
@@ -1155,76 +1254,6 @@
                     },
                     "id": {
                       "type": "string"
-                    },
-                    "images": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "hash",
-                          "mime",
-                          "size",
-                          "url",
-                          "provider"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "alternativeText": {
-                            "type": "string"
-                          },
-                          "caption": {
-                            "type": "string"
-                          },
-                          "width": {
-                            "type": "integer"
-                          },
-                          "height": {
-                            "type": "integer"
-                          },
-                          "formats": {
-                            "type": "object"
-                          },
-                          "hash": {
-                            "type": "string"
-                          },
-                          "ext": {
-                            "type": "string"
-                          },
-                          "mime": {
-                            "type": "string"
-                          },
-                          "size": {
-                            "type": "number"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "previewUrl": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "provider_metadata": {
-                            "type": "object"
-                          },
-                          "related": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
                     },
                     "header": {
                       "type": "object",
@@ -1269,75 +1298,99 @@
                           "id": {
                             "type": "string"
                           },
-                          "image": {
-                            "required": [
-                              "id",
-                              "name",
-                              "hash",
-                              "mime",
-                              "size",
-                              "url",
-                              "provider"
-                            ],
-                            "properties": {
-                              "id": {
-                                "type": "string"
-                              },
-                              "name": {
-                                "type": "string"
-                              },
-                              "alternativeText": {
-                                "type": "string"
-                              },
-                              "caption": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "integer"
-                              },
-                              "height": {
-                                "type": "integer"
-                              },
-                              "formats": {
-                                "type": "object"
-                              },
-                              "hash": {
-                                "type": "string"
-                              },
-                              "ext": {
-                                "type": "string"
-                              },
-                              "mime": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "number"
-                              },
-                              "url": {
-                                "type": "string"
-                              },
-                              "previewUrl": {
-                                "type": "string"
-                              },
-                              "provider": {
-                                "type": "string"
-                              },
-                              "provider_metadata": {
-                                "type": "object"
-                              },
-                              "related": {
-                                "type": "string"
-                              },
-                              "created_by": {
-                                "type": "string"
-                              },
-                              "updated_by": {
-                                "type": "string"
-                              }
-                            }
-                          },
                           "text": {
                             "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "primary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
+                    "image": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "alt"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "media": {
+                          "required": [
+                            "id",
+                            "name",
+                            "hash",
+                            "mime",
+                            "size",
+                            "url",
+                            "provider"
+                          ],
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "alternativeText": {
+                              "type": "string"
+                            },
+                            "caption": {
+                              "type": "string"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "formats": {
+                              "type": "object"
+                            },
+                            "hash": {
+                              "type": "string"
+                            },
+                            "ext": {
+                              "type": "string"
+                            },
+                            "mime": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "number"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "previewUrl": {
+                              "type": "string"
+                            },
+                            "provider": {
+                              "type": "string"
+                            },
+                            "provider_metadata": {
+                              "type": "object"
+                            },
+                            "related": {
+                              "type": "string"
+                            },
+                            "created_by": {
+                              "type": "string"
+                            },
+                            "updated_by": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
@@ -1529,6 +1582,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -1553,12 +1610,6 @@
                     "id": {
                       "type": "string"
                     },
-                    "title": {
-                      "type": "string"
-                    },
-                    "text": {
-                      "type": "string"
-                    },
                     "theme": {
                       "type": "string",
                       "default": "muted",
@@ -1567,6 +1618,12 @@
                         "secondary",
                         "muted"
                       ]
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
                     },
                     "buttons": {
                       "type": "array",
@@ -1653,83 +1710,86 @@
                         "id": {
                           "type": "string"
                         },
-                        "image": {
-                          "type": "object",
-                          "required": [
-                            "id",
-                            "alt"
-                          ],
-                          "properties": {
-                            "id": {
-                              "type": "string"
-                            },
-                            "alt": {
-                              "type": "string"
-                            },
-                            "media": {
-                              "required": [
-                                "id",
-                                "name",
-                                "hash",
-                                "mime",
-                                "size",
-                                "url",
-                                "provider"
-                              ],
-                              "properties": {
-                                "id": {
-                                  "type": "string"
-                                },
-                                "name": {
-                                  "type": "string"
-                                },
-                                "alternativeText": {
-                                  "type": "string"
-                                },
-                                "caption": {
-                                  "type": "string"
-                                },
-                                "width": {
-                                  "type": "integer"
-                                },
-                                "height": {
-                                  "type": "integer"
-                                },
-                                "formats": {
-                                  "type": "object"
-                                },
-                                "hash": {
-                                  "type": "string"
-                                },
-                                "ext": {
-                                  "type": "string"
-                                },
-                                "mime": {
-                                  "type": "string"
-                                },
-                                "size": {
-                                  "type": "number"
-                                },
-                                "url": {
-                                  "type": "string"
-                                },
-                                "previewUrl": {
-                                  "type": "string"
-                                },
-                                "provider": {
-                                  "type": "string"
-                                },
-                                "provider_metadata": {
-                                  "type": "object"
-                                },
-                                "related": {
-                                  "type": "string"
-                                },
-                                "created_by": {
-                                  "type": "string"
-                                },
-                                "updated_by": {
-                                  "type": "string"
+                        "images": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "id",
+                              "alt"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              },
+                              "media": {
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "hash",
+                                  "mime",
+                                  "size",
+                                  "url",
+                                  "provider"
+                                ],
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "alternativeText": {
+                                    "type": "string"
+                                  },
+                                  "caption": {
+                                    "type": "string"
+                                  },
+                                  "width": {
+                                    "type": "integer"
+                                  },
+                                  "height": {
+                                    "type": "integer"
+                                  },
+                                  "formats": {
+                                    "type": "object"
+                                  },
+                                  "hash": {
+                                    "type": "string"
+                                  },
+                                  "ext": {
+                                    "type": "string"
+                                  },
+                                  "mime": {
+                                    "type": "string"
+                                  },
+                                  "size": {
+                                    "type": "number"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "previewUrl": {
+                                    "type": "string"
+                                  },
+                                  "provider": {
+                                    "type": "string"
+                                  },
+                                  "provider_metadata": {
+                                    "type": "object"
+                                  },
+                                  "related": {
+                                    "type": "string"
+                                  },
+                                  "created_by": {
+                                    "type": "string"
+                                  },
+                                  "updated_by": {
+                                    "type": "string"
+                                  }
                                 }
                               }
                             }
@@ -1901,6 +1961,15 @@
                     "id": {
                       "type": "string"
                     },
+                    "theme": {
+                      "type": "string",
+                      "default": "secondary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
                     "header": {
                       "type": "object",
                       "required": [
@@ -1929,16 +1998,7 @@
                         }
                       }
                     },
-                    "theme": {
-                      "type": "string",
-                      "default": "secondary",
-                      "enum": [
-                        "primary",
-                        "secondary",
-                        "muted"
-                      ]
-                    },
-                    "card": {
+                    "cards": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -1954,6 +2014,88 @@
                           },
                           "text": {
                             "type": "string"
+                          },
+                          "image": {
+                            "type": "object",
+                            "required": [
+                              "id",
+                              "alt"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              },
+                              "media": {
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "hash",
+                                  "mime",
+                                  "size",
+                                  "url",
+                                  "provider"
+                                ],
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "alternativeText": {
+                                    "type": "string"
+                                  },
+                                  "caption": {
+                                    "type": "string"
+                                  },
+                                  "width": {
+                                    "type": "integer"
+                                  },
+                                  "height": {
+                                    "type": "integer"
+                                  },
+                                  "formats": {
+                                    "type": "object"
+                                  },
+                                  "hash": {
+                                    "type": "string"
+                                  },
+                                  "ext": {
+                                    "type": "string"
+                                  },
+                                  "mime": {
+                                    "type": "string"
+                                  },
+                                  "size": {
+                                    "type": "number"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "previewUrl": {
+                                    "type": "string"
+                                  },
+                                  "provider": {
+                                    "type": "string"
+                                  },
+                                  "provider_metadata": {
+                                    "type": "object"
+                                  },
+                                  "related": {
+                                    "type": "string"
+                                  },
+                                  "created_by": {
+                                    "type": "string"
+                                  },
+                                  "updated_by": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
                           }
                         }
                       }
@@ -2023,69 +2165,84 @@
                             "type": "string"
                           },
                           "avatar": {
+                            "type": "object",
                             "required": [
                               "id",
-                              "name",
-                              "hash",
-                              "mime",
-                              "size",
-                              "url",
-                              "provider"
+                              "alt"
                             ],
                             "properties": {
                               "id": {
                                 "type": "string"
                               },
-                              "name": {
+                              "alt": {
                                 "type": "string"
                               },
-                              "alternativeText": {
-                                "type": "string"
-                              },
-                              "caption": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "integer"
-                              },
-                              "height": {
-                                "type": "integer"
-                              },
-                              "formats": {
-                                "type": "object"
-                              },
-                              "hash": {
-                                "type": "string"
-                              },
-                              "ext": {
-                                "type": "string"
-                              },
-                              "mime": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "number"
-                              },
-                              "url": {
-                                "type": "string"
-                              },
-                              "previewUrl": {
-                                "type": "string"
-                              },
-                              "provider": {
-                                "type": "string"
-                              },
-                              "provider_metadata": {
-                                "type": "object"
-                              },
-                              "related": {
-                                "type": "string"
-                              },
-                              "created_by": {
-                                "type": "string"
-                              },
-                              "updated_by": {
-                                "type": "string"
+                              "media": {
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "hash",
+                                  "mime",
+                                  "size",
+                                  "url",
+                                  "provider"
+                                ],
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "alternativeText": {
+                                    "type": "string"
+                                  },
+                                  "caption": {
+                                    "type": "string"
+                                  },
+                                  "width": {
+                                    "type": "integer"
+                                  },
+                                  "height": {
+                                    "type": "integer"
+                                  },
+                                  "formats": {
+                                    "type": "object"
+                                  },
+                                  "hash": {
+                                    "type": "string"
+                                  },
+                                  "ext": {
+                                    "type": "string"
+                                  },
+                                  "mime": {
+                                    "type": "string"
+                                  },
+                                  "size": {
+                                    "type": "number"
+                                  },
+                                  "url": {
+                                    "type": "string"
+                                  },
+                                  "previewUrl": {
+                                    "type": "string"
+                                  },
+                                  "provider": {
+                                    "type": "string"
+                                  },
+                                  "provider_metadata": {
+                                    "type": "object"
+                                  },
+                                  "related": {
+                                    "type": "string"
+                                  },
+                                  "created_by": {
+                                    "type": "string"
+                                  },
+                                  "updated_by": {
+                                    "type": "string"
+                                  }
+                                }
                               }
                             }
                           },
@@ -2098,20 +2255,16 @@
                           "description": {
                             "type": "string"
                           },
-                          "socialNetwork": {
+                          "socialNetworks": {
                             "type": "array",
                             "items": {
                               "type": "object",
                               "required": [
                                 "id",
-                                "name",
                                 "url"
                               ],
                               "properties": {
                                 "id": {
-                                  "type": "string"
-                                },
-                                "name": {
                                   "type": "string"
                                 },
                                 "url": {
@@ -2149,68 +2302,60 @@
                       "type": "string"
                     },
                     "author": {
-                      "type": "string"
-                    },
-                    "job": {
-                      "type": "string"
-                    },
-                    "avatar": {
                       "required": [
                         "id",
-                        "name",
-                        "hash",
-                        "mime",
-                        "size",
-                        "url",
-                        "provider"
+                        "username",
+                        "email",
+                        "job",
+                        "description"
                       ],
                       "properties": {
                         "id": {
                           "type": "string"
                         },
-                        "name": {
+                        "username": {
                           "type": "string"
                         },
-                        "alternativeText": {
-                          "type": "string"
-                        },
-                        "caption": {
-                          "type": "string"
-                        },
-                        "width": {
-                          "type": "integer"
-                        },
-                        "height": {
-                          "type": "integer"
-                        },
-                        "formats": {
-                          "type": "object"
-                        },
-                        "hash": {
-                          "type": "string"
-                        },
-                        "ext": {
-                          "type": "string"
-                        },
-                        "mime": {
-                          "type": "string"
-                        },
-                        "size": {
-                          "type": "number"
-                        },
-                        "url": {
-                          "type": "string"
-                        },
-                        "previewUrl": {
+                        "email": {
                           "type": "string"
                         },
                         "provider": {
                           "type": "string"
                         },
-                        "provider_metadata": {
-                          "type": "object"
+                        "password": {
+                          "type": "string"
                         },
-                        "related": {
+                        "resetPasswordToken": {
+                          "type": "string"
+                        },
+                        "confirmed": {
+                          "type": "boolean"
+                        },
+                        "blocked": {
+                          "type": "boolean"
+                        },
+                        "role": {
+                          "type": "string"
+                        },
+                        "reviews": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "picture": {
+                          "type": "string"
+                        },
+                        "articles": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "job": {
+                          "type": "string"
+                        },
+                        "description": {
                           "type": "string"
                         },
                         "created_by": {
@@ -2220,13 +2365,20 @@
                           "type": "string"
                         }
                       }
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "primary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
                     }
                   },
                   "required": [
                     "id",
-                    "text",
-                    "author",
-                    "job"
+                    "text"
                   ]
                 },
                 {
@@ -2245,76 +2397,6 @@
                     },
                     "id": {
                       "type": "string"
-                    },
-                    "images": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "hash",
-                          "mime",
-                          "size",
-                          "url",
-                          "provider"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "alternativeText": {
-                            "type": "string"
-                          },
-                          "caption": {
-                            "type": "string"
-                          },
-                          "width": {
-                            "type": "integer"
-                          },
-                          "height": {
-                            "type": "integer"
-                          },
-                          "formats": {
-                            "type": "object"
-                          },
-                          "hash": {
-                            "type": "string"
-                          },
-                          "ext": {
-                            "type": "string"
-                          },
-                          "mime": {
-                            "type": "string"
-                          },
-                          "size": {
-                            "type": "number"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "previewUrl": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "provider_metadata": {
-                            "type": "object"
-                          },
-                          "related": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
                     },
                     "header": {
                       "type": "object",
@@ -2359,75 +2441,99 @@
                           "id": {
                             "type": "string"
                           },
-                          "image": {
-                            "required": [
-                              "id",
-                              "name",
-                              "hash",
-                              "mime",
-                              "size",
-                              "url",
-                              "provider"
-                            ],
-                            "properties": {
-                              "id": {
-                                "type": "string"
-                              },
-                              "name": {
-                                "type": "string"
-                              },
-                              "alternativeText": {
-                                "type": "string"
-                              },
-                              "caption": {
-                                "type": "string"
-                              },
-                              "width": {
-                                "type": "integer"
-                              },
-                              "height": {
-                                "type": "integer"
-                              },
-                              "formats": {
-                                "type": "object"
-                              },
-                              "hash": {
-                                "type": "string"
-                              },
-                              "ext": {
-                                "type": "string"
-                              },
-                              "mime": {
-                                "type": "string"
-                              },
-                              "size": {
-                                "type": "number"
-                              },
-                              "url": {
-                                "type": "string"
-                              },
-                              "previewUrl": {
-                                "type": "string"
-                              },
-                              "provider": {
-                                "type": "string"
-                              },
-                              "provider_metadata": {
-                                "type": "object"
-                              },
-                              "related": {
-                                "type": "string"
-                              },
-                              "created_by": {
-                                "type": "string"
-                              },
-                              "updated_by": {
-                                "type": "string"
-                              }
-                            }
-                          },
                           "text": {
                             "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "primary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
+                    "image": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "alt"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "alt": {
+                          "type": "string"
+                        },
+                        "media": {
+                          "required": [
+                            "id",
+                            "name",
+                            "hash",
+                            "mime",
+                            "size",
+                            "url",
+                            "provider"
+                          ],
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "alternativeText": {
+                              "type": "string"
+                            },
+                            "caption": {
+                              "type": "string"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "formats": {
+                              "type": "object"
+                            },
+                            "hash": {
+                              "type": "string"
+                            },
+                            "ext": {
+                              "type": "string"
+                            },
+                            "mime": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "number"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "previewUrl": {
+                              "type": "string"
+                            },
+                            "provider": {
+                              "type": "string"
+                            },
+                            "provider_metadata": {
+                              "type": "object"
+                            },
+                            "related": {
+                              "type": "string"
+                            },
+                            "created_by": {
+                              "type": "string"
+                            },
+                            "updated_by": {
+                              "type": "string"
+                            }
                           }
                         }
                       }

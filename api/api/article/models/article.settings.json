@@ -81,6 +81,11 @@
           "localized": true
         }
       }
+    },
+    "author": {
+      "via": "articles",
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

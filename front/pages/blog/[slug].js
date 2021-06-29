@@ -1,23 +1,29 @@
 import delve from 'dlv';
+import { getStrapiURL } from '../../utils';
 import { getDataDependencies } from '../services/api';
+import { getLocalizedParams } from '../../utils/localize';
 
-import SliceManager from '../../components/shared/SliceManager';
+import Layout from '../../components/layout';
+import BlockManager from '../../components/shared/BlockManager';
 import ArticleContent from '../../components/pages/blog/ArticleContent';
 
-const Article = ({ pageData }) => {
-  const slices = delve(pageData, 'slices');
+const Article = ({ global, pageData }) => {
+  const blocks = delve(pageData, 'blocks');
   return (
     <>
-      <ArticleContent data={pageData} />
-      {slices && <SliceManager slices={slices} />}
+      <Layout global={global} pageData={pageData} type="article">
+        <ArticleContent {...pageData} />
+        {blocks && <BlockManager blocks={blocks} />}
+      </Layout>
     </>
   );
 };
 
 // This gets called on every request
 export async function getServerSideProps(context) {
+  const { locale } = getLocalizedParams(context.query);
   const res = await fetch(
-    `${process.env.API_URL}/articles?slug=${context.params.slug}`
+    getStrapiURL(`/articles?slug=${context.params.slug}&_locale=${locale}`)
   );
   const json = await res.json();
 

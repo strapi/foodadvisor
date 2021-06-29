@@ -1,30 +1,46 @@
+import delve from 'dlv';
+
 import { getStrapiMedia } from '../../../utils';
 
-const Testimonial = ({ text, author, avatar, job }) => {
+const Testimonial = ({ theme, text, author }) => {
   return (
-    <div className="bg-white pt-40 pb-80 px-4">
-      <div className="bg-gray-700 w-2/3 mx-auto p-20 rounded-full">
-        <p className="text-white w-full md:w-2/3 m-auto text-center text-lg md:text-3xl">
-          <span className="font-bold text-primary">“</span>
-          {text}
-          <span className="font-bold text-primary">”</span>
-        </p>
-        <div className="flex items-center justify-center mt-8">
-          <a href="#" className="block relative">
-            <img
-              alt="profil"
-              src={getStrapiMedia(avatar.url)}
-              className="mx-auto object-cover rounded-full h-10 w-10 "
-            />
-          </a>
-          <div className="flex ml-2 items-center justify-center">
-            <span className="font-semibold text-primary mr-2 text-lg">
-              {author}
-            </span>
-            <span className="text-gray-400 text-xl font-light">/</span>
-            <span className="text-gray-400 text-md ml-2">{job}</span>
+    <div className="bg-white pt-60 pb-60 px-4">
+      <div className="bg-gray-700 md:w-2/4 mx-auto p-20 rounded-full">
+        {text && (
+          <p className="text-white w-full md:w-2/3 m-auto text-center text-md md:text-3xl">
+            <span className={`font-bold text-${theme}`}>“</span>
+            {text}
+            <span className={`font-bold text-${theme}`}>”</span>
+          </p>
+        )}
+
+        {author && (
+          <div className="flex items-center justify-center mt-8">
+            <a href="#" className="block relative">
+              <img
+                alt="profil"
+                src={getStrapiMedia(
+                  delve(author, 'picture.formats.thumbnail.url')
+                )}
+                className="mx-auto object-cover rounded-full h-10 w-10 "
+              />
+            </a>
+
+            <div className="flex ml-2 items-center justify-center">
+              <span
+                className={`font-semibold text-${theme} mr-2 text-md md:text-lg`}
+              >
+                {delve(author, 'username')}
+              </span>
+              <span className="text-gray-400 text-xs md:text-xl font-light">
+                /
+              </span>
+              <span className="text-gray-400 text-xs md:text-xl ml-2">
+                {delve(author, 'job')}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

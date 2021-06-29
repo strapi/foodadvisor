@@ -2,7 +2,7 @@
   "connection": "default",
   "collectionName": "components_meta",
   "info": {
-    "name": "meta",
+    "name": "metas",
     "description": "",
     "icon": "address-book"
   },

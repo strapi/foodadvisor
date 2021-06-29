@@ -1,12 +1,14 @@
 import delve from 'dlv';
 
 import Columns from './columns';
-import SocialNetworks from './socialNetworks';
+import SocialLogo from '../../shared/SocialLogo';
 import CustomLink from '../../shared/CustomLink';
 
 const Footer = ({ footer, pageData }) => {
-  const theme = delve(footer, 'button.theme');
   const label = delve(footer, 'label');
+  const theme = delve(footer, 'button.theme');
+  const socialNetworks = delve(footer, 'socialNetworks');
+
   return (
     <footer className="bg-white mt-24 pt-4 pb-8 xl:pt-8">
       <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 text-gray-400 dark:text-gray-300">
@@ -14,8 +16,12 @@ const Footer = ({ footer, pageData }) => {
           columns={delve(footer, 'footerColumns')}
           locale={delve(pageData, 'locale')}
         />
-
-        <SocialNetworks />
+        <div className="pt-8 flex border-t border-gray-200 max-w-xs mx-auto items-center justify-between">
+          {socialNetworks &&
+            socialNetworks.map((network, index) => (
+              <SocialLogo url={delve(network, 'url')} size="20" key={index} />
+            ))}
+        </div>
 
         <div className="text-center pt-10 sm:pt-12 font-light flex items-center justify-center">
           {delve(footer, 'button') && (

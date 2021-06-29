@@ -12,24 +12,17 @@
       "required": true
     },
     "author": {
-      "type": "string",
-      "required": true
+      "plugin": "users-permissions",
+      "model": "user"
     },
-    "job": {
-      "type": "string",
-      "required": true
-    },
-    "avatar": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
       ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
+      "default": "primary"
     }
   }
 }

@@ -2,6 +2,7 @@ import App from 'next/app';
 import ErrorPage from 'next/error';
 
 import 'tailwindcss/tailwind.css';
+import 'typeface-lato';
 
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { getStrapiURL } from '../utils';

@@ -8,16 +8,38 @@ export function getLocalizedParams(query) {
   return { slug: slug || '', locale: lang || 'en' };
 }
 
-export function localizePath(localePage, currentLocale) {
+export function localizePath(localePage, type) {
   const { locale, slug } = localePage;
 
-  return locale === currentLocale ? `/${slug}` : `/${slug}?lang=${locale}`;
+  switch (type) {
+    case 'restaurant':
+      return `/restaurants/${slug}?lang=${locale}`;
+    case 'article':
+      return `/blog/${slug}?lang=${locale}`;
+
+    default:
+      return `/${slug}?lang=${locale}`;
+  }
 }
 
 function getUrl(type, localization, targetLocale) {
-  return type == 'universals'
-    ? `/universals/${localization.id}`
-    : `/${type}?_locale=${targetLocale}`;
+  switch (type) {
+    case 'universals':
+      return `/universals/${delve(localization, 'id')}`;
+    case 'restaurant-page':
+      return `/restaurant-page?_locale=${targetLocale}`;
+    case 'blog-page':
+      return `/blog-page?_locale=${targetLocale}`;
+    case 'article':
+      return `/articles/${delve(localization, 'id')}?_locale=${targetLocale}`;
+    case 'restaurant':
+      return `/restaurants/${delve(
+        localization,
+        'id'
+      )}?_locale=${targetLocale}`;
+    default:
+      break;
+  }
 }
 
 export async function getLocalizedData(targetLocale, pageData, type) {
@@ -33,9 +55,8 @@ export async function getLocalizedData(targetLocale, pageData, type) {
 export async function listLocalizedPaths(pageData, type) {
   const currentPage = {
     locale: pageData.locale,
-    href: localizePath(pageData),
+    href: localizePath(pageData, type),
   };
-
   const paths = await Promise.all(
     pageData.localizations.map(async (localization) => {
       const url = getUrl(type, localization, localization.locale);
@@ -44,7 +65,7 @@ export async function listLocalizedPaths(pageData, type) {
       const page = { ...pageData, ...localePage };
       return {
         locale: page.locale,
-        href: localizePath(page),
+        href: localizePath(page, type),
       };
     })
   );

@@ -20,13 +20,13 @@
       "type": "uid",
       "targetField": "name"
     },
-    "restaurants": {
-      "via": "category",
-      "collection": "restaurant"
-    },
     "articles": {
       "via": "category",
       "collection": "article"
+    },
+    "restaurants": {
+      "via": "category",
+      "collection": "restaurant"
     }
   }
 }

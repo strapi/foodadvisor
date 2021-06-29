@@ -19,9 +19,11 @@ const Universals = ({ global, pageData }) => {
 // This gets called on every request
 export async function getServerSideProps(context) {
   const { slug, locale } = getLocalizedParams(context.query);
-
+  const preview = context.preview
+    ? '&_publicationState=preview&published_at_null=true'
+    : '';
   const res = await fetch(
-    getStrapiURL(`/universals?slug=${slug}&_locale=${locale}`)
+    getStrapiURL(`/pages?slug=${slug}&_locale=${locale}${preview}`)
   );
   const json = await res.json();
 

@@ -792,6 +792,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -997,8 +1001,11 @@
                           "category": {
                             "type": "string"
                           },
-                          "district": {
+                          "place": {
                             "type": "string"
+                          },
+                          "socialNetworks": {
+                            "type": "component"
                           },
                           "localizations": {
                             "type": "array",
@@ -1089,7 +1096,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "note"
               ],
               "properties": {
                 "id": {
@@ -1098,14 +1106,14 @@
                 "content": {
                   "type": "string"
                 },
-                "note": {
-                  "type": "integer"
-                },
                 "author": {
                   "type": "string"
                 },
                 "restaurant": {
                   "type": "string"
+                },
+                "note": {
+                  "type": "integer"
                 },
                 "localizations": {
                   "type": "array",
@@ -1140,13 +1148,13 @@
               "slug": {
                 "type": "uid"
               },
-              "restaurants": {
+              "articles": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "articles": {
+              "restaurants": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -1160,16 +1168,13 @@
               }
             }
           },
-          "district": {
+          "place": {
             "required": [
               "id",
-              "number"
+              "name"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "number": {
                 "type": "string"
               },
               "restaurants": {
@@ -1177,6 +1182,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "name": {
+                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -1186,6 +1194,24 @@
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "socialNetworks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "url"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -1244,8 +1270,11 @@
                 "category": {
                   "type": "string"
                 },
-                "district": {
+                "place": {
                   "type": "string"
+                },
+                "socialNetworks": {
+                  "type": "component"
                 },
                 "localizations": {
                   "type": "array",
@@ -1480,6 +1509,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -1685,8 +1718,11 @@
                           "category": {
                             "type": "string"
                           },
-                          "district": {
+                          "place": {
                             "type": "string"
+                          },
+                          "socialNetworks": {
+                            "type": "component"
                           },
                           "localizations": {
                             "type": "array",
@@ -1782,8 +1818,26 @@
           "category": {
             "type": "string"
           },
-          "district": {
+          "place": {
             "type": "string"
+          },
+          "socialNetworks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "url"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "localizations": {
             "type": "array",

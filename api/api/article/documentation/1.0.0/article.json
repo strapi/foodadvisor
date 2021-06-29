@@ -645,6 +645,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -784,6 +788,9 @@
                           "image": {
                             "type": "string"
                           },
+                          "author": {
+                            "type": "string"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -850,13 +857,13 @@
               "slug": {
                 "type": "uid"
               },
-              "restaurants": {
+              "articles": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "articles": {
+              "restaurants": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -937,6 +944,71 @@
               }
             }
           },
+          "author": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "job",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "reviews": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "picture": {
+                "type": "string"
+              },
+              "articles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -969,6 +1041,9 @@
                   "type": "string"
                 },
                 "image": {
+                  "type": "string"
+                },
+                "author": {
                   "type": "string"
                 },
                 "localizations": {
@@ -1127,6 +1202,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -1266,6 +1345,9 @@
                           "image": {
                             "type": "string"
                           },
+                          "author": {
+                            "type": "string"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -1318,6 +1400,9 @@
             }
           },
           "category": {
+            "type": "string"
+          },
+          "author": {
             "type": "string"
           },
           "localizations": {

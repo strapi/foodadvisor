@@ -2,7 +2,8 @@
   "collectionName": "components_shared_cards",
   "info": {
     "name": "card",
-    "icon": "sim-card"
+    "icon": "sim-card",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,11 @@
     },
     "text": {
       "type": "string"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
     }
   }
 }

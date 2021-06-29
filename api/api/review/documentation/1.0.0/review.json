@@ -516,7 +516,8 @@
     "schemas": {
       "Review": {
         "required": [
-          "id"
+          "id",
+          "note"
         ],
         "properties": {
           "id": {
@@ -525,14 +526,13 @@
           "content": {
             "type": "string"
           },
-          "note": {
-            "type": "integer"
-          },
           "author": {
             "required": [
               "id",
               "username",
-              "email"
+              "email",
+              "job",
+              "description"
             ],
             "properties": {
               "id": {
@@ -569,6 +569,18 @@
                 }
               },
               "picture": {
+                "type": "string"
+              },
+              "articles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job": {
+                "type": "string"
+              },
+              "description": {
                 "type": "string"
               },
               "created_by": {
@@ -632,8 +644,11 @@
               "category": {
                 "type": "string"
               },
-              "district": {
+              "place": {
                 "type": "string"
+              },
+              "socialNetworks": {
+                "type": "component"
               },
               "localizations": {
                 "type": "array",
@@ -655,11 +670,15 @@
               }
             }
           },
+          "note": {
+            "type": "integer"
+          },
           "localizations": {
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "note"
               ],
               "properties": {
                 "id": {
@@ -668,14 +687,14 @@
                 "content": {
                   "type": "string"
                 },
-                "note": {
-                  "type": "integer"
-                },
                 "author": {
                   "type": "string"
                 },
                 "restaurant": {
                   "type": "string"
+                },
+                "note": {
+                  "type": "integer"
                 },
                 "localizations": {
                   "type": "array",
@@ -701,18 +720,21 @@
         }
       },
       "NewReview": {
+        "required": [
+          "note"
+        ],
         "properties": {
           "content": {
             "type": "string"
-          },
-          "note": {
-            "type": "integer"
           },
           "author": {
             "type": "string"
           },
           "restaurant": {
             "type": "string"
+          },
+          "note": {
+            "type": "integer"
           },
           "localizations": {
             "type": "array",

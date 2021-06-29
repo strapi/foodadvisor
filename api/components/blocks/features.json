@@ -2,15 +2,11 @@
   "collectionName": "components_slices_features",
   "info": {
     "name": "features",
-    "icon": "search-plus"
+    "icon": "search-plus",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "header": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.header"
-    },
     "theme": {
       "type": "enumeration",
       "enum": [
@@ -20,7 +16,12 @@
       ],
       "default": "secondary"
     },
-    "card": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "cards": {
       "type": "component",
       "repeatable": true,
       "component": "shared.card"

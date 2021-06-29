@@ -642,6 +642,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },
@@ -883,6 +887,10 @@
                     }
                   }
                 }
+              },
+              "preventIndexing": {
+                "type": "boolean",
+                "default": false
               }
             }
           },

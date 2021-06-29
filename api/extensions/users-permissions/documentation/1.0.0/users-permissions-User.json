@@ -1188,7 +1188,9 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "job",
+          "description"
         ],
         "properties": {
           "id": {
@@ -1255,7 +1257,8 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "note"
               ],
               "properties": {
                 "id": {
@@ -1264,14 +1267,14 @@
                 "content": {
                   "type": "string"
                 },
-                "note": {
-                  "type": "integer"
-                },
                 "author": {
                   "type": "string"
                 },
                 "restaurant": {
                   "type": "string"
+                },
+                "note": {
+                  "type": "integer"
                 },
                 "localizations": {
                   "type": "array",
@@ -1357,13 +1360,79 @@
                 "type": "string"
               }
             }
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "content",
+                "image"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "seo": {
+                  "type": "component"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "slices": {
+                  "type": "dynamiczone"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "job": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "job",
+          "description"
         ],
         "properties": {
           "username": {
@@ -1401,6 +1470,18 @@
             "items": {
               "type": "string"
             }
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "job": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

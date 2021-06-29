@@ -111,16 +111,26 @@
       ]
     },
     "reviews": {
-      "collection": "review",
-      "via": "restaurant"
+      "via": "restaurant",
+      "collection": "review"
     },
     "category": {
-      "via": "restaurants",
-      "model": "category"
+      "model": "category",
+      "via": "restaurants"
     },
-    "district": {
+    "place": {
       "via": "restaurants",
-      "model": "district"
+      "model": "place"
+    },
+    "socialNetworks": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.social-networks"
     }
   }
 }
