@@ -5,7 +5,10 @@ import Team from '../../blocks/Team';
 import Pricing from '../../blocks/Pricing';
 import Features from '../../blocks/Features';
 import Testimonial from '../../blocks/Testimonial';
+import CtaCommandLine from '../../blocks/CtaCommandLine';
+import RelatedArticles from '../../blocks/RelatedArticles';
 import FeaturesWithImages from '../../blocks/FeaturesWithImages';
+import RelatedRestaurants from '../../blocks/RelatedRestaurants';
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
   let Block;
@@ -34,6 +37,15 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       break;
     case 'blocks.pricing':
       Block = Pricing;
+      break;
+    case 'blocks.cta-command-line':
+      Block = CtaCommandLine;
+      break;
+    case 'restaurant.related-restaurants':
+      Block = RelatedRestaurants;
+      break;
+    case 'article.related-articles':
+      Block = RelatedArticles;
       break;
   }
 

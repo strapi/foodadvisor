@@ -41,8 +41,6 @@ const EditView = ({
 }) => {
   const { currentEnvironment, plugins } = useGlobalContext();
 
-  console.log(layout);
-
   const { createActionAllowedFields, readActionAllowedFields, updateActionAllowedFields } =
     useMemo(() => {
       return getFieldsActionMatchingPermissions(userPermissions, slug);
@@ -241,16 +239,16 @@ const EditView = ({
                             href={`${CLIENT_URL}/api/preview?secret=${CLIENT_PREVIEW_SECRET}&slug=${_.get(
                               data,
                               'slug'
-                            )}&lang=${_.get(data, 'locale')}&type=${_.get(
+                            )}&locale=${_.get(data, 'locale')}&apiID=${_.get(
                               layout,
                               'contentType.apiID'
-                            )}`}
+                            )}&kind=${_.get(layout, 'contentType.kind')}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             title="page preview"
                           >
                             <i />
-                            View page preview
+                            Preview
                           </StyledExternalLink>
                         </li>
                       )}

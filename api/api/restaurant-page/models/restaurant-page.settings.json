@@ -73,6 +73,16 @@
       "components": [
         "blocks.cta"
       ]
+    },
+    "restaurantsPerPage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "required": true,
+      "default": 12
     }
   }
 }

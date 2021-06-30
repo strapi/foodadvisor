@@ -1,51 +1,54 @@
-import delve from 'dlv'
+import delve from 'dlv';
+
+import { articlesAdapter } from '../../adapters/article';
+import { restaurantsAdapter } from '../../adapters/restaurant';
 
 async function fetchArticles(articles) {
   const fullArticles = Promise.all(
     articles.map(({ id }) => {
-      return fetch(`${process.env.API_URL}/articles/${id}`).then((r) =>
-        r.json()
-      )
+      return fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`).then(
+        (r) => r.json()
+      );
     })
-  ).then((r) => articlesAdapter(r))
-  return fullArticles
+  ).then((r) => articlesAdapter(r));
+  return fullArticles;
 }
 
 async function fetchRestaurants(restaurants) {
   const fullRestaurants = Promise.all(
     restaurants.map(({ id }) => {
-      return fetch(`${process.env.API_URL}/restaurants/${id}`).then((r) =>
-        r.json()
-      )
+      return fetch(`${process.env.NEXT_PUBLIC_API_URL}/restaurants/${id}`).then(
+        (r) => r.json()
+      );
     })
-  ).then((r) => restaurantsAdapter(r))
-  return fullRestaurants
+  ).then((r) => restaurantsAdapter(r));
+  return fullRestaurants;
 }
 
-function mergeDataDeps(sliceData, extendedData) {
-  return Object.assign({}, sliceData, extendedData)
+function mergeDataDeps(blockData, extendedData) {
+  return Object.assign({}, blockData, extendedData);
 }
 
-export async function checkRequiredData(slice) {
-  switch (slice.__component) {
-    case 'slices.related-articles':
-      return mergeDataDeps(slice, {
-        articles: await fetchArticles(slice.articles),
-      })
-    case 'slices.related-restaurants':
-      return mergeDataDeps(slice, {
-        restaurants: await fetchRestaurants(slice.restaurants),
-      })
+export async function checkRequiredData(block) {
+  switch (block.__component) {
+    case 'article.related-articles':
+      return mergeDataDeps(block, {
+        articles: await fetchArticles(block.articles),
+      });
+    case 'restaurant.related-restaurants':
+      return mergeDataDeps(block, {
+        restaurants: await fetchRestaurants(block.restaurants),
+      });
     default:
-      return slice
+      return block;
   }
 }
 
 export async function getDataDependencies(json) {
-  let slices = delve(json, 'slices', [])
-  slices = await Promise.all(slices.map(checkRequiredData))
+  let blocks = delve(json, 'blocks', []);
+  blocks = await Promise.all(blocks.map(checkRequiredData));
   return {
     ...json,
-    slices,
-  }
+    blocks,
+  };
 }

@@ -318,7 +318,8 @@
       "Blog-page": {
         "required": [
           "id",
-          "slug"
+          "slug",
+          "articlesPerPage"
         ],
         "properties": {
           "id": {
@@ -494,7 +495,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "blocks.cta"
+                        "blocks.cta",
+                        "blocks.cta-command-line"
                       ]
                     },
                     "id": {
@@ -541,8 +543,7 @@
                             "required": [
                               "id",
                               "href",
-                              "label",
-                              "isExternal"
+                              "label"
                             ],
                             "properties": {
                               "id": {
@@ -573,16 +574,60 @@
                   "required": [
                     "id"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "blocks.cta",
+                        "blocks.cta-command-line"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "primary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
+                    "commandLine": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "text",
+                    "theme",
+                    "commandLine"
+                  ]
                 }
               ]
             }
+          },
+          "articlesPerPage": {
+            "type": "integer",
+            "default": 12
           },
           "localizations": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "slug"
+                "slug",
+                "articlesPerPage"
               ],
               "properties": {
                 "id": {
@@ -602,6 +647,9 @@
                 },
                 "blocks": {
                   "type": "dynamiczone"
+                },
+                "articlesPerPage": {
+                  "type": "integer"
                 },
                 "localizations": {
                   "type": "array",
@@ -635,7 +683,8 @@
       },
       "NewBlog-page": {
         "required": [
-          "slug"
+          "slug",
+          "articlesPerPage"
         ],
         "properties": {
           "seo": {
@@ -808,7 +857,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "blocks.cta"
+                        "blocks.cta",
+                        "blocks.cta-command-line"
                       ]
                     },
                     "id": {
@@ -855,8 +905,7 @@
                             "required": [
                               "id",
                               "href",
-                              "label",
-                              "isExternal"
+                              "label"
                             ],
                             "properties": {
                               "id": {
@@ -887,9 +936,52 @@
                   "required": [
                     "id"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "blocks.cta",
+                        "blocks.cta-command-line"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "theme": {
+                      "type": "string",
+                      "default": "primary",
+                      "enum": [
+                        "primary",
+                        "secondary",
+                        "muted"
+                      ]
+                    },
+                    "commandLine": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "text",
+                    "theme",
+                    "commandLine"
+                  ]
                 }
               ]
             }
+          },
+          "articlesPerPage": {
+            "type": "integer",
+            "default": 12
           },
           "localizations": {
             "type": "array",

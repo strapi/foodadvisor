@@ -799,7 +799,7 @@
               }
             }
           },
-          "slices": {
+          "blocks": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -899,8 +899,7 @@
                       "required": [
                         "id",
                         "href",
-                        "label",
-                        "isExternal"
+                        "label"
                       ],
                       "properties": {
                         "id": {
@@ -989,7 +988,7 @@
                           "seo": {
                             "type": "component"
                           },
-                          "slices": {
+                          "blocks": {
                             "type": "dynamiczone"
                           },
                           "reviews": {
@@ -1258,7 +1257,7 @@
                 "seo": {
                   "type": "component"
                 },
-                "slices": {
+                "blocks": {
                   "type": "dynamiczone"
                 },
                 "reviews": {
@@ -1516,7 +1515,7 @@
               }
             }
           },
-          "slices": {
+          "blocks": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -1616,8 +1615,7 @@
                       "required": [
                         "id",
                         "href",
-                        "label",
-                        "isExternal"
+                        "label"
                       ],
                       "properties": {
                         "id": {
@@ -1706,7 +1704,7 @@
                           "seo": {
                             "type": "component"
                           },
-                          "slices": {
+                          "blocks": {
                             "type": "dynamiczone"
                           },
                           "reviews": {

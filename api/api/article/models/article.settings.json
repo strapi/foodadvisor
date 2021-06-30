@@ -44,11 +44,11 @@
       "required": true,
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
-    "slices": {
+    "blocks": {
       "type": "dynamiczone",
       "components": [
         "shared.embed-form",

@@ -1386,7 +1386,7 @@
                 "content": {
                   "type": "string"
                 },
-                "slices": {
+                "blocks": {
                   "type": "dynamiczone"
                 },
                 "category": {

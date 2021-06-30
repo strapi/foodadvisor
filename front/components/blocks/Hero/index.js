@@ -1,7 +1,6 @@
 import delve from 'dlv';
 
-import { getStrapiMedia } from '../../../utils';
-
+import ImageCards from './image-cards';
 import CustomLink from '../../shared/CustomLink';
 
 const Hero = ({ intro }) => {
@@ -14,36 +13,7 @@ const Hero = ({ intro }) => {
     <section className="text-gray-600 body-font py-40 flex justify-center items-center">
       <div className="container flex md:flex-row flex-col items-center">
         <div className="mt-4 relative relative-20 lg:mt-0 lg:col-start-1">
-          <div className="relative space-y-4">
-            <div className="flex items-end justify-center lg:justify-start space-x-4">
-              {images &&
-                images
-                  .slice(0, 2)
-                  .map((image, index) => (
-                    <img
-                      className="rounded-lg shadow-lg w-32 md:w-56"
-                      key={`heroImage-${index}`}
-                      width="200"
-                      src={getStrapiMedia(delve(image, 'media.url'))}
-                      alt={delve(image, 'alt')}
-                    />
-                  ))}
-            </div>
-            <div className="flex items-start justify-center lg:justify-start space-x-4 md:ml-12">
-              {images &&
-                images
-                  .slice(2, 4)
-                  .map((image, index) => (
-                    <img
-                      className="rounded-lg shadow-lg w-32 md:w-56"
-                      key={`heroImage-${index}`}
-                      width="200"
-                      src={getStrapiMedia(delve(image, 'media.url'))}
-                      alt={delve(image, 'alt')}
-                    />
-                  ))}
-            </div>
-          </div>
+          <ImageCards images={images} />
         </div>
 
         <div className="lg:flex-grow md:w-1/2 my-12 lg:pl-24 md:pl-16 md:mx-auto flex flex-col md:items-start md:text-left items-center text-center">
@@ -53,7 +23,9 @@ const Hero = ({ intro }) => {
             </h1>
           )}
 
-          {introText && <p className="mb-8 leading-relaxed">{introText}</p>}
+          {introText && (
+            <p className="mb-8 px-2 leading-relaxed">{introText}</p>
+          )}
 
           <div className="block space-y-3 md:flex md:space-y-0 space-x-2">
             {buttons &&

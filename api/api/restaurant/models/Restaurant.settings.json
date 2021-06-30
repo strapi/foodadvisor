@@ -94,7 +94,7 @@
         }
       }
     },
-    "slices": {
+    "blocks": {
       "pluginOptions": {
         "i18n": {
           "localized": true

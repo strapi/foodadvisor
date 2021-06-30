@@ -24,8 +24,8 @@ export function localizePath(localePage, type) {
 
 function getUrl(type, localization, targetLocale) {
   switch (type) {
-    case 'universals':
-      return `/universals/${delve(localization, 'id')}`;
+    case 'pages':
+      return `/pages/${delve(localization, 'id')}`;
     case 'restaurant-page':
       return `/restaurant-page?_locale=${targetLocale}`;
     case 'blog-page':

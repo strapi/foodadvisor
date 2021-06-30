@@ -24,7 +24,7 @@
     "isExternal": {
       "type": "boolean",
       "default": false,
-      "required": true
+      "required": false
     }
   }
 }

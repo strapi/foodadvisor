@@ -320,7 +320,8 @@
           "id",
           "slug",
           "categoryText",
-          "districtText"
+          "districtText",
+          "restaurantsPerPage"
         ],
         "properties": {
           "id": {
@@ -546,8 +547,7 @@
                             "required": [
                               "id",
                               "href",
-                              "label",
-                              "isExternal"
+                              "label"
                             ],
                             "properties": {
                               "id": {
@@ -582,6 +582,10 @@
               ]
             }
           },
+          "restaurantsPerPage": {
+            "type": "integer",
+            "default": 12
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -589,7 +593,8 @@
                 "id",
                 "slug",
                 "categoryText",
-                "districtText"
+                "districtText",
+                "restaurantsPerPage"
               ],
               "properties": {
                 "id": {
@@ -612,6 +617,9 @@
                 },
                 "blocks": {
                   "type": "dynamiczone"
+                },
+                "restaurantsPerPage": {
+                  "type": "integer"
                 },
                 "localizations": {
                   "type": "array",
@@ -647,7 +655,8 @@
         "required": [
           "slug",
           "categoryText",
-          "districtText"
+          "districtText",
+          "restaurantsPerPage"
         ],
         "properties": {
           "seo": {
@@ -870,8 +879,7 @@
                             "required": [
                               "id",
                               "href",
-                              "label",
-                              "isExternal"
+                              "label"
                             ],
                             "properties": {
                               "id": {
@@ -905,6 +913,10 @@
                 }
               ]
             }
+          },
+          "restaurantsPerPage": {
+            "type": "integer",
+            "default": 12
           },
           "localizations": {
             "type": "array",

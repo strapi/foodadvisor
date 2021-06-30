@@ -57,13 +57,24 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "blocks.cta"
+        "blocks.cta",
+        "blocks.cta-command-line"
       ],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
+    },
+    "articlesPerPage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "default": 12,
+      "required": true
     }
   }
 }

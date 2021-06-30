@@ -632,7 +632,7 @@
               "seo": {
                 "type": "component"
               },
-              "slices": {
+              "blocks": {
                 "type": "dynamiczone"
               },
               "reviews": {

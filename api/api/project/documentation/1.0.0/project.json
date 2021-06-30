@@ -704,8 +704,7 @@
                       "required": [
                         "id",
                         "href",
-                        "label",
-                        "isExternal"
+                        "label"
                       ],
                       "properties": {
                         "id": {
@@ -949,8 +948,7 @@
                       "required": [
                         "id",
                         "href",
-                        "label",
-                        "isExternal"
+                        "label"
                       ],
                       "properties": {
                         "id": {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 
 import { getLocalizedParams } from '../../utils/localize';
-import { getStrapiURL, getRestaurants } from '../../utils';
+import { getStrapiURL, getRestaurants, getData } from '../../utils';
 
 import Layout from '../../components/layout';
 import Header from '../../components/shared/Header';
@@ -18,6 +18,8 @@ const Restaurants = ({
   categories,
   places,
   locale,
+  perPage,
+  preview,
 }) => {
   const [placeId, setPlaceId] = useState(null);
   const [categoryId, setCategoryId] = useState(null);
@@ -35,16 +37,21 @@ const Restaurants = ({
       { place: placeId },
       { locale: locale },
       { page: pageNumber },
+      { perPage },
     ],
     getRestaurants,
     {
       initialData,
     }
   );
-  console.log(pageNumber >= delve(data, 'count'));
 
   return (
-    <Layout global={global} pageData={pageData} type="restaurant-page">
+    <Layout
+      global={global}
+      pageData={pageData}
+      type="restaurant-page"
+      preview={preview}
+    >
       <Container>
         <Header {...header} />
         <div className="flex flex-col md:flex-row gap-2 my-24 px-4">
@@ -141,28 +148,60 @@ const Restaurants = ({
 export async function getServerSideProps(context) {
   const { locale } = getLocalizedParams(context.query);
 
-  const resRestaurantPage = await fetch(
-    getStrapiURL(`/restaurant-page?_locale=${locale}`)
+  const data = getData(
+    null,
+    locale,
+    'restaurant-page',
+    'singleType',
+    context.preview
   );
-  const restaurantPage = await resRestaurantPage.json();
 
-  const resRestaurants = await fetch(
-    getStrapiURL(`/restaurants?_limit=12&_locale=${locale}`)
-  );
-  const restaurants = await resRestaurants.json();
+  try {
+    const resRestaurantPage = await fetch(delve(data, 'data'));
+    const restaurantPage = await resRestaurantPage.json();
+    const perPage = delve(restaurantPage, 'restaurantsPerPage') || 12;
 
-  const resCountRestaurants = await fetch(
-    getStrapiURL(`/restaurants/count?_locale=${locale}`)
-  );
-  const countRestaurants = await resCountRestaurants.json();
+    const resRestaurants = await fetch(
+      getStrapiURL(
+        `/restaurants?_limit=${
+          perPage
+        }&_locale=${locale}`
+      )
+    );
+    const restaurants = await resRestaurants.json();
 
-  const resCategories = await fetch(getStrapiURL(`/categories`));
-  const categories = await resCategories.json();
+    const resCountRestaurants = await fetch(
+      getStrapiURL(`/restaurants/count?_locale=${locale}`)
+    );
+    const countRestaurants = await resCountRestaurants.json();
 
-  const resPlaces = await fetch(getStrapiURL(`/places`));
-  const places = await resPlaces.json();
+    const resCategories = await fetch(getStrapiURL(`/categories`));
+    const categories = await resCategories.json();
 
-  if (!restaurants.length || !categories.length || !places.length) {
+    const resPlaces = await fetch(getStrapiURL(`/places`));
+    const places = await resPlaces.json();
+
+    if (!restaurants.length || !categories.length || !places.length) {
+      return {
+        redirect: {
+          destination: '/',
+          permanent: false,
+        },
+      };
+    }
+
+    return {
+      props: {
+        initialData: { restaurants, count: countRestaurants },
+        pageData: restaurantPage,
+        categories,
+        places,
+        locale,
+        perPage,
+        preview: context.preview || null,
+      },
+    };
+  } catch {
     return {
       redirect: {
         destination: '/',
@@ -170,16 +209,6 @@ export async function getServerSideProps(context) {
       },
     };
   }
-
-  return {
-    props: {
-      initialData: { restaurants, count: countRestaurants },
-      pageData: restaurantPage,
-      categories,
-      places,
-      locale,
-    },
-  };
 }
 
 export default Restaurants;

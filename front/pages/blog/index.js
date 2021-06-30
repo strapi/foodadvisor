@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 
 import { getLocalizedParams } from '../../utils/localize';
-import { getStrapiURL, getArticles } from '../../utils';
+import { getStrapiURL, getArticles, getData } from '../../utils';
 
 import Layout from '../../components/layout';
 import Header from '../../components/shared/Header';
@@ -12,7 +12,15 @@ import Container from '../../components/shared/Container';
 import BlockManager from '../../components/shared/BlockManager';
 import ArticleCard from '../../components/pages/blog/ArticleCard';
 
-const Articles = ({ global, initialData, pageData, categories, locale }) => {
+const Articles = ({
+  global,
+  initialData,
+  pageData,
+  categories,
+  locale,
+  perPage,
+  preview,
+}) => {
   const [categoryId, setCategoryId] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -21,7 +29,7 @@ const Articles = ({ global, initialData, pageData, categories, locale }) => {
   const categoryText = delve(pageData, 'categoryText');
 
   const { data, status } = useQuery(
-    ['articles', { category: categoryId }, { page: pageNumber }],
+    ['articles', { category: categoryId }, { page: pageNumber }, { perPage }],
     getArticles,
     {
       initialData,
@@ -29,7 +37,12 @@ const Articles = ({ global, initialData, pageData, categories, locale }) => {
   );
 
   return (
-    <Layout global={global} pageData={pageData} type="blog-page">
+    <Layout
+      global={global}
+      pageData={pageData}
+      type="blog-page"
+      preview={preview}
+    >
       <Container>
         <Header {...header} />
         <div className="flex flex-col md:flex-row gap-2 my-24 px-4">
@@ -105,23 +118,52 @@ const Articles = ({ global, initialData, pageData, categories, locale }) => {
 // This gets called on every request
 export async function getServerSideProps(context) {
   const { locale } = getLocalizedParams(context.query);
+  const data = getData(
+    null,
+    locale,
+    'blog-page',
+    'singleType',
+    context.preview
+  );
 
-  const resBlogPage = await fetch(getStrapiURL(`/blog-page?_locale=${locale}`));
-  const blogPage = await resBlogPage.json();
+  try {
+    const resBlogPage = await fetch(delve(data, 'data'));
+    const blogPage = await resBlogPage.json();
+    const perPage = delve(blogPage, 'articlesPerPage') || 12;
 
-  const resArticles = await fetch(getStrapiURL(`/articles?_limit=12`));
-  const restaurants = await resArticles.json();
+    const resArticles = await fetch(
+      getStrapiURL(`/articles?_limit=${perPage}&_locale=${locale}`)
+    );
+    const restaurants = await resArticles.json();
 
-  const resCountArticles = await fetch(getStrapiURL(`/articles/count`));
-  const countArticles = await resCountArticles.json();
+    const resCountArticles = await fetch(
+      getStrapiURL(`/articles/count?_locale=${locale}`)
+    );
+    const countArticles = await resCountArticles.json();
 
-  const resCategories = await fetch(getStrapiURL(`/categories`));
-  const categories = await resCategories.json();
+    const resCategories = await fetch(getStrapiURL(`/categories`));
+    const categories = await resCategories.json();
 
-  const resLocales = await fetch(getStrapiURL(`/i18n/locales`));
-  const locales = await resLocales.json();
+    if (!restaurants.length || !categories.length) {
+      return {
+        redirect: {
+          destination: '/',
+          permanent: false,
+        },
+      };
+    }
 
-  if (!restaurants.length || !categories.length || !locales.length) {
+    return {
+      props: {
+        initialData: { restaurants, count: countArticles },
+        pageData: blogPage,
+        categories,
+        locale,
+        perPage,
+        preview: context.preview || null,
+      },
+    };
+  } catch (error) {
     return {
       redirect: {
         destination: '/',
@@ -129,15 +171,6 @@ export async function getServerSideProps(context) {
       },
     };
   }
-
-  return {
-    props: {
-      initialData: { restaurants, count: countArticles },
-      pageData: blogPage,
-      categories,
-      locale,
-    },
-  };
 }
 
 export default Articles;
