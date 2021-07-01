@@ -3,11 +3,8 @@ import delve from 'dlv';
 import ImageCards from './image-cards';
 import CustomLink from '../../shared/CustomLink';
 
-const Hero = ({ intro }) => {
-  const images = delve(intro, 'images');
-  const introText = delve(intro, 'text');
-  const buttons = delve(intro, 'buttons');
-  const title = delve(intro, 'header.title');
+const Hero = ({ images, header, text, buttons }) => {
+  const title = delve(header, 'title');
 
   return (
     <section className="text-gray-600 body-font py-40 flex justify-center items-center">
@@ -23,9 +20,7 @@ const Hero = ({ intro }) => {
             </h1>
           )}
 
-          {introText && (
-            <p className="mb-8 px-2 leading-relaxed">{introText}</p>
-          )}
+          {text && <p className="mb-8 px-2 leading-relaxed">{text}</p>}
 
           <div className="block space-y-3 md:flex md:space-y-0 space-x-2">
             {buttons &&

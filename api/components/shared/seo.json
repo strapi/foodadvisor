@@ -20,11 +20,6 @@
       "component": "shared.meta",
       "repeatable": true
     },
-    "metaImage": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.image"
-    },
     "preventIndexing": {
       "type": "boolean",
       "default": false,

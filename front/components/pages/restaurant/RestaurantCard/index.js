@@ -13,12 +13,12 @@ const RestaurantCard = ({
   locale,
 }) => {
   const description = delve(information, 'description');
-
+  
   return (
     <Link href={`/restaurants/${slug}?lang=${locale}`}>
       <div className="overflow-hidden shadow-lg rounded-lg h-90 w-full cursor-pointer">
         <img
-          alt="blog photo"
+          alt={delve(images[0], 'alternativeText')}
           src={getStrapiMedia(delve(images[0], 'url'))}
           className="max-h-40 w-full object-cover"
         />
@@ -36,7 +36,7 @@ const RestaurantCard = ({
             </p>
           )}
 
-          {category && (
+          {delve(category, 'name') && (
             <div className="flex flex-wrap justify-starts items-center mt-4">
               <div className="text-xs mr-2 py-1.5 px-4 text-gray-600 bg-blue-100 rounded-2xl">
                 #{delve(category, 'name')}

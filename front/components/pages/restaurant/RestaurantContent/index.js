@@ -17,23 +17,23 @@ import { getStrapiMedia } from '../../../../utils';
 
 const RestaurantContent = ({ pageData, reviews }) => {
   const name = delve(pageData, 'name');
-  const category = delve(pageData, 'category');
-  const information = delve(pageData, 'information');
-  const socialNetworks = delve(pageData, 'socialNetworks');
-  const description = delve(information, 'description');
   const price = delve(pageData, 'price');
   const images = delve(pageData, 'images');
+  const category = delve(pageData, 'category');
+  const information = delve(pageData, 'information');
+  const description = delve(information, 'description');
+  const socialNetworks = delve(pageData, 'socialNetworks');
 
   return (
     <Container>
       <section className="text-gray-600 body-font overflow-hidden mt-40">
-        <div className="mx-auto flex flex-wrap">
-          <div className="flex flex-wrap md:w-1/2">
-            <div className="md:p-2 w-full">
+        <div className="mx-auto md:flex md:flex-wrap">
+          <div className="lg:flex lg:flex-wrap w-full sm:w-1/2">
+            <div className="p-2 md:w-full">
               <img
-                alt="gallery"
+                alt={delve(images[0], 'alternativeText')}
                 className="object-center block object-cover"
-                src={getStrapiMedia(delve(images[0], 'formats.medium.url'))}
+                src={getStrapiMedia(delve(images[0], 'url'))}
               />
               <Gallery images={images} />
             </div>
@@ -80,7 +80,7 @@ const RestaurantContent = ({ pageData, reviews }) => {
           </div>
         </div>
       </section>
-      <div className="text-center pt-24">
+      <div className="text-center pt-40">
         <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Reviews
         </p>

@@ -16,15 +16,13 @@ const Testimonial = ({ theme, text, author }) => {
 
         {author && (
           <div className="flex items-center justify-center mt-8">
-            <a href="#" className="block relative">
+            <div className="block relative">
               <img
-                alt="profil"
-                src={getStrapiMedia(
-                  delve(author, 'picture.formats.thumbnail.url')
-                )}
+                alt={delve(author, 'picture.alternativeText')}
+                src={getStrapiMedia(delve(author, 'picture.url'))}
                 className="mx-auto object-cover rounded-full h-10 w-10 "
               />
-            </a>
+            </div>
 
             <div className="flex ml-2 items-center justify-center">
               <span

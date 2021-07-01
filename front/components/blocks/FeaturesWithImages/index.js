@@ -2,6 +2,8 @@ import delve from 'dlv';
 
 import { getStrapiMedia } from '../../../utils';
 
+import FeaturesCheck from './features-check';
+
 const FeaturesWithImages = ({ header, theme, text, featuresCheck, image }) => {
   const label = delve(header, 'label');
   const title = delve(header, 'title');
@@ -24,40 +26,14 @@ const FeaturesWithImages = ({ header, theme, text, featuresCheck, image }) => {
             {text && (
               <p className="mt-4 text-lg leading-6 text-gray-500">{text}</p>
             )}
-            <ul className="mt-8 md:grid md:grid-cols-2 gap-6">
-              {featuresCheck &&
-                featuresCheck.map((feature, index) => (
-                  <li key={`featureCheck-${index}`} className="mt-6 lg:mt-0">
-                    <div className="flex">
-                      <span className="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-800">
-                        <svg
-                          className="h-4 w-4"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                      </span>
-                      {delve(feature, 'text') && (
-                        <span className="ml-4 text-base leading-6 font-medium text-gray-500 dark:text-gray-200">
-                          {delve(feature, 'text')}
-                        </span>
-                      )}
-                    </div>
-                  </li>
-                ))}
-            </ul>
+            <FeaturesCheck features={featuresCheck} />
           </div>
 
-          <div class="mt-10 mx-4 md:-mx-12 relative lg:mt-0s lg:col-start-1">
+          <div className="mt-10 mx-4 md:-mx-12 relative lg:mt-0s lg:col-start-1">
             <img
-              src={getStrapiMedia(delve(image, 'media.url'))}
-              alt="illustration"
-              class="relative mx-auto shadow-lg rounded-lg w-auto"
+              src={getStrapiMedia(delve(image, 'url'))}
+              alt={delve(image, 'alternativeText')}
+              className="relative mx-auto shadow-lg rounded-lg w-auto"
             />
           </div>
         </div>

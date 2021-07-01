@@ -54,7 +54,8 @@
         "blocks.faq",
         "blocks.team",
         "blocks.cta",
-        "blocks.pricing"
+        "blocks.pricing",
+        "blocks.cta-command-line"
       ],
       "pluginOptions": {
         "i18n": {

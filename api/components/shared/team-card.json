@@ -7,11 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "avatar": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.image"
-    },
     "fullname": {
       "type": "string",
       "required": true

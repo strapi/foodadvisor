@@ -1,13 +1,14 @@
 import delve from 'dlv';
 
 import Link from 'next/link';
+
 import { getStrapiMedia } from '../../../../utils';
 
 const ArticleCard = ({ slug, title, category, seo, locale, author }) => {
   const description = delve(seo, 'metaDescription');
 
   return (
-    <div className="pr-8">
+    <div>
       <span className="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">
         {delve(category, 'name')}
       </span>
@@ -23,10 +24,10 @@ const ArticleCard = ({ slug, title, category, seo, locale, author }) => {
               className="w-4 h-4 ml-2"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              stroke-width="2"
+              strokeWidth="2"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path d="M5 12h14"></path>
               <path d="M12 5l7 7-7 7"></path>
@@ -34,21 +35,23 @@ const ArticleCard = ({ slug, title, category, seo, locale, author }) => {
           </a>
         </Link>
       </div>
-      <a className="inline-flex items-center">
-        <img
-          alt="blog"
-          src={getStrapiMedia(delve(author, 'picture.formats.medium.url'))}
-          className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
-        />
-        <span className="flex-grow flex flex-col pl-4">
-          <span className="title-font font-medium text-gray-900">
-            {delve(author, 'username')}
+      {delve(author, 'picture') && (
+        <div className="inline-flex items-center">
+          <img
+            alt={delve(author, 'picture.alternativeText')}
+            src={getStrapiMedia(delve(author, 'picture.url'))}
+            className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+          />
+          <span className="flex-grow flex flex-col pl-4">
+            <span className="title-font font-medium text-gray-900">
+              {delve(author, 'username')}
+            </span>
+            <span className="text-gray-400 text-xs tracking-widest mt-0.5">
+              {delve(author, 'job')}
+            </span>
           </span>
-          <span className="text-gray-400 text-xs tracking-widest mt-0.5">
-            {delve(author, 'job')}
-          </span>
-        </span>
-      </a>
+        </div>
+      )}
     </div>
   );
 };

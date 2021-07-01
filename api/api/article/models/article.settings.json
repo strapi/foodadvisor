@@ -51,10 +51,7 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "shared.embed-form",
-        "shared.subscribe-newsletter",
-        "article.related-articles",
-        "shared.embed-tweet"
+        "blocks.related-articles"
       ],
       "pluginOptions": {
         "i18n": {
@@ -65,6 +62,11 @@
     "category": {
       "model": "category",
       "via": "articles"
+    },
+    "author": {
+      "via": "articles",
+      "plugin": "users-permissions",
+      "model": "user"
     },
     "image": {
       "model": "file",
@@ -81,11 +83,6 @@
           "localized": true
         }
       }
-    },
-    "author": {
-      "via": "articles",
-      "plugin": "users-permissions",
-      "model": "user"
     }
   }
 }

@@ -14,8 +14,8 @@ const ImageCards = ({ images }) => {
                 className="rounded-lg shadow-lg w-32 md:w-56"
                 key={`heroImage-${index}`}
                 width="200"
-                src={getStrapiMedia(delve(image, 'media.url'))}
-                alt={delve(image, 'alt')}
+                src={getStrapiMedia(delve(image, 'url'))}
+                alt={delve(image, 'alternativeText')}
               />
             ))}
       </div>
@@ -28,8 +28,8 @@ const ImageCards = ({ images }) => {
                 className="rounded-lg shadow-lg w-32 md:w-56"
                 key={`heroImage-${index}`}
                 width="200"
-                src={getStrapiMedia(delve(image, 'media.url'))}
-                alt={delve(image, 'alt')}
+                src={getStrapiMedia(delve(image, 'url'))}
+                alt={delve(image, 'alternativeText')}
               />
             ))}
       </div>

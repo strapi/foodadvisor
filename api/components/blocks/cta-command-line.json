@@ -6,14 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "text": {
-      "type": "string",
-      "required": true
-    },
     "theme": {
       "type": "enumeration",
       "enum": [
@@ -22,6 +14,14 @@
         "muted"
       ],
       "default": "primary",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
       "required": true
     },
     "commandLine": {

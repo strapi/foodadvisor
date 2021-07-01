@@ -16,11 +16,6 @@
       "type": "text",
       "required": true
     },
-    "featuresCheck": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.features-check"
-    },
     "theme": {
       "type": "enumeration",
       "enum": [
@@ -32,9 +27,16 @@
       "default": "primary"
     },
     "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.image"
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }

@@ -14,8 +14,20 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
   let Block;
 
   switch (__component) {
+    case 'blocks.faq':
+      Block = Faq;
+      break;
     case 'blocks.hero':
       Block = Hero;
+      break;
+    case 'blocks.cta':
+      Block = Cta;
+      break;
+    case 'blocks.team':
+      Block = Team;
+      break;
+    case 'blocks.pricing':
+      Block = Pricing;
       break;
     case 'blocks.features':
       Block = Features;
@@ -23,29 +35,17 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'blocks.testimonial':
       Block = Testimonial;
       break;
-    case 'blocks.features-with-images':
-      Block = FeaturesWithImages;
-      break;
-    case 'blocks.faq':
-      Block = Faq;
-      break;
-    case 'blocks.team':
-      Block = Team;
-      break;
-    case 'blocks.cta':
-      Block = Cta;
-      break;
-    case 'blocks.pricing':
-      Block = Pricing;
+    case 'blocks.related-articles':
+      Block = RelatedArticles;
       break;
     case 'blocks.cta-command-line':
       Block = CtaCommandLine;
       break;
-    case 'restaurant.related-restaurants':
+    case 'blocks.related-restaurants':
       Block = RelatedRestaurants;
       break;
-    case 'article.related-articles':
-      Block = RelatedArticles;
+    case 'blocks.features-with-images':
+      Block = FeaturesWithImages;
       break;
   }
 

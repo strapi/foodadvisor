@@ -560,10 +560,10 @@
                 "category": {
                   "type": "string"
                 },
-                "image": {
+                "author": {
                   "type": "string"
                 },
-                "author": {
+                "image": {
                   "type": "string"
                 },
                 "localizations": {

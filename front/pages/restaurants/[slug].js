@@ -9,7 +9,6 @@ import RestaurantContent from '../../components/pages/restaurant/RestaurantConte
 
 const Restaurant = ({ global, pageData, reviews, preview }) => {
   const blocks = delve(pageData, 'blocks');
-  console.log(blocks);
   return (
     <>
       <Layout global={global} pageData={pageData} preview={preview} type="restaurant">

@@ -27,7 +27,7 @@ const Seo = ({ seo }) => {
       />
       <meta
         property="og:image"
-        content={delve(metaImage, 'media.url')}
+        content={delve(metaImage, 'url')}
         key="og:image"
       />
       <meta property="og:type" content="website" />

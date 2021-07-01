@@ -7,14 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "text",
-      "required": true
-    },
-    "author": {
-      "plugin": "users-permissions",
-      "model": "user"
-    },
     "theme": {
       "type": "enumeration",
       "enum": [
@@ -23,6 +15,14 @@
         "muted"
       ],
       "default": "primary"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

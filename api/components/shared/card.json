@@ -14,9 +14,16 @@
       "type": "string"
     },
     "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.image"
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }
