@@ -10,30 +10,29 @@ const RestaurantCard = ({
   name,
   information,
   category,
+  place,
   locale,
 }) => {
   const description = delve(information, 'description');
-  
+
   return (
     <Link href={`/restaurants/${slug}?lang=${locale}`}>
       <div className="overflow-hidden shadow-lg rounded-lg h-90 w-full cursor-pointer">
         <img
           alt={delve(images[0], 'alternativeText')}
           src={getStrapiMedia(delve(images[0], 'url'))}
-          className="max-h-40 w-full object-cover"
+          className="max-h-48 w-full object-cover"
         />
-        <div className="bg-white dark:bg-gray-800 w-full p-4">
-          <p className="text-secondary text-md font-medium">Restaurant</p>
+        <div className="bg-white w-full p-4">
+          <p className="text-secondary text-md font-medium">
+            {delve(place, 'name')}
+          </p>
           {name && (
-            <p className="text-gray-800 dark:text-white text-xl font-medium mb-2">
-              {name}
-            </p>
+            <p className="text-gray-800 text-xl font-medium mb-2">{name}</p>
           )}
 
           {description && (
-            <p className="text-gray-400 dark:text-gray-300 font-light text-md">
-              {description}
-            </p>
+            <p className="text-gray-400 font-light text-md">{description}</p>
           )}
 
           {delve(category, 'name') && (

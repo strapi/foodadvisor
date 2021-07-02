@@ -1,5 +1,7 @@
 import delve from 'dlv';
 
+import Link from 'next/link';
+
 import Stars from './stars';
 import Price from './price';
 import Gallery from './gallery.js';
@@ -18,6 +20,7 @@ import { getStrapiMedia } from '../../../../utils';
 const RestaurantContent = ({ pageData, reviews }) => {
   const name = delve(pageData, 'name');
   const price = delve(pageData, 'price');
+  const locale = delve(pageData, 'locale');
   const images = delve(pageData, 'images');
   const category = delve(pageData, 'category');
   const information = delve(pageData, 'information');
@@ -27,6 +30,27 @@ const RestaurantContent = ({ pageData, reviews }) => {
   return (
     <Container>
       <section className="text-gray-600 body-font overflow-hidden mt-40">
+        <button
+          type="button"
+          class="ml-2 py-4 px-6 bg-gray-300 hover:bg-secondary-darker text-white w-1/8 text-center text-base font-semibold shadow-sm rounded-md"
+        >
+          <Link href={`/restaurants?lang=${locale}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M7 16l-4-4m0 0l4-4m-4 4h18"
+              />
+            </svg>
+          </Link>
+        </button>
         <div className="mx-auto md:flex md:flex-wrap">
           <div className="lg:flex lg:flex-wrap w-full sm:w-1/2">
             <div className="p-2 md:w-full">

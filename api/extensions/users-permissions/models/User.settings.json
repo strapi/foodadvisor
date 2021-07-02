@@ -73,10 +73,6 @@
     "job": {
       "type": "string",
       "required": true
-    },
-    "description": {
-      "type": "text",
-      "required": true
     }
   }
 }

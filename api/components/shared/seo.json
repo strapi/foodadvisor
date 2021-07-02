@@ -24,6 +24,9 @@
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "structuredData": {
+      "type": "json"
     }
   }
 }

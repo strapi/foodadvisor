@@ -27,8 +27,8 @@ const Restaurants = ({
 
   const blocks = delve(pageData, 'blocks');
   const header = delve(pageData, 'header');
-  const categoryText = delve(pageData, 'categoryText');
   const placeText = delve(pageData, 'placeText');
+  const categoryText = delve(pageData, 'categoryText');
 
   const { data, status } = useQuery(
     [
@@ -44,6 +44,8 @@ const Restaurants = ({
       initialData,
     }
   );
+
+  const lastPage = Math.ceil(data.count / perPage) || 1;
 
   return (
     <Layout
@@ -97,7 +99,7 @@ const Restaurants = ({
           </div>
         </div>
 
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 mt-24 px-4">
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-16 mt-24 px-4">
           {status === 'loading' && <div>Loading restaurants</div>}
           {status === 'error' && <div>Oops</div>}
           {status === 'success' &&
@@ -107,7 +109,7 @@ const Restaurants = ({
             ))}
         </div>
 
-        {delve(data, 'count') && delve(data, 'count') > 0 && (
+        {delve(data, 'count') > 0 && (
           <div className="grid grid-cols-3 gap-4 my-24">
             <div className="col-start-2 col-end-3">
               <div className="flex items-center">
@@ -125,12 +127,12 @@ const Restaurants = ({
                 <button
                   type="button"
                   className={`${
-                    pageNumber <= delve(data, 'count')
+                    pageNumber >= lastPage
                       ? 'cursor-not-allowed opacity-50'
                       : ''
                   } w-full p-4 border-t border-b border-r text-base rounded-r-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
                   onClick={() => setPageNumber(pageNumber + 1)}
-                  disabled={pageNumber <= delve(data, 'count')}
+                  disabled={pageNumber >= lastPage}
                 >
                   Next
                 </button>
@@ -162,11 +164,7 @@ export async function getServerSideProps(context) {
     const perPage = delve(restaurantPage, 'restaurantsPerPage') || 12;
 
     const resRestaurants = await fetch(
-      getStrapiURL(
-        `/restaurants?_limit=${
-          perPage
-        }&_locale=${locale}`
-      )
+      getStrapiURL(`/restaurants?_limit=${perPage}&_locale=${locale}`)
     );
     const restaurants = await resRestaurants.json();
 

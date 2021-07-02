@@ -233,7 +233,7 @@ const EditView = ({
                           }}
                         />
                       </CheckPermissions>
-                      {!data.published_at && (
+                      {!data.published_at && _.get(data, 'slug') && (
                         <li>
                           <StyledExternalLink
                             href={`${CLIENT_URL}/api/preview?secret=${CLIENT_PREVIEW_SECRET}&slug=${_.get(

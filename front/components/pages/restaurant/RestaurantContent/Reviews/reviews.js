@@ -68,7 +68,7 @@ const Reviews = ({ reviews }) => {
                   </div>
                   {delve(review, 'content') && (
                     <div className="mt-3">
-                      <p className="mt-1 max-w-xs dark:text-white">
+                      <p className="mt-1  dark:text-white">
                         {delve(review, 'content')}
                       </p>
                     </div>
