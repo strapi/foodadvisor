@@ -21,6 +21,17 @@
     }
   },
   "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false,
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "name": {
       "type": "string",
       "pluginOptions": {
@@ -46,7 +57,7 @@
       "required": true,
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -60,7 +71,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": true
@@ -75,24 +86,15 @@
       },
       "component": "restaurant.information"
     },
-    "publish_at": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "seo": {
+    "socialNetworks": {
       "type": "component",
-      "component": "shared.seo",
-      "required": false,
-      "repeatable": false,
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "shared.social-networks"
     },
     "blocks": {
       "pluginOptions": {
@@ -104,7 +106,8 @@
       "components": [
         "restaurant.rich-content",
         "blocks.related-restaurants",
-        "blocks.faq"
+        "blocks.faq",
+        "blocks.cta"
       ]
     },
     "reviews": {
@@ -118,16 +121,6 @@
     "place": {
       "via": "restaurants",
       "model": "place"
-    },
-    "socialNetworks": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.social-networks"
     }
   }
 }

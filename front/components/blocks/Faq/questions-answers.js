@@ -1,5 +1,9 @@
 import delve from 'dlv';
 
+import ReactMarkdown from 'react-markdown';
+
+import 'github-markdown-css';
+
 const QuestionsAnswers = ({ items, theme }) => {
   return (
     <dl className="w-full md:w-2/3 mt-12 md:mt-0">
@@ -11,8 +15,13 @@ const QuestionsAnswers = ({ items, theme }) => {
                 {delve(item, 'question')}
               </h3>
             </dt>
-            <dd className={`mb-16 text-${theme}-text`}>
-              <p>{delve(item, 'answer')}</p>
+            <dd className={`markdown-body mb-16 text-${theme}-text`}>
+              <p>
+                <ReactMarkdown
+                  children={delve(item, 'answer')}
+                  linkTarget="_blank"
+                ></ReactMarkdown>
+              </p>
             </dd>
           </div>
         ))}

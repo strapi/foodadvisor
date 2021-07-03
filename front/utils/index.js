@@ -14,13 +14,43 @@ export function getStrapiURL(path) {
   return `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${path}`;
 }
 
+export function handleRedirection(slug, preview, custom) {
+  if (preview) {
+    return {
+      redirect: {
+        destination: `/api/exit-preview`,
+        permanent: false,
+      },
+    };
+  } else if (custom) {
+    return {
+      redirect: {
+        destination: `/${custom}`,
+        permanent: false,
+      },
+    };
+  } else {
+    return {
+      redirect: {
+        destination: `/${slug}`,
+        permanent: false,
+      },
+    };
+  }
+}
+
 export function getData(slug, locale, apiID, kind, preview) {
   const previewParams = preview
     ? '&_publicationState=preview&published_at_null=true'
     : '';
 
   if (kind == 'collectionType') {
-    const prefix = apiID == 'page' ? `` : `/${pluralize(apiID)}`;
+    let prefix = `/${pluralize(apiID)}`;
+    if (apiID == 'page') {
+      prefix = ``;
+    } else if (apiID == 'article') {
+      prefix = `/blog`;
+    }
     const slugToReturn = `${prefix}/${slug}?lang=${locale}`;
     const apiUrl = `/${pluralize(
       apiID
@@ -113,22 +143,4 @@ export async function getArticles(key) {
   const articles = await res.json();
 
   return { articles, count: countFilteredArticles };
-}
-
-export function handleRedirection(slug, locale) {
-  if (locale == 'en') {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
-  } else {
-    return {
-      redirect: {
-        destination: `/${slug}`,
-        permanent: false,
-      },
-    };
-  }
 }

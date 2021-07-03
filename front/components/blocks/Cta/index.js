@@ -17,29 +17,31 @@ const Cta = ({ title, text, buttons, theme }) => {
                 className="mt-4 md:mt-0 inline-flex rounded-md shadow"
                 key={`ctaButton-${index}`}
               >
-                <button
-                  type="button"
-                  className={`py-4 px-6 bg-${delve(
-                    button,
-                    'theme'
-                  )} hover:bg-${delve(
-                    button,
-                    'theme'
-                  )}-darker focus:ring-${delve(
-                    button,
-                    'theme'
-                  )}-lighter text-${delve(
-                    button,
-                    'theme'
-                  )}-text w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg`}
+                <Link
+                  href={delve(button, 'link.href')}
+                  key={`cta-button-${index}`}
                 >
-                  <Link
-                    href={delve(button, 'link.href')}
-                    key={`cta-button-${index}`}
-                  >
-                    <a>{delve(button, 'link.label')}</a>
-                  </Link>
-                </button>
+                  <a target={delve(button, 'link.target')}>
+                    <button
+                      type="button"
+                      className={`py-4 px-6 bg-${delve(
+                        button,
+                        'theme'
+                      )} hover:bg-${delve(
+                        button,
+                        'theme'
+                      )}-darker focus:ring-${delve(
+                        button,
+                        'theme'
+                      )}-lighter text-${delve(
+                        button,
+                        'theme'
+                      )}-text w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg`}
+                    >
+                      {delve(button, 'link.label')}
+                    </button>
+                  </a>
+                </Link>
               </div>
             ))}
         </div>

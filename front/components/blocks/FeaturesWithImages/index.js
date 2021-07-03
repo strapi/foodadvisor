@@ -9,10 +9,10 @@ const FeaturesWithImages = ({ header, theme, text, featuresCheck, image }) => {
   const title = delve(header, 'title');
 
   return (
-    <div className="max-w-screen-xl p-4 bg-white mx-auto px-4 sm:px-6 lg:px-8 relative py-40">
+    <div className="max-w-screen-xl p-4 bg-white mx-auto px-4 sm:px-6 lg:px-8 relative py-40 lg:mt-20">
       <div className="relative">
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
-          <div className="lg:col-start-2 lg:max-w-2xl ml-auto">
+          <div className="lg:col-start-2 md:ml-24 lg:max-w-2xl">
             {label && (
               <p className={`font-black leading-6 text-${theme} uppercase`}>
                 {label}
@@ -29,7 +29,7 @@ const FeaturesWithImages = ({ header, theme, text, featuresCheck, image }) => {
             <FeaturesCheck features={featuresCheck} />
           </div>
 
-          <div className="mt-10 mx-4 md:-mx-12 relative lg:mt-0s lg:col-start-1">
+          <div className="mt-10 lg:-mx-4 relative relative-20 lg:mt-0 lg:col-start-1">
             <img
               src={getStrapiMedia(delve(image, 'url'))}
               alt={delve(image, 'alternativeText')}

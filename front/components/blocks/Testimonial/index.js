@@ -5,7 +5,7 @@ import { getStrapiMedia } from '../../../utils';
 const Testimonial = ({ theme, text, author }) => {
   return (
     <div className="bg-white pt-60 pb-60 px-4">
-      <div className="bg-gray-700 md:w-2/4 mx-auto p-20 rounded-full">
+      <div className="bg-gray-600 md:w-2/4 mx-auto p-20 rounded-full">
         {text && (
           <p className="text-white w-full md:w-2/3 m-auto text-center text-md md:text-3xl">
             <span className={`font-bold text-${theme}`}>“</span>
@@ -33,7 +33,7 @@ const Testimonial = ({ theme, text, author }) => {
               <span className="text-gray-400 text-xs md:text-xl font-light">
                 /
               </span>
-              <span className="text-gray-400 text-xs md:text-xl ml-2">
+              <span className="text-gray-400 text-xs md:text-lg ml-2">
                 {delve(author, 'job')}
               </span>
             </div>

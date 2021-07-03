@@ -11,7 +11,12 @@ const Restaurant = ({ global, pageData, reviews, preview }) => {
   const blocks = delve(pageData, 'blocks');
   return (
     <>
-      <Layout global={global} pageData={pageData} preview={preview} type="restaurant">
+      <Layout
+        global={global}
+        pageData={pageData}
+        preview={preview}
+        type="restaurant"
+      >
         <RestaurantContent pageData={pageData} reviews={reviews} />
         {blocks && <BlockManager blocks={blocks} />}
       </Layout>
@@ -39,12 +44,7 @@ export async function getServerSideProps(context) {
   const reviews = await resReview.json();
 
   if (!json.length) {
-    return {
-      redirect: {
-        destination: '/restaurants',
-        permanent: false,
-      },
-    };
+    return handleRedirection(slug, context.preview, 'restaurants');
   }
 
   const pageData = await getDataDependencies(delve(json, '0'));

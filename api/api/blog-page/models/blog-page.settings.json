@@ -54,6 +54,16 @@
         }
       }
     },
+    "articlesPerPage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "default": 12,
+      "required": true
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
@@ -65,16 +75,6 @@
           "localized": true
         }
       }
-    },
-    "articlesPerPage": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "integer",
-      "default": 12,
-      "required": true
     }
   }
 }

@@ -12,14 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "restaurants": {
-      "via": "place",
-      "collection": "restaurant"
-    },
     "name": {
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "restaurants": {
+      "via": "place",
+      "collection": "restaurant"
     }
   }
 }

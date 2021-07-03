@@ -26,15 +26,6 @@
         }
       }
     },
-    "author": {
-      "via": "reviews",
-      "plugin": "users-permissions",
-      "model": "user"
-    },
-    "restaurant": {
-      "via": "reviews",
-      "model": "restaurant"
-    },
     "note": {
       "pluginOptions": {
         "i18n": {
@@ -45,6 +36,15 @@
       "required": true,
       "max": 5,
       "min": 1
+    },
+    "author": {
+      "via": "reviews",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "restaurant": {
+      "via": "reviews",
+      "model": "restaurant"
     }
   }
 }

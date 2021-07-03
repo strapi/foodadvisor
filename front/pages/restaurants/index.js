@@ -180,12 +180,7 @@ export async function getServerSideProps(context) {
     const places = await resPlaces.json();
 
     if (!restaurants.length || !categories.length || !places.length) {
-      return {
-        redirect: {
-          destination: '/',
-          permanent: false,
-        },
-      };
+      return handleRedirection(slug, context.preview, '');
     }
 
     return {

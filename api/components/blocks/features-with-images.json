@@ -37,6 +37,11 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "featuresCheck": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.features-check"
     }
   }
 }

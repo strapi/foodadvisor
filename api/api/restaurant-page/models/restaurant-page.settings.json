@@ -54,7 +54,7 @@
       "type": "string",
       "required": true
     },
-    "districtText": {
+    "placeText": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -62,6 +62,16 @@
       },
       "type": "string",
       "required": true
+    },
+    "restaurantsPerPage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "required": true,
+      "default": 12
     },
     "blocks": {
       "pluginOptions": {
@@ -73,16 +83,6 @@
       "components": [
         "blocks.cta"
       ]
-    },
-    "restaurantsPerPage": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "integer",
-      "required": true,
-      "default": 12
     }
   }
 }

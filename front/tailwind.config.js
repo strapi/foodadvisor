@@ -17,7 +17,7 @@ module.exports = {
           light: '#85dcb',
           darker: '#3aa192',
           text: '#FFFFFF',
-          lightest: '#8dd1c7',
+          lightest: '#ecf7f5',
         },
         muted: {
           DEFAULT: '#E5E7EB',

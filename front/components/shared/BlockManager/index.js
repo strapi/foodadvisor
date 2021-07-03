@@ -7,6 +7,7 @@ import Features from '../../blocks/Features';
 import Testimonial from '../../blocks/Testimonial';
 import CtaCommandLine from '../../blocks/CtaCommandLine';
 import RelatedArticles from '../../blocks/RelatedArticles';
+import RichContent from '../../pages/restaurant/RichContent';
 import FeaturesWithImages from '../../blocks/FeaturesWithImages';
 import RelatedRestaurants from '../../blocks/RelatedRestaurants';
 
@@ -17,6 +18,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'blocks.faq':
       Block = Faq;
       break;
+
     case 'blocks.hero':
       Block = Hero;
       break;
@@ -34,6 +36,9 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       break;
     case 'blocks.testimonial':
       Block = Testimonial;
+      break;
+    case 'restaurant.rich-content':
+      Block = RichContent;
       break;
     case 'blocks.related-articles':
       Block = RelatedArticles;

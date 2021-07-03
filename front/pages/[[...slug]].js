@@ -30,7 +30,7 @@ export async function getServerSideProps(context) {
   const json = await res.json();
 
   if (!json.length) {
-    return handleRedirection(slug, locale);
+    return handleRedirection(slug, context.preview, null)
   }
 
   const pageData = await getDataDependencies(delve(json, '0'));

@@ -36,6 +36,8 @@ const Articles = ({
     }
   );
 
+  const lastPage = Math.ceil(data.count / perPage) || 1;
+
   return (
     <Layout
       global={global}
@@ -68,7 +70,7 @@ const Articles = ({
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-24 px-4">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-40 mt-24 px-4">
           {status === 'loading' && <div>Loading articles</div>}
           {status === 'error' && <div>Oops</div>}
           {status === 'success' &&
@@ -96,12 +98,12 @@ const Articles = ({
                 <button
                   type="button"
                   className={`${
-                    pageNumber >= data.count
+                    pageNumber >= lastPage
                       ? 'cursor-not-allowed opacity-50'
                       : ''
                   } w-full p-4 border-t border-b border-r text-base rounded-r-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
                   onClick={() => setPageNumber(pageNumber + 1)}
-                  disabled={pageNumber >= data.count}
+                  disabled={pageNumber >= lastPage}
                 >
                   Next
                 </button>
@@ -145,12 +147,7 @@ export async function getServerSideProps(context) {
     const categories = await resCategories.json();
 
     if (!restaurants.length || !categories.length) {
-      return {
-        redirect: {
-          destination: '/',
-          permanent: false,
-        },
-      };
+      return handleRedirection(slug, context.preview, '');
     }
 
     return {

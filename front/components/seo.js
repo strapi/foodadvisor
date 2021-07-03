@@ -6,6 +6,7 @@ const Seo = ({ seo }) => {
   const metaTags = delve(seo, 'metas');
   const metaTitle = delve(seo, 'metaTitle');
   const metaImage = delve(seo, 'metaImage');
+  const structuredData = delve(seo, 'structuredData');
   const preventIndexing = delve(seo, 'preventIndexing');
   const metaDescription = delve(seo, 'metaDescription');
 
@@ -42,6 +43,7 @@ const Seo = ({ seo }) => {
           <meta name="googlebot" content="noindex"></meta>
         </>
       )}
+      <script type="application/ld+json">{structuredData}</script>
     </Head>
   );
 };

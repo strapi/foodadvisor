@@ -39,8 +39,15 @@
       "type": "uid",
       "targetField": "title"
     },
-    "content": {
-      "type": "richtext",
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
       "required": true,
       "pluginOptions": {
         "i18n": {
@@ -48,10 +55,21 @@
         }
       }
     },
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "blocks.related-articles"
+        "blocks.related-articles",
+        "blocks.faq",
+        "blocks.cta-command-line"
       ],
       "pluginOptions": {
         "i18n": {
@@ -67,22 +85,6 @@
       "via": "articles",
       "plugin": "users-permissions",
       "model": "user"
-    },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "files",
-        "images",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     }
   }
 }

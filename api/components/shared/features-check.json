@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_features_checks",
+  "info": {
+    "name": "featuresCheck",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

@@ -19,7 +19,10 @@ const PreviewBanner = () => {
         </div>
 
         <p class="max-w-3xl text-lg leading-6 text-white">
-          You are in preview mode
+          You are in preview mode -
+          <a className="px-2 underline" href={`/api/exit-preview`}>
+            Turn off to safely browse the website again
+          </a>
         </p>
       </div>
     </div>

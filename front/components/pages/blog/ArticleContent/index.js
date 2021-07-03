@@ -1,5 +1,7 @@
 import delve from 'dlv';
 
+import Link from 'next/link';
+
 import ReactMarkdown from 'react-markdown';
 
 import { getStrapiMedia } from '../../../../utils';
@@ -10,12 +12,12 @@ import 'github-markdown-css';
 
 const gfm = require('remark-gfm');
 
-const ArticleContent = ({ title, image, content, author }) => {
+const ArticleContent = ({ title, image, content, author, locale }) => {
   return (
     <Container>
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font py-24">
         <div className="container px-5 py-24 mx-auto flex flex-col justify-center items-center">
-          <h1 className="font-black sm:text-5xl text-4xl  mb-4 text-gray-900">
+          <h1 className="font-black sm:text-5xl text-4xl  mb-4 text-gray-900 text-center">
             {title}
           </h1>
 
@@ -41,7 +43,7 @@ const ArticleContent = ({ title, image, content, author }) => {
                     {delve(author, 'username')}
                   </h2>
                   <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-                  <p className="text-sm">{delve(author, 'description')}</p>
+                  <p className="text-sm">{delve(author, 'job')}</p>
                 </div>
               </div>
             </div>
@@ -50,6 +52,7 @@ const ArticleContent = ({ title, image, content, author }) => {
             <ReactMarkdown
               children={content}
               remarkPlugins={[gfm]}
+              linkTarget="_blank"
               components={{
                 img: ({ node, ...props }) => (
                   <img src={getStrapiMedia(delve(props, 'src'))} />
@@ -57,6 +60,14 @@ const ArticleContent = ({ title, image, content, author }) => {
               }}
             ></ReactMarkdown>
           </div>
+          <Link href={`/blog?lang=${locale}`}>
+            <button
+              type="button"
+              className="ml-2 py-4 mt-8 px-6 bg-secondary hover:bg-secondary-darker text-white w-1/8 text-center text-base font-semibold shadow-sm rounded-md"
+            >
+              Back to articles
+            </button>
+          </Link>
         </div>
       </section>
     </Container>
