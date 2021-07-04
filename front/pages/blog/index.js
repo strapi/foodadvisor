@@ -29,7 +29,13 @@ const Articles = ({
   const categoryText = delve(pageData, 'categoryText');
 
   const { data, status } = useQuery(
-    ['articles', { category: categoryId }, { page: pageNumber }, { perPage }],
+    [
+      'articles',
+      { category: categoryId },
+      { locale: locale },
+      { page: pageNumber },
+      { perPage },
+    ],
     getArticles,
     {
       initialData,

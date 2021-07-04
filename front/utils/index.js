@@ -123,8 +123,9 @@ export async function getRestaurants(key) {
 
 export async function getArticles(key) {
   const categoryId = key.queryKey[1].category;
-  const pageNumber = key.queryKey[2].page;
-  const perPage = key.queryKey[3].perPage;
+  const localeCode = key.queryKey[2].locale;
+  const pageNumber = key.queryKey[3].page;
+  const perPage = key.queryKey[4].perPage;
 
   const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * perPage;
 
@@ -135,6 +136,14 @@ export async function getArticles(key) {
     baseUrl = `${baseUrl}&category.id=${categoryId}`;
     countUrl = `${countUrl}?category.id=${categoryId}`;
   }
+
+  if (localeCode) {
+    baseUrl = `${baseUrl}&_locale=${localeCode}`;
+    countUrl = categoryId
+      ? `${countUrl}&_locale=${localeCode}`
+      : `${countUrl}?_locale=${localeCode}`;
+  }
+  console.log(baseUrl);
 
   const resCountFilteredArticles = await fetch(countUrl);
   const countFilteredArticles = await resCountFilteredArticles.json();

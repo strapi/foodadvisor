@@ -1,7 +1,10 @@
 import { getData } from '../../utils';
 
 export default async (req, res) => {
-  if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
+  if (
+    req.query.secret !== process.env.PREVIEW_SECRET ||
+    (req.query.slug != '' && !req.query.slug)
+  ) {
     return res.status(401).json({ message: 'Invalid token' });
   }
 

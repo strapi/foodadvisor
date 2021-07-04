@@ -27,6 +27,18 @@
     },
     "structuredData": {
       "type": "json"
+    },
+    "metaImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

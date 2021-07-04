@@ -33,7 +33,7 @@ const RestaurantContent = ({ pageData, reviews }) => {
         <Link href={`/restaurants?lang=${locale}`}>
           <button
             type="button"
-            className="ml-2 py-4 px-6 bg-gray-300 hover:bg-secondary-darker text-white w-1/8 text-center text-base font-semibold shadow-sm rounded-md"
+            className="ml-2 py-4 px-6 bg-secondary hover:bg-secondary-darker text-white w-1/8 text-center text-base font-semibold shadow-sm rounded-md"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
