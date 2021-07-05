@@ -107,7 +107,8 @@
         "restaurant.rich-content",
         "blocks.related-restaurants",
         "blocks.faq",
-        "blocks.cta"
+        "blocks.cta",
+        "blocks.cta-command-line"
       ]
     },
     "reviews": {
