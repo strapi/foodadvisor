@@ -26,21 +26,21 @@
     "lodash": "^4.17.5",
     "reactour": "^1.18.0",
     "sqlite3": "^4.0.6",
-    "strapi": "3.6.2",
-    "strapi-admin": "3.6.2",
-    "strapi-connector-bookshelf": "3.6.2",
-    "strapi-plugin-content-manager": "3.6.2",
-    "strapi-plugin-content-type-builder": "3.6.2",
-    "strapi-plugin-email": "3.6.2",
-    "strapi-plugin-i18n": "^3.6.2",
-    "strapi-plugin-upload": "3.6.2",
-    "strapi-plugin-users-permissions": "3.6.2",
-    "strapi-utils": "3.6.2",
+    "strapi": "3.6.5",
+    "strapi-admin": "3.6.5",
+    "strapi-connector-bookshelf": "3.6.5",
+    "strapi-plugin-content-manager": "3.6.5",
+    "strapi-plugin-content-type-builder": "3.6.5",
+    "strapi-plugin-email": "3.6.5",
+    "strapi-plugin-i18n": "^3.6.5",
+    "strapi-plugin-upload": "3.6.5",
+    "strapi-plugin-users-permissions": "3.6.5",
+    "strapi-utils": "3.6.5",
     "unzip-stream": "^0.3.0",
     "uuid-v4": "^0.1.0"
   },
   "strapi": {
-    "uuid": "FOODADVISOR-undefined-30671326-1c5a-4d9d-9a66-b6862cf0b7e7"
+    "uuid": "FOODADVISOR-30671326-1c5a-4d9d-9a66-b6862cf0b7e7"
   },
   "engines": {
     "node": ">= 10.0.0",
