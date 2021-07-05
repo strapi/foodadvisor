@@ -143,7 +143,6 @@ export async function getArticles(key) {
       ? `${countUrl}&_locale=${localeCode}`
       : `${countUrl}?_locale=${localeCode}`;
   }
-  console.log(baseUrl);
 
   const resCountFilteredArticles = await fetch(countUrl);
   const countFilteredArticles = await resCountFilteredArticles.json();

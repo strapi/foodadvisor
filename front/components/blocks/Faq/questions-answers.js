@@ -16,12 +16,10 @@ const QuestionsAnswers = ({ items, theme }) => {
               </h3>
             </dt>
             <dd className={`markdown-body mb-16 text-${theme}-text`}>
-              <p>
-                <ReactMarkdown
-                  children={delve(item, 'answer')}
-                  linkTarget="_blank"
-                ></ReactMarkdown>
-              </p>
+              <ReactMarkdown
+                children={delve(item, 'answer')}
+                linkTarget="_blank"
+              ></ReactMarkdown>
             </dd>
           </div>
         ))}

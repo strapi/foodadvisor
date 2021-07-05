@@ -7,7 +7,7 @@ const Hero = ({ images, header, text, buttons }) => {
   const title = delve(header, 'title');
 
   return (
-    <section className="text-gray-600 body-font py-40 flex justify-center items-center">
+    <section className="text-gray-600 body-font py-40 flex justify-center items-center 2xl:h-screen">
       <div className="container flex md:flex-row flex-col items-center">
         <div className="mt-4 relative relative-20 lg:mt-0 lg:col-start-1">
           <ImageCards images={images} />

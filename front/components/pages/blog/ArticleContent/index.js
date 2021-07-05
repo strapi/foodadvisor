@@ -16,7 +16,7 @@ const ArticleContent = ({ title, image, content, author, locale }) => {
   return (
     <Container>
       <section className="text-gray-600 body-font py-24">
-        <div className="container px-5 py-24 mx-auto flex flex-col justify-center items-center">
+        <div className="container px-5 py-2 mx-auto flex flex-col justify-center items-center">
           <h1 className="font-black sm:text-5xl text-4xl  mb-4 text-gray-900 text-center">
             {title}
           </h1>

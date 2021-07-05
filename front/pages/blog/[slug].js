@@ -1,5 +1,5 @@
 import delve from 'dlv';
-import { getStrapiURL } from '../../utils';
+import { getStrapiURL, handleRedirection } from '../../utils';
 import { getDataDependencies } from '../services/api';
 import { getLocalizedParams } from '../../utils/localize';
 
@@ -38,7 +38,7 @@ export async function getServerSideProps(context) {
   const json = await res.json();
 
   if (!json.length) {
-    return handleRedirection(slug, context.preview, 'blog');
+    return handleRedirection(context.params.slug, context.preview, 'blog');
   }
 
   const pageData = await getDataDependencies(delve(json, '0'));

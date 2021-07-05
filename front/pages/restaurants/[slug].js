@@ -44,7 +44,7 @@ export async function getServerSideProps(context) {
   const reviews = await resReview.json();
 
   if (!json.length) {
-    return handleRedirection(slug, context.preview, 'restaurants');
+    return handleRedirection(context.params.slug, context.preview, 'restaurants');
   }
 
   const pageData = await getDataDependencies(delve(json, '0'));

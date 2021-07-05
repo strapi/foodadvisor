@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const SocialLogo = ({ url, size }) => {
-  if (url.includes('facebook')) {
+  if (url && url.includes('facebook')) {
     return (
       <Link href={url} key={url}>
         <a target="_blank">
@@ -19,7 +19,7 @@ const SocialLogo = ({ url, size }) => {
         </a>
       </Link>
     );
-  } else if (url.includes('twitter')) {
+  } else if (url && url.includes('twitter')) {
     return (
       <Link href={url} key={url}>
         <a target="_blank">
@@ -36,7 +36,7 @@ const SocialLogo = ({ url, size }) => {
         </a>
       </Link>
     );
-  } else if (url.includes('github')) {
+  } else if (url && url.includes('github')) {
     return (
       <Link href={url} key={url}>
         <a target="_blank">
@@ -53,7 +53,7 @@ const SocialLogo = ({ url, size }) => {
         </a>
       </Link>
     );
-  } else if (url.includes('linkedin')) {
+  } else if (url && url.includes('linkedin')) {
     return (
       <Link href={url} key={url}>
         <a target="_blank">
@@ -70,7 +70,7 @@ const SocialLogo = ({ url, size }) => {
         </a>
       </Link>
     );
-  } else if (url.includes('instagram')) {
+  } else if (url && url.includes('instagram')) {
     return (
       <Link href={url} key={url}>
         <a target="_blank">
