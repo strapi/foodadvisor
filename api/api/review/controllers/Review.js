@@ -1,19 +1,15 @@
 'use strict';
 
-/**
- * Review.js controller
- *
- * @description: A set of functions called "actions" for managing `Review`.
- */
+const { sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
   create: async (ctx) => {
     // Set the reviewer ID as author key based on the login user info.
     // https://strapi.io/documentation/3.x.x/guides/authentication.html#user-object-in-strapi-context
     try {
-      ctx.request.body.author = ctx.state.user.id
+      ctx.request.body.author = ctx.state.user.id;
     } catch (err) {
-      return ctx.badRequest(null, 'Can\'t find authenticated user ID');
+      return ctx.badRequest(null, "Can't find authenticated user ID");
     }
 
     if (!ctx.request.body.restaurant) {
@@ -34,6 +30,8 @@ module.exports = {
       return ctx.badRequest(null, '`note` attribute have to be between 0 and 5');
     }
 
-    return strapi.api.review.services.review.create(ctx.request.body);
-  }
+    let review = await strapi.api.review.services.review.create(ctx.request.body);
+
+    return sanitizeEntity(review, { model: strapi.models.review });
+  },
 };

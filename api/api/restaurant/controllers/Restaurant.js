@@ -1,3 +1,5 @@
+const { sanitizeEntity } = require('strapi-utils');
+
 module.exports = {
   find: async (ctx) => {
     let restaurants;
@@ -10,6 +12,7 @@ module.exports = {
 
     restaurants = await Promise.all(
       restaurants.map(async (restaurant) => {
+        sanitizeEntity(restaurant, { model: strapi.models.restaurant });
         restaurant.note = await strapi.api.review.services.review.average(restaurant.id);
 
         return restaurant;
@@ -62,6 +65,6 @@ module.exports = {
       restaurant.noteDetails.push(detail);
     }
 
-    return restaurant;
-  }
+    return sanitizeEntity(restaurant, { model: strapi.models.restaurant });
+  },
 };
