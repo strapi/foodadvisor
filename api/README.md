@@ -1,19 +1,27 @@
-# Strapi API
+# FoodAdvisor - API
 
-## Available Scripts
+![FoodAdvisor](../foodadvisor.png)
 
-In the project directory, you can run:
+Welcome to FoodAdvisor, the official Strapi demo application.
 
-### `yarn`
+## Get started
 
-`yarn` installs all dependencies to make this project work.
+You can get started with this project locally on your machine by following the instructions below or you can [request a private instance on our website](https://strapi.io/demo).
 
-### `yarn seed`
+## Prerequisites
 
-`yarn seed` seeds demo data.
+Be sure to have the correct env variabless:
 
-**You need to run this command before starting your project**
+- Strapi:
+  - `CLIENT_URL=<url-of-nextjs>`
+  - `CLIENT_PREVIEW_SECRET=<a-random-token>`
 
-### `yarn develop`
-`yarn develop` starts the server in developement environment and builds the administration panel.
-Open [http://localhost:1337/admin](http://localhost:1337/admin) to view it in the browser.
+## Start Strapi
+
+- Run the following command in your `./foodadvisor/api` folder:
+
+```
+yarn && yarn run seed && yarn develop
+```
+
+This will install the dependencies, fill your application with data and run your server. You can run these commands separately.

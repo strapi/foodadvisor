@@ -535,8 +535,8 @@
               "required": [
                 "id",
                 "title",
-                "content",
-                "image"
+                "image",
+                "content"
               ],
               "properties": {
                 "id": {
@@ -551,6 +551,9 @@
                 "slug": {
                   "type": "uid"
                 },
+                "image": {
+                  "type": "string"
+                },
                 "content": {
                   "type": "string"
                 },
@@ -563,7 +566,7 @@
                 "author": {
                   "type": "string"
                 },
-                "image": {
+                "publish_at": {
                   "type": "string"
                 },
                 "localizations": {
@@ -600,6 +603,9 @@
                 "id": {
                   "type": "string"
                 },
+                "seo": {
+                  "type": "component"
+                },
                 "name": {
                   "type": "string"
                 },
@@ -624,10 +630,7 @@
                 "information": {
                   "type": "component"
                 },
-                "publish_at": {
-                  "type": "string"
-                },
-                "seo": {
+                "socialNetworks": {
                   "type": "component"
                 },
                 "blocks": {
@@ -645,8 +648,8 @@
                 "place": {
                   "type": "string"
                 },
-                "socialNetworks": {
-                  "type": "component"
+                "publish_at": {
+                  "type": "string"
                 },
                 "localizations": {
                   "type": "array",

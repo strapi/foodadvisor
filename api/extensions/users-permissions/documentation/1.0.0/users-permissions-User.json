@@ -1189,8 +1189,7 @@
           "id",
           "username",
           "email",
-          "job",
-          "description"
+          "job"
         ],
         "properties": {
           "id": {
@@ -1267,14 +1266,14 @@
                 "content": {
                   "type": "string"
                 },
+                "note": {
+                  "type": "integer"
+                },
                 "author": {
                   "type": "string"
                 },
                 "restaurant": {
                   "type": "string"
-                },
-                "note": {
-                  "type": "integer"
                 },
                 "localizations": {
                   "type": "array",
@@ -1367,8 +1366,8 @@
               "required": [
                 "id",
                 "title",
-                "content",
-                "image"
+                "image",
+                "content"
               ],
               "properties": {
                 "id": {
@@ -1383,6 +1382,9 @@
                 "slug": {
                   "type": "uid"
                 },
+                "image": {
+                  "type": "string"
+                },
                 "content": {
                   "type": "string"
                 },
@@ -1395,7 +1397,7 @@
                 "author": {
                   "type": "string"
                 },
-                "image": {
+                "publish_at": {
                   "type": "string"
                 },
                 "localizations": {
@@ -1421,9 +1423,6 @@
           },
           "job": {
             "type": "string"
-          },
-          "description": {
-            "type": "string"
           }
         }
       },
@@ -1431,8 +1430,7 @@
         "required": [
           "username",
           "email",
-          "job",
-          "description"
+          "job"
         ],
         "properties": {
           "username": {
@@ -1478,9 +1476,6 @@
             }
           },
           "job": {
-            "type": "string"
-          },
-          "description": {
             "type": "string"
           },
           "created_by": {

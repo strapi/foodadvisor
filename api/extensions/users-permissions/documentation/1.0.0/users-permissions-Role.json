@@ -529,8 +529,7 @@
                 "id",
                 "username",
                 "email",
-                "job",
-                "description"
+                "job"
               ],
               "properties": {
                 "id": {
@@ -576,9 +575,6 @@
                   }
                 },
                 "job": {
-                  "type": "string"
-                },
-                "description": {
                   "type": "string"
                 },
                 "created_by": {

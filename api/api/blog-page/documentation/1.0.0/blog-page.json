@@ -368,6 +368,9 @@
                 "type": "boolean",
                 "default": false
               },
+              "structuredData": {
+                "type": "object"
+              },
               "metaImage": {
                 "required": [
                   "id",
@@ -471,6 +474,10 @@
           "categoryText": {
             "type": "string"
           },
+          "articlesPerPage": {
+            "type": "integer",
+            "default": 12
+          },
           "blocks": {
             "type": "array",
             "items": {
@@ -572,12 +579,6 @@
                     "id": {
                       "type": "string"
                     },
-                    "title": {
-                      "type": "string"
-                    },
-                    "text": {
-                      "type": "string"
-                    },
                     "theme": {
                       "type": "string",
                       "default": "primary",
@@ -587,24 +588,26 @@
                         "muted"
                       ]
                     },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
                     "commandLine": {
                       "type": "string"
                     }
                   },
                   "required": [
                     "id",
+                    "theme",
                     "title",
                     "text",
-                    "theme",
                     "commandLine"
                   ]
                 }
               ]
             }
-          },
-          "articlesPerPage": {
-            "type": "integer",
-            "default": 12
           },
           "localizations": {
             "type": "array",
@@ -630,11 +633,11 @@
                 "categoryText": {
                   "type": "string"
                 },
-                "blocks": {
-                  "type": "dynamiczone"
-                },
                 "articlesPerPage": {
                   "type": "integer"
+                },
+                "blocks": {
+                  "type": "dynamiczone"
                 },
                 "localizations": {
                   "type": "array",
@@ -715,6 +718,9 @@
                 "type": "boolean",
                 "default": false
               },
+              "structuredData": {
+                "type": "object"
+              },
               "metaImage": {
                 "required": [
                   "id",
@@ -818,6 +824,10 @@
           "categoryText": {
             "type": "string"
           },
+          "articlesPerPage": {
+            "type": "integer",
+            "default": 12
+          },
           "blocks": {
             "type": "array",
             "items": {
@@ -919,12 +929,6 @@
                     "id": {
                       "type": "string"
                     },
-                    "title": {
-                      "type": "string"
-                    },
-                    "text": {
-                      "type": "string"
-                    },
                     "theme": {
                       "type": "string",
                       "default": "primary",
@@ -934,24 +938,26 @@
                         "muted"
                       ]
                     },
+                    "title": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
                     "commandLine": {
                       "type": "string"
                     }
                   },
                   "required": [
                     "id",
+                    "theme",
                     "title",
                     "text",
-                    "theme",
                     "commandLine"
                   ]
                 }
               ]
             }
-          },
-          "articlesPerPage": {
-            "type": "integer",
-            "default": 12
           },
           "localizations": {
             "type": "array",

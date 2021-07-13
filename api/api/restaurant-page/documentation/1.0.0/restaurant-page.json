@@ -320,7 +320,7 @@
           "id",
           "slug",
           "categoryText",
-          "districtText",
+          "placeText",
           "restaurantsPerPage"
         ],
         "properties": {
@@ -370,6 +370,9 @@
                 "type": "boolean",
                 "default": false
               },
+              "structuredData": {
+                "type": "object"
+              },
               "metaImage": {
                 "required": [
                   "id",
@@ -473,8 +476,12 @@
           "categoryText": {
             "type": "string"
           },
-          "districtText": {
+          "placeText": {
             "type": "string"
+          },
+          "restaurantsPerPage": {
+            "type": "integer",
+            "default": 12
           },
           "blocks": {
             "type": "array",
@@ -567,10 +574,6 @@
               ]
             }
           },
-          "restaurantsPerPage": {
-            "type": "integer",
-            "default": 12
-          },
           "localizations": {
             "type": "array",
             "items": {
@@ -578,7 +581,7 @@
                 "id",
                 "slug",
                 "categoryText",
-                "districtText",
+                "placeText",
                 "restaurantsPerPage"
               ],
               "properties": {
@@ -597,14 +600,14 @@
                 "categoryText": {
                   "type": "string"
                 },
-                "districtText": {
+                "placeText": {
                   "type": "string"
-                },
-                "blocks": {
-                  "type": "dynamiczone"
                 },
                 "restaurantsPerPage": {
                   "type": "integer"
+                },
+                "blocks": {
+                  "type": "dynamiczone"
                 },
                 "localizations": {
                   "type": "array",
@@ -640,7 +643,7 @@
         "required": [
           "slug",
           "categoryText",
-          "districtText",
+          "placeText",
           "restaurantsPerPage"
         ],
         "properties": {
@@ -687,6 +690,9 @@
                 "type": "boolean",
                 "default": false
               },
+              "structuredData": {
+                "type": "object"
+              },
               "metaImage": {
                 "required": [
                   "id",
@@ -790,8 +796,12 @@
           "categoryText": {
             "type": "string"
           },
-          "districtText": {
+          "placeText": {
             "type": "string"
+          },
+          "restaurantsPerPage": {
+            "type": "integer",
+            "default": 12
           },
           "blocks": {
             "type": "array",
@@ -883,10 +893,6 @@
                 }
               ]
             }
-          },
-          "restaurantsPerPage": {
-            "type": "integer",
-            "default": 12
           },
           "localizations": {
             "type": "array",

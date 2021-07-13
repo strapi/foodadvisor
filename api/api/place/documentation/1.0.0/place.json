@@ -523,6 +523,9 @@
           "id": {
             "type": "string"
           },
+          "name": {
+            "type": "string"
+          },
           "restaurants": {
             "type": "array",
             "items": {
@@ -535,6 +538,9 @@
               "properties": {
                 "id": {
                   "type": "string"
+                },
+                "seo": {
+                  "type": "component"
                 },
                 "name": {
                   "type": "string"
@@ -560,10 +566,7 @@
                 "information": {
                   "type": "component"
                 },
-                "publish_at": {
-                  "type": "string"
-                },
-                "seo": {
+                "socialNetworks": {
                   "type": "component"
                 },
                 "blocks": {
@@ -581,8 +584,8 @@
                 "place": {
                   "type": "string"
                 },
-                "socialNetworks": {
-                  "type": "component"
+                "publish_at": {
+                  "type": "string"
                 },
                 "localizations": {
                   "type": "array",
@@ -604,13 +607,6 @@
                 }
               }
             }
-          },
-          "name": {
-            "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           }
         }
       },
@@ -619,18 +615,14 @@
           "name"
         ],
         "properties": {
+          "name": {
+            "type": "string"
+          },
           "restaurants": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          },
-          "name": {
-            "type": "string"
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
           },
           "created_by": {
             "type": "string"

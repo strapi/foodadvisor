@@ -1,23 +1,28 @@
-# Next.js + Tailwind CSS Example
+# FoodAdvisor - Client
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) (v2.1) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+![FoodAdvisor](../foodadvisor.png)
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+Welcome to FoodAdvisor, the official Strapi demo application.
 
-## Deploy your own
+## Get started
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+You can get started with this project locally on your machine by following the instructions below or you can [request a private instance on our website](https://strapi.io/demo).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Prerequisites
 
-## How to use
+Be sure to have the correct env variables:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+- Next.js (already in `.env.development`):
+  - `NEXT_PUBLIC_API_URL=<url-of-strapi>`
+  - `PREVIEW_SECRET=<the-same-random-token-as-for-strapi>`
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+
+## Start Next.js
+
+- Run the following command in your `./foodadvisor/client` folder
+
+```
+yarn && yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+This will install the dependencies, and run your server. You can run these commands separately.

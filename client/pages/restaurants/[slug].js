@@ -38,13 +38,17 @@ export async function getServerSideProps(context) {
 
   const resReview = await fetch(
     getStrapiURL(
-      `/reviews?restaurant.slug=${context.params.slug}&_locale=${locale}`
+      `/reviews?restaurant.slug=${context.params.slug}&_locale=${locale}&_publicationState=preview`
     )
   );
   const reviews = await resReview.json();
 
   if (!json.length) {
-    return handleRedirection(context.params.slug, context.preview, 'restaurants');
+    return handleRedirection(
+      context.params.slug,
+      context.preview,
+      'restaurants'
+    );
   }
 
   const pageData = await getDataDependencies(delve(json, '0'));

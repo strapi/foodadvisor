@@ -20,18 +20,19 @@
   },
   "dependencies": {
     "body-scroll-lock": "^3.1.5",
-    "faker": "^5.5.3",
     "fs-extra": "8.1.0",
     "knex": "0.16.3",
     "lodash": "^4.17.5",
     "reactour": "^1.18.0",
-    "sqlite3": "^4.0.6",
+    "sqlite3": "5.0.2",
     "strapi": "3.6.5",
     "strapi-admin": "3.6.5",
     "strapi-connector-bookshelf": "3.6.5",
     "strapi-plugin-content-manager": "3.6.5",
     "strapi-plugin-content-type-builder": "3.6.5",
+    "strapi-plugin-documentation": "3.6.5",
     "strapi-plugin-email": "3.6.5",
+    "strapi-plugin-graphql": "3.6.5",
     "strapi-plugin-i18n": "^3.6.5",
     "strapi-plugin-upload": "3.6.5",
     "strapi-plugin-users-permissions": "3.6.5",
@@ -40,7 +41,7 @@
     "uuid-v4": "^0.1.0"
   },
   "strapi": {
-    "uuid": "FOODADVISOR-30671326-1c5a-4d9d-9a66-b6862cf0b7e7"
+    "uuid": "FOODADVISOR-LOCAL-f5d40e53-d109-4e74-af9c-020c31e2e854"
   },
   "engines": {
     "node": ">= 10.0.0",

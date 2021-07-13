@@ -526,13 +526,15 @@
           "content": {
             "type": "string"
           },
+          "note": {
+            "type": "integer"
+          },
           "author": {
             "required": [
               "id",
               "username",
               "email",
-              "job",
-              "description"
+              "job"
             ],
             "properties": {
               "id": {
@@ -580,9 +582,6 @@
               "job": {
                 "type": "string"
               },
-              "description": {
-                "type": "string"
-              },
               "created_by": {
                 "type": "string"
               },
@@ -601,6 +600,9 @@
             "properties": {
               "id": {
                 "type": "string"
+              },
+              "seo": {
+                "type": "component"
               },
               "name": {
                 "type": "string"
@@ -626,10 +628,7 @@
               "information": {
                 "type": "component"
               },
-              "publish_at": {
-                "type": "string"
-              },
-              "seo": {
+              "socialNetworks": {
                 "type": "component"
               },
               "blocks": {
@@ -647,8 +646,8 @@
               "place": {
                 "type": "string"
               },
-              "socialNetworks": {
-                "type": "component"
+              "publish_at": {
+                "type": "string"
               },
               "localizations": {
                 "type": "array",
@@ -670,9 +669,6 @@
               }
             }
           },
-          "note": {
-            "type": "integer"
-          },
           "localizations": {
             "type": "array",
             "items": {
@@ -687,14 +683,14 @@
                 "content": {
                   "type": "string"
                 },
+                "note": {
+                  "type": "integer"
+                },
                 "author": {
                   "type": "string"
                 },
                 "restaurant": {
                   "type": "string"
-                },
-                "note": {
-                  "type": "integer"
                 },
                 "localizations": {
                   "type": "array",
@@ -727,14 +723,14 @@
           "content": {
             "type": "string"
           },
+          "note": {
+            "type": "integer"
+          },
           "author": {
             "type": "string"
           },
           "restaurant": {
             "type": "string"
-          },
-          "note": {
-            "type": "integer"
           },
           "localizations": {
             "type": "array",
