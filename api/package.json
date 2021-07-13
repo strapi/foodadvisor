@@ -41,7 +41,7 @@
     "uuid-v4": "^0.1.0"
   },
   "strapi": {
-    "uuid": "FOODADVISOR-LOCAL-f5d40e53-d109-4e74-af9c-020c31e2e854"
+    "uuid": "7b581c0d-89b7-479e-b379-a76ab90b8754"
   },
   "engines": {
     "node": ">= 10.0.0",
