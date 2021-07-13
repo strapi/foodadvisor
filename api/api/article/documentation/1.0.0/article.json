@@ -537,10 +537,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -1111,10 +1115,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",

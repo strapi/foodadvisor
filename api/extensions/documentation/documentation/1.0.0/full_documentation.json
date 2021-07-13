@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/13/2021 4:16:42 PM"
+    "x-generation-date": "07/13/2021 5:10:39 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7853,10 +7853,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -8427,10 +8431,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -8799,10 +8807,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -9149,10 +9161,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -10253,10 +10269,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -11433,10 +11453,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -12697,10 +12721,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -13017,10 +13045,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -13296,10 +13328,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
@@ -14120,10 +14156,14 @@
                 "type": "string"
               },
               "metaTitle": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 60,
+                "minLength": 50
               },
               "metaDescription": {
-                "type": "string"
+                "type": "string",
+                "maxLength": 160,
+                "minLength": 50
               },
               "meta": {
                 "type": "array",
