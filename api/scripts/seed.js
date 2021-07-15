@@ -3,7 +3,7 @@ const util = require('util');
 const fse = require('fs-extra');
 const unzip = require('unzip-stream');
 const crypto = require('crypto');
-const uuid = require('uuid-v4')
+const uuid = require('uuid-v4');
 
 const zipPath = path.resolve('data.zip');
 const dataPath = path.resolve('data');
@@ -32,10 +32,10 @@ async function updateUid() {
       const rawFile = fse.readFileSync(filePath);
       const packageJSON = JSON.parse(rawFile);
 
-      if (packageJSON.strapi.uuid.includes("FOODADVISOR"))
-        return null
+      if (packageJSON.strapi.uuid.includes('FOODADVISOR')) return null;
 
-      packageJSON.strapi.uuid = `FOODADVISOR-LOCAL-` + uuid();
+      packageJSON.strapi.uuid =
+        `FOODADVISOR-LOCAL-${process.env.GITPOD_WORKSPACE_URL ? 'GITPOD-' : ''}` + uuid();
 
       const data = JSON.stringify(packageJSON, null, 2);
       fse.writeFileSync(filePath, data);
@@ -46,11 +46,10 @@ async function updateUid() {
 }
 
 async function seed() {
-
   try {
     await updateUid();
   } catch (error) {
-    console.log(error);    
+    console.log(error);
   }
 
   try {
@@ -65,7 +64,7 @@ async function seed() {
     console.log(`Failed to remove ${uploadPath}`);
   }
 
-  await new Promise(resolve => {
+  await new Promise((resolve) => {
     fse
       .createReadStream(zipPath)
       .pipe(unzip.Extract({ path: '.' }))
@@ -92,16 +91,13 @@ async function seed() {
 
   try {
     await fse.ensureFile(dotEnv);
-    await fse.appendFile(
-      dotEnv,
-      `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}\n`
-    );
+    await fse.appendFile(dotEnv, `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}\n`);
   } catch (err) {
     console.log(`Failed to create ${dotEnv}`);
   }
 }
 
-seed().catch(error => {
+seed().catch((error) => {
   console.error(error);
   process.exit(1);
 });
