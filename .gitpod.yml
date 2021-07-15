@@ -4,16 +4,12 @@ tasks:
       cd /workspace/foodadvisor/api
       yarn install
       yarn seed
-    command: |
-      cd /workspace/foodadvisor/api &&
-      yarn develop
+    command: yarn develop
   - name: Next.js
     init: |
       cd /workspace/foodadvisor/client &&
       yarn install
-    command: |
-      workspace/foodadvisor/client &&
-      yarn dev
+    command: yarn dev
 ports:
   - port: 1337
     onOpen: open-browser
