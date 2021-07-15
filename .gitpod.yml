@@ -1,18 +1,18 @@
 tasks:
   - name: Strapi
     init: |
-      cd /workspace/api
+      cd /workspace/foodadvisor/api
       yarn install
       yarn seed
     command: |
-      cd /workspace/api &&
+      cd /workspace/foodadvisor/api &&
       yarn develop
   - name: Next.js
     init: |
-      cd /workspace/client &&
+      cd /workspace/foodadvisor/client &&
       yarn install
     command: |
-      workspace/client &&
+      workspace/foodadvisor/client &&
       yarn dev
 ports:
   - port: 1337
