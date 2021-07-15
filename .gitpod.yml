@@ -1,0 +1,21 @@
+tasks:
+  - name: Strapi
+     init: >
+      cd /workspace/api &&
+      yarn install &&
+      yarn seed
+    command: >
+      cd /workspace/api &&
+      yarn develop
+  - name: Next.js
+     init: >
+      cd /workspace/client &&
+      yarn install
+    command: >
+      cd /workspace/client &&
+      yarn dev
+ports:
+  - port: 1337
+    onOpen: open-browser
+  - port: 3000
+    onOpen: open-browser
