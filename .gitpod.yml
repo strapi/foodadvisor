@@ -9,9 +9,11 @@ tasks:
     init: |
       cd /workspace/foodadvisor/client &&
       yarn install
+      sed -i "1s#.*#NEXT_PUBLIC_API_URL=${GITPOD_WORKSPACE_URL}#" .env.development
     command: yarn dev
 ports:
   - port: 1337
     onOpen: open-browser
+    visibility: public
   - port: 3000
     onOpen: open-browser
