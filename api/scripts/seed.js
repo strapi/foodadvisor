@@ -35,7 +35,7 @@ async function updateUid() {
       if (packageJSON.strapi.uuid.includes('FOODADVISOR')) return null;
 
       packageJSON.strapi.uuid =
-        `FOODADVISOR-LOCAL-${process.env.GITPOD_WORKSPACE_URL ? 'GITPOD-' : ''}` + uuid();
+        `FOODADVISOR-${process.env.GITPOD_WORKSPACE_URL ? 'GITPOD-' : 'LOCAL-'}` + uuid();
 
       const data = JSON.stringify(packageJSON, null, 2);
       fse.writeFileSync(filePath, data);
