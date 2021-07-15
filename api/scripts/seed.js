@@ -94,7 +94,7 @@ async function seed() {
     await fse.ensureFile(dotEnv);
     await fse.appendFile(
       dotEnv,
-      `\nADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}`
+      `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}\n`
     );
   } catch (err) {
     console.log(`Failed to create ${dotEnv}`);
