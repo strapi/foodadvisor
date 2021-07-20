@@ -4,7 +4,7 @@ import tour from './utils/tour';
 
 const initialState = {
   tour,
-  isOpen: true,
+  isOpen: false,
   totalLength: 0,
   currentStep: 0,
   actualPlugin: null

@@ -108,7 +108,7 @@ const tour = {
             <br />
             <br />
             <strong>Reminder:</strong> Single types are handy to manage content like a Navbar, the
-            fooer or any other type of content that is not part of a collection.
+            footer or any other type of content that is not part of a collection.
             <br />
             <br />
             <ul>
