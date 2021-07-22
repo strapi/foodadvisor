@@ -9,15 +9,11 @@
   "attributes": {
     "metaTitle": {
       "required": true,
-      "type": "string",
-      "maxLength": 60,
-      "minLength": 50
+      "type": "string"
     },
     "metaDescription": {
       "type": "string",
-      "required": true,
-      "maxLength": 160,
-      "minLength": 50
+      "required": true
     },
     "meta": {
       "type": "component",
