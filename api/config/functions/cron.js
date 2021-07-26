@@ -15,6 +15,7 @@ module.exports = {
       _publicationState: 'preview', // preview returns both draft and published entries
       published_at_null: true, // so we add another condition here to filter entries that have not been published
       publish_at_lt: new Date(),
+      ready: true,
     });
 
     // update published_at of restaurants
@@ -31,6 +32,7 @@ module.exports = {
       _publicationState: 'preview', // preview returns both draft and published entries
       published_at_null: true, // so we add another condition here to filter entries that have not been published
       publish_at_lt: new Date(),
+      ready: true,
     });
 
     // update published_at of articles
@@ -47,6 +49,7 @@ module.exports = {
       _publicationState: 'preview', // preview returns both draft and published entries
       published_at_null: true, // so we add another condition here to filter entries that have not been published
       publish_at_lt: new Date(),
+      ready: true,
     });
 
     // update published_at of pages

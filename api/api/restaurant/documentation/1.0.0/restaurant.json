@@ -904,6 +904,9 @@
                           "publish_at": {
                             "type": "string"
                           },
+                          "ready": {
+                            "type": "boolean"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -1252,6 +1255,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "ready": {
+            "type": "boolean",
+            "default": true
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -1312,6 +1319,9 @@
                 },
                 "publish_at": {
                   "type": "string"
+                },
+                "ready": {
+                  "type": "boolean"
                 },
                 "localizations": {
                   "type": "array",
@@ -1658,6 +1668,9 @@
                           "publish_at": {
                             "type": "string"
                           },
+                          "ready": {
+                            "type": "boolean"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -1915,6 +1928,10 @@
           "publish_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "ready": {
+            "type": "boolean",
+            "default": true
           },
           "localizations": {
             "type": "array",

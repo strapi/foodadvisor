@@ -70,6 +70,15 @@
         }
       },
       "type": "datetime"
+    },
+    "ready": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": true
     }
   }
 }

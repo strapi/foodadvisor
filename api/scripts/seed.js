@@ -89,11 +89,17 @@ async function seed() {
     console.log(`Failed to remove ${dataPath}`);
   }
 
-  try {
-    await fse.ensureFile(dotEnv);
-    await fse.appendFile(dotEnv, `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}\n`);
-  } catch (err) {
-    console.log(`Failed to create ${dotEnv}`);
+  await fse.ensureFile(dotEnv);
+  const dotEnvData = fse.readFileSync(dotEnv).toString();
+  if (!dotEnvData.includes('ADMIN_JWT_SECRET')) {
+    try {
+      await fse.appendFile(
+        dotEnv,
+        `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}\n`
+      );
+    } catch (err) {
+      console.log(`Failed to create ${dotEnv}`);
+    }
   }
 }
 

@@ -37,6 +37,12 @@ const StyledExternalLink = styled.a`
 
 const ExternalLink = () => {
   const { modifiedData, layout } = useContentManagerEditViewDataManager();
+  const bannedApiID = ['category'];
+
+  if (bannedApiID.includes(layout.apiID)) {
+    return null;
+  }
+
   if (modifiedData.published_at) {
     return null;
   }

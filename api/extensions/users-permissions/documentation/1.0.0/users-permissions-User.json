@@ -1400,6 +1400,9 @@
                 "publish_at": {
                   "type": "string"
                 },
+                "ready": {
+                  "type": "boolean"
+                },
                 "localizations": {
                   "type": "array",
                   "items": {

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/26/2021 2:40:31 PM"
+    "x-generation-date": "07/26/2021 3:21:57 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8089,6 +8089,9 @@
                           "publish_at": {
                             "type": "string"
                           },
+                          "ready": {
+                            "type": "boolean"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -8339,6 +8342,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "ready": {
+            "type": "boolean",
+            "default": true
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -8378,6 +8385,9 @@
                 },
                 "publish_at": {
                   "type": "string"
+                },
+                "ready": {
+                  "type": "boolean"
                 },
                 "localizations": {
                   "type": "array",
@@ -8596,6 +8606,9 @@
                           "publish_at": {
                             "type": "string"
                           },
+                          "ready": {
+                            "type": "boolean"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -8755,6 +8768,10 @@
           "publish_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "ready": {
+            "type": "boolean",
+            "default": true
           },
           "localizations": {
             "type": "array",
@@ -9497,6 +9514,9 @@
                 "publish_at": {
                   "type": "string"
                 },
+                "ready": {
+                  "type": "boolean"
+                },
                 "localizations": {
                   "type": "array",
                   "items": {
@@ -9578,6 +9598,9 @@
                 },
                 "publish_at": {
                   "type": "string"
+                },
+                "ready": {
+                  "type": "boolean"
                 },
                 "localizations": {
                   "type": "array",
@@ -11354,6 +11377,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "ready": {
+            "type": "boolean",
+            "default": true
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -11379,6 +11406,9 @@
                 },
                 "publish_at": {
                   "type": "string"
+                },
+                "ready": {
+                  "type": "boolean"
                 },
                 "localizations": {
                   "type": "array",
@@ -12534,6 +12564,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "ready": {
+            "type": "boolean",
+            "default": true
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -12627,6 +12661,9 @@
                 },
                 "publish_at": {
                   "type": "string"
+                },
+                "ready": {
+                  "type": "boolean"
                 },
                 "localizations": {
                   "type": "array",
@@ -13663,6 +13700,9 @@
                           "publish_at": {
                             "type": "string"
                           },
+                          "ready": {
+                            "type": "boolean"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -14011,6 +14051,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "ready": {
+            "type": "boolean",
+            "default": true
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -14071,6 +14115,9 @@
                 },
                 "publish_at": {
                   "type": "string"
+                },
+                "ready": {
+                  "type": "boolean"
                 },
                 "localizations": {
                   "type": "array",
@@ -14417,6 +14464,9 @@
                           "publish_at": {
                             "type": "string"
                           },
+                          "ready": {
+                            "type": "boolean"
+                          },
                           "localizations": {
                             "type": "array",
                             "items": {
@@ -14675,6 +14725,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "ready": {
+            "type": "boolean",
+            "default": true
+          },
           "localizations": {
             "type": "array",
             "items": {
@@ -14830,6 +14884,9 @@
               },
               "publish_at": {
                 "type": "string"
+              },
+              "ready": {
+                "type": "boolean"
               },
               "localizations": {
                 "type": "array",
@@ -15307,6 +15364,9 @@
                 },
                 "publish_at": {
                   "type": "string"
+                },
+                "ready": {
+                  "type": "boolean"
                 },
                 "localizations": {
                   "type": "array",
