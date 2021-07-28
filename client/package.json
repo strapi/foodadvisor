@@ -1,5 +1,5 @@
 {
-  "name": "FoodAdvisor Client | Strapi Live demo",
+  "name": "foodadvisor-client",
   "version": "3.0.0",
   "private": false,
   "scripts": {
