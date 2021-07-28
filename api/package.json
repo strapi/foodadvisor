@@ -10,7 +10,8 @@
     "build": "strapi build",
     "strapi": "strapi",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "codesandbox": "yarn seed && strapi develop"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
