@@ -1,16 +1,14 @@
 import delve from 'dlv';
-
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-
-import { getLocalizedParams } from '../../utils/localize';
-import { getStrapiURL, getArticles, getData } from '../../utils';
-
 import Layout from '../../components/layout';
-import Header from '../../components/shared/Header';
-import Container from '../../components/shared/Container';
-import BlockManager from '../../components/shared/BlockManager';
+import NoResults from '../../components/no-results';
 import ArticleCard from '../../components/pages/blog/ArticleCard';
+import BlockManager from '../../components/shared/BlockManager';
+import Container from '../../components/shared/Container';
+import Header from '../../components/shared/Header';
+import { getArticles, getData, getStrapiURL } from '../../utils';
+import { getLocalizedParams } from '../../utils/localize';
 
 const Articles = ({
   global,
@@ -76,9 +74,9 @@ const Articles = ({
           </div>
         </div>
 
+        <NoResults status={status} length={delve(data, 'articles.length')} />
+
         <div className="grid md:grid-cols-2 grid-cols-1 gap-40 mt-24 px-4">
-          {status === 'loading' && <div>Loading articles</div>}
-          {status === 'error' && <div>Oops</div>}
           {status === 'success' &&
             delve(data, 'articles') &&
             data.articles.map((article, index) => (

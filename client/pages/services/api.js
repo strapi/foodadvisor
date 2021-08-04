@@ -1,5 +1,4 @@
 import delve from 'dlv';
-
 import { articlesAdapter } from '../../adapters/article';
 import { restaurantsAdapter } from '../../adapters/restaurant';
 

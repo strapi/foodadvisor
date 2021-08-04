@@ -1,5 +1,4 @@
 import Header from '../../shared/Header';
-
 import FeatureCards from './feature-cards';
 
 const Features = ({ header, cards }) => {

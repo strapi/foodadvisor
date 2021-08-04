@@ -1,7 +1,5 @@
 import delve from 'dlv';
-
 import { getStrapiMedia } from '../../../utils';
-
 import FeaturesCheck from './features-check';
 
 const FeaturesWithImages = ({ header, theme, text, featuresCheck, image }) => {

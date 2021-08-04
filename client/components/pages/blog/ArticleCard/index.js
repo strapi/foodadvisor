@@ -1,7 +1,5 @@
 import delve from 'dlv';
-
 import Link from 'next/link';
-
 import { getStrapiMedia } from '../../../../utils';
 
 const ArticleCard = ({ slug, title, category, seo, locale, author, image }) => {

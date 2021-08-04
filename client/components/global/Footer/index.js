@@ -1,8 +1,7 @@
 import delve from 'dlv';
-
-import Columns from './columns';
-import SocialLogo from '../../shared/SocialLogo';
 import CustomLink from '../../shared/CustomLink';
+import SocialLogo from '../../shared/SocialLogo';
+import Columns from './columns';
 
 const Footer = ({ footer, pageData }) => {
   const label = delve(footer, 'label');

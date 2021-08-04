@@ -17,7 +17,7 @@ const Pricing = ({ header, pricingCards }) => {
         )}
       </div>
 
-      <div className="sm:flex flex-wrap justify-center items-center text-center gap-8 pb-12 pt-16 mt-4">
+      <div className="flex flex-wrap justify-center items-center text-center gap-8 pb-12 pt-16 mt-4">
         {pricingCards &&
           pricingCards.map((card, index) => (
             <div

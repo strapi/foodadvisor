@@ -1,11 +1,10 @@
 import delve from 'dlv';
-import { getStrapiURL } from '../../utils';
-import { getDataDependencies } from '../services/api';
-import { getLocalizedParams } from '../../utils/localize';
-
 import Layout from '../../components/layout';
-import BlockManager from '../../components/shared/BlockManager';
 import RestaurantContent from '../../components/pages/restaurant/RestaurantContent';
+import BlockManager from '../../components/shared/BlockManager';
+import { getStrapiURL } from '../../utils';
+import { getLocalizedParams } from '../../utils/localize';
+import { getDataDependencies } from '../services/api';
 
 const Restaurant = ({ global, pageData, reviews, preview }) => {
   const blocks = delve(pageData, 'blocks');

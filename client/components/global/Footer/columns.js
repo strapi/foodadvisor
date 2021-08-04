@@ -1,5 +1,4 @@
 import delve from 'dlv';
-
 import CustomLink from '../../shared/CustomLink';
 
 const Columns = ({ columns, locale }) => {

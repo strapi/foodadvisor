@@ -1,5 +1,4 @@
 import delve from 'dlv';
-
 import Link from 'next/link';
 
 const Cta = ({ title, text, buttons, theme }) => {
@@ -14,7 +13,7 @@ const Cta = ({ title, text, buttons, theme }) => {
           {buttons &&
             buttons.map((button, index) => (
               <div
-                className="mt-4 md:mt-0 inline-flex rounded-md shadow"
+                className="mt-4 md:mt-4 inline-flex rounded-md shadow"
                 key={`ctaButton-${index}`}
               >
                 <Link

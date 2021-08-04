@@ -1,11 +1,10 @@
 import delve from 'dlv';
-
 import { getStrapiMedia } from '../../../utils';
 
 const Testimonial = ({ theme, text, author }) => {
   return (
     <div className="bg-white pt-60 pb-60 px-4">
-      <div className="bg-gray-600 md:w-2/4 mx-auto p-20 rounded-full">
+      <div className="bg-gray-600 md:w-3/4 mx-auto p-20 rounded-full">
         {text && (
           <p className="text-white w-full md:w-2/3 m-auto text-center text-md md:text-3xl">
             <span className={`font-bold text-${theme}`}>“</span>

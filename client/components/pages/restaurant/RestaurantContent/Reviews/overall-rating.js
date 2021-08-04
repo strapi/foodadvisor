@@ -64,9 +64,7 @@ const OverallRating = ({ reviews }) => {
               <div key={`noteProgress-${index}`}>
                 <div className="flex items-center justify-between text-gray-400 text-sm">
                   <p>{delve(item, 'label')}</p>
-                  <p>
-                    {delve(item, 'value')}
-                  </p>
+                  <p>{delve(item, 'value')}</p>
                 </div>
                 <div className="w-full h-2 bg-gray-100 rounded-full mb-4">
                   <div

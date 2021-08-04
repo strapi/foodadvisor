@@ -1,21 +1,16 @@
 import delve from 'dlv';
-
 import Link from 'next/link';
-
-import Stars from './stars';
-import Price from './price';
+import { getStrapiMedia } from '../../../../utils';
+import Container from '../../../shared/Container';
+import SocialLogo from '../../../shared/SocialLogo';
 import Gallery from './gallery.js';
 import Information from './information';
 import OpeningHours from './opening-hours';
+import Price from './price';
 import ReviewSummary from './review-summary';
-
-import Reviews from './Reviews/reviews';
 import OverallRating from './Reviews/overall-rating';
-
-import Container from '../../../shared/Container';
-import SocialLogo from '../../../shared/SocialLogo';
-
-import { getStrapiMedia } from '../../../../utils';
+import Reviews from './Reviews/reviews';
+import Stars from './stars';
 
 const RestaurantContent = ({ pageData, reviews }) => {
   const name = delve(pageData, 'name');
@@ -52,7 +47,7 @@ const RestaurantContent = ({ pageData, reviews }) => {
           </button>
         </Link>
         <div className="mx-auto md:flex md:flex-wrap">
-          <div className="lg:flex lg:flex-wrap w-full sm:w-1/2">
+          <div className="lg:flex lg:flex-wrap w-full lg:w-1/2">
             <div className="p-2 md:w-full">
               <img
                 alt={delve(images[0], 'alternativeText')}

@@ -1,5 +1,4 @@
 import Header from '../../shared/Header';
-
 import MemberCards from './member-cards';
 
 const Team = ({ header, members }) => {

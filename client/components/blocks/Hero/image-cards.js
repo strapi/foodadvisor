@@ -1,5 +1,4 @@
 import delve from 'dlv';
-
 import { getStrapiMedia } from '../../../utils';
 
 const ImageCards = ({ images }) => {

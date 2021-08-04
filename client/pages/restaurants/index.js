@@ -1,15 +1,14 @@
 import delve from 'dlv';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-
-import { getLocalizedParams } from '../../utils/localize';
-import { getStrapiURL, getRestaurants, getData } from '../../utils';
-
 import Layout from '../../components/layout';
-import Header from '../../components/shared/Header';
-import Container from '../../components/shared/Container';
-import BlockManager from '../../components/shared/BlockManager';
+import NoResults from '../../components/no-results';
 import RestaurantCard from '../../components/pages/restaurant/RestaurantCard';
+import BlockManager from '../../components/shared/BlockManager';
+import Container from '../../components/shared/Container';
+import Header from '../../components/shared/Header';
+import { getData, getRestaurants, getStrapiURL } from '../../utils';
+import { getLocalizedParams } from '../../utils/localize';
 
 const Restaurants = ({
   global,
@@ -99,9 +98,9 @@ const Restaurants = ({
           </div>
         </div>
 
+        <NoResults status={status} length={delve(data, 'restaurants.length')} />
+
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-16 mt-24 px-4">
-          {status === 'loading' && <div>Loading restaurants</div>}
-          {status === 'error' && <div>Oops</div>}
           {status === 'success' &&
             delve(data, 'restaurants') &&
             data.restaurants.map((restaurant, index) => (

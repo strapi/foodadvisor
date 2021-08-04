@@ -1,8 +1,6 @@
 import delve from 'dlv';
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
 import { getStrapiMedia } from '../../../../utils';
 
 const Gallery = ({ images }) => {

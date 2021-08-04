@@ -1,5 +1,4 @@
 import delve from 'dlv';
-
 import Head from 'next/head';
 
 const Seo = ({ seo }) => {

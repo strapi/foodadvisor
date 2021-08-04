@@ -1,6 +1,6 @@
-import Header from '../../shared/Header';
-import Container from '../../shared/Container';
 import ArticleCard from '../../pages/blog/ArticleCard';
+import Container from '../../shared/Container';
+import Header from '../../shared/Header';
 
 const RelatedArticles = ({ header, articles }) => {
   return (

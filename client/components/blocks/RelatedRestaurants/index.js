@@ -1,6 +1,6 @@
-import Header from '../../shared/Header';
-import Container from '../../shared/Container';
 import RestaurantCard from '../../pages/restaurant/RestaurantCard';
+import Container from '../../shared/Container';
+import Header from '../../shared/Header';
 
 const RelatedRestaurants = ({ header, restaurants }) => {
   return (

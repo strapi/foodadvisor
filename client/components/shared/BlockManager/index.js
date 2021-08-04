@@ -1,15 +1,15 @@
 import Cta from '../../blocks/Cta';
-import Faq from '../../blocks/Faq';
-import Hero from '../../blocks/Hero';
-import Team from '../../blocks/Team';
-import Pricing from '../../blocks/Pricing';
-import Features from '../../blocks/Features';
-import Testimonial from '../../blocks/Testimonial';
 import CtaCommandLine from '../../blocks/CtaCommandLine';
-import RelatedArticles from '../../blocks/RelatedArticles';
-import RichContent from '../../pages/restaurant/RichContent';
+import Faq from '../../blocks/Faq';
+import Features from '../../blocks/Features';
 import FeaturesWithImages from '../../blocks/FeaturesWithImages';
+import Hero from '../../blocks/Hero';
+import Pricing from '../../blocks/Pricing';
+import RelatedArticles from '../../blocks/RelatedArticles';
 import RelatedRestaurants from '../../blocks/RelatedRestaurants';
+import Team from '../../blocks/Team';
+import Testimonial from '../../blocks/Testimonial';
+import RichContent from '../../pages/restaurant/RichContent';
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
   let Block;

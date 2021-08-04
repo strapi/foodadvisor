@@ -1,14 +1,9 @@
 import delve from 'dlv';
-
-import Link from 'next/link';
-
-import ReactMarkdown from 'react-markdown';
-
-import { getStrapiMedia } from '../../../../utils';
-
-import Container from '../../../shared/Container';
-
 import 'github-markdown-css';
+import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import { getStrapiMedia } from '../../../../utils';
+import Container from '../../../shared/Container';
 
 const gfm = require('remark-gfm');
 

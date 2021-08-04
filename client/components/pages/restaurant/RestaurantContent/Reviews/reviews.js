@@ -1,8 +1,6 @@
 import delve from 'dlv';
-
 import React from 'react';
 import Moment from 'react-moment';
-
 import { getStrapiMedia } from '../../../../../utils';
 
 const Reviews = ({ reviews }) => {

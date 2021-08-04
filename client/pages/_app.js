@@ -1,11 +1,9 @@
 import App from 'next/app';
 import ErrorPage from 'next/error';
-
+import { QueryClient, QueryClientProvider } from 'react-query';
+import 'tailwindcss/tailwind.css';
 import { getStrapiURL } from '../utils';
 import { getLocalizedParams } from '../utils/localize';
-import { QueryClientProvider, QueryClient } from 'react-query';
-
-import 'tailwindcss/tailwind.css';
 
 const queryClient = new QueryClient();
 

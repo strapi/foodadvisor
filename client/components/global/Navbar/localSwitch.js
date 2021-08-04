@@ -1,15 +1,12 @@
 import delve from 'dlv';
-
 import { useRouter } from 'next/router';
-import { useState, useRef, useEffect } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
+import { useOnClickOutside } from '../../../utils/hooks';
 import {
-  localizePath,
   getLocalizedData,
   listLocalizedPaths,
+  localizePath,
 } from '../../../utils/localize';
-
-import { useOnClickOutside } from '../../../utils/hooks';
 
 const localeSwitch = ({ pageData, type }) => {
   const router = useRouter();

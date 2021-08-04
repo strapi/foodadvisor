@@ -1,9 +1,8 @@
 import delve from 'dlv';
-
-import Nav from './nav';
 import Cta from './cta';
-import Logo from './logo';
 import LocalSwitch from './localSwitch';
+import Logo from './logo';
+import Nav from './nav';
 
 const Navigation = ({ navigation, pageData, type }) => {
   return (
