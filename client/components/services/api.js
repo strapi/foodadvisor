@@ -7,9 +7,9 @@ async function fetchArticles(articles) {
   const fullArticles = Promise.all(
     articles.map(({ id }) => {
       return fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`).then(
-        (r) => r.json()
+        (r) => r.json(),
       );
-    })
+    }),
   ).then((r) => articlesAdapter(r));
   return fullArticles;
 }
@@ -18,9 +18,9 @@ async function fetchRestaurants(restaurants) {
   const fullRestaurants = Promise.all(
     restaurants.map(({ id }) => {
       return fetch(`${process.env.NEXT_PUBLIC_API_URL}/restaurants/${id}`).then(
-        (r) => r.json()
+        (r) => r.json(),
       );
-    })
+    }),
   ).then((r) => restaurantsAdapter(r));
   return fullRestaurants;
 }

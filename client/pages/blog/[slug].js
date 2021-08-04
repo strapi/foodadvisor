@@ -1,6 +1,6 @@
 import delve from 'dlv';
 import { getStrapiURL, handleRedirection } from '../../utils';
-import { getDataDependencies } from '../services/api';
+import { getDataDependencies } from '../../components/services/api';
 import { getLocalizedParams } from '../../utils/localize';
 
 import Layout from '../../components/layout';

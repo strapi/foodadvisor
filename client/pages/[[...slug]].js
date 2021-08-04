@@ -1,6 +1,6 @@
 import delve from 'dlv';
 
-import { getDataDependencies } from './services/api';
+import { getDataDependencies } from '../components/services/api';
 import { handleRedirection, getData } from '../utils';
 import { getLocalizedParams } from '../utils/localize';
 
