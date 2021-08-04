@@ -1,6 +1,6 @@
 tasks:
   - name: Strapi
-    init: |
+    init: >
       cd /workspace/foodadvisor/api &&
       yarn install &&
       yarn seed &&
