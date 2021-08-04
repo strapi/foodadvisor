@@ -25,3 +25,7 @@ yarn && yarn run seed && yarn develop
 ```
 
 This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
+
+### Missing Images
+
+**_A workaround_**: Please check the `public\upload` folder, and extract the contents of `data.zip\uploads` to this folder if not there.
