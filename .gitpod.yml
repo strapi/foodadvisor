@@ -1,16 +1,16 @@
 tasks:
   - name: Strapi
     init: |
-      cd /workspace/foodadvisor/api
-      yarn install
-      yarn seed
-      echo CLIENT_PREVIEW_SECRET=ARNFCb9zrC9ZHm5hZzCigWivD40icS4s >> .env
+      cd /workspace/foodadvisor/api &&
+      yarn install &&
+      yarn seed &&
+      echo CLIENT_PREVIEW_SECRET=ARNFCb9zrC9ZHm5hZzCigWivD40icS4s >> .env &&
       echo CLIENT_URL=$(sed s#https://#https://3000-#g <<< $GITPOD_WORKSPACE_URL) >> .env
     command: yarn develop
   - name: Next.js
     init: |
       cd /workspace/foodadvisor/client &&
-      yarn install
+      yarn install &&
       sed -i "1s#.*#NEXT_PUBLIC_API_URL=$(sed s#https://#https://1337-#g <<< $GITPOD_WORKSPACE_URL)#" .env.development
     command: yarn dev
 ports:
