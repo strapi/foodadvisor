@@ -27,10 +27,14 @@ MyApp.getInitialProps = async (appContext) => {
 
   const appProps = await App.getInitialProps(appContext);
 
-  const res = await fetch(getStrapiURL(`/global?_locale=${locale}`));
-  const globalData = await res.json();
+  try {
+    const res = await fetch(getStrapiURL(`/global?_locale=${locale}`));
+    const globalData = await res.json();
 
-  return { ...appProps, pageProps: { global: globalData } };
+    return { ...appProps, pageProps: { global: globalData } };
+  } catch (error) {
+    return { ...appProps };
+  }
 };
 
 export default MyApp;

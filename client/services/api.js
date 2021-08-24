@@ -1,6 +1,6 @@
 import delve from 'dlv';
-import { articlesAdapter } from '../../adapters/article';
-import { restaurantsAdapter } from '../../adapters/restaurant';
+import { articlesAdapter } from '../adapters/article';
+import { restaurantsAdapter } from '../adapters/restaurant';
 
 async function fetchArticles(articles) {
   const fullArticles = Promise.all(
