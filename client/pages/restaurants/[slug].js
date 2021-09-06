@@ -4,7 +4,7 @@ import RestaurantContent from '../../components/pages/restaurant/RestaurantConte
 import BlockManager from '../../components/shared/BlockManager';
 import { getStrapiURL } from '../../utils';
 import { getLocalizedParams } from '../../utils/localize';
-import { getDataDependencies } from '../services/api';
+import { getDataDependencies } from '../../services/api';
 
 const Restaurant = ({ global, pageData, reviews, preview }) => {
   const blocks = delve(pageData, 'blocks');

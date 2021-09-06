@@ -4,7 +4,7 @@ import ArticleContent from '../../components/pages/blog/ArticleContent';
 import BlockManager from '../../components/shared/BlockManager';
 import { getStrapiURL, handleRedirection } from '../../utils';
 import { getLocalizedParams } from '../../utils/localize';
-import { getDataDependencies } from '../services/api';
+import { getDataDependencies } from '../../services/api';
 
 const Article = ({ global, pageData, preview }) => {
   const blocks = delve(pageData, 'blocks');
