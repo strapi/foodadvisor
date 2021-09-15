@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "foodadvisor-api",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application.",
@@ -10,7 +10,8 @@
     "build": "strapi build",
     "strapi": "strapi",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "codesandbox": "yarn seed && strapi develop"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -20,27 +21,28 @@
   },
   "dependencies": {
     "body-scroll-lock": "^3.1.5",
-    "fs-extra": "8.1.0",
+    "fs-extra": "^10.0.0",
     "knex": "0.16.3",
     "lodash": "^4.17.5",
     "reactour": "^1.18.0",
-    "sqlite3": "^4.0.6",
-    "strapi": "3.6.0",
-    "strapi-admin": "3.6.0",
-    "strapi-connector-bookshelf": "3.6.0",
-    "strapi-plugin-content-manager": "3.6.0",
-    "strapi-plugin-content-type-builder": "3.6.0",
-    "strapi-plugin-documentation": "3.6.0",
-    "strapi-plugin-email": "3.6.0",
-    "strapi-plugin-graphql": "3.6.0",
-    "strapi-plugin-i18n": "^3.6.0",
-    "strapi-plugin-upload": "3.6.0",
-    "strapi-plugin-users-permissions": "3.6.0",
-    "strapi-utils": "3.6.0",
-    "unzip-stream": "^0.3.0"
+    "sqlite3": "5.0.2",
+    "strapi": "3.6.5",
+    "strapi-admin": "3.6.5",
+    "strapi-connector-bookshelf": "3.6.5",
+    "strapi-plugin-content-manager": "3.6.5",
+    "strapi-plugin-content-type-builder": "3.6.5",
+    "strapi-plugin-documentation": "3.6.5",
+    "strapi-plugin-email": "3.6.5",
+    "strapi-plugin-graphql": "3.6.5",
+    "strapi-plugin-i18n": "^3.6.5",
+    "strapi-plugin-upload": "3.6.5",
+    "strapi-plugin-users-permissions": "3.6.5",
+    "strapi-utils": "3.6.5",
+    "unzip-stream": "^0.3.0",
+    "uuid-v4": "^0.1.0"
   },
   "strapi": {
-    "uuid": "7b581c0d-89b7-479e-b379-a76ab90b8754"
+    "uuid": "FOODADVISOR-LOCAL-8822bd66-77b5-4fbc-9adf-3d9d8a215b53"
   },
   "engines": {
     "node": ">= 10.0.0",

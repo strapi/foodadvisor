@@ -1,0 +1,11 @@
+{
+  "infiniteLoopProtection": true,
+  "hardReloadOnChange": false,
+  "view": "browser",
+  "template": "node",
+  "container": {
+    "node": 14,
+    "port": 1337,
+    "startScript": "codesandbox"
+  }
+}

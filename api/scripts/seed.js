@@ -3,6 +3,7 @@ const util = require('util');
 const fse = require('fs-extra');
 const unzip = require('unzip-stream');
 const crypto = require('crypto');
+const uuid = require('uuid-v4');
 
 const zipPath = path.resolve('data.zip');
 const dataPath = path.resolve('data');
@@ -23,7 +24,34 @@ async function dumpSqlite() {
   await util.promisify(db.close).bind(db);
 }
 
+async function updateUid() {
+  const filePath = `./package.json`;
+
+  try {
+    if (fse.existsSync(filePath)) {
+      const rawFile = fse.readFileSync(filePath);
+      const packageJSON = JSON.parse(rawFile);
+
+      if (packageJSON.strapi.uuid.includes('FOODADVISOR')) return null;
+
+      packageJSON.strapi.uuid =
+        `FOODADVISOR-${process.env.GITPOD_WORKSPACE_URL ? 'GITPOD-' : 'LOCAL-'}` + uuid();
+
+      const data = JSON.stringify(packageJSON, null, 2);
+      fse.writeFileSync(filePath, data);
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
+
 async function seed() {
+  try {
+    await updateUid();
+  } catch (error) {
+    console.log(error);
+  }
+
   try {
     await fse.emptyDir(tmpPath);
   } catch (err) {
@@ -36,7 +64,7 @@ async function seed() {
     console.log(`Failed to remove ${uploadPath}`);
   }
 
-  await new Promise(resolve => {
+  await new Promise((resolve) => {
     fse
       .createReadStream(zipPath)
       .pipe(unzip.Extract({ path: '.' }))
@@ -61,18 +89,21 @@ async function seed() {
     console.log(`Failed to remove ${dataPath}`);
   }
 
-  try {
-    await fse.ensureFile(dotEnv);
-    await fse.writeFile(
-      dotEnv,
-      `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}`
-    );
-  } catch (err) {
-    console.log(`Failed to create ${dotEnv}`);
+  await fse.ensureFile(dotEnv);
+  const dotEnvData = fse.readFileSync(dotEnv).toString();
+  if (!dotEnvData.includes('ADMIN_JWT_SECRET')) {
+    try {
+      await fse.appendFile(
+        dotEnv,
+        `ADMIN_JWT_SECRET=${crypto.randomBytes(64).toString('base64')}\n`
+      );
+    } catch (err) {
+      console.log(`Failed to create ${dotEnv}`);
+    }
   }
 }
 
-seed().catch(error => {
+seed().catch((error) => {
   console.error(error);
   process.exit(1);
 });

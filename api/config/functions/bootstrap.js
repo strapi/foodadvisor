@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -8,4 +8,4 @@
  * run jobs, or perform some special logic.
  */
 
-module.exports = async () => { };
+module.exports = async () => {};

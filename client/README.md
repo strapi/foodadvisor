@@ -1,61 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FoodAdvisor - Client
 
-## Available Scripts
+![FoodAdvisor](../foodadvisor.png)
 
-In the project directory, you can run:
+Welcome to FoodAdvisor, the official Strapi demo application.
 
-### `yarn generate`
+## Get started
 
-`yarn generate` allows you to auto-generate boilerplate code for common parts of your
-application, specifically `component`s, and `container`s. You can
-also run `yarn generate <part>` to skip the first selection. (e.g. `yarn generate container`)
+You can get started with this project locally on your machine by following the instructions below or you can [request a private instance on our website](https://strapi.io/demo).
 
-### `yarn install`
+## Prerequisites
 
-`yarn install` installs all dependencies to make this project work.
+Be sure to have the correct env variables:
 
-### `yarn start`
+- Next.js (already in `.env.development`):
+  - `NEXT_PUBLIC_API_URL=<url-of-strapi>`
+  - `PREVIEW_SECRET=<the-same-random-token-as-for-strapi>`
 
-`yarn start` runs the app in the development mode.
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Start Next.js
 
-The page will reload if you make edits.
-
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-`yarn test` launches the test runner in the interactive watch mode.
-
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-`yarn build` builds the app for production to the `build` folder.
-
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. `yarneject` will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-### Config
-
-Retrieve strapi back-end URL :
+- Run the following command in your `./foodadvisor/client` folder
 
 ```
-const { env: { REACT_APP_BACKEND_URL } } = process;
+yarn && yarn dev
 ```
+
+This will install the dependencies, and run your server. You can run these commands separately.

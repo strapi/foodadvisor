@@ -59,15 +59,20 @@
       "via": "author",
       "collection": "review"
     },
-    "likes": {
-      "collection": "like",
-      "via": "author"
-    },
     "picture": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
+    },
+    "articles": {
+      "via": "author",
+      "collection": "article"
+    },
+    "job": {
+      "type": "string",
+      "required": true
     }
   }
 }

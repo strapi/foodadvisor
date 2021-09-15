@@ -13,23 +13,20 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
-    },
-    "restaurants": {
-      "via": "category",
-      "collection": "restaurant"
-    },
-    "previous_": {
-      "private": true,
-      "type": "json"
-    },
-    "author_": {
-      "private": true,
-      "type": "json"
+      "type": "string",
+      "required": true
     },
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "articles": {
+      "via": "category",
+      "collection": "article"
+    },
+    "restaurants": {
+      "via": "category",
+      "collection": "restaurant"
     }
   }
 }

@@ -2,7 +2,7 @@
   "connection": "default",
   "collectionName": "components_opening_hours",
   "info": {
-    "name": "opening-hours",
+    "name": "openingHours",
     "description": "",
     "icon": "calendar-alt"
   },

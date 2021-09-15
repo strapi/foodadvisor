@@ -50,7 +50,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -236,7 +238,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -301,7 +305,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": []
       }
     },
@@ -352,7 +358,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -412,7 +420,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "requestBody": {
           "description": "",
           "required": true,
@@ -484,7 +494,9 @@
           }
         },
         "summary": "",
-        "tags": ["Review"],
+        "tags": [
+          "Review"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -503,7 +515,10 @@
   "components": {
     "schemas": {
       "Review": {
-        "required": ["id"],
+        "required": [
+          "id",
+          "note"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -515,7 +530,12 @@
             "type": "integer"
           },
           "author": {
-            "required": ["id", "username", "email"],
+            "required": [
+              "id",
+              "username",
+              "email",
+              "job"
+            ],
             "properties": {
               "id": {
                 "type": "string"
@@ -550,13 +570,16 @@
                   "type": "string"
                 }
               },
-              "likes": {
+              "picture": {
+                "type": "string"
+              },
+              "articles": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "picture": {
+              "job": {
                 "type": "string"
               },
               "created_by": {
@@ -567,87 +590,49 @@
               }
             }
           },
-          "likes": {
-            "type": "array",
-            "items": {
-              "required": ["id"],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "author": {
-                  "type": "string"
-                },
-                "review": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "restaurant": {
-            "required": ["id", "opening_hours"],
+            "required": [
+              "id",
+              "name",
+              "images",
+              "price"
+            ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "cover": {
+              "seo": {
+                "type": "component"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "images": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "address": {
-                "type": "string"
-              },
-              "website": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
               "price": {
                 "type": "string",
-                "enum": ["_1", "_2", "_3", "_4"]
-              },
-              "district": {
-                "type": "string",
                 "enum": [
-                  "_1st",
-                  "_2nd",
-                  "_3rd",
-                  "_4th",
-                  "_5th",
-                  "_6th",
-                  "_7th",
-                  "_8th",
-                  "_9th",
-                  "_10th",
-                  "_11th",
-                  "_12th",
-                  "_13th",
-                  "_14th",
-                  "_15th",
-                  "_16th",
-                  "_17th",
-                  "_18th",
-                  "_19th",
-                  "_20th"
+                  "_1",
+                  "_2",
+                  "_3",
+                  "_4"
                 ]
               },
-              "publish_at": {
-                "type": "string"
+              "information": {
+                "type": "component"
+              },
+              "socialNetworks": {
+                "type": "component"
+              },
+              "blocks": {
+                "type": "dynamiczone"
               },
               "reviews": {
                 "type": "array",
@@ -658,20 +643,14 @@
               "category": {
                 "type": "string"
               },
-              "opening_hours": {
-                "type": "component"
+              "place": {
+                "type": "string"
               },
-              "seo": {
-                "type": "component"
+              "publish_at": {
+                "type": "string"
               },
-              "previous_": {
-                "type": "object"
-              },
-              "author_": {
-                "type": "object"
-              },
-              "slug": {
-                "type": "uid"
+              "ready": {
+                "type": "boolean"
               },
               "localizations": {
                 "type": "array",
@@ -696,7 +675,10 @@
           "localizations": {
             "type": "array",
             "items": {
-              "required": ["id"],
+              "required": [
+                "id",
+                "note"
+              ],
               "properties": {
                 "id": {
                   "type": "string"
@@ -709,12 +691,6 @@
                 },
                 "author": {
                   "type": "string"
-                },
-                "likes": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "restaurant": {
                   "type": "string"
@@ -743,6 +719,9 @@
         }
       },
       "NewReview": {
+        "required": [
+          "note"
+        ],
         "properties": {
           "content": {
             "type": "string"
@@ -752,12 +731,6 @@
           },
           "author": {
             "type": "string"
-          },
-          "likes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "restaurant": {
             "type": "string"

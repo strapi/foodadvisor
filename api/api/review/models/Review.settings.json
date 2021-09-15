@@ -27,22 +27,20 @@
       }
     },
     "note": {
-      "type": "integer",
-      "max": 5,
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": 1
     },
     "author": {
+      "via": "reviews",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "reviews"
-    },
-    "likes": {
-      "collection": "like",
-      "via": "review"
+      "model": "user"
     },
     "restaurant": {
       "via": "reviews",

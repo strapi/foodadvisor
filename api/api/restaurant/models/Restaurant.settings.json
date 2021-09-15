@@ -8,7 +8,10 @@
   },
   "options": {
     "increments": true,
-    "timestamps": ["created_at", "updated_at"],
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": "",
     "draftAndPublish": true
   },
@@ -18,11 +21,11 @@
     }
   },
   "attributes": {
-    "cover": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload",
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
       "required": false,
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -35,135 +38,8 @@
         "i18n": {
           "localized": true
         }
-      }
-    },
-    "description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "address": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "website": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "phone": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "price": {
-      "type": "enumeration",
-      "enum": ["_1", "_2", "_3", "_4"],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "district": {
-      "type": "enumeration",
-      "enum": [
-        "_1st",
-        "_2nd",
-        "_3rd",
-        "_4th",
-        "_5th",
-        "_6th",
-        "_7th",
-        "_8th",
-        "_9th",
-        "_10th",
-        "_11th",
-        "_12th",
-        "_13th",
-        "_14th",
-        "_15th",
-        "_16th",
-        "_17th",
-        "_18th",
-        "_19th",
-        "_20th"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "publish_at": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "reviews": {
-      "collection": "review",
-      "via": "restaurant"
-    },
-    "category": {
-      "model": "category",
-      "via": "restaurants"
-    },
-    "opening_hours": {
-      "type": "component",
-      "component": "restaurant.opening-hours",
-      "min": 1,
-      "repeatable": true,
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "seo": {
-      "type": "component",
-      "component": "restaurant.seo",
-      "required": false,
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "previous_": {
-      "private": true,
-      "type": "json",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "author_": {
-      "private": true,
-      "type": "json",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      },
+      "required": true
     },
     "slug": {
       "pluginOptions": {
@@ -173,6 +49,96 @@
       },
       "type": "uid",
       "targetField": "name"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "price": {
+      "type": "enumeration",
+      "enum": [
+        "_1",
+        "_2",
+        "_3",
+        "_4"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "information": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "restaurant.information"
+    },
+    "socialNetworks": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.social-networks"
+    },
+    "blocks": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "restaurant.rich-content",
+        "blocks.related-restaurants",
+        "blocks.faq",
+        "blocks.cta",
+        "blocks.cta-command-line"
+      ]
+    },
+    "reviews": {
+      "via": "restaurant",
+      "collection": "review"
+    },
+    "category": {
+      "model": "category",
+      "via": "restaurants"
+    },
+    "place": {
+      "via": "restaurants",
+      "model": "place"
+    },
+    "publish_at": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime"
+    },
+    "ready": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": true
     }
   }
 }
