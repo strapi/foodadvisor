@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "compress"
+  },
+  "options": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "primary",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
+    }
+  }
+}

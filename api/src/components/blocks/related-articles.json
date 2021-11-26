@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_article_related_articles",
+  "info": {
+    "displayName": "relatedArticles",
+    "icon": "caret-square-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}

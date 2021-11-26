@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_testimonials",
+  "info": {
+    "displayName": "testimonial",
+    "icon": "quote-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "primary"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

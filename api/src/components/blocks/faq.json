@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_faqs",
+  "info": {
+    "displayName": "faq",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "muted"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.question-answer"
+    }
+  }
+}

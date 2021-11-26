@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_pricing_cards",
+  "info": {
+    "displayName": "pricingCards",
+    "icon": "file-invoice-dollar"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "perks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pricing.perks"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_slices_features",
+  "info": {
+    "displayName": "features",
+    "icon": "search-plus"
+  },
+  "options": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "secondary"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card"
+    }
+  }
+}
