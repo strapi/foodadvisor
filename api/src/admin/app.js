@@ -1,33 +1,13 @@
+import PreviewButton from "./extensions/components/PreviewButton";
+
 export default {
   config: {
-    locales: [
-      // 'ar',
-      'fr',
-      // 'cs',
-      // 'de',
-      // 'dk',
-      // 'es',
-      // 'he',
-      // 'id',
-      // 'it',
-      // 'ja',
-      // 'ko',
-      // 'ms',
-      // 'nl',
-      // 'no',
-      // 'pl',
-      // 'pt-BR',
-      // 'pt',
-      // 'ru',
-      // 'sk',
-      // 'sv',
-      // 'th',
-      // 'tr',
-      // 'uk',
-      // 'vi',
-      // 'zh-Hans',
-      // 'zh',
-    ],
+    locales: ["fr"],
   },
-  bootstrap() {},
+  bootstrap(app) {
+    app.injectContentManagerComponent("editView", "right-links", {
+      name: "my-plugin-my-compo",
+      Component: PreviewButton,
+    });
+  },
 };
