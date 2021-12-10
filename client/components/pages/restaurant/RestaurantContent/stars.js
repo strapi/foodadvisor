@@ -1,5 +1,5 @@
 const Stars = ({ reviews }) => {
-  const notes = reviews.map((review) => review.note);
+  const notes = reviews.map((review) => review.attributes.note);
   const average = Math.floor(notes.reduce((a, b) => a + b, 0) / reviews.length);
 
   return (

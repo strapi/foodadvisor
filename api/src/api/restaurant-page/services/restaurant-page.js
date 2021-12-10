@@ -4,4 +4,6 @@
  * restaurant-page service.
  */
 
-module.exports = () => ({});
+const { createCoreService } = require("@strapi/strapi").factories;
+
+module.exports = createCoreService("api::restaurant-page.restaurant-page");

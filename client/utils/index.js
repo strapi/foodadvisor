@@ -1,20 +1,22 @@
-var pluralize = require('pluralize');
+var pluralize = require("pluralize");
 
 export function getStrapiMedia(url) {
   if (url == null) {
     return null;
   }
-  if (url.startsWith('http') || url.startsWith('//')) {
+  if (url.startsWith("http") || url.startsWith("//")) {
     return url;
   }
-  return `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${url}`;
+  return `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337"}${url}`;
 }
 
 export function getStrapiURL(path) {
-  return `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${path}`;
+  return `${
+    process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337"
+  }/api${path}`;
 }
 
-export function handleRedirection(slug, preview, custom) {
+export function handleRedirection(preview, custom) {
   if (preview) {
     return {
       redirect: {
@@ -32,7 +34,7 @@ export function handleRedirection(slug, preview, custom) {
   } else {
     return {
       redirect: {
-        destination: `/${slug}`,
+        destination: `/`,
         permanent: false,
       },
     };
@@ -41,33 +43,33 @@ export function handleRedirection(slug, preview, custom) {
 
 export function getData(slug, locale, apiID, kind, preview) {
   const previewParams = preview
-    ? '&_publicationState=preview&published_at_null=true'
-    : '';
+    ? "&publicationState=preview&published_at_null=true"
+    : "";
 
-  if (kind == 'collectionType') {
+  if (kind == "collectionType") {
     let prefix = `/${pluralize(apiID)}`;
-    if (apiID == 'page') {
+    if (apiID == "page") {
       prefix = ``;
-    } else if (apiID == 'article') {
+    } else if (apiID == "article") {
       prefix = `/blog`;
     }
     const slugToReturn = `${prefix}/${slug}?lang=${locale}`;
     const apiUrl = `/${pluralize(
       apiID
-    )}?slug=${slug}&_locale=${locale}${previewParams}`;
+    )}?filters[slug][$eq]=${slug}&locale=${locale}${previewParams}&populate[blocks][populate]=members.picture,header,buttons.link,faq,featuresCheck,cards,pricingCards.perks,articles,restaurants,author.picture,images,cards.image,image&populate=localizations`;
 
     return {
       data: getStrapiURL(apiUrl),
       slug: slugToReturn,
     };
   } else {
-    const apiUrl = `/${apiID}?_locale=${locale}${previewParams}`;
+    const apiUrl = `/${apiID}?locale=${locale}${previewParams}&populate[blocks][populate]=*&populate=localizations&populate[header]=*`;
 
-    if (apiID.includes('-page')) {
+    if (apiID.includes("-page")) {
       const slugToReturn =
-        apiID == 'blog-page'
-          ? `/${apiID.replace('-page', '')}?lang=${locale}`
-          : `/${apiID.replace('-page', 's')}?lang=${locale}`;
+        apiID == "blog-page"
+          ? `/${apiID.replace("-page", "")}?lang=${locale}`
+          : `/${apiID.replace("-page", "s")}?lang=${locale}`;
       return {
         data: getStrapiURL(apiUrl),
         slug: slugToReturn,
@@ -82,73 +84,62 @@ export function getData(slug, locale, apiID, kind, preview) {
 }
 
 export async function getRestaurants(key) {
-  const categoryId = key.queryKey[1].category;
-  const placeId = key.queryKey[2].place;
+  const categoryName = key.queryKey[1].category;
+  const placeName = key.queryKey[2].place;
   const localeCode = key.queryKey[3].locale;
   const pageNumber = key.queryKey[4].page;
   const perPage = key.queryKey[5].perPage;
   const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * perPage;
 
-  let baseUrl = getStrapiURL(`/restaurants?_limit=${perPage}&_start=${start}`);
-  let countUrl = getStrapiURL(`/restaurants/count`);
+  let baseUrl = getStrapiURL(
+    `/restaurants?pagination[limit]=${perPage}&pagination[start]=${start}&pagination[withCount]=true&populate=images,category,place,information`
+  );
 
-  if (categoryId) {
-    baseUrl = `${baseUrl}&category.id=${categoryId}`;
-    countUrl = `${countUrl}?category.id=${categoryId}`;
+  if (categoryName) {
+    baseUrl = `${baseUrl}&filters[category][name][$eq]=${categoryName}`;
   }
 
-  if (placeId) {
-    baseUrl = `${baseUrl}&place.id=${placeId}`;
-    countUrl = categoryId
-      ? `${countUrl}&place.id=${placeId}`
-      : `${countUrl}?place.id=${placeId}`;
+  if (placeName) {
+    baseUrl = `${baseUrl}&filters[place][name][$eq]=${placeName}`;
   }
 
   if (localeCode) {
-    baseUrl = `${baseUrl}&_locale=${localeCode}`;
-    countUrl =
-      placeId || categoryId
-        ? `${countUrl}&_locale=${localeCode}`
-        : `${countUrl}?_locale=${localeCode}`;
+    baseUrl = `${baseUrl}&locale=${localeCode}`;
   }
-
-  const resCountFilteredRestaurants = await fetch(countUrl);
-  const countFilteredRestaurants = await resCountFilteredRestaurants.json();
 
   const res = await fetch(baseUrl);
   const restaurants = await res.json();
 
-  return { restaurants, count: countFilteredRestaurants };
+  return {
+    restaurants: restaurants.data,
+    count: restaurants.meta.pagination.total,
+  };
 }
 
 export async function getArticles(key) {
-  const categoryId = key.queryKey[1].category;
+  const categoryName = key.queryKey[1].category;
   const localeCode = key.queryKey[2].locale;
   const pageNumber = key.queryKey[3].page;
   const perPage = key.queryKey[4].perPage;
 
   const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * perPage;
 
-  let baseUrl = getStrapiURL(`/articles?_limit=${perPage}&_start=${start}`);
-  let countUrl = getStrapiURL(`/articles/count`);
+  let baseUrl = getStrapiURL(
+    `/articles?pagination[limit]=${perPage}&pagination[start]=${start}&pagination[withCount]=true&populate=image,category,author,seo`
+  );
 
-  if (categoryId) {
-    baseUrl = `${baseUrl}&category.id=${categoryId}`;
-    countUrl = `${countUrl}?category.id=${categoryId}`;
+  if (categoryName) {
+    baseUrl = `${baseUrl}&filters[category][name][$eq]=${categoryName}`;
   }
 
   if (localeCode) {
-    baseUrl = `${baseUrl}&_locale=${localeCode}`;
-    countUrl = categoryId
-      ? `${countUrl}&_locale=${localeCode}`
-      : `${countUrl}?_locale=${localeCode}`;
+    baseUrl = `${baseUrl}&locale=${localeCode}`;
   }
-
-  const resCountFilteredArticles = await fetch(countUrl);
-  const countFilteredArticles = await resCountFilteredArticles.json();
 
   const res = await fetch(baseUrl);
   const articles = await res.json();
 
-  return { articles, count: countFilteredArticles };
+  console.log(articles.data);
+
+  return { articles: articles.data, count: articles.meta.pagination.total };
 }

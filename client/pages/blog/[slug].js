@@ -1,13 +1,12 @@
-import delve from 'dlv';
-import Layout from '../../components/layout';
-import ArticleContent from '../../components/pages/blog/ArticleContent';
-import BlockManager from '../../components/shared/BlockManager';
-import { getStrapiURL, handleRedirection } from '../../utils';
-import { getLocalizedParams } from '../../utils/localize';
-import { getDataDependencies } from '../../services/api';
+import delve from "dlv";
+import Layout from "../../components/layout";
+import ArticleContent from "../../components/pages/blog/ArticleContent";
+import BlockManager from "../../components/shared/BlockManager";
+import { getStrapiURL, handleRedirection } from "../../utils";
+import { getLocalizedParams } from "../../utils/localize";
 
 const Article = ({ global, pageData, preview }) => {
-  const blocks = delve(pageData, 'blocks');
+  const blocks = delve(pageData, "attributes.blocks");
   return (
     <>
       <Layout
@@ -27,22 +26,21 @@ const Article = ({ global, pageData, preview }) => {
 export async function getServerSideProps(context) {
   const { locale } = getLocalizedParams(context.query);
   const preview = context.preview
-    ? '&_publicationState=preview&published_at_null=true'
-    : '';
+    ? "&publicationState=preview&published_at_null=true"
+    : "";
   const res = await fetch(
     getStrapiURL(
-      `/articles?slug=${context.params.slug}&_locale=${locale}${preview}`
+      `/articles?filters[slug]=${context.params.slug}&locale=${locale}${preview}&populate=localizations,image,author.picture,blocks.articles.image,blocks.faq,blocks.header`
     )
   );
   const json = await res.json();
 
-  if (!json.length) {
-    return handleRedirection(context.params.slug, context.preview, 'blog');
+  if (!json.data.length) {
+    return handleRedirection(context.params.slug, context.preview, "blog");
   }
 
-  const pageData = await getDataDependencies(delve(json, '0'));
   return {
-    props: { pageData, preview: context.preview || null },
+    props: { pageData: json.data[0], preview: context.preview || null },
   };
 }
 

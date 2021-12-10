@@ -17,7 +17,7 @@ const OverallRating = ({ reviews }) => {
     );
   }
 
-  const notes = reviews.map((review) => review.note);
+  const notes = reviews.map((review) => review.attributes.note);
   const average = notes.reduce((a, b) => a + b, 0) / reviewsCount;
 
   const reviewNotes = [

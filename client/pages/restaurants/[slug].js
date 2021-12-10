@@ -1,13 +1,13 @@
-import delve from 'dlv';
-import Layout from '../../components/layout';
-import RestaurantContent from '../../components/pages/restaurant/RestaurantContent';
-import BlockManager from '../../components/shared/BlockManager';
-import { getStrapiURL } from '../../utils';
-import { getLocalizedParams } from '../../utils/localize';
-import { getDataDependencies } from '../../services/api';
+import delve from "dlv";
+import Layout from "../../components/layout";
+import RestaurantContent from "../../components/pages/restaurant/RestaurantContent";
+import BlockManager from "../../components/shared/BlockManager";
+import { getStrapiURL, handleRedirection } from "../../utils";
+import { getLocalizedParams } from "../../utils/localize";
 
-const Restaurant = ({ global, pageData, reviews, preview }) => {
-  const blocks = delve(pageData, 'blocks');
+const Restaurant = ({ global, pageData, preview }) => {
+  const blocks = delve(pageData, "attributes.blocks");
+  console.log(blocks);
   return (
     <>
       <Layout
@@ -16,7 +16,7 @@ const Restaurant = ({ global, pageData, reviews, preview }) => {
         preview={preview}
         type="restaurant"
       >
-        <RestaurantContent pageData={pageData} reviews={reviews} />
+        <RestaurantContent pageData={pageData} />
         {blocks && <BlockManager blocks={blocks} />}
       </Layout>
     </>
@@ -26,33 +26,28 @@ const Restaurant = ({ global, pageData, reviews, preview }) => {
 export async function getServerSideProps(context) {
   const { locale } = getLocalizedParams(context.query);
   const preview = context.preview
-    ? '&_publicationState=preview&published_at_null=true'
-    : '';
+    ? "&publicationState=preview&published_at_null=true"
+    : "";
   const res = await fetch(
     getStrapiURL(
-      `/restaurants?slug=${context.params.slug}&_locale=${locale}${preview}`
+      `/restaurants?filters[slug]=${context.params.slug}&locale=${locale}${preview}&populate[reviews][populate]=author,author.picture&populate[information][populate]=opening_hours,location&populate[images][fields]=url&populate[category][fields]=name&populate[localizations]=*&populate[socialNetworks]=*&populate[blocks][populate]=restaurants.images,header,faq,buttons.link`
     )
   );
   const json = await res.json();
 
-  const resReview = await fetch(
-    getStrapiURL(
-      `/reviews?restaurant.slug=${context.params.slug}&_locale=${locale}&_publicationState=preview`
-    )
-  );
-  const reviews = await resReview.json();
-
-  if (!json.length) {
+  if (!json.data.length) {
     return handleRedirection(
       context.params.slug,
       context.preview,
-      'restaurants'
+      "restaurants"
     );
   }
 
-  const pageData = await getDataDependencies(delve(json, '0'));
   return {
-    props: { pageData, reviews, preview: context.preview || null },
+    props: {
+      pageData: json.data[0],
+      preview: context.preview || null,
+    },
   };
 }
 

@@ -44,7 +44,7 @@ export async function checkRequiredData(block) {
 }
 
 export async function getDataDependencies(json) {
-  let blocks = delve(json, 'blocks', []);
+  let blocks = delve(json, 'attributes.blocks', []);
   blocks = await Promise.all(blocks.map(checkRequiredData));
   return {
     ...json,

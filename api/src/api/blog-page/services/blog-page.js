@@ -1,7 +1,9 @@
-'use strict';
+"use strict";
 
 /**
  * blog-page service.
  */
 
-module.exports = () => ({});
+const { createCoreService } = require("@strapi/strapi").factories;
+
+module.exports = createCoreService("api::blog-page.blog-page");

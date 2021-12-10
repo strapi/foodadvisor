@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "foodadvisor-v-4",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -12,13 +12,14 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.0.0-beta.13",
-    "@strapi/plugin-users-permissions": "4.0.0-beta.13",
-    "@strapi/strapi": "4.0.0-beta.13",
+    "@strapi/plugin-i18n": "4.0.0",
+    "@strapi/plugin-users-permissions": "4.0.0",
+    "@strapi/strapi": "4.0.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.0.0",
     "lodash": "^4.17.21",
     "lodash.set": "^4.3.2",
+    "qs": "^6.10.2",
     "sqlite3": "5.0.2",
     "unzip-stream": "^0.3.1",
     "uuid-v4": "^0.1.0"
@@ -27,7 +28,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "8624288a-3ec7-4810-bfb8-ddc7a8b9c48c"
+    "uuid": "FOODADVISOR-LOCAL-092c44de-692e-4d21-acfa-ed40a3fe01a9"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",

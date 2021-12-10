@@ -1,44 +1,5 @@
-module.exports = {
-  routes: [
-    {
-      method: 'GET',
-      path: '/logs',
-      handler: 'log.find',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'GET',
-      path: '/logs/:id',
-      handler: 'log.findOne',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'POST',
-      path: '/logs',
-      handler: 'log.create',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'PUT',
-      path: '/logs/:id',
-      handler: 'log.update',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'DELETE',
-      path: '/logs/:id',
-      handler: 'log.delete',
-      config: {
-        policies: [],
-      },
-    },
-  ],
-};
+"use strict";
+
+const { createCoreRouter } = require("@strapi/strapi").factories;
+
+module.exports = createCoreRouter("api::log.log");

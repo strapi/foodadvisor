@@ -1,44 +1,5 @@
-module.exports = {
-  routes: [
-    {
-      method: 'GET',
-      path: '/places',
-      handler: 'place.find',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'GET',
-      path: '/places/:id',
-      handler: 'place.findOne',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'POST',
-      path: '/places',
-      handler: 'place.create',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'PUT',
-      path: '/places/:id',
-      handler: 'place.update',
-      config: {
-        policies: [],
-      },
-    },
-    {
-      method: 'DELETE',
-      path: '/places/:id',
-      handler: 'place.delete',
-      config: {
-        policies: [],
-      },
-    },
-  ],
-};
+"use strict"
+
+const { createCoreRouter } = require("@strapi/strapi").factories;
+
+module.exports = createCoreRouter("api::place.place");

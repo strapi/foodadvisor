@@ -1,5 +1,5 @@
-import delve from 'dlv';
-import { getStrapiMedia } from '../../../utils';
+import delve from "dlv";
+import { getStrapiMedia } from "../../../utils";
 
 const Testimonial = ({ theme, text, author }) => {
   return (
@@ -17,8 +17,13 @@ const Testimonial = ({ theme, text, author }) => {
           <div className="flex items-center justify-center mt-8">
             <div className="block relative">
               <img
-                alt={delve(author, 'picture.alternativeText')}
-                src={getStrapiMedia(delve(author, 'picture.url'))}
+                alt={delve(
+                  author,
+                  "data.attributes.picture.data.attributes.alternativeText"
+                )}
+                src={getStrapiMedia(
+                  delve(author, "data.attributes.picture.data.attributes.url")
+                )}
                 className="mx-auto object-cover rounded-full h-10 w-10 "
               />
             </div>
@@ -27,13 +32,13 @@ const Testimonial = ({ theme, text, author }) => {
               <span
                 className={`font-semibold text-${theme} mr-2 text-md md:text-lg`}
               >
-                {delve(author, 'username')}
+                {delve(author, "data.attributes.username")}
               </span>
               <span className="text-gray-400 text-xs md:text-xl font-light">
                 /
               </span>
               <span className="text-gray-400 text-xs md:text-lg ml-2">
-                {delve(author, 'job')}
+                {delve(author, "data.attributes.job")}
               </span>
             </div>
           </div>

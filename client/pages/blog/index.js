@@ -1,14 +1,14 @@
-import delve from 'dlv';
-import { useState } from 'react';
-import { useQuery } from 'react-query';
-import Layout from '../../components/layout';
-import NoResults from '../../components/no-results';
-import ArticleCard from '../../components/pages/blog/ArticleCard';
-import BlockManager from '../../components/shared/BlockManager';
-import Container from '../../components/shared/Container';
-import Header from '../../components/shared/Header';
-import { getArticles, getData, getStrapiURL } from '../../utils';
-import { getLocalizedParams } from '../../utils/localize';
+import delve from "dlv";
+import { useState } from "react";
+import { useQuery } from "react-query";
+import Layout from "../../components/layout";
+import NoResults from "../../components/no-results";
+import ArticleCard from "../../components/pages/blog/ArticleCard";
+import BlockManager from "../../components/shared/BlockManager";
+import Container from "../../components/shared/Container";
+import Header from "../../components/shared/Header";
+import { getArticles, getData, getStrapiURL } from "../../utils";
+import { getLocalizedParams } from "../../utils/localize";
 
 const Articles = ({
   global,
@@ -22,13 +22,13 @@ const Articles = ({
   const [categoryId, setCategoryId] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const blocks = delve(pageData, 'blocks');
-  const header = delve(pageData, 'header');
-  const categoryText = delve(pageData, 'categoryText');
+  const blocks = delve(pageData, "attributes.blocks");
+  const header = delve(pageData, "attributes.header");
+  const categoryText = delve(pageData, "attributes.categoryText");
 
   const { data, status } = useQuery(
     [
-      'articles',
+      "articles",
       { category: categoryId },
       { locale: locale },
       { page: pageNumber },
@@ -60,13 +60,16 @@ const Articles = ({
               >
                 <option value="">
                   {categoryId
-                    ? 'Clear filter'
-                    : categoryText || 'Select a category'}
+                    ? "Clear filter"
+                    : categoryText || "Select a category"}
                 </option>
                 {categories &&
                   categories.map((category, index) => (
-                    <option key={`categoryOption-${index}`} value={category.id}>
-                      {category.name}
+                    <option
+                      key={`categoryOption-${index}`}
+                      value={delve(category, "attributes.id")}
+                    >
+                      {delve(category, "attributes.name")}
                     </option>
                   ))}
               </select>
@@ -74,13 +77,13 @@ const Articles = ({
           </div>
         </div>
 
-        <NoResults status={status} length={delve(data, 'articles.length')} />
+        <NoResults status={status} length={delve(data, "articles").length} />
 
         <div className="grid md:grid-cols-2 grid-cols-1 gap-40 mt-24 px-4">
-          {status === 'success' &&
-            delve(data, 'articles') &&
+          {status === "success" &&
+            delve(data, "articles") &&
             data.articles.map((article, index) => (
-              <ArticleCard {...article} locale={locale} key={index} />
+              <ArticleCard {...article.attributes} locale={locale} key={index} />
             ))}
         </div>
 
@@ -91,7 +94,7 @@ const Articles = ({
                 <button
                   type="button"
                   className={`${
-                    pageNumber <= 1 ? 'cursor-not-allowed opacity-50' : ''
+                    pageNumber <= 1 ? "cursor-not-allowed opacity-50" : ""
                   } w-full p-4 border text-base rounded-l-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
                   onClick={() => setPageNumber(pageNumber - 1)}
                   disabled={pageNumber <= 1}
@@ -103,8 +106,8 @@ const Articles = ({
                   type="button"
                   className={`${
                     pageNumber >= lastPage
-                      ? 'cursor-not-allowed opacity-50'
-                      : ''
+                      ? "cursor-not-allowed opacity-50"
+                      : ""
                   } w-full p-4 border-t border-b border-r text-base rounded-r-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
                   onClick={() => setPageNumber(pageNumber + 1)}
                   disabled={pageNumber >= lastPage}
@@ -127,38 +130,40 @@ export async function getServerSideProps(context) {
   const data = getData(
     null,
     locale,
-    'blog-page',
-    'singleType',
+    "blog-page",
+    "singleType",
     context.preview
   );
 
   try {
-    const resBlogPage = await fetch(delve(data, 'data'));
+    const resBlogPage = await fetch(delve(data, "data"));
     const blogPage = await resBlogPage.json();
-    const perPage = delve(blogPage, 'articlesPerPage') || 12;
+    const perPage = delve(blogPage, "articlesPerPage") || 12;
 
     const resArticles = await fetch(
-      getStrapiURL(`/articles?_limit=${perPage}&_locale=${locale}`)
+      getStrapiURL(
+        `/articles?pagination[limit]=${perPage}&locale=${locale}&pagination[withCount]=true&populate=image,category,author`
+      )
     );
-    const restaurants = await resArticles.json();
+    const articles = await resArticles.json();
 
-    const resCountArticles = await fetch(
-      getStrapiURL(`/articles/count?_locale=${locale}`)
+    const resCategories = await fetch(
+      getStrapiURL(`/categories?pagination[limit]=99`)
     );
-    const countArticles = await resCountArticles.json();
-
-    const resCategories = await fetch(getStrapiURL(`/categories`));
     const categories = await resCategories.json();
 
-    if (!restaurants.length || !categories.length) {
-      return handleRedirection(slug, context.preview, '');
+    if (!articles.data.length || !categories.data.length) {
+      return handleRedirection(slug, context.preview, "");
     }
 
     return {
       props: {
-        initialData: { restaurants, count: countArticles },
-        pageData: blogPage,
-        categories,
+        initialData: {
+          articles: articles.data,
+          count: articles.meta.pagination.total,
+        },
+        pageData: blogPage.data,
+        categories: categories.data,
         locale,
         perPage,
         preview: context.preview || null,
@@ -167,7 +172,7 @@ export async function getServerSideProps(context) {
   } catch (error) {
     return {
       redirect: {
-        destination: '/',
+        destination: "/",
         permanent: false,
       },
     };
