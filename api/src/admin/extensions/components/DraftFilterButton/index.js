@@ -3,6 +3,7 @@ import { Button } from "@strapi/design-system/Button";
 import Write from "@strapi/icons/Write";
 import { useQueryParams } from "@strapi/helper-plugin";
 import { useIntl } from "react-intl";
+import { useLocation } from "react-router-dom";
 
 const ReviewContent = () => {
   const { formatMessage } = useIntl();
@@ -12,6 +13,12 @@ const ReviewContent = () => {
   const hasPublishFilter = filters.find((filter) => filter.publishedAt);
   const hasPreviewFilter =
     hasReadyFilter !== undefined && hasPublishFilter !== undefined;
+  const validPathNames = [
+    "/content-manager/collectionType/api::article.article",
+    "/content-manager/collectionType/api::restaurant.restaurant",
+    "/content-manager/collectionType/api::page.page",
+  ];
+  const displayButton = validPathNames.includes(useLocation().pathname);
 
   const handleClick = () => {
     if (hasPreviewFilter) {
@@ -48,11 +55,14 @@ const ReviewContent = () => {
         defaultMessage: "Show drafts",
       };
 
-  return (
-    <Button variant="secondary" startIcon={<Write />} onClick={handleClick}>
-      {formatMessage(content)}
-    </Button>
-  );
+  if (displayButton) {
+    return (
+      <Button variant="secondary" startIcon={<Write />} onClick={handleClick}>
+        {formatMessage(content)}
+      </Button>
+    );
+  }
+  return <></>;
 };
 
 export default ReviewContent;

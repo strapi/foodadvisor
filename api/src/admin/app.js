@@ -9,21 +9,23 @@ export default {
         "components.DraftFilterButton.show-drafts": "Afficher les drafts",
         "components.DraftFilterButton.hide-drafts":
           "Ne pas afficher les drafts",
+        "components.PreviewButton.button": "Prévisualiser",
       },
       en: {
         "components.DraftFilterButton.show-drafts": "Show drafts",
         "components.DraftFilterButton.hide-drafts": "Hide drafts",
+        "components.PreviewButton.button": "Preview",
       },
     },
   },
   bootstrap(app) {
-    app.injectContentManagerComponent("editView", "right-links", {
-      name: "my-plugin-my-compo",
-      Component: PreviewButton,
-    });
     app.injectContentManagerComponent("listView", "actions", {
-      name: "my-plugin-my-compo",
+      name: "DraftFilterButton",
       Component: DraftFilterButton,
+    });
+    app.injectContentManagerComponent("editView", "right-links", {
+      name: "PreviewButton",
+      Component: PreviewButton,
     });
   },
 };

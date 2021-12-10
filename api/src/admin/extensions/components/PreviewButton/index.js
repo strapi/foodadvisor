@@ -2,8 +2,10 @@ import React from "react";
 import { Button } from "@strapi/design-system/Button";
 import Eye from "@strapi/icons/Eye";
 import { useCMEditViewDataManager } from "@strapi/helper-plugin";
+import { useIntl } from "react-intl";
 
 const PreviewButton = () => {
+  const { formatMessage } = useIntl();
   const { modifiedData, layout } = useCMEditViewDataManager();
   const bannedApiID = ["category"];
 
@@ -28,9 +30,14 @@ const PreviewButton = () => {
     window.open(previewUrl, "_blank").focus();
   };
 
+  const content = {
+    id: "components.PreviewButton.button",
+    defaultMessage: "Preview",
+  };
+
   return (
     <Button variant="secondary" startIcon={<Eye />} onClick={handlePreview}>
-      Preview
+      {formatMessage(content)}
     </Button>
   );
 };
