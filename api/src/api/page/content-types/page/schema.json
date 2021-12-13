@@ -81,6 +81,15 @@
         }
       },
       "required": true
+    },
+    "comment": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text",
+      "private": true
     }
   }
 }

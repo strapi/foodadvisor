@@ -7,7 +7,6 @@ import { getLocalizedParams } from "../../utils/localize";
 
 const Restaurant = ({ global, pageData, preview }) => {
   const blocks = delve(pageData, "attributes.blocks");
-  console.log(blocks);
   return (
     <>
       <Layout

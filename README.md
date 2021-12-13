@@ -19,8 +19,8 @@ You can get started with this project locally on your machine by following the i
 Be sure to have the correct env variables for each part:
 
 - Strapi (example in `./api/.env.example`):
-  - `CLIENT_URL=<url-of-nextjs>`
-  - `CLIENT_PREVIEW_SECRET=<a-random-token>`
+  - `STRAPI_ADMIN_CLIENT_URL=<url-of-nextjs>`
+  - `STRAPI_ADMIN_CLIENT_PREVIEW_SECRET=<a-random-token>`
 
 - Next.js (already in `./client/.env.development`):
   - `NEXT_PUBLIC_API_URL=<url-of-strapi>`
@@ -81,4 +81,4 @@ This will install the dependencies, and run your server. You can run these comma
 
 ## Resources
 
- [Resource center](https://strapi.io/resource-center) • [Demo](https://strapi.io/demo) • [Starters](https://strapi.io/starters) • [Become a Strapi expert](https://academy.strapi.io/) • [Forum](https://forum.strapi.io/) • [Discord](https://discord.strapi.io) • [Youtube](https://www.youtube.com/c/Strapi/featured) • [Try Enterprise Edition](https://strapi.io/enterprise)
+[Docs](https://docs.strapi.io) • [Demo](https://strapi.io/demo) • [Starters](https://strapi.io/starters) • [Forum](https://forum.strapi.io/) • [Discord](https://discord.strapi.io) • [Youtube](https://www.youtube.com/c/Strapi/featured) • [Try Enterprise Edition](https://strapi.io/enterprise) • [Strapi Design System](https://design-system.strapi.io/) • [Marketplace](https://market.strapi.io/)

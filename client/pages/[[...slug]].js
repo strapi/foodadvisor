@@ -4,7 +4,6 @@ import Layout from "../components/layout";
 import BlockManager from "../components/shared/BlockManager";
 import { getData, handleRedirection } from "../utils";
 import { getLocalizedParams } from "../utils/localize";
-import { getDataDependencies } from "../services/api";
 
 const Universals = ({ global, pageData, preview }) => {
   if (pageData === null) {

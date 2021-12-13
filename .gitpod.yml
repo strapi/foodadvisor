@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+tasks:
+  - name: Strapi
+    init: >
+      cd /workspace/foodadvisor/api &&
+      yarn install &&
+      yarn seed &&
+      echo STRAPI_ADMIN_CLIENT_PREVIEW_SECRET=ARNFCb9zrC9ZHm5hZzCigWivD40icS4s >> .env &&
+      echo STRAPI_ADMIN_CLIENT_URL=$(sed s#https://#https://3000-#g <<< $GITPOD_WORKSPACE_URL) >> .env &&
+      gp sync-done strapi
+    command: yarn develop
+  - name: Next.js
+    init: |
+      cd /workspace/foodadvisor/client &&
+      gp sync-await strapi
+      yarn install &&
+      sed -i "1s#.*#NEXT_PUBLIC_API_URL=$(sed s#https://#https://1337-#g <<< $GITPOD_WORKSPACE_URL)#" .env.development
+    command: yarn dev
+ports:
+  - port: 1337
+    onOpen: open-browser
+    visibility: public
+  - port: 3000
+    onOpen: open-browser
+    visibility: public

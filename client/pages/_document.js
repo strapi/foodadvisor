@@ -32,6 +32,12 @@ class MyDocument extends Document {
               __html: `var typebot = Typebot.Chat({publishId: "faq-mj24-mnn49",buttonColor: "#e27d60",buttonIconUrl: "",loadingColors: {chatBackground: "#ffffff",bubbleBackground: "#F7F8FF",typingDots: "#303235",},proactiveMessage: {avatar: "undefined",textContent: "Contact the sales team",delay: 60000,remember: true}});`,
             }}
           ></script>
+          <script
+            type="text/javascript"
+            async
+            defer
+            src="https://buttons.github.io/buttons.js"
+          />
           <Main />
           <NextScript />
         </body>

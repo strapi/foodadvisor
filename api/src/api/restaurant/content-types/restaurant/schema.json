@@ -143,6 +143,15 @@
       "relation": "oneToMany",
       "target": "api::review.review",
       "mappedBy": "restaurant"
+    },
+    "comment": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text",
+      "private": true
     }
   }
 }

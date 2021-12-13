@@ -1,5 +1,7 @@
-import DraftFilterButton from "./extensions/components/DraftFilterButton";
 import PreviewButton from "./extensions/components/PreviewButton";
+import TweetButton from "./extensions/components/TweetButton";
+import InternalComment from "./extensions/components/InternalComment";
+import DraftFilterButton from "./extensions/components/DraftFilterButton";
 
 export default {
   config: {
@@ -10,11 +12,13 @@ export default {
         "components.DraftFilterButton.hide-drafts":
           "Ne pas afficher les drafts",
         "components.PreviewButton.button": "Prévisualiser",
+        "components.TweetButton.button": "Partager sur Twitter",
       },
       en: {
         "components.DraftFilterButton.show-drafts": "Show drafts",
         "components.DraftFilterButton.hide-drafts": "Hide drafts",
         "components.PreviewButton.button": "Preview",
+        "components.TweetButton.button": "Share on Twitter",
       },
     },
   },
@@ -26,6 +30,14 @@ export default {
     app.injectContentManagerComponent("editView", "right-links", {
       name: "PreviewButton",
       Component: PreviewButton,
+    });
+    app.injectContentManagerComponent("editView", "right-links", {
+      name: "InternalComment",
+      Component: InternalComment,
+    });
+    app.injectContentManagerComponent("editView", "right-links", {
+      name: "TweetButton",
+      Component: TweetButton,
     });
   },
 };

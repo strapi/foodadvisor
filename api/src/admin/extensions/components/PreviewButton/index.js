@@ -7,6 +7,7 @@ import { useIntl } from "react-intl";
 const PreviewButton = () => {
   const { formatMessage } = useIntl();
   const { modifiedData, layout } = useCMEditViewDataManager();
+
   const bannedApiID = ["category"];
 
   if (
@@ -36,9 +37,11 @@ const PreviewButton = () => {
   };
 
   return (
-    <Button variant="secondary" startIcon={<Eye />} onClick={handlePreview}>
-      {formatMessage(content)}
-    </Button>
+    <>
+      <Button variant="secondary" startIcon={<Eye />} onClick={handlePreview}>
+        {formatMessage(content)}
+      </Button>
+    </>
   );
 };
 

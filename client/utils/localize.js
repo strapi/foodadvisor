@@ -1,20 +1,20 @@
-import delve from "dlv";
-import { getStrapiURL } from ".";
+import delve from 'dlv';
+import { getStrapiURL } from '.';
 
 export function getLocalizedParams(query) {
-  const lang = delve(query, "lang");
-  const slug = delve(query, "slug");
+  const lang = delve(query, 'lang');
+  const slug = delve(query, 'slug');
 
-  return { slug: slug || "", locale: lang || "en" };
+  return { slug: slug || '', locale: lang || 'en' };
 }
 
 export function localizePath(localePage, type) {
   const { locale, slug } = localePage;
 
   switch (type) {
-    case "restaurant":
+    case 'restaurant':
       return `/restaurants/${slug}?lang=${locale}`;
-    case "article":
+    case 'article':
       return `/blog/${slug}?lang=${locale}`;
 
     default:
@@ -24,16 +24,16 @@ export function localizePath(localePage, type) {
 
 function getUrl(type, localization, targetLocale) {
   switch (type) {
-    case "pages":
-      return `/pages/${delve(localization, "id")}`;
-    case "restaurant-page":
+    case 'pages':
+      return `/pages/${delve(localization, 'id')}`;
+    case 'restaurant-page':
       return `/restaurant-page?locale=${targetLocale}`;
-    case "blog-page":
-      return `/blog-page?_locale=${targetLocale}`;
-    case "article":
-      return `/articles/${delve(localization, "id")}?locale=${targetLocale}`;
-    case "restaurant":
-      return `/restaurants/${delve(localization, "id")}?locale=${targetLocale}`;
+    case 'blog-page':
+      return `/blog-page?locale=${targetLocale}`;
+    case 'article':
+      return `/articles/${delve(localization, 'id')}?locale=${targetLocale}`;
+    case 'restaurant':
+      return `/restaurants/${delve(localization, 'id')}?locale=${targetLocale}`;
     default:
       break;
   }
@@ -41,7 +41,7 @@ function getUrl(type, localization, targetLocale) {
 
 export async function getLocalizedData(targetLocale, pageData, type) {
   const localization = pageData.attributes.localizations.data.find(
-    (localization) => localization.attributes.locale === "fr-FR"
+    (localization) => localization.attributes.locale === 'fr-FR'
   );
   const url = getUrl(type, localization, targetLocale);
   const res = await fetch(getStrapiURL(url));

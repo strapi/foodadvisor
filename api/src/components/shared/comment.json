@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_comments",
+  "info": {
+    "displayName": "comment",
+    "icon": "comment-dots"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}
