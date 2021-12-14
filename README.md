@@ -41,7 +41,7 @@ git clone https://github.com/strapi/foodadvisor.git
 - Run the following command in your `./foodadvisor/api` folder:
 
 ```
-yarn && yarn run seed && yarn develop
+yarn && yarn seed && yarn develop
 ```
 
 This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
