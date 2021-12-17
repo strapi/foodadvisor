@@ -16,26 +16,39 @@ const Reviews = ({ reviews }) => {
               <div className="flex-shrink-0">
                 <div className="inline-block relative">
                   <img
-                    alt="profil"
-                    src={getStrapiMedia(delve(review, 'author.picture.url'))}
+                    alt={delve(
+                      review,
+                      "attributes.author.data.attributes.picture.data.attributes.alternativeText"
+                    )}
+                    src={getStrapiMedia(
+                      delve(
+                        review,
+                        "attributes.author.data.attributes.picture.data.attributes.url"
+                      )
+                    )}
                     className="mx-auto object-cover rounded-full h-16 w-16 "
                   />
                 </div>
               </div>
-              {delve(review, 'author') && (
+              {delve(review, "attributes.author") && (
                 <div className="ml-6">
                   <p className="flex items-baseline">
                     <span className="text-gray-600 dark:text-gray-200 font-bold">
-                      {delve(review, 'author.username')}
+                      {delve(
+                        review,
+                        "attributes.author.data.attributes.username"
+                      )}
                     </span>
                     <span className="text-gray-500 ml-2 text-sm">
-                      <Moment fromNow>{delve(review, 'created_at')}</Moment>
+                      <Moment fromNow>
+                        {delve(review, "attributes.createdAt")}
+                      </Moment>
                     </span>
                   </p>
 
                   <div className="flex items-center mt-1">
                     {[...Array(5).keys()].map((index) =>
-                      delve(review, 'note') <= index ? (
+                      delve(review, "attributes.note") <= index ? (
                         <svg
                           fill="none"
                           stroke="currentColor"
@@ -64,10 +77,10 @@ const Reviews = ({ reviews }) => {
                       )
                     )}
                   </div>
-                  {delve(review, 'content') && (
+                  {delve(review, "attributes.content") && (
                     <div className="mt-3">
                       <p className="mt-1  dark:text-white">
-                        {delve(review, 'content')}
+                        {delve(review, "attributes.content")}
                       </p>
                     </div>
                   )}

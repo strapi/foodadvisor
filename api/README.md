@@ -13,15 +13,15 @@ You can get started with this project locally on your machine by following the i
 Be sure to have the correct env variabless:
 
 - Strapi:
-  - `CLIENT_URL=<url-of-nextjs>`
-  - `CLIENT_PREVIEW_SECRET=<a-random-token>`
+  - `STRAPI_ADMIN_CLIENT_URL=<url-of-nextjs>`
+  - `STRAPI_ADMIN_CLIENT_PREVIEW_SECRET=<a-random-token>`
 
 ## Start Strapi
 
 - Run the following command in your `./foodadvisor/api` folder:
 
 ```
-yarn && yarn run seed && yarn develop
+yarn && yarn seed && yarn develop
 ```
 
 This will install the dependencies, fill your application with data and run your server. You can run these commands separately.

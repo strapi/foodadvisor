@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blocks_cta_command_lines",
+  "info": {
+    "displayName": "CtaCommandLine",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "primary",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "text": {
+      "type": "string",
+      "required": false
+    },
+    "commandLine": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

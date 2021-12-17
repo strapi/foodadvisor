@@ -1,52 +1,37 @@
 {
-  "name": "foodadvisor-api",
+  "name": "foodadvisor-v4",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application.",
-  "main": "./server.js",
+  "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
-    "seed": "node scripts/seed.js",
-    "codesandbox": "yarn seed && strapi develop"
+    "seed": "node script/seed.js"
   },
-  "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-react": "^7.7.0"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "body-scroll-lock": "^3.1.5",
+    "@strapi/plugin-i18n": "4.0.0",
+    "@strapi/plugin-users-permissions": "4.0.0",
+    "@strapi/strapi": "4.0.0",
+    "fs": "^0.0.1-security",
     "fs-extra": "^10.0.0",
-    "knex": "0.16.3",
-    "lodash": "^4.17.5",
-    "reactour": "^1.18.0",
+    "lodash": "^4.17.21",
+    "lodash.set": "^4.3.2",
     "sqlite3": "5.0.2",
-    "strapi": "3.6.5",
-    "strapi-admin": "3.6.5",
-    "strapi-connector-bookshelf": "3.6.5",
-    "strapi-plugin-content-manager": "3.6.5",
-    "strapi-plugin-content-type-builder": "3.6.5",
-    "strapi-plugin-documentation": "3.6.5",
-    "strapi-plugin-email": "3.6.5",
-    "strapi-plugin-graphql": "3.6.5",
-    "strapi-plugin-i18n": "^3.6.5",
-    "strapi-plugin-upload": "3.6.5",
-    "strapi-plugin-users-permissions": "3.6.5",
-    "strapi-utils": "3.6.5",
-    "unzip-stream": "^0.3.0",
+    "unzip-stream": "^0.3.1",
     "uuid-v4": "^0.1.0"
   },
+  "author": {
+    "name": "A Strapi developer"
+  },
   "strapi": {
-    "uuid": "FOODADVISOR-LOCAL-8822bd66-77b5-4fbc-9adf-3d9d8a215b53"
+    "uuid": "092c44de-692e-4d21-acfa-ed40a3fe01a9"
   },
   "engines": {
-    "node": ">= 10.0.0",
-    "npm": ">= 6.0.0"
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }

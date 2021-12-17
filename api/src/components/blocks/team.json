@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_slices_teams",
+  "info": {
+    "displayName": "team",
+    "icon": "people-carry",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

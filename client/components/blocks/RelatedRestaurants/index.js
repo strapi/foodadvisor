@@ -10,8 +10,8 @@ const RelatedRestaurants = ({ header, restaurants }) => {
         <div className="w-4/5 mx-auto py-16 ">
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 pt-12 pb-12 px-4">
             {restaurants &&
-              restaurants.map((restaurant, index) => (
-                <RestaurantCard {...restaurant} key={index} />
+              restaurants.data.map((restaurant, index) => (
+                <RestaurantCard {...restaurant.attributes} key={index} />
               ))}
           </div>
         </div>

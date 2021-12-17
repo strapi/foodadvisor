@@ -1,13 +1,18 @@
-import delve from 'dlv';
-import 'github-markdown-css';
-import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
-import { getStrapiMedia } from '../../../../utils';
-import Container from '../../../shared/Container';
+import delve from "dlv";
+import "github-markdown-css";
+import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+import { getStrapiMedia } from "../../../../utils";
+import Container from "../../../shared/Container";
 
-const gfm = require('remark-gfm');
+const gfm = require("remark-gfm");
 
-const ArticleContent = ({ title, image, content, author, locale }) => {
+const ArticleContent = ({ attributes }) => {
+  const title = delve(attributes, "title");
+  const image = delve(attributes, "image");
+  const content = delve(attributes, "content");
+  const author = delve(attributes, "author");
+  const locale = delve(attributes, "locale");
   return (
     <Container>
       <section className="text-gray-600 body-font py-24">
@@ -19,26 +24,36 @@ const ArticleContent = ({ title, image, content, author, locale }) => {
           <div className="lg:w-4/6 mx-auto mt-10">
             <div className="shadow-lg rounded-lg overflow-hidden">
               <img
-                alt={delve(image, 'alternativeText')}
+                alt={delve(image, "data.attributes.alternativeText")}
                 className="object-cover object-center h-full w-full"
-                src={getStrapiMedia(delve(image, 'url'))}
+                src={getStrapiMedia(delve(image, "data.attributes.url"))}
               />
             </div>
             <div className="flex flex-col sm:flex-row mt-10 items-center justify-center">
               <div className="sm:w-1/2 text-center sm:pr-8 sm:py-8">
                 <div className="w-20 h-20 shadow-md rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
                   <img
-                    alt={delve(author, 'picture.alternativeText')}
+                    alt={delve(
+                      author,
+                      "data.attributes.picture.data.attributes.alternativeText"
+                    )}
                     className="object-cover rounded-full object-center h-full w-full"
-                    src={getStrapiMedia(delve(author, 'picture.url'))}
+                    src={getStrapiMedia(
+                      delve(
+                        author,
+                        "data.attributes.picture.data.attributes.url"
+                      )
+                    )}
                   />
                 </div>
                 <div className="flex flex-col items-center text-center justify-center">
                   <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">
-                    {delve(author, 'username')}
+                    {delve(author, "data.attributes.username")}
                   </h2>
                   <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-                  <p className="text-sm">{delve(author, 'job')}</p>
+                  <p className="text-sm">
+                    {delve(author, "data.attributes.job")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -50,7 +65,7 @@ const ArticleContent = ({ title, image, content, author, locale }) => {
               linkTarget="_blank"
               components={{
                 img: ({ node, ...props }) => (
-                  <img src={getStrapiMedia(delve(props, 'src'))} />
+                  <img src={getStrapiMedia(delve(props, "src"))} />
                 ),
               }}
             ></ReactMarkdown>

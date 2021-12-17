@@ -1,9 +1,9 @@
-import App from 'next/app';
-import ErrorPage from 'next/error';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import 'tailwindcss/tailwind.css';
-import { getStrapiURL } from '../utils';
-import { getLocalizedParams } from '../utils/localize';
+import App from "next/app";
+import ErrorPage from "next/error";
+import { QueryClient, QueryClientProvider } from "react-query";
+import "tailwindcss/tailwind.css";
+import { getStrapiURL } from "../utils";
+import { getLocalizedParams } from "../utils/localize";
 
 const queryClient = new QueryClient();
 
@@ -28,10 +28,15 @@ MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext);
 
   try {
-    const res = await fetch(getStrapiURL(`/global?_locale=${locale}`));
+    const res = await fetch(
+      getStrapiURL(
+        `/global?populate[navigation][populate]=*&populate[footer][populate][footerColumns][populate]=*&locale=${locale}`
+      )
+    );
     const globalData = await res.json();
+    const globalDataAttributes = globalData.data.attributes;
 
-    return { ...appProps, pageProps: { global: globalData } };
+    return { ...appProps, pageProps: { global: globalDataAttributes } };
   } catch (error) {
     return { ...appProps };
   }

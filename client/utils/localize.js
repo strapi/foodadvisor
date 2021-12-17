@@ -27,24 +27,21 @@ function getUrl(type, localization, targetLocale) {
     case 'pages':
       return `/pages/${delve(localization, 'id')}`;
     case 'restaurant-page':
-      return `/restaurant-page?_locale=${targetLocale}`;
+      return `/restaurant-page?locale=${targetLocale}`;
     case 'blog-page':
-      return `/blog-page?_locale=${targetLocale}`;
+      return `/blog-page?locale=${targetLocale}`;
     case 'article':
-      return `/articles/${delve(localization, 'id')}?_locale=${targetLocale}`;
+      return `/articles/${delve(localization, 'id')}?locale=${targetLocale}`;
     case 'restaurant':
-      return `/restaurants/${delve(
-        localization,
-        'id'
-      )}?_locale=${targetLocale}`;
+      return `/restaurants/${delve(localization, 'id')}?locale=${targetLocale}`;
     default:
       break;
   }
 }
 
 export async function getLocalizedData(targetLocale, pageData, type) {
-  const localization = pageData.localizations.find(
-    (localization) => localization.locale === targetLocale
+  const localization = pageData.attributes.localizations.data.find(
+    (localization) => localization.attributes.locale === 'fr-FR'
   );
   const url = getUrl(type, localization, targetLocale);
   const res = await fetch(getStrapiURL(url));
@@ -54,15 +51,15 @@ export async function getLocalizedData(targetLocale, pageData, type) {
 
 export async function listLocalizedPaths(pageData, type) {
   const currentPage = {
-    locale: pageData.locale,
-    href: localizePath(pageData, type),
+    locale: pageData.attributes.locale,
+    href: localizePath(pageData.attributes, type),
   };
   const paths = await Promise.all(
-    pageData.localizations.map(async (localization) => {
-      const url = getUrl(type, localization, localization.locale);
+    pageData.attributes.localizations.data.map(async (localization) => {
+      const url = getUrl(type, localization, localization.attributes.locale);
       const res = await fetch(getStrapiURL(url));
       const localePage = await res.json();
-      const page = { ...pageData, ...localePage };
+      const page = { ...pageData.attributes, ...localePage.data.attributes };
       return {
         locale: page.locale,
         href: localizePath(page, type),

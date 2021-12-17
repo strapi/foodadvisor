@@ -13,7 +13,7 @@ const Footer = ({ footer, pageData }) => {
       <div className="max-w-screen-lg xl:max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 text-gray-400 dark:text-gray-300">
         <Columns
           columns={delve(footer, 'footerColumns')}
-          locale={delve(pageData, 'locale')}
+          locale={delve(pageData, 'attributes.locale')}
         />
         <div className="pt-8 flex border-t border-gray-200 max-w-xs mx-auto items-center justify-between">
           {socialNetworks &&

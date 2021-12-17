@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_restaurant_more_information",
+  "info": {
+    "displayName": "moreInformation",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}
