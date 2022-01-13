@@ -1,10 +1,10 @@
 {
-  "name": "@strapi/seo",
+  "name": "@strapi/plugin-seo",
   "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "description": "Make your content SEO friendly.",
   "strapi": {
     "name": "SEO",
-    "description": "Description of seo plugin",
+    "description": "Make your content SEO friendly.",
     "kind": "plugin"
   },
   "dependencies": {

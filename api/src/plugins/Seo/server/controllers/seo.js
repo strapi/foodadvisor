@@ -1,21 +1,26 @@
 'use strict';
 
 module.exports = {
-  getSeoComponent(ctx) {
+  findSeoComponent(ctx) {
     ctx.body = strapi.plugin('seo').service('seo').getSeoComponent();
   },
-  getContentTypes(ctx) {
+  findContentTypes(ctx) {
     ctx.body = strapi.plugin('seo').service('seo').getContentTypes();
   },
   async createSeoComponent(ctx) {
     const { body } = ctx.request;
 
     strapi.reload.isWatching = false;
-    
-    const result = await strapi.plugin('seo').service('seo').createSeoComponent(body);
-    
-    setImmediate(() => strapi.reload());
-    
-    ctx.body = result;
+
+    try {
+      const data = await strapi
+        .plugin('seo')
+        .service('seo')
+        .createSeoComponent(body);
+      if (data) setImmediate(() => strapi.reload());
+      ctx.body = data;
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

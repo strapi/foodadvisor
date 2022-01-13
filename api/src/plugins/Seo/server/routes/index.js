@@ -1,8 +1,8 @@
 module.exports = [
   {
     method: 'GET',
-    path: '/component/seo',
-    handler: 'seo.getSeoComponent',
+    path: '/component',
+    handler: 'seo.findSeoComponent',
     config: {
       auth: false,
       policies: [],
@@ -10,7 +10,7 @@ module.exports = [
   },
   {
     method: 'POST',
-    path: '/components',
+    path: '/component',
     handler: 'seo.createSeoComponent',
     config: {
       auth: false,
@@ -20,7 +20,7 @@ module.exports = [
   {
     method: 'GET',
     path: '/content-types',
-    handler: 'seo.getContentTypes',
+    handler: 'seo.findContentTypes',
     config: {
       auth: false,
       policies: [],

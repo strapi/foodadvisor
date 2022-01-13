@@ -1,6 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
+const fetch = require('node-fetch');
 
 module.exports = ({ strapi }) => ({
   getSeoComponent() {
@@ -23,75 +24,82 @@ module.exports = ({ strapi }) => ({
       );
 
       if (name.includes('api::')) {
-        if (contentTypes[name].kind === 'collectionType') {
-          collectionTypes.push({
-            seo: hasSharedSeoComponent ? true : false,
-            uid: contentTypes[name].uid,
-            kind: contentTypes[name].kind,
-            globalId: contentTypes[name].globalId,
-            attributes: contentTypes[name].attributes,
-          });
-        } else {
-          singleTypes.push({
-            seo: hasSharedSeoComponent ? true : false,
-            uid: contentTypes[name].uid,
-            kind: contentTypes[name].kind,
-            globalId: contentTypes[name].globalId,
-            attributes: contentTypes[name].attributes,
-          });
-        }
+        const object = {
+          seo: hasSharedSeoComponent ? true : false,
+          uid: contentTypes[name].uid,
+          kind: contentTypes[name].kind,
+          globalId: contentTypes[name].globalId,
+          attributes: contentTypes[name].attributes,
+        };
+        contentTypes[name].kind === 'collectionType'
+          ? collectionTypes.push(object)
+          : singleTypes.push(object);
       }
     });
 
     return { collectionTypes, singleTypes } || null;
   },
-  getSeoComponentFromGithub(source) {
+  async getContentFromGithub(url) {
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
 
+      if (res.status === 403)
+        throw new Error(
+          'GitHub: API rate limit exceeded, please wait for few minutes before trying to fetch your component again.'
+        );
+      const content = _.get(data, 'content', null);
+      if (content) {
+        const decodedContent = Buffer.from(content, 'base64').toString('ascii');
+        return JSON.parse(decodedContent);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    return null;
   },
   async createSeoComponent(body) {
     const { source } = body;
-    const seoComponent = this.getSeoComponent();
-    
+    const seoComponent = await this.getSeoComponent();
+
     if (!seoComponent) {
-      return strapi
-        .plugin('content-type-builder')
-        .services.components.createComponent({
-          component: {
-            category: 'shared',
-            displayName: 'Seo',
-            icon: 'anchor',
-            attributes: {
-              metaTitle: {
-                required: true,
-                type: 'string',
+      const repository = source.replace('https://github.com/', '');
+      const metaSocialContentUrl = `https://api.github.com/repos/${repository}/contents/shared/meta-social.json?ref=main`;
+      const seoContentUrl = `https://api.github.com/repos/${repository}/contents/shared/seo.json?ref=main`;
+
+      const seoContent = await this.getContentFromGithub(seoContentUrl);
+      const metaSocialContent = await this.getContentFromGithub(
+        metaSocialContentUrl
+      );
+
+      if (metaSocialContent && seoContent) {
+        try {
+          const res = await strapi
+            .plugin('content-type-builder')
+            .services.components.createComponent({
+              component: {
+                category: 'shared',
+                displayName: seoContent.info.displayName,
+                icon: seoContent.info.icon,
+                attributes: seoContent.attributes,
               },
-              metaDescription: {
-                type: 'string',
-                required: true,
-              },
-              meta: {
-                type: 'component',
-                component: 'shared.meta',
-                repeatable: true,
-              },
-              preventIndexing: {
-                type: 'boolean',
-                default: false,
-                required: false,
-              },
-              structuredData: {
-                type: 'json',
-              },
-              metaImage: {
-                allowedTypes: ['images', 'files', 'videos'],
-                type: 'media',
-                multiple: false,
-              },
-            },
-          },
-          components: [],
-        });
+              components: [
+                {
+                  tmpUID: 'shared.meta-social',
+                  category: 'shared',
+                  displayName: metaSocialContent.info.displayName,
+                  icon: metaSocialContent.info.icon,
+                  attributes: metaSocialContent.attributes,
+                },
+              ],
+            });
+          return res;
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        return null;
+      }
     }
-    return 'This components already exists';
   },
 });

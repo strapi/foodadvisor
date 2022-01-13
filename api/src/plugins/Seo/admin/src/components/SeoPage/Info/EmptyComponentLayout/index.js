@@ -14,23 +14,37 @@ import Information from '@strapi/icons/Information';
 import { Illo } from './illo';
 
 const EmptyComponentLayout = ({ setShouldEffect }) => {
-  const [content, setContent] = useState('https://github.com/strapi/strapi');
+  const [error, setError] = useState(false);
+  const [content, setContent] = useState(
+    'https://github.com/strapi/components'
+  );
   const re = new RegExp(
-    '(?:https://)github.com(/)(.*)(/)(d*[a-zA-Z][a-zA-Z0-9]*)'
+    '(?:https://)github.com(/)(d*[a-zA-Z][a-zA-Z0-9]*)(/)(d*[a-zA-Z][a-zA-Z0-9]*)'
   );
 
   const { lockAppWithAutoreload, unlockAppWithAutoreload } =
     useAutoReloadOverlayBlocker();
 
+  const handleError = (content) => {
+    if (error) {
+      return "GitHub repository doesn't contain shared.seo or shared.meta-social component";
+    }
+
+    return re.test(content)
+      ? undefined
+      : 'Please provide a Github repository URL';
+  };
+
   const handleClick = async () => {
     try {
       lockAppWithAutoreload();
-      await createSeoComponent(content);
+      const data = await createSeoComponent(content);
+      if (!data) setError(true);
     } catch (error) {
       console.log(error);
     } finally {
-      setShouldEffect(true);
       unlockAppWithAutoreload();
+      setShouldEffect(true);
     }
   };
 
@@ -46,11 +60,7 @@ const EmptyComponentLayout = ({ setShouldEffect }) => {
               label="Content"
               name="content"
               hint="Description line"
-              error={
-                re.test(content)
-                  ? undefined
-                  : 'Please provide a Github repository URL'
-              }
+              error={handleError(content)}
               onChange={(e) => setContent(e.target.value)}
               value={content}
               labelAction={

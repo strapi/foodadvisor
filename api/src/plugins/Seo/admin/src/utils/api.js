@@ -1,9 +1,9 @@
 import { request } from '@strapi/helper-plugin';
+import pluginId from '../pluginId';
 
 const fetchSeoComponent = async () => {
   try {
-    const data = await request(`/seo/component/seo`, { method: 'GET' });
-    // Return data
+    const data = await request(`/${pluginId}/component`, { method: 'GET' });
     return data;
   } catch (error) {
     return null;
@@ -12,7 +12,7 @@ const fetchSeoComponent = async () => {
 
 const fetchContentTypes = async () => {
   try {
-    const data = await request(`/seo/content-types`, { method: 'GET' });
+    const data = await request(`/${pluginId}/content-types`, { method: 'GET' });
     return data;
   } catch (error) {
     return null;
@@ -21,11 +21,15 @@ const fetchContentTypes = async () => {
 
 const createSeoComponent = async (source) => {
   try {
-    const data = await request(`/seo/components`, {
-      method: 'POST',
-      body: { source },
-    }, true);
-    return data;
+    const data = await request(
+      `/${pluginId}/component`,
+      {
+        method: 'POST',
+        body: { source },
+      },
+      true
+    );
+    return data.json();
   } catch (error) {
     return null;
   }
