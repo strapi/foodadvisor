@@ -1,69 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import _ from 'lodash';
 
-import {
-  Accordion,
-  AccordionToggle,
-  AccordionContent,
-  AccordionGroup,
-} from '@strapi/design-system/Accordion';
-
 import { Box } from '@strapi/design-system/Box';
-import { Icon } from '@strapi/design-system/Icon';
-import Dot from '@strapi/icons/Dot';
+import { Badge } from '@strapi/design-system/Badge';
+import { Stack } from '@strapi/design-system/Stack';
 
-const SEOChecker = ({ modifiedData, richTextFields }) => {
-  const [expanded, setExpanded] = useState(false);
-  const keywords = _.get(modifiedData, 'seo.keywords');
-  
-  let counter = 0
+import { useIntl } from 'react-intl';
+import { getTrad } from '../../../../../utils';
 
-  // TODO count
+import SEOAccordion from '../SEOAccordion';
 
-  if (keywords) {
-    const keywordsArray = keywords.split(',');
-    let check = '';
-    if (keywordsArray.length === 0) {
-      check = 'danger';
-    } else if (keywordsArray.length <= 1) {
-      check = 'neutral';
-    } else {
-      check = 'success';
+const KeywordDensityCheck = ({ keywordsDensity }) => {
+  const { formatMessage } = useIntl();
+  const [status, setStatus] = useState({
+    message: formatMessage({
+      id: getTrad('SEOChecks.keywordsDensityCheck.default'),
+      defaultMessage: 'Every keywords are used more than 2 times.',
+    }),
+    color: 'success',
+  });
+
+  useEffect(() => {
+    if (_.isEmpty(keywordsDensity)) {
+      setStatus({
+        message: formatMessage({
+          id: getTrad('SEOChecks.keywordsDensityCheck.no-keywords'),
+          defaultMessage: 'No keywords were found in your SEO component.',
+        }),
+        color: 'danger',
+      });
+      return;
     }
+    Object.keys(keywordsDensity).map((keyword) => {
+      if (_.get(keywordsDensity[keyword], 'count', 0) === 0) {
+        setStatus({
+          message: formatMessage({
+            id: getTrad('SEOChecks.keywordsDensityCheck.one-not-used'),
+            defaultMessage: 'One keyword is not being used in your content.',
+          }),
+          color: 'danger',
+        });
+      } else if (_.get(keywordsDensity[keyword], 'count', 0) <= 1) {
+        setStatus({
+          message: formatMessage({
+            id: getTrad('SEOChecks.keywordsDensityCheck.one-used-once'),
+            defaultMessage: 'One keyword is only used once in your content.',
+          }),
+          color: 'warning',
+        });
+      }
+    });
+  }, []);
 
-    return (
-      <AccordionGroup label="Label">
-        <Accordion
-          expanded={expanded}
-          toggle={() => setExpanded((s) => !s)}
-          id="acc-1"
-          size="S"
-        >
-          <AccordionToggle
-            title="Keyword Density"
-            togglePosition="left"
-            startIcon={
-              <Icon
-                aria-hidden={true}
-                colors={(theme) => ({
-                  rect: {
-                    fill: _.get(theme, `colors.${check}600`),
-                  },
-                })}
-                as={Dot}
-              />
-            }
-          />
-          <AccordionContent>
-            <Box padding={3}>My name is John Duff</Box>
-          </AccordionContent>
-        </Accordion>
-      </AccordionGroup>
-    );
-  }
-
-  return <></>;
+  return (
+    <SEOAccordion
+      title="Keyword Density"
+      status={status}
+      component={
+        <Box padding={2}>
+          <Stack size={2}>
+            {keywordsDensity &&
+              Object.keys(keywordsDensity).map((keyword) => (
+                <div key={keyword}>
+                  <Badge>
+                    {`${keyword}: 
+                      ${_.get(
+                        keywordsDensity[keyword],
+                        'count',
+                        0
+                      ).toString()}`}
+                  </Badge>
+                </div>
+              ))}
+          </Stack>
+        </Box>
+      }
+    />
+  );
 };
 
-export default SEOChecker;
+export default KeywordDensityCheck;

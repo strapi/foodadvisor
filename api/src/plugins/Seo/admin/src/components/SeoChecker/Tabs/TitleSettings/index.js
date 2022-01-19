@@ -9,6 +9,9 @@ import Information from '@strapi/icons/Information';
 import _ from 'lodash';
 
 const TitleSettings = ({ modifiedData }) => {
+  const handleSomething = (e) => {
+    modifiedData.seo.metaTitle = e;
+  };
   return (
     <Box padding={10}>
       <TextInput
@@ -21,7 +24,7 @@ const TitleSettings = ({ modifiedData }) => {
             ? 'Meta title is too long'
             : undefined
         }
-        onChange={(e) => (modifiedData.seo.metaTitle = e)}
+        onChange={(e) => handleSomething(e)}
         value={modifiedData.seo.metaTitle}
         labelAction={
           <Tooltip description="Content of the tooltip">

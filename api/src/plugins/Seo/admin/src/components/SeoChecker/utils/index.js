@@ -83,22 +83,83 @@ const getRichTextFields = (contentType, components, modifiedData) => {
   return richTextFields;
 };
 
+const getEmptyAltCount = (richtext, field) => {
+  const occurences = richtext
+    .split('\n')
+    .filter((x) => x.includes('![](')).length;
+
+  return { field, occurences };
+};
+
 const increaseCounter = (base, field) => {
   const richtext = _.get(base, field, '');
+  const emptyAlts = getEmptyAltCount(richtext, field);
   const words = removeMd(richtext).split(' ');
-  return richtext ? { words, length: words.length } : { words: [], length: 0 };
+  return richtext
+    ? { words, length: words.length, emptyAlts }
+    : { words: [], length: 0, emptyAlts };
 };
 
 const buildKeywordDensityObject = (keywords, words) => {
   keywords.map((keyword) => {
-    const trimmedKeyword = keyword.trim();
-    const count = words.filter((word) => word.includes(trimmedKeyword)).length;
-    if (keywordsDensity[trimmedKeyword] === undefined) {
-      keywordsDensity[trimmedKeyword] = { count };
-    } else {
-      keywordsDensity[trimmedKeyword].count += count;
+    if (!_.isEmpty(keyword)) {
+      const trimmedKeyword = keyword.trim();
+      const count = words.filter((word) =>
+        word.includes(trimmedKeyword)
+      ).length;
+      if (keywordsDensity[trimmedKeyword] === undefined) {
+        keywordsDensity[trimmedKeyword] = { count };
+      } else {
+        keywordsDensity[trimmedKeyword].count += count;
+      }
     }
   });
+};
+
+const recursiveSearch = (
+  obj,
+  searchKey,
+  blackList,
+  results = [],
+  imageNames = []
+) => {
+  const altTexts = results;
+  const names = imageNames;
+  Object.keys(obj).forEach((key) => {
+    const value = obj[key];
+    if (key === searchKey && typeof value !== 'object') {
+      altTexts.push(value);
+      names.push(obj['name']);
+    } else if (
+      typeof value === 'object' &&
+      !blackList.includes(key) &&
+      !_.isNull(value)
+    ) {
+      recursiveSearch(value, searchKey, blackList, altTexts, names);
+    }
+  });
+  return { altTexts, names };
+};
+
+const getAltCheck = (contentType, modifiedData) => {
+  let relations = ['localizations'];
+
+  // Get every 1st level richtext fields
+  Object.keys(contentType.attributes).map((field) => {
+    if (contentType.attributes[field].type === 'relation') {
+      relations.push(field);
+    }
+  });
+
+  const { altTexts, names } = recursiveSearch(
+    modifiedData,
+    'alternativeText',
+    relations
+  );
+  const altCount = altTexts.length;
+  const intersection =
+    altTexts.filter((x) => names.includes(x)).length - altCount;
+  return intersection;
 };
 
 const getRichTextCheck = (modifiedData, components, contentType) => {
@@ -108,6 +169,8 @@ const getRichTextCheck = (modifiedData, components, contentType) => {
     modifiedData
   );
 
+  const intersections = getAltCheck(contentType, modifiedData);
+  let emptyAltCount = { intersections, richTextAlts: [] };
   let wordCount = 0;
   const keywords = _.get(modifiedData, 'seo.keywords', '').split(',');
   keywordsDensity = {};
@@ -116,9 +179,13 @@ const getRichTextCheck = (modifiedData, components, contentType) => {
   richTextFields.map((data) => {
     // 1st level field
     if (_.isNull(data.field)) {
-      const { words, length } = increaseCounter(modifiedData, data.name);
+      const { words, length, emptyAlts } = increaseCounter(
+        modifiedData,
+        data.name
+      );
 
       wordCount += length;
+      emptyAltCount.richTextAlts.push(emptyAlts);
       buildKeywordDensityObject(keywords, words);
     }
     // Repeatable and non-repeatable component that contains richtext
@@ -129,13 +196,18 @@ const getRichTextCheck = (modifiedData, components, contentType) => {
 
         if (isRepeatable) {
           item.map((x) => {
-            const { words, length } = increaseCounter(x, data.field);
+            const { words, length, emptyAlts } = increaseCounter(x, data.field);
             wordCount += length;
+            emptyAltCount.richTextAlts.push(emptyAlts);
             buildKeywordDensityObject(keywords, words);
           });
         } else {
-          const { words, length } = increaseCounter(item, data.field);
+          const { words, length, emptyAlts } = increaseCounter(
+            item,
+            data.field
+          );
           wordCount += length;
+          emptyAltCount.richTextAlts.push(emptyAlts);
           buildKeywordDensityObject(keywords, words);
         }
       }
@@ -159,13 +231,21 @@ const getRichTextCheck = (modifiedData, components, contentType) => {
               []
             );
             repeatableField.map((x) => {
-              const { words, length } = increaseCounter(x, data.field);
+              const { words, length, emptyAlts } = increaseCounter(
+                x,
+                data.field
+              );
               wordCount += length;
+              emptyAltCount.richTextAlts.push(emptyAlts);
               buildKeywordDensityObject(keywords, words);
             });
           } else {
-            const { words, length } = increaseCounter(component, data.field);
+            const { words, length, emptyAlts } = increaseCounter(
+              component,
+              data.field
+            );
             wordCount += length;
+            emptyAltCount.richTextAlts.push(emptyAlts);
             buildKeywordDensityObject(keywords, words);
           }
         });
@@ -173,7 +253,7 @@ const getRichTextCheck = (modifiedData, components, contentType) => {
     }
   });
 
-  return { wordCount, keywordsDensity };
+  return { wordCount, keywordsDensity, emptyAltCount };
 };
 
 export { getRichTextCheck };

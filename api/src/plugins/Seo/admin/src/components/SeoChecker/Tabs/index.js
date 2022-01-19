@@ -14,16 +14,8 @@ import TitleSettings from './TitleSettings';
 import SocialNetworks from './SocialNetworks';
 import SEOChecker from './SEOChecker';
 
-import { getRichTextCheck } from '../utils';
 
 const SeoTabs = ({ modifiedData, components, contentType }) => {
-  const { wordCount, keywordsDensity } = getRichTextCheck(
-    modifiedData,
-    components,
-    contentType
-  );
-
-  console.log(wordCount, keywordsDensity);
   return (
     <TabGroup label="Some stuff for the label" id="tabs">
       <Tabs>
@@ -34,7 +26,7 @@ const SeoTabs = ({ modifiedData, components, contentType }) => {
       <TabPanels>
         <TabPanel>
           <Box padding={4} background="neutral0">
-            {/* <TitleSettings modifiedData={modifiedData} /> */}
+            <TitleSettings modifiedData={modifiedData} />
           </Box>
         </TabPanel>
         <TabPanel>
@@ -44,7 +36,11 @@ const SeoTabs = ({ modifiedData, components, contentType }) => {
         </TabPanel>
         <TabPanel>
           <Box padding={4} background="neutral0">
-            <SEOChecker modifiedData={modifiedData} />
+            <SEOChecker
+              modifiedData={modifiedData}
+              components={components}
+              contentType={contentType}
+            />
           </Box>
         </TabPanel>
       </TabPanels>
