@@ -1,46 +1,62 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useCMEditViewDataManager } from '@strapi/helper-plugin';
 import { Box } from '@strapi/design-system/Box';
 import { TextInput } from '@strapi/design-system/TextInput';
-import { Tooltip } from '@strapi/design-system/Tooltip';
+import { Switch } from '@strapi/design-system/Switch';
 
-import Information from '@strapi/icons/Information';
+import Serp from './Serp';
+import SerpMobile from './SerpMobile';
 
 import _ from 'lodash';
 
 const TitleSettings = ({ modifiedData }) => {
-  const handleSomething = (e) => {
-    modifiedData.seo.metaTitle = e;
+  const [checked, setChecked] = useState(false);
+  const { onChange } = useCMEditViewDataManager();
+  const { metaTitle, metaDescription } = modifiedData.seo;
+
+  const handleChange = (value, name) => {
+    onChange({ target: { value, name } });
   };
+
   return (
-    <Box padding={10}>
+    <Box padding={4}>
       <TextInput
-        placeholder="This is a content placeholder"
-        label="Content"
-        name="content"
-        hint="Description line"
+        label="Meta Title"
+        name="metaTitle"
+        hint="60 characters (recommended maximum limit)"
+        onChange={(e) => handleChange(e.target.value, 'seo.metaTitle')}
+        value={metaTitle}
         error={
-          modifiedData.seo.metaTitle.length > 60
-            ? 'Meta title is too long'
+          metaTitle && metaTitle.length > 60
+            ? 'Meta Title is too long'
             : undefined
         }
-        onChange={(e) => handleSomething(e)}
-        value={modifiedData.seo.metaTitle}
-        labelAction={
-          <Tooltip description="Content of the tooltip">
-            <button
-              aria-label="Information about the email"
-              style={{
-                border: 'none',
-                padding: 0,
-                background: 'transparent',
-              }}
-            >
-              <Information aria-hidden={true} />
-            </button>
-          </Tooltip>
+      />
+      <TextInput
+        label="Meta Description"
+        name="metaDescription"
+        hint="160 characters (recommended maximum limit)"
+        onChange={(e) => handleChange(e.target.value, 'seo.metaDescription')}
+        value={metaDescription}
+        error={
+          metaDescription && metaDescription.length > 160
+            ? 'Meta Title is too long'
+            : undefined
         }
       />
+
+      <Switch
+        label="Mobile preview"
+        selected={checked}
+        onChange={() => setChecked((s) => !s)}
+        visibleLabels
+      />
+
+      {checked ? (
+        <SerpMobile metaTitle={metaTitle} metaDescription={metaDescription} />
+      ) : (
+        <Serp metaTitle={metaTitle} metaDescription={metaDescription} />
+      )}
     </Box>
   );
 };

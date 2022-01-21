@@ -10,10 +10,9 @@ import {
 
 import { Box } from '@strapi/design-system/Box';
 
+import SEOChecker from './SEOChecker';
 import TitleSettings from './TitleSettings';
 import SocialNetworks from './SocialNetworks';
-import SEOChecker from './SEOChecker';
-
 
 const SeoTabs = ({ modifiedData, components, contentType }) => {
   return (
@@ -31,7 +30,7 @@ const SeoTabs = ({ modifiedData, components, contentType }) => {
         </TabPanel>
         <TabPanel>
           <Box padding={4} background="neutral0">
-            {/* <SocialNetworks modifiedData={modifiedData} /> */}
+            <SocialNetworks modifiedData={modifiedData} />
           </Box>
         </TabPanel>
         <TabPanel>

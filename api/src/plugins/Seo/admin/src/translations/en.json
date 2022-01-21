@@ -1,4 +1,11 @@
 {
+  "SEOPage.header.button.edit-component": "Edit SEO component",
+  "SEOPage.header.title": "SEO",
+  "SEOPage.header.subtitle": "Optimize your content to be SEO friendly",
+  "SEOPage.empty-component-layout.github-error": "This GitHub repository doesn't contains shared.seo or shared.meta-social component",
+  "SEOPage.empty-component-layout.regexp-error": "Please provide a valid GitHub repository URL",
+  "SEOPage.empty-component-layout.no-component": "You don't have any SEO component yet",
+  "SEOPage.empty-component-layout.input.tooltip": "The strapi/components GitHub repository contains the default SEO component",
   "CMEditView.modal.tabs.title-settings": "Title settings.",
   "CMEditView.modal.tabs.social-network": "Social Networks.",
   "CMEditView.modal.tabs.seo-analyse": "Social Analyse.",

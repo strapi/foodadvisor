@@ -19,10 +19,9 @@ const SeoChecker = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { allLayoutData, modifiedData } = useCMEditViewDataManager();
 
-  const contentType = allLayoutData.contentType;
-  const components = allLayoutData.components;
+  const { contentType, components } = allLayoutData;
 
-  if (modifiedData.hasOwnProperty('seo')) {
+  if (modifiedData.hasOwnProperty('seo') && _.get(modifiedData, 'seo', null)) {
     return (
       <>
         <Button onClick={() => setIsVisible((prev) => !prev)}>SEO</Button>

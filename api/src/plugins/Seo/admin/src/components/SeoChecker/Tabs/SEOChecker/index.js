@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getAltCheck, getRichTextCheck } from '../../utils';
+import { getRichTextCheck } from '../../utils';
 
 import KeywordDensityCheck from './KeywordDensityCheck';
 import WordCountCheck from './WordCountCheck';
@@ -21,8 +21,6 @@ const SEOChecker = ({ modifiedData, components, contentType }) => {
     components,
     contentType
   );
-
-  console.log(emptyAltCount);
 
   return (
     <>

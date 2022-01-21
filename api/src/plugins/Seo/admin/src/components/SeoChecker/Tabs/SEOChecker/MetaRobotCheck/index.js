@@ -15,8 +15,6 @@ import Dot from '@strapi/icons/Dot';
 
 import SEOAccordion from '../SEOAccordion';
 
-const { formatMessage } = useIntl();
-
 const robotTags = [
   { name: 'noindex', message: 'Search engines will index this page.' },
   {
@@ -40,6 +38,7 @@ const robotTags = [
 ];
 
 const MetaRobotCheck = ({ metaRobots }) => {
+  const { formatMessage } = useIntl();
   const [status, setStatus] = useState({
     message: formatMessage({
       id: getTrad('SEOChecks.metaRobotsCheck.default'),
