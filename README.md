@@ -26,7 +26,7 @@ Be sure to have the correct env variables for each part:
   - `NEXT_PUBLIC_API_URL=<url-of-strapi>`
   - `PREVIEW_SECRET=<the-same-random-token-as-for-strapi>`
 
-### 1. Clone FoodAdvisor
+## 1. Clone FoodAdvisor
 
 - Clone the repository by running the following command:
 
