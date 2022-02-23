@@ -24,7 +24,7 @@ const Restaurants = ({
   const [categoryId, setCategoryId] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const blocks = delve(pageData, "blocks");
+  const blocks = delve(pageData, "attributes.blocks");
   const header = delve(pageData, "attributes.header");
   const placeText = delve(pageData, "attributes.placeText");
   const categoryText = delve(pageData, "attributes.categoryText");
