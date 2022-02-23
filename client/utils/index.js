@@ -63,7 +63,7 @@ export function getData(slug, locale, apiID, kind, preview) {
       slug: slugToReturn,
     };
   } else {
-    const apiUrl = `/${apiID}?locale=${locale}${previewParams}&populate[blocks][populate]=*&populate=localizations&populate[header]=*`;
+    const apiUrl = `/${apiID}?locale=${locale}${previewParams}&populate[blocks][populate]=*,buttons.link&populate=localizations&populate[header]=*`;
 
     if (apiID.includes('-page')) {
       const slugToReturn =
