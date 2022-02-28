@@ -21,7 +21,7 @@ module.exports = {
         },
         muted: {
           DEFAULT: '#E5E7EB',
-          ligth: '#F3F4F6',
+          light: '#F3F4F6',
           darker: '#D1D5DB',
           text: '#555b66',
         },
