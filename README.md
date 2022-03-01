@@ -38,6 +38,8 @@ git clone https://github.com/strapi/foodadvisor.git
 
 ## 2. Start Strapi
 
+Navigate to your `./my-projects/foodadvisor/api` folder by running `cd api` from your command line.
+
 - Run the following command in your `./foodadvisor/api` folder:
 
 ```
@@ -47,6 +49,8 @@ yarn && yarn seed && yarn develop
 This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
 
 ## 3. Start Next.js
+
+Navigate to your `./my-projects/foodadvisor/client` folder by running `cd client` from your command line.
 
 - Run the following command in your `./foodadvisor/client` folder
 
