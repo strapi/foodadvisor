@@ -9,7 +9,6 @@ Icon
 .Spotlight-V100
 .Trashes
 ._*
-.vscode
 
 
 ############################
@@ -96,7 +95,6 @@ results
 node_modules
 .node_history
 
-
 ############################
 # Tests
 ############################
@@ -104,17 +102,13 @@ node_modules
 testApp
 coverage
 
-
-# Custom
-
-!data.zip
-
 ############################
 # Strapi
 ############################
 
-exports
-.cache
-build
 .env
+license.txt
+exports
+*.cache
+build
 .strapi-updater.json

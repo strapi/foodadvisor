@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_team_cards",
+  "info": {
+    "displayName": "teamCard",
+    "icon": "smile"
+  },
+  "options": {},
+  "attributes": {
+    "fullname": {
+      "type": "string",
+      "required": true
+    },
+    "job": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "socialNetworks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-networks"
+    }
+  }
+}

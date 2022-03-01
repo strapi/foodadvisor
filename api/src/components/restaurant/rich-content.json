@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_restaurant_rich_contents",
+  "info": {
+    "displayName": "richContent",
+    "icon": "asterisk"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

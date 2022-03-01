@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_question_answers",
+  "info": {
+    "displayName": "questionAnswer",
+    "icon": "question-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": false
+    },
+    "answer": {
+      "type": "richtext",
+      "required": false
+    }
+  }
+}
