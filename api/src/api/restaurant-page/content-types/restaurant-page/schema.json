@@ -15,16 +15,6 @@
     }
   },
   "attributes": {
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.seo"
-    },
     "header": {
       "type": "component",
       "repeatable": false,
@@ -81,6 +71,16 @@
       "components": [
         "blocks.cta"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
     }
   }
 }
