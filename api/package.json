@@ -12,9 +12,10 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.0.0",
-    "@strapi/plugin-users-permissions": "4.0.0",
-    "@strapi/strapi": "4.0.0",
+    "@strapi/plugin-i18n": "4.1.1",
+    "@strapi/plugin-seo": "^1.7.2",
+    "@strapi/plugin-users-permissions": "4.1.1",
+    "@strapi/strapi": "4.1.1",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.0.0",
     "lodash": "^4.17.21",

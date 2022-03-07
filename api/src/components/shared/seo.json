@@ -1,40 +1,53 @@
 {
-  "connection": "default",
-  "collectionName": "components_seo",
+  "collectionName": "components_shared_seos",
   "info": {
     "displayName": "seo",
-    "icon": "anchor"
+    "icon": "search"
   },
+  "options": {},
   "attributes": {
     "metaTitle": {
       "required": true,
-      "type": "string"
+      "type": "string",
+      "maxLength": 60
     },
     "metaDescription": {
       "type": "string",
-      "required": true
-    },
-    "meta": {
-      "type": "component",
-      "component": "shared.meta",
-      "repeatable": true
-    },
-    "preventIndexing": {
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    "structuredData": {
-      "type": "json"
+      "required": true,
+      "maxLength": 160,
+      "minLength": 50
     },
     "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "metaSocial": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.meta-social"
+    },
+    "keywords": {
+      "type": "text",
+      "regex": "[^,]+"
+    },
+    "metaRobots": {
+      "type": "string",
+      "regex": "[^,]+"
+    },
+    "structuredData": {
+      "type": "json"
+    },
+    "metaViewport": {
+      "type": "string"
+    },
+    "canonicalURL": {
+      "type": "string"
     }
   }
 }
