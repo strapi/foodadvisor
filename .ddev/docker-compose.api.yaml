@@ -1,0 +1,20 @@
+version: "3.6"
+
+services:
+  api:
+    container_name: ddev-${DDEV_SITENAME}-api
+    build:
+      context: ../api
+    env_file: ../api/.env
+    environment:
+      {}
+    ports:
+      - "1337:1337"
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    volumes:
+      - ".:/mnt/ddev_config"
+      - ../api/src:/app/src:cached
+      - ../api/script:/app/script:cached
+      - ../api/config:/app/config:cached
