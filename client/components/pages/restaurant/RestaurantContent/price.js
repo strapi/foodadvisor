@@ -2,16 +2,16 @@ const Price = ({ price }) => {
   let result = '';
 
   switch (price) {
-    case '_1':
+    case 'p1':
       result = '€';
       break;
-    case '_2':
+    case 'p2':
       result = '€ €';
       break;
-    case '_3':
+    case 'p3':
       result = '€ € €';
       break;
-    case '_4':
+    case 'p4':
       result = '€ € € €';
       break;
 
