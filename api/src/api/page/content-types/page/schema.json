@@ -54,33 +54,6 @@
         }
       }
     },
-    "publish_at": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "ready": {
-      "type": "boolean",
-      "default": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text",
-      "private": true
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
@@ -90,6 +63,43 @@
         }
       },
       "component": "shared.seo"
+    },
+    "publicationState": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Draft",
+        "In review",
+        "Changes requested",
+        "Publication scheduled",
+        "Published"
+      ],
+      "default": "Draft"
+    },
+    "publishAt": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "datetime"
+    },
+    "comment": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text"
+    },
+    "editors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "admin::user"
     }
   }
 }

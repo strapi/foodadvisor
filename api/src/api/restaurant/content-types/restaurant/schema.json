@@ -99,7 +99,33 @@
         "blocks.cta-command-line"
       ]
     },
-    "publish_at": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
+    },
+    "publicationState": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Draft",
+        "In review",
+        "Changes requested",
+        "Publication scheduled",
+        "Published"
+      ],
+      "default": "Draft"
+    },
+    "publishAt": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -107,14 +133,14 @@
       },
       "type": "datetime"
     },
-    "ready": {
+    "comment": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "type": "boolean",
-      "default": true
+      "type": "text",
+      "private": true
     },
     "category": {
       "type": "relation",
@@ -134,24 +160,10 @@
       "target": "api::review.review",
       "mappedBy": "restaurant"
     },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text",
-      "private": true
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.seo"
+    "editors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "admin::user"
     }
   }
 }

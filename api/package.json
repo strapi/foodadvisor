@@ -17,6 +17,7 @@
     "@strapi/plugin-i18n": "4.3.6",
     "@strapi/plugin-seo": "^1.7.2",
     "@strapi/plugin-users-permissions": "4.3.6",
+    "@strapi/provider-email-sendmail": "^4.3.6",
     "@strapi/strapi": "4.3.6",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.0.0",
@@ -31,9 +32,7 @@
   "author": {
     "name": "A Strapi developer"
   },
-  "strapi": {
-    "uuid": "FOODADVISOR-LOCAL-e74f5ec4-d690-4ff6-970e-f6ada0a1f8ff"
-  },
+  "strapi": {},
   "engines": {
     "node": ">=12.x.x <=16.x.x",
     "npm": ">=6.0.0"

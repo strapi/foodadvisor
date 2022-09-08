@@ -7,26 +7,27 @@ module.exports = {
     ];
 
     contentTypes.map(async (type) => {
-      const draftArticlesToPublish = await strapi.db.query(type).findMany({
-        where: {
-          ready: true,
-          publishedAt: null,
-          publish_at: {
-            $lte: new Date(),
+      try {
+        const draftArticlesToPublish = await strapi.db.query(type).findMany({
+          where: {
+            publicationState: 'Publication scheduled',
+            publishedAt: null,
+            publish_at_lt: new Date(),
           },
-        },
-      });
+        });
 
-      await Promise.all(
-        draftArticlesToPublish.map(async (article) => {
-          return await strapi.db.query(type).update({
-            where: { id: article.id },
-            data: {
-              publishedAt: new Date(),
-            },
-          });
-        })
-      );
+        await Promise.all(
+          draftArticlesToPublish.map(async (article) => {
+            return await strapi.db.query(type).update({
+              where: { id: article.id },
+              data: {
+                publishedAt: new Date(),
+                publicationState: 'Published',
+              },
+            });
+          })
+        );
+      } catch (error) {}
     });
   },
 };
