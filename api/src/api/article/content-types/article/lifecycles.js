@@ -18,7 +18,6 @@ module.exports = {
     });
 
     if (!params.populate) {
-      console.log("yes");
       return;
     }
     const { publicationState, editors, updatedBy } = params.data;

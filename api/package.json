@@ -14,16 +14,16 @@
   "dependencies": {
     "@notum-cz/strapi-plugin-content-versioning": "^0.4.4",
     "@offset-dev/strapi-calendar": "^0.0.8",
-    "@strapi/plugin-i18n": "4.3.6",
+    "@strapi/plugin-i18n": "4.3.8",
     "@strapi/plugin-seo": "^1.7.2",
-    "@strapi/plugin-users-permissions": "4.3.6",
-    "@strapi/provider-email-sendmail": "^4.3.6",
-    "@strapi/strapi": "4.3.6",
+    "@strapi/plugin-users-permissions": "4.3.8",
+    "@strapi/provider-email-sendmail": "^4.3.8",
+    "@strapi/strapi": "4.3.8",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.0.0",
     "lodash": "^4.17.21",
     "lodash.set": "^4.3.2",
-    "sqlite3": "5.0.2",
+    "sqlite3": "5.1.0",
     "strapi-plugin-entity-relationship-chart": "^4.1.0",
     "strapi-plugin-todo": "^0.0.9",
     "unzip-stream": "^0.3.1",
@@ -32,7 +32,9 @@
   "author": {
     "name": "A Strapi developer"
   },
-  "strapi": {},
+  "strapi": {
+    "uuid": "FOODADVISOR-LOCAL-497fcfb5-ccce-4575-bc9f-fa2df5870d6b"
+  },
   "engines": {
     "node": ">=12.x.x <=16.x.x",
     "npm": ">=6.0.0"
