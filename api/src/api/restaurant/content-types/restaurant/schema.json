@@ -109,39 +109,6 @@
       },
       "component": "shared.seo"
     },
-    "publicationState": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Draft",
-        "In review",
-        "Changes requested",
-        "Publication scheduled",
-        "Published"
-      ],
-      "default": "Draft"
-    },
-    "publishAt": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "datetime"
-    },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text",
-      "private": true
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -159,11 +126,6 @@
       "relation": "oneToMany",
       "target": "api::review.review",
       "mappedBy": "restaurant"
-    },
-    "editors": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "admin::user"
     }
   }
 }

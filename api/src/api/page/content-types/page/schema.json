@@ -31,7 +31,8 @@
           "localized": false
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "blocks": {
       "type": "dynamiczone",
@@ -63,38 +64,6 @@
         }
       },
       "component": "shared.seo"
-    },
-    "publicationState": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Draft",
-        "In review",
-        "Changes requested",
-        "Publication scheduled",
-        "Published"
-      ],
-      "default": "Draft"
-    },
-    "publishAt": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "datetime"
-    },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text"
     },
     "editors": {
       "type": "relation",

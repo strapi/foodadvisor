@@ -27,6 +27,21 @@ yarn && yarn seed && yarn develop
 This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
 
 
+## Credentials
+
+- Super Admin:
+  - email: kai@strapidemo.com
+  - password: welcomeToStrapi123
+
+- Editor
+  - email: editor@strapidemo.com
+  - password: welcomeToStrapi123
+
+- Author
+  - email: author@strapidemo.com
+  - password: welcomeToStrapi123
+
+
 ## Publication Workflow
 
 FoodAdvisor contains a publication workflow workaround for the `article` content-type only. It contains two parts:

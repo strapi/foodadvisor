@@ -48,6 +48,21 @@ yarn && yarn seed && yarn develop
 
 This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
 
+#### Credentials
+
+- Super Admin:
+  - email: kai@strapidemo.com
+  - password: welcomeToStrapi123
+
+- Editor
+  - email: editor@strapidemo.com
+  - password: welcomeToStrapi123
+
+- Author
+  - email: author@strapidemo.com
+  - password: welcomeToStrapi123
+  
+
 ## 3. Start Next.js
 
 Navigate to your `./my-projects/foodadvisor/client` folder by running `cd client` from your command line.
@@ -81,7 +96,6 @@ This will install the dependencies, and run your server. You can run these comma
 [Media Library](https://strapi.io/features/media-library): The media library allows you to store your images, videos and files in your Strapi admin panel with many ways to visualize and manage them.<br />
 [Role-Based Access Control (RBAC)](https://strapi.io/features/custom-roles-and-permissions): Role-Based Access Control is a feature available in the Administration Panel settings that let your team members have access rights only to the information they need.<br />
 [Internationalization (i18n)](https://strapi.io/features/internationalization): Internationalization (i18n) lets you create many content versions, also called locales, in different languages and for different countries.<br />
-
 
 ## Resources
 

@@ -98,22 +98,6 @@
       ],
       "default": "Draft"
     },
-    "publishAt": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "datetime"
-    },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text"
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
