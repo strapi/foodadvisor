@@ -16,8 +16,6 @@
     "@strapi/plugin-graphql": "^4.4.1",
     "@strapi/plugin-i18n": "4.4.1",
     "@strapi/plugin-seo": "^1.7.2",
-    "@strapi/plugin-users-permissions": "4.4.1",
-    "@strapi/provider-email-sendmail": "^4.4.1",
     "@strapi/strapi": "4.4.1",
     "@webbio/strapi-plugin-scheduler": "^0.1.2",
     "better-sqlite3": "^7.6.2",
