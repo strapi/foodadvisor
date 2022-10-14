@@ -14,10 +14,10 @@ const tmpPath = path.resolve(".tmp");
 
 const dotEnv = path.resolve(".env");
 
-const sqlite = require("sqlite3").verbose();
+const Database = require("better-sqlite3");
 
 async function dumpSqlite() {
-  const db = new sqlite.Database(".tmp/data.db");
+  const db = new Database(".tmp/data.db");
   const sql = fse.readFileSync("./data/dump.sql").toString();
 
   await util.promisify(db.exec).bind(db)(sql);
