@@ -2636,13 +2636,13 @@
     lodash "4.17.21"
 
 "@strapi/plugin-graphql@^4.4.1":
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-4.4.1.tgz#7069f11fc2611302e326aa3ab1e7a68e42ce914b"
-  integrity sha512-85h3NK/Ul6klciTTqRIoEU/2IIi96+tMSw3y4zgOA7oSoSbZshFIrCF6Gbz7+QkS9LWBy95P+Sx0I9Zb2MdZEA==
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-4.4.3.tgz#7954e18fa5d7dfa34374cf75d43ad6ea9f38e86c"
+  integrity sha512-KeuKQre2DOsAf8z4feV8D3VBKLW024CD9IPE9NvnkP+rAQEkFN6FkZHZY0gHY+EUssDrYZPDr9IYavu5wFZPgA==
   dependencies:
     "@graphql-tools/schema" "8.1.2"
     "@graphql-tools/utils" "^8.10.0"
-    "@strapi/utils" "4.4.1"
+    "@strapi/utils" "4.4.3"
     apollo-server-core "3.1.2"
     apollo-server-koa "3.10.0"
     glob "^7.1.7"
@@ -2814,6 +2814,17 @@
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.4.1.tgz#77bcd61cb66974d34e9d2faf3061ebf1c07947a5"
   integrity sha512-M9YKBygyUtNQq60s/vQ/BFTKbJko0tx976m6Zt4I7QVpqCXkbBjgChd4W5qJONWUV5lCFlcZNitHF9cwEsYmVg==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.29.2"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    yup "0.32.9"
+
+"@strapi/utils@4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.4.3.tgz#6947eda897a936d31b3879fabe1163e13f8c1d04"
+  integrity sha512-EsyNrC4F95KC+tRNN+IBQrOVJIoKmbNxE2El6FBeO1TeKpppYFI4AWzAbj/txcaIOlhvlAY7J9zTRGms72GgHA==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.29.2"
