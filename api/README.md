@@ -26,7 +26,6 @@ yarn && yarn seed && yarn develop
 
 This will install the dependencies, fill your application with data and run your server. You can run these commands separately.
 
-
 ## Credentials
 
 - Super Admin:
@@ -40,7 +39,6 @@ This will install the dependencies, fill your application with data and run your
 - Author
   - email: author@strapidemo.com
   - password: welcomeToStrapi123
-
 
 ## Publication Workflow
 
@@ -59,6 +57,4 @@ If an article is not related to an editor, no emails will be sent.
   - Publishing (RBAC) the article will automatically set the `publicationState` to `Published`
   - Setting the `publicationState` to Published will automatically publish the article (RBAC)
 
-Another component has been injected into the list view. For author users, a button allows them to automatically apply a filter `publicationState == Changes requested` so that authors can quickly see any articles not published yet that need changes. For editor users, a button allows them to automatically apply a filter `publicationState == In review` so that editors can quickly see any articles not published yet that need to be reviewed. 
-
-
+Another component has been injected into the list view. For author users, a button allows them to automatically apply a filter `publicationState == Changes requested` so that authors can quickly see any articles not published yet that need changes. For editor users, a button allows them to automatically apply a filter `publicationState == In review` so that editors can quickly see any articles not published yet that need to be reviewed.

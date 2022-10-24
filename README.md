@@ -61,7 +61,6 @@ This will install the dependencies, fill your application with data and run your
 - Author
   - email: author@strapidemo.com
   - password: welcomeToStrapi123
-  
 
 ## 3. Start Next.js
 
