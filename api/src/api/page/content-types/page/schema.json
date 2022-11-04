@@ -31,7 +31,8 @@
           "localized": false
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "blocks": {
       "type": "dynamiczone",
@@ -54,33 +55,6 @@
         }
       }
     },
-    "publish_at": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "ready": {
-      "type": "boolean",
-      "default": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text",
-      "private": true
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
@@ -90,6 +64,11 @@
         }
       },
       "component": "shared.seo"
+    },
+    "editors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "admin::user"
     }
   }
 }

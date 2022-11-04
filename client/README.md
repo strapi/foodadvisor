@@ -16,7 +16,6 @@ Be sure to have the correct env variables:
   - `NEXT_PUBLIC_API_URL=<url-of-strapi>`
   - `PREVIEW_SECRET=<the-same-random-token-as-for-strapi>`
 
-
 ## Start Next.js
 
 - Run the following command in your `./foodadvisor/client` folder

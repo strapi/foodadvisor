@@ -1,7 +1,8 @@
 import PreviewButton from "./extensions/components/PreviewButton";
 import TweetButton from "./extensions/components/TweetButton";
 import InternalComment from "./extensions/components/InternalComment";
-import DraftFilterButton from "./extensions/components/DraftFilterButton";
+import DraftFilterButton from './extensions/components/DraftFilterButton';
+import PublicationWorkflow from './extensions/components/PublicationWorkflow';
 
 export default {
   config: {
@@ -27,14 +28,18 @@ export default {
       name: "DraftFilterButton",
       Component: DraftFilterButton,
     });
+     app.injectContentManagerComponent('editView', 'right-links', {
+       name: 'PublicationWorkflow',
+       Component: PublicationWorkflow,
+     });
     app.injectContentManagerComponent("editView", "right-links", {
       name: "PreviewButton",
       Component: PreviewButton,
     });
-    app.injectContentManagerComponent("editView", "right-links", {
-      name: "InternalComment",
-      Component: InternalComment,
-    });
+    // app.injectContentManagerComponent("editView", "right-links", {
+    //   name: "InternalComment",
+    //   Component: InternalComment,
+    // });
     app.injectContentManagerComponent("editView", "right-links", {
       name: "TweetButton",
       Component: TweetButton,

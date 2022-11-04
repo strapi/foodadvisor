@@ -72,45 +72,6 @@
       ],
       "required": false
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
-    "publish_at": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "datetime"
-    },
-    "ready": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean",
-      "default": true,
-      "required": false
-    },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "articles"
-    },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text",
-      "private": true
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
@@ -120,6 +81,41 @@
         }
       },
       "component": "shared.seo"
+    },
+    "publicationState": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Draft",
+        "In review",
+        "Changes requested",
+        "Publication scheduled",
+        "Published"
+      ],
+      "default": "Draft"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "articles"
+    },
+    "editors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "admin::user"
+    },
+    "publicationStages": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "json"
     }
   }
 }

@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cookies",
+  "info": {
+    "singularName": "cookie",
+    "pluralName": "cookies",
+    "displayName": "Cookies"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    },
+    "content-manager": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": true
+    },
+    "host": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cookie-category.cookie-category",
+      "inversedBy": "cookies",
+      "required": true
+    },
+    "party": {
+      "type": "enumeration",
+      "enum": [
+        "First-party",
+        "Second-party",
+        "Third-party"
+      ],
+      "required": true
+    },
+    "isVisible": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "duration": {
+      "type": "json",
+      "required": false
+    }
+  }
+}

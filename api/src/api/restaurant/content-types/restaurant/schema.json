@@ -99,22 +99,15 @@
         "blocks.cta-command-line"
       ]
     },
-    "publish_at": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "datetime"
-    },
-    "ready": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean",
-      "default": true
+      "component": "shared.seo"
     },
     "category": {
       "type": "relation",
@@ -133,25 +126,6 @@
       "relation": "oneToMany",
       "target": "api::review.review",
       "mappedBy": "restaurant"
-    },
-    "comment": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "text",
-      "private": true
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.seo"
     }
   }
 }
