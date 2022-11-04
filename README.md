@@ -51,7 +51,7 @@ This will install the dependencies, fill your application with data and run your
 #### Credentials
 
 - Super Admin:
-  - email: kai@strapidemo.com
+  - email: admin@strapidemo.com
   - password: welcomeToStrapi123
 
 - Editor
