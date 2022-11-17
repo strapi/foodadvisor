@@ -1,12 +1,19 @@
-import delve from "dlv";
-import Layout from "../../components/layout";
-import ArticleContent from "../../components/pages/blog/ArticleContent";
-import BlockManager from "../../components/shared/BlockManager";
-import { getStrapiURL, handleRedirection } from "../../utils";
-import { getLocalizedParams } from "../../utils/localize";
+import delve from 'dlv';
+import dynamic from 'next/dynamic';
+
+const ArticleContent = dynamic(
+  () => import('../../components/pages/blog/ArticleContent'),
+  { ssr: false }
+);
+
+import Layout from '../../components/layout';
+import BlockManager from '../../components/shared/BlockManager';
+
+import { getStrapiURL, handleRedirection } from '../../utils';
+import { getLocalizedParams } from '../../utils/localize';
 
 const Article = ({ global, pageData, preview }) => {
-  const blocks = delve(pageData, "attributes.blocks");
+  const blocks = delve(pageData, 'attributes.blocks');
   return (
     <>
       <Layout
@@ -26,8 +33,8 @@ const Article = ({ global, pageData, preview }) => {
 export async function getServerSideProps(context) {
   const { locale } = getLocalizedParams(context.query);
   const preview = context.preview
-    ? "&publicationState=preview&published_at_null=true"
-    : "";
+    ? '&publicationState=preview&published_at_null=true'
+    : '';
   const res = await fetch(
     getStrapiURL(
       `/articles?filters[slug]=${context.params.slug}&locale=${locale}${preview}&populate=localizations,image,author.picture,blocks.articles.image,blocks.faq,blocks.header`
@@ -36,7 +43,7 @@ export async function getServerSideProps(context) {
   const json = await res.json();
 
   if (!json.data.length) {
-    return handleRedirection(context.params.slug, context.preview, "blog");
+    return handleRedirection(context.params.slug, context.preview, 'blog');
   }
 
   return {

@@ -1,18 +1,23 @@
-import delve from "dlv";
-import "github-markdown-css";
-import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import { getStrapiMedia } from "../../../../utils";
-import Container from "../../../shared/Container";
+import React from 'react';
+import delve from 'dlv';
+import Link from 'next/link';
+import 'github-markdown-css';
 
-const gfm = require("remark-gfm");
+import styles from './ArticleContent.module.css';
+
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+import Container from '../../../shared/Container';
+
+import { getStrapiMedia } from '../../../../utils';
 
 const ArticleContent = ({ attributes }) => {
-  const title = delve(attributes, "title");
-  const image = delve(attributes, "image");
-  const content = delve(attributes, "content");
-  const author = delve(attributes, "author");
-  const locale = delve(attributes, "locale");
+  const title = delve(attributes, 'title');
+  const image = delve(attributes, 'image');
+  const content = delve(attributes, 'ckeditor_content');
+  const locale = delve(attributes, 'locale');
+
   return (
     <Container>
       <section className="text-gray-600 body-font py-24">
@@ -24,51 +29,29 @@ const ArticleContent = ({ attributes }) => {
           <div className="lg:w-4/6 mx-auto mt-10">
             <div className="shadow-lg rounded-lg overflow-hidden">
               <img
-                alt={delve(image, "data.attributes.alternativeText")}
+                alt={delve(image, 'data.attributes.alternativeText')}
                 className="object-cover object-center h-full w-full"
-                src={getStrapiMedia(delve(image, "data.attributes.url"))}
+                src={getStrapiMedia(delve(image, 'data.attributes.url'))}
               />
             </div>
             <div className="flex flex-col sm:flex-row mt-10 items-center justify-center">
-              <div className="sm:w-1/2 text-center sm:pr-8 sm:py-8">
-                <div className="w-20 h-20 shadow-md rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
-                  <img
-                    alt={delve(
-                      author,
-                      "data.attributes.picture.data.attributes.alternativeText"
-                    )}
-                    className="object-cover rounded-full object-center h-full w-full"
-                    src={getStrapiMedia(
-                      delve(
-                        author,
-                        "data.attributes.picture.data.attributes.url"
-                      )
-                    )}
-                  />
-                </div>
-                <div className="flex flex-col items-center text-center justify-center">
-                  <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">
-                    {delve(author, "data.attributes.username")}
-                  </h2>
-                  <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-                  <p className="text-sm">
-                    {delve(author, "data.attributes.job")}
-                  </p>
-                </div>
-              </div>
+              
             </div>
           </div>
-          <div className="markdown-body shadow-lg rounded-xl lg:w-3/6 w-full md:p-12 p-6 mt-2 bg-white">
-            <ReactMarkdown
-              children={content}
-              remarkPlugins={[gfm]}
-              linkTarget="_blank"
-              components={{
-                img: ({ node, ...props }) => (
-                  <img src={getStrapiMedia(delve(props, "src"))} />
-                ),
-              }}
-            ></ReactMarkdown>
+          <div className="markdown-body ck-content shadow-lg rounded-xl lg:w-4/6 w-full md:p-12 p-6 mt-2 bg-white">
+            <div className={styles['ck-no-border']}>
+              <CKEditor
+                editor={ClassicEditor}
+                onReady={(editor) => {
+                  editor.ui.view.toolbar.element.remove();
+                }}
+                data={content.replaceAll(
+                  '"/uploads',
+                  `"${process.env.NEXT_PUBLIC_API_URL}/uploads`
+                )}
+                disabled={true}
+              />
+            </div>
           </div>
           <Link href={`/blog?lang=${locale}`}>
             <button

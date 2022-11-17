@@ -4,6 +4,8 @@ import LocalSwitch from './localSwitch';
 import Logo from './logo';
 import Nav from './nav';
 
+import GitHubButton from 'react-github-btn';
+
 const Navigation = ({ navigation, pageData, type }) => {
   return (
     <header className="text-gray-600 bg-white body-font border-b-2">
@@ -21,15 +23,14 @@ const Navigation = ({ navigation, pageData, type }) => {
         {delve(navigation, 'rightButton') && (
           <div className="flex">
             <div className="mr-5 py-4 px-6 hidden lg:block">
-              <a
-                className="github-button"
+              <GitHubButton
                 href="https://github.com/strapi/foodadvisor"
-                data-size="large"
                 data-show-count="true"
+                data-size="large"
                 aria-label="Star strapi/foodadvisor on GitHub"
               >
                 Star
-              </a>
+              </GitHubButton>
             </div>
             <Cta
               href={delve(navigation, 'rightButton.href')}

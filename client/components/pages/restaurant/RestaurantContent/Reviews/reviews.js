@@ -1,6 +1,8 @@
-import delve from 'dlv';
 import React from 'react';
-import Moment from 'react-moment';
+import delve from 'dlv';
+
+import { formatDistance } from 'date-fns';
+
 import { getStrapiMedia } from '../../../../../utils';
 
 const Reviews = ({ reviews }) => {
@@ -18,37 +20,41 @@ const Reviews = ({ reviews }) => {
                   <img
                     alt={delve(
                       review,
-                      "attributes.author.data.attributes.picture.data.attributes.alternativeText"
+                      'attributes.author.data.attributes.picture.data.attributes.alternativeText'
                     )}
                     src={getStrapiMedia(
                       delve(
                         review,
-                        "attributes.author.data.attributes.picture.data.attributes.url"
+                        'attributes.author.data.attributes.picture.data.attributes.url'
                       )
                     )}
                     className="mx-auto object-cover rounded-full h-16 w-16 "
                   />
                 </div>
               </div>
-              {delve(review, "attributes.author") && (
+              {delve(review, 'attributes.author') && (
                 <div className="ml-6">
                   <p className="flex items-baseline">
                     <span className="text-gray-600 dark:text-gray-200 font-bold">
                       {delve(
                         review,
-                        "attributes.author.data.attributes.username"
+                        'attributes.author.data.attributes.username'
                       )}
                     </span>
                     <span className="text-gray-500 ml-2 text-sm">
-                      <Moment fromNow>
-                        {delve(review, "attributes.createdAt")}
-                      </Moment>
+                      {formatDistance(
+                        new Date(delve(review, 'attributes.createdAt')),
+                        new Date(),
+                        {
+                          addSuffix: true,
+                        }
+                      )}
                     </span>
                   </p>
 
                   <div className="flex items-center mt-1">
                     {[...Array(5).keys()].map((index) =>
-                      delve(review, "attributes.note") <= index ? (
+                      delve(review, 'attributes.note') <= index ? (
                         <svg
                           fill="none"
                           stroke="currentColor"
@@ -77,10 +83,10 @@ const Reviews = ({ reviews }) => {
                       )
                     )}
                   </div>
-                  {delve(review, "attributes.content") && (
+                  {delve(review, 'attributes.content') && (
                     <div className="mt-3">
                       <p className="mt-1  dark:text-white">
-                        {delve(review, "attributes.content")}
+                        {delve(review, 'attributes.content')}
                       </p>
                     </div>
                   )}
