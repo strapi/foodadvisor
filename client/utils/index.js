@@ -56,14 +56,14 @@ export function getData(slug, locale, apiID, kind, preview) {
     const slugToReturn = `${prefix}/${slug}?lang=${locale}`;
     const apiUrl = `/${pluralize(
       apiID
-    )}?filters[slug][$eq]=${slug}&locale=${locale}${previewParams}&populate[blocks][populate]=members.picture,header,buttons.link,faq,featuresCheck,cards,pricingCards.perks,articles,restaurants,author.picture,images,cards.image,image&populate=localizations`;
+    )}?filters[slug][$eq]=${slug}&locale=${locale}${previewParams}&populate[blocks][populate]=members.picture,header,buttons.link,faq,featuresCheck,cards,pricingCards.perks,articles,restaurants,author.picture,images,cards.image,image&populate=localizations&populate[seo][populate]=metaSocial.image`;
 
     return {
       data: getStrapiURL(apiUrl),
       slug: slugToReturn,
     };
   } else {
-    const apiUrl = `/${apiID}?locale=${locale}${previewParams}&populate[blocks][populate]=*,buttons.link&populate=localizations&populate[header]=*`;
+    const apiUrl = `/${apiID}?locale=${locale}${previewParams}&populate[blocks][populate]=*,buttons.link&populate=localizations&populate[header]=*&populate[seo]=metaSocial`;
 
     if (apiID.includes('-page')) {
       const slugToReturn =
@@ -92,7 +92,7 @@ export async function getRestaurants(key) {
   const start = +pageNumber === 1 ? 0 : (+pageNumber - 1) * perPage;
 
   let baseUrl = getStrapiURL(
-    `/restaurants?pagination[limit]=${perPage}&pagination[start]=${start}&pagination[withCount]=true&populate=images,category,place,information`
+    `/restaurants?pagination[limit]=${perPage}&pagination[start]=${start}&pagination[withCount]=true&populate=images,category,place,information,seo`
   );
 
   if (categoryName) {

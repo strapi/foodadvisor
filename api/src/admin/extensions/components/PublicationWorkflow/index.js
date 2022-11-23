@@ -20,8 +20,6 @@ import CustomAccordion from './accordion';
 
 import { Illo } from './illo';
 
-import _ from 'lodash';
-
 const PublicationWorkflow = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { modifiedData } = useCMEditViewDataManager();

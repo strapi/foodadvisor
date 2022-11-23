@@ -7,7 +7,7 @@ import Seo from './seo';
 const Layout = ({ children, global, pageData, preview, type }) => {
   return (
     <div>
-      <Seo seo={delve(pageData, 'seo')} />
+      <Seo seo={delve(pageData, 'attributes.seo')} />
       {preview && <PreviewBanner />}
       <Navbar {...global} pageData={pageData} type={type} />
       {children}

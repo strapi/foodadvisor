@@ -32,7 +32,7 @@
         }
       },
       "type": "string",
-      "required": true
+      "required": false
     },
     "blocks": {
       "type": "dynamiczone",

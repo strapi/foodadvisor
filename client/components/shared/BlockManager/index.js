@@ -1,15 +1,47 @@
-import Cta from '../../blocks/Cta';
-import CtaCommandLine from '../../blocks/CtaCommandLine';
-import Faq from '../../blocks/Faq';
-import Features from '../../blocks/Features';
-import FeaturesWithImages from '../../blocks/FeaturesWithImages';
-import Hero from '../../blocks/Hero';
-import Pricing from '../../blocks/Pricing';
-import RelatedArticles from '../../blocks/RelatedArticles';
-import RelatedRestaurants from '../../blocks/RelatedRestaurants';
-import Team from '../../blocks/Team';
-import Testimonial from '../../blocks/Testimonial';
-import RichContent from '../../pages/restaurant/RichContent';
+import dynamic from 'next/dynamic';
+
+const Cta = dynamic(() => import('../../blocks/Cta'), {
+  ssr: true,
+});
+const CtaCommandLine = dynamic(() => import('../../blocks/CtaCommandLine'), {
+  ssr: true,
+});
+const Faq = dynamic(() => import('../../blocks/Faq'), {
+  ssr: true,
+});
+const Features = dynamic(() => import('../../blocks/Features'), {
+  ssr: true,
+});
+const FeaturesWithImages = dynamic(
+  () => import('../../blocks/FeaturesWithImages'),
+  {
+    ssr: true,
+  }
+);
+const Hero = dynamic(() => import('../../blocks/Hero'), {
+  ssr: true,
+});
+const Pricing = dynamic(() => import('../../blocks/Pricing'), {
+  ssr: true,
+});
+const RelatedArticles = dynamic(() => import('../../blocks/RelatedArticles'), {
+  ssr: true,
+});
+const RelatedRestaurants = dynamic(() => import('../../blocks/Cta'), {
+  ssr: true,
+});
+const Team = dynamic(() => import('../../blocks/Team'), {
+  ssr: true,
+});
+const Testimonial = dynamic(() => import('../../blocks/Testimonial'), {
+  ssr: true,
+});
+const RichContent = dynamic(
+  () => import('../../pages/restaurant/RichContent'),
+  {
+    ssr: true,
+  }
+);
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
   let Block;
