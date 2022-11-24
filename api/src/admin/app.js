@@ -1,6 +1,5 @@
 import PreviewButton from "./extensions/components/PreviewButton";
 import TweetButton from "./extensions/components/TweetButton";
-import InternalComment from "./extensions/components/InternalComment";
 import DraftFilterButton from './extensions/components/DraftFilterButton';
 import PublicationWorkflow from './extensions/components/PublicationWorkflow';
 
@@ -36,10 +35,6 @@ export default {
       name: "PreviewButton",
       Component: PreviewButton,
     });
-    // app.injectContentManagerComponent("editView", "right-links", {
-    //   name: "InternalComment",
-    //   Component: InternalComment,
-    // });
     app.injectContentManagerComponent("editView", "right-links", {
       name: "TweetButton",
       Component: TweetButton,
