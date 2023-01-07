@@ -2636,10 +2636,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@offset-dev/strapi-calendar@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@offset-dev/strapi-calendar/-/strapi-calendar-0.0.8.tgz#ae851b6af978d6136b998ade22be8d4f5cd484e2"
-  integrity sha512-EQZH7kSyo+1zwdx9EBVpkvAgsHlcE5PKpAmULJO+5Oe/exzk3AYATP6Qnoyr1g0OseyBkZSk1oFsQkuD1l+IJg==
+"@offset-dev/strapi-calendar@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@offset-dev/strapi-calendar/-/strapi-calendar-0.0.10.tgz#5b6bf420a13915fecccb176f1c69692697d83dc4"
+  integrity sha512-sHxlNAXvujNqBIGBdH/HvJOXIHToWNubl/J6uoDYj5JpRubZ8E6+SwmE27nrIgs6ElsLeM7kQ8usPfFsFyvN6w==
   dependencies:
     "@devexpress/dx-react-core" "^3.0.3"
     "@devexpress/dx-react-scheduler" "^3.0.3"
@@ -2653,6 +2653,7 @@
     "@mui/x-date-pickers" "^5.0.0-beta.6"
     moment "^2.29.3"
     react-color "^2.19.3"
+    validate-color "^2.2.1"
 
 "@open-draft/until@^1.0.3":
   version "1.0.3"
@@ -12485,6 +12486,11 @@ v8flags@^2.0.10:
   integrity sha1-qrGh+jDUX4jdMhFIh1rALAtV5bQ=
   dependencies:
     user-home "^1.1.1"
+
+validate-color@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/validate-color/-/validate-color-2.2.1.tgz#f97214883304f87eaa9dc1eb8e9d8cd8b606a5d1"
+  integrity sha512-1eDb1zqP6W6bbfKKl6dRXObelNoQpW7aF3BUTh2AivWuhcD0pa3ejwURWqrVsyKJMLBMlHLFcM3sj5J+dSFhbg==
 
 value-equal@^1.0.1:
   version "1.0.1"
