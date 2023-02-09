@@ -19,9 +19,7 @@
     "@strapi/plugin-users-permissions": "4.6.1",
     "@strapi/strapi": "4.6.1",
     "@webbio/strapi-plugin-scheduler": "^0.1.2",
-    "ai-text-generation": "^0.2.0",
     "better-sqlite3": "^7.6.2",
-    "date-fns": "^2.29.3",
     "fs-extra": "^10.0.0",
     "strapi-plugin-cookie-manager": "^1.0.7",
     "strapi-plugin-populate-deep": "^1.1.2",
@@ -33,7 +31,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "FOODADVISOR-LOCAL-91bcb9c3-39e5-43e4-ac15-05df0813913f"
+    "uuid": "91bcb9c3-39e5-43e4-ac15-05df0813913f"
   },
   "engines": {
     "node": ">=14.x.x <=18.x.x",
