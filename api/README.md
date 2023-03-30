@@ -10,7 +10,7 @@ You can get started with this project locally on your machine by following the i
 
 ## Prerequisites
 
-Be sure to have the correct env variabless:
+Be sure to have the correct env variables:
 
 - Strapi:
   - `STRAPI_ADMIN_CLIENT_URL=<url-of-nextjs>`
@@ -20,7 +20,7 @@ Be sure to have the correct env variabless:
 
 - Run the following command in your `./foodadvisor/api` folder:
 
-```
+```bash
 yarn && yarn seed && yarn develop
 ```
 
