@@ -13,12 +13,12 @@
   "devDependencies": {},
   "dependencies": {
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
-    "@offset-dev/strapi-calendar": "^0.0.8",
-    "@strapi/plugin-graphql": "^4.6.1",
-    "@strapi/plugin-i18n": "4.6.1",
+    "@offset-dev/strapi-calendar": "^0.0.10",
+    "@strapi/plugin-graphql": "4.9.0",
+    "@strapi/plugin-i18n": "4.9.0",
     "@strapi/plugin-seo": "^1.8.0",
-    "@strapi/plugin-users-permissions": "4.6.1",
-    "@strapi/strapi": "4.6.1",
+    "@strapi/plugin-users-permissions": "4.9.0",
+    "@strapi/strapi": "4.9.0",
     "@webbio/strapi-plugin-scheduler": "^0.1.2",
     "better-sqlite3": "^7.6.2",
     "fs-extra": "^10.0.0",
@@ -32,7 +32,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "91bcb9c3-39e5-43e4-ac15-05df0813913f"
+    "uuid": "FOODADVISOR-LOCAL-aa30a9e6-db71-45b0-8100-ad0de728f951"
   },
   "engines": {
     "node": ">=14.x.x <=18.x.x",

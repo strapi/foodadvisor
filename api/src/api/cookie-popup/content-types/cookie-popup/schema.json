@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cookie_popups",
+  "info": {
+    "singularName": "cookie-popup",
+    "pluralName": "cookie-popups",
+    "displayName": "Cookie Popups"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    },
+    "content-manager": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
+    }
+  }
+}

@@ -40,7 +40,7 @@ $RECYCLE.BIN/
 *.csv
 *.dat
 *.dmg
-*.gz
+# *.gz
 *.iso
 *.jar
 *.rar
