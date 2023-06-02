@@ -145,7 +145,7 @@ const BlockManager = ({ blocks, contentType, pageData, type }) => {
                     process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
                   }/admin/content-manager/${type}/api::${contentType}.${contentType}/${
                     pageData?.id
-                  }?plugins[i18n][locale]=${query?.lang}`}
+                  }?plugins[i18n][locale]=${query?.lang || 'en'}`}
                 >
                   <a target="_blank">
                     <svg
