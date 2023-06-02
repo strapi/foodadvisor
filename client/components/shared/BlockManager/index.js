@@ -140,36 +140,35 @@ const BlockManager = ({ blocks, contentType, pageData, type }) => {
                 <div className="hidden group-hover:block">
                   {contentType} {'>'} {pageData?.id} {'>'} {block.__component}
                 </div>
-                <Link
-                  href={`${
-                    process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
-                  }/admin/content-manager/${type}/api::${contentType}.${contentType}/${
-                    pageData?.id
-                  }?plugins[i18n][locale]=${query?.lang || 'en'}`}
-                >
-                  <a target="_blank">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      className="w-4 h-4 mr-1 mb-0.5 ml-1"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                      />
-                    </svg>
-                  </a>
-                </Link>
+                {process.env.NEXT_PUBLIC_API_URL && (
+                  <Link
+                    href={`${
+                      process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'
+                    }/admin/content-manager/${type}/api::${contentType}.${contentType}/${
+                      pageData?.id
+                    }?plugins[i18n][locale]=${query?.lang || 'en'}`}
+                  >
+                    <a target="_blank">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        className="w-4 h-4 mr-1 mb-0.5 ml-1"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                        />
+                      </svg>
+                    </a>
+                  </Link>
+                )}
               </span>
             )}
 
-            <Block
-              component={block.__component}
-              {...block}
-            />
+            <Block component={block.__component} {...block} />
           </div>
         ) : null;
       })}
