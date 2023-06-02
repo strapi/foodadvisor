@@ -98,7 +98,7 @@ const BlockManager = ({ blocks, contentType, pageData, type }) => {
         }
 
         return Block ? (
-          <div>
+          <div key={`index-${index}`}>
             {type && contentType && (
               <span className="group bg-blue-100 text-blue-800 text-sm font-semibold inline-flex items-center absolute right-0 m-2 p-1.5 rounded-full dark:bg-gray-700 dark:text-blue-400">
                 <svg
@@ -112,8 +112,8 @@ const BlockManager = ({ blocks, contentType, pageData, type }) => {
                     fill="#4945FF"
                   />
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M497.448 218.701H254.711V342.474H378.483V466.244H502.254V223.507C502.254 220.853 500.102 218.701 497.448 218.701Z"
                     fill="white"
                   />
@@ -167,7 +167,6 @@ const BlockManager = ({ blocks, contentType, pageData, type }) => {
             )}
 
             <Block
-              key={`index-${index}`}
               component={block.__component}
               {...block}
             />
