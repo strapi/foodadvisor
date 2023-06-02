@@ -60,16 +60,16 @@ const Articles = ({
               >
                 <option value="">
                   {categoryId
-                    ? "Clear filter"
-                    : categoryText || "Select a category"}
+                    ? 'Clear filter'
+                    : categoryText || 'Select a category'}
                 </option>
                 {categories &&
                   categories.map((category, index) => (
                     <option
                       key={`categoryOption-${index}`}
-                      value={delve(category, "attributes.id")}
+                      value={delve(category, 'attributes.id')}
                     >
-                      {delve(category, "attributes.name")}
+                      {delve(category, 'attributes.name')}
                     </option>
                   ))}
               </select>
@@ -77,13 +77,17 @@ const Articles = ({
           </div>
         </div>
 
-        <NoResults status={status} length={delve(data, "articles").length} />
+        <NoResults status={status} length={delve(data, 'articles').length} />
 
         <div className="grid md:grid-cols-2 grid-cols-1 gap-40 mt-24 px-4">
-          {status === "success" &&
-            delve(data, "articles") &&
+          {status === 'success' &&
+            delve(data, 'articles') &&
             data.articles.map((article, index) => (
-              <ArticleCard {...article.attributes} locale={locale} key={index} />
+              <ArticleCard
+                {...article.attributes}
+                locale={locale}
+                key={index}
+              />
             ))}
         </div>
 
@@ -94,7 +98,7 @@ const Articles = ({
                 <button
                   type="button"
                   className={`${
-                    pageNumber <= 1 ? "cursor-not-allowed opacity-50" : ""
+                    pageNumber <= 1 ? 'cursor-not-allowed opacity-50' : ''
                   } w-full p-4 border text-base rounded-l-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
                   onClick={() => setPageNumber(pageNumber - 1)}
                   disabled={pageNumber <= 1}
@@ -106,8 +110,8 @@ const Articles = ({
                   type="button"
                   className={`${
                     pageNumber >= lastPage
-                      ? "cursor-not-allowed opacity-50"
-                      : ""
+                      ? 'cursor-not-allowed opacity-50'
+                      : ''
                   } w-full p-4 border-t border-b border-r text-base rounded-r-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
                   onClick={() => setPageNumber(pageNumber + 1)}
                   disabled={pageNumber >= lastPage}
@@ -119,7 +123,12 @@ const Articles = ({
           </div>
         )}
       </Container>
-      <BlockManager blocks={blocks} />
+      <BlockManager
+        blocks={blocks}
+        type="singleType"
+        contentType="blog-page"
+        pageData={pageData}
+      />
     </Layout>
   );
 };

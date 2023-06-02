@@ -16,7 +16,14 @@ const Restaurant = ({ global, pageData, preview }) => {
         type="restaurant"
       >
         <RestaurantContent pageData={pageData} />
-        {blocks && <BlockManager blocks={blocks} />}
+        {blocks && (
+          <BlockManager
+            blocks={blocks}
+            type="collectionType"
+            contentType="restaurant"
+            pageData={pageData}
+          />
+        )}
       </Layout>
     </>
   );

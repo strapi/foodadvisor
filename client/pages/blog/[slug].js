@@ -23,7 +23,14 @@ const Article = ({ global, pageData, preview }) => {
         type="article"
       >
         <ArticleContent {...pageData} />
-        {blocks && <BlockManager blocks={blocks} />}
+        {blocks && (
+          <BlockManager
+            blocks={blocks}
+            type="collectionType"
+            contentType="blog"
+            pageData={pageData}
+          />
+        )}
       </Layout>
     </>
   );

@@ -22,7 +22,7 @@ const Navigation = ({ navigation, pageData, type }) => {
 
         {delve(navigation, 'rightButton') && (
           <div className="flex">
-            <div className="mr-5 py-4 px-6 hidden lg:block">
+            <div className="mr-5 py-4 px-6 hidden 2xl:block">
               <GitHubButton
                 href="https://github.com/strapi/foodadvisor"
                 data-show-count="true"

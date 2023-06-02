@@ -4,7 +4,8 @@
   "info": {
     "singularName": "place",
     "pluralName": "places",
-    "displayName": "place"
+    "displayName": "place",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false

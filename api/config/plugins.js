@@ -4,11 +4,5 @@ module.exports = ({ env }) => ({
     config: {
       model: 'scheduler',
     },
-  },
-  'cookie-manager': {
-    enabled: true,
-    config: {
-      localization: true,
-    },
   }
 });

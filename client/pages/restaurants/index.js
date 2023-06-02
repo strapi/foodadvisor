@@ -1,14 +1,14 @@
-import delve from "dlv";
-import { useState } from "react";
-import { useQuery } from "react-query";
-import Layout from "../../components/layout";
-import NoResults from "../../components/no-results";
-import RestaurantCard from "../../components/pages/restaurant/RestaurantCard";
-import BlockManager from "../../components/shared/BlockManager";
-import Container from "../../components/shared/Container";
-import Header from "../../components/shared/Header";
-import { getData, getRestaurants, getStrapiURL } from "../../utils";
-import { getLocalizedParams } from "../../utils/localize";
+import delve from 'dlv';
+import { useState } from 'react';
+import { useQuery } from 'react-query';
+import Layout from '../../components/layout';
+import NoResults from '../../components/no-results';
+import RestaurantCard from '../../components/pages/restaurant/RestaurantCard';
+import BlockManager from '../../components/shared/BlockManager';
+import Container from '../../components/shared/Container';
+import Header from '../../components/shared/Header';
+import { getData, getRestaurants, getStrapiURL } from '../../utils';
+import { getLocalizedParams } from '../../utils/localize';
 
 const Restaurants = ({
   global,
@@ -24,14 +24,14 @@ const Restaurants = ({
   const [categoryId, setCategoryId] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const blocks = delve(pageData, "attributes.blocks");
-  const header = delve(pageData, "attributes.header");
-  const placeText = delve(pageData, "attributes.placeText");
-  const categoryText = delve(pageData, "attributes.categoryText");
+  const blocks = delve(pageData, 'attributes.blocks');
+  const header = delve(pageData, 'attributes.header');
+  const placeText = delve(pageData, 'attributes.placeText');
+  const categoryText = delve(pageData, 'attributes.categoryText');
 
   const { data, status } = useQuery(
     [
-      "restaurants",
+      'restaurants',
       { category: categoryId },
       { place: placeId },
       { locale: locale },
@@ -59,20 +59,20 @@ const Restaurants = ({
           <div>
             <select
               className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-              onChange={(value) => setCategoryId(delve(value, "target.value"))}
+              onChange={(value) => setCategoryId(delve(value, 'target.value'))}
             >
               <option value="">
                 {categoryId
-                  ? "Clear filter"
-                  : categoryText || "Select a category"}
+                  ? 'Clear filter'
+                  : categoryText || 'Select a category'}
               </option>
               {categories &&
                 categories.map((category, index) => (
                   <option
                     key={`categoryOption-${index}`}
-                    value={delve(category, "attributes.id")}
+                    value={delve(category, 'attributes.id')}
                   >
-                    {delve(category, "attributes.name")}
+                    {delve(category, 'attributes.name')}
                   </option>
                 ))}
             </select>
@@ -80,29 +80,29 @@ const Restaurants = ({
           <div>
             <select
               className="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-              onChange={(value) => setPlaceId(delve(value, "target.value"))}
+              onChange={(value) => setPlaceId(delve(value, 'target.value'))}
             >
               <option value="">
-                {placeId ? "Clear filter" : placeText || "Select a place"}
+                {placeId ? 'Clear filter' : placeText || 'Select a place'}
               </option>
               {places &&
                 places.map((place, index) => (
                   <option
                     key={`placeOption-${index}`}
-                    value={delve(place, "attributes.id")}
+                    value={delve(place, 'attributes.id')}
                   >
-                    {delve(place, "attributes.name")}
+                    {delve(place, 'attributes.name')}
                   </option>
                 ))}
             </select>
           </div>
         </div>
 
-        <NoResults status={status} length={delve(data, "restaurants").length} />
+        <NoResults status={status} length={delve(data, 'restaurants').length} />
 
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-16 mt-24 px-4">
-          {status === "success" &&
-            delve(data, "restaurants") &&
+          {status === 'success' &&
+            delve(data, 'restaurants') &&
             data.restaurants.map((restaurant, index) => (
               <RestaurantCard
                 {...restaurant.attributes}
@@ -112,29 +112,34 @@ const Restaurants = ({
             ))}
         </div>
 
-        {delve(data, "count") > 0 && (
+        {delve(data, 'count') > 0 && (
           <div className="grid grid-cols-3 gap-4 my-24">
             <div className="col-start-2 col-end-3">
               <div className="flex items-center">
                 <button
                   type="button"
                   className={`${
-                    pageNumber <= 1 ? "cursor-not-allowed opacity-50" : ""
+                    pageNumber <= 1 ? 'cursor-not-allowed opacity-50' : ''
                   } w-full p-4 border text-base rounded-l-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
-                  onClick={() => setPageNumber(pageNumber - 1)}
+                  onClick={() => {
+                    setPageNumber(pageNumber - 1);
+                    window.scrollTo(0, 200);
+                  }}
                   disabled={pageNumber <= 1}
                 >
                   Previous
                 </button>
 
                 <button
-                  type="button"
                   className={`${
                     pageNumber >= lastPage
-                      ? "cursor-not-allowed opacity-50"
-                      : ""
+                      ? 'cursor-not-allowed opacity-50'
+                      : ''
                   } w-full p-4 border-t border-b border-r text-base rounded-r-xl text-gray-600 bg-white hover:bg-gray-100 focus:outline-none`}
-                  onClick={() => setPageNumber(pageNumber + 1)}
+                  onClick={() => {
+                    setPageNumber(pageNumber + 1);
+                    window.scrollTo(0, 200);
+                  }}
                   disabled={pageNumber >= lastPage}
                 >
                   Next
@@ -144,7 +149,12 @@ const Restaurants = ({
           </div>
         )}
       </Container>
-      <BlockManager blocks={blocks} />
+      <BlockManager
+        blocks={blocks}
+        type="singleType"
+        contentType="restaurant-page"
+        pageData={pageData}
+      />
     </Layout>
   );
 };
@@ -156,15 +166,15 @@ export async function getServerSideProps(context) {
   const data = getData(
     null,
     locale,
-    "restaurant-page",
-    "singleType",
+    'restaurant-page',
+    'singleType',
     context.preview
   );
 
   try {
-    const resRestaurantPage = await fetch(delve(data, "data"));
+    const resRestaurantPage = await fetch(delve(data, 'data'));
     const restaurantPage = await resRestaurantPage.json();
-    const perPage = delve(restaurantPage, "restaurantsPerPage") || 12;
+    const perPage = delve(restaurantPage, 'restaurantsPerPage') || 12;
 
     const resRestaurants = await fetch(
       getStrapiURL(
@@ -186,7 +196,7 @@ export async function getServerSideProps(context) {
       !categories.data.length ||
       !places.data.length
     ) {
-      return handleRedirection(slug, context.preview, "");
+      return handleRedirection(slug, context.preview, '');
     }
 
     return {
@@ -206,7 +216,7 @@ export async function getServerSideProps(context) {
   } catch (error) {
     return {
       redirect: {
-        destination: "/",
+        destination: '/',
         permanent: false,
       },
     };
