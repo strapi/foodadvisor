@@ -1,7 +1,11 @@
 import delve from 'dlv';
 import ErrorPage from 'next/error';
 import Layout from '../components/layout';
-import BlockManager from '../components/shared/BlockManager';
+import dynamic from 'next/dynamic';
+const BlockManager = dynamic(
+  () => import('../components/shared/BlockManager'),
+  { ssr: false }
+);
 import { getData, handleRedirection } from '../utils';
 import { getLocalizedParams } from '../utils/localize';
 
@@ -13,7 +17,14 @@ const Universals = ({ global, pageData, preview }) => {
   const blocks = delve(pageData, 'attributes.blocks');
   return (
     <Layout global={global} pageData={pageData} type="pages" preview={preview}>
-      {blocks && <BlockManager blocks={blocks} type="collectionType" contentType="page" pageData={pageData} />}
+      {blocks && (
+        <BlockManager
+          blocks={blocks}
+          type="collectionType"
+          contentType="page"
+          pageData={pageData}
+        />
+      )}
     </Layout>
   );
 };
