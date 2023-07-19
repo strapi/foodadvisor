@@ -73,40 +73,11 @@
       },
       "component": "shared.seo"
     },
-    "publicationState": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Draft",
-        "In review",
-        "Changes requested",
-        "Publication scheduled",
-        "Published"
-      ],
-      "default": "Draft"
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "articles"
-    },
-    "editors": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "admin::user"
-    },
-    "publicationStages": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "json"
     },
     "ckeditor_content": {
       "pluginOptions": {

@@ -1,7 +1,10 @@
 module.exports = {
   // mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -9,14 +12,14 @@ module.exports = {
           DEFAULT: '#e27d60',
           light: '#e48a6f',
           darker: '#cb7056',
-          text: '#FFFFFF',
+          text: 'white',
           lightest: '#f0beaf',
         },
         secondary: {
           DEFAULT: '#41b3a3',
           light: '#85dcb',
           darker: '#3aa192',
-          text: '#FFFFFF',
+          text: 'white',
           lightest: '#ecf7f5',
         },
         muted: {
@@ -35,4 +38,10 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern:
+        /(bg|text)-(primary|secondary|muted)/,
+    },
+  ],
 };
