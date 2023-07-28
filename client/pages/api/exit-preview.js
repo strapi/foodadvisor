@@ -1,8 +1,10 @@
 export default async function exit(req, res) {
+
+  console.log('disabling draft mode');
+
   // Exit the current user from "Preview Mode". This function accepts no args.
-  res.clearPreviewData();
+  res.setDraftMode({ enable: false });
 
   // Redirect the user back to a provided redirect path or the index page
-  res.writeHead(307, { Location: '/' });
-  res.end();
+  res.redirect('/');
 }

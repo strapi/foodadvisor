@@ -1,6 +1,8 @@
 import { getData } from '../../utils';
 
 export default async (req, res) => {
+  console.log(req.query.secret, process.env.PREVIEW_SECRET);
+
   if (
     req.query.secret !== process.env.PREVIEW_SECRET ||
     (req.query.slug != '' && !req.query.slug)
@@ -13,17 +15,16 @@ export default async (req, res) => {
     req.query.locale,
     req.query.apiID,
     req.query.kind,
-    null
+    true
   );
+
+  console.log({ previewData });
 
   if (!previewData.data) {
     return res.status(401).json({ message: 'Invalid slug' });
   }
-  res.setPreviewData({});
 
-  res.writeHead(307, {
-    Location: previewData.slug,
-  });
-
-  res.end();
+  console.log('enabling draft mode');
+  res.setDraftMode({ enable: true });
+  res.redirect(previewData.slug);
 };

@@ -141,7 +141,7 @@ export async function getServerSideProps(context) {
     locale,
     "blog-page",
     "singleType",
-    context.preview
+    context.draftMode
   );
 
   try {
@@ -162,7 +162,7 @@ export async function getServerSideProps(context) {
     const categories = await resCategories.json();
 
     if (!articles.data.length || !categories.data.length) {
-      return handleRedirection(slug, context.preview, "");
+      return handleRedirection(slug, context.draftMode, "");
     }
 
     return {
@@ -175,7 +175,7 @@ export async function getServerSideProps(context) {
         categories: categories.data,
         locale,
         perPage,
-        preview: context.preview || null,
+        preview: context.draftMode || null,
       },
     };
   } catch (error) {

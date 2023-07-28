@@ -1,9 +1,10 @@
-import App from "next/app";
-import ErrorPage from "next/error";
-import { QueryClient, QueryClientProvider } from "react-query";
+import App from 'next/app';
+import ErrorPage from 'next/error';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import 'tailwindcss/tailwind.css';
-import { getStrapiURL } from "../utils";
-import { getLocalizedParams } from "../utils/localize";
+import { getStrapiURL } from '../utils';
+import { getLocalizedParams } from '../utils/localize';
+import { VercelToolbar } from '@vercel/toolbar/next';
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <VercelToolbar />
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
       </QueryClientProvider>

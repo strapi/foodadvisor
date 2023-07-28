@@ -8,10 +8,10 @@ const Nav = ({ links, locale }) => {
         <Link
           href={`${delve(link, 'href')}?lang=${locale || 'en'}`}
           key={`navigationLink-${index}`}
+          className="md:mr-10 hover:text-gray-900"
+          target={delve(link, 'target')}
         >
-          <a className="md:mr-10 hover:text-gray-900" key={`link-${index}`} target={delve(link, 'target')}>
-            {delve(link, 'label')}
-          </a>
+          {delve(link, 'label')}
         </Link>
       ))}
     </nav>

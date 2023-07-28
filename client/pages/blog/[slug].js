@@ -22,7 +22,7 @@ const Article = ({ global, pageData, preview }) => {
         preview={preview}
         type="article"
       >
-        <ArticleContent {...pageData} />
+        {/* <ArticleContent {...pageData} />
         {blocks && (
           <BlockManager
             blocks={blocks}
@@ -30,7 +30,7 @@ const Article = ({ global, pageData, preview }) => {
             contentType="blog"
             pageData={pageData}
           />
-        )}
+        )} */}
       </Layout>
     </>
   );
@@ -38,23 +38,28 @@ const Article = ({ global, pageData, preview }) => {
 
 // This gets called on every request
 export async function getServerSideProps(context) {
+  console.log('getServerSideProps', context.query);
   const { locale } = getLocalizedParams(context.query);
-  const preview = context.preview
-    ? '&publicationState=preview&published_at_null=true'
+  const preview = context.draftMode
+    ? '&publicationState=preview&published_at_null=true&encodeSourceMaps=true'
     : '';
   const res = await fetch(
     getStrapiURL(
       `/articles?filters[slug]=${context.params.slug}&locale=${locale}${preview}&populate=localizations,image,author.picture,blocks.articles.image,blocks.faq,blocks.header`
     )
   );
+
   const json = await res.json();
 
+  console.log(json);
+
   if (!json.data.length) {
-    return handleRedirection(context.params.slug, context.preview, 'blog');
+    console.log('here');
+    return handleRedirection(context.params.slug, context.draftMode, 'blog');
   }
 
   return {
-    props: { pageData: json.data[0], preview: context.preview || null },
+    props: { pageData: json.data[0], preview: context.draftMode || null },
   };
 }
 

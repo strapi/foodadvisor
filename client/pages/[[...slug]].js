@@ -39,17 +39,17 @@ export async function getServerSideProps(context) {
       locale,
       'page',
       'collectionType',
-      context.preview
+      context.draftMode
     );
     const res = await fetch(delve(data, 'data'));
     const json = await res.json();
 
     if (!json.data.length) {
-      return handleRedirection(context.preview, null);
+      return handleRedirection(context.draftMode, null);
     }
 
     return {
-      props: { pageData: json.data[0], preview: context.preview || null },
+      props: { pageData: json.data[0], preview: context.draftMode || null },
     };
   } catch (error) {
     return {

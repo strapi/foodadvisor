@@ -168,7 +168,7 @@ export async function getServerSideProps(context) {
     locale,
     'restaurant-page',
     'singleType',
-    context.preview
+    context.draftMode
   );
 
   try {
@@ -196,7 +196,7 @@ export async function getServerSideProps(context) {
       !categories.data.length ||
       !places.data.length
     ) {
-      return handleRedirection(slug, context.preview, '');
+      return handleRedirection(slug, context.draftMode, '');
     }
 
     return {
@@ -210,7 +210,7 @@ export async function getServerSideProps(context) {
         places: places.data,
         locale,
         perPage,
-        preview: context.preview || null,
+        preview: context.draftMode || null,
       },
     };
   } catch (error) {

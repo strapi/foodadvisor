@@ -19,27 +19,26 @@ const Cta = ({ title, text, buttons, theme }) => {
                 <Link
                   href={delve(button, 'link.href')}
                   key={`cta-button-${index}`}
+                  target={delve(button, 'link.target')}
                 >
-                  <a target={delve(button, 'link.target')}>
-                    <button
-                      type="button"
-                      className={`py-4 px-6 bg-${delve(
-                        button,
-                        'theme'
-                      )} hover:bg-${delve(
-                        button,
-                        'theme'
-                      )}-darker focus:ring-${delve(
-                        button,
-                        'theme'
-                      )}-lighter text-${delve(
-                        button,
-                        'theme'
-                      )}-text w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg`}
-                    >
-                      {delve(button, 'link.label')}
-                    </button>
-                  </a>
+                  <button
+                    type="button"
+                    className={`py-4 px-6 bg-${delve(
+                      button,
+                      'theme'
+                    )} hover:bg-${delve(
+                      button,
+                      'theme'
+                    )}-darker focus:ring-${delve(
+                      button,
+                      'theme'
+                    )}-lighter text-${delve(
+                      button,
+                      'theme'
+                    )}-text w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg`}
+                  >
+                    {delve(button, 'link.label')}
+                  </button>
                 </Link>
               </div>
             ))}

@@ -17,6 +17,7 @@ export function getStrapiURL(path) {
 }
 
 export function handleRedirection(preview, custom) {
+  console.log('handleRedirection', { preview, custom });
   if (preview) {
     return {
       redirect: {
@@ -43,7 +44,7 @@ export function handleRedirection(preview, custom) {
 
 export function getData(slug, locale, apiID, kind, preview) {
   const previewParams = preview
-    ? '&publicationState=preview&published_at_null=true'
+    ? '&publicationState=preview&published_at_null=true&encodeSourceMaps=true'
     : '';
 
   if (kind == 'collectionType') {

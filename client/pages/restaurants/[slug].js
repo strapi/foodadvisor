@@ -31,7 +31,7 @@ const Restaurant = ({ global, pageData, preview }) => {
 
 export async function getServerSideProps(context) {
   const { locale } = getLocalizedParams(context.query);
-  const preview = context.preview
+  const preview = context.draftMode
     ? "&publicationState=preview&published_at_null=true"
     : "";
   const res = await fetch(
@@ -44,7 +44,7 @@ export async function getServerSideProps(context) {
   if (!json.data.length) {
     return handleRedirection(
       context.params.slug,
-      context.preview,
+      context.draftMode,
       "restaurants"
     );
   }
@@ -52,7 +52,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       pageData: json.data[0],
-      preview: context.preview || null,
+      preview: context.draftMode || null,
     },
   };
 }
