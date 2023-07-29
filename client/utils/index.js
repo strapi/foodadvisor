@@ -16,32 +16,6 @@ export function getStrapiURL(path) {
   }/api${path}`;
 }
 
-export function handleRedirection(preview, custom) {
-  console.log('handleRedirection', { preview, custom });
-  if (preview) {
-    return {
-      redirect: {
-        destination: `/api/exit-preview`,
-        permanent: false,
-      },
-    };
-  } else if (custom) {
-    return {
-      redirect: {
-        destination: `/${custom}`,
-        permanent: false,
-      },
-    };
-  } else {
-    return {
-      redirect: {
-        destination: `/`,
-        permanent: false,
-      },
-    };
-  }
-}
-
 export function getData(slug, locale, apiID, kind, preview) {
   const previewParams = preview
     ? '&publicationState=preview&published_at_null=true&encodeSourceMaps=true'

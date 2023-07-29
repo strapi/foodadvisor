@@ -1,7 +1,4 @@
 export default async function exit(req, res) {
-
-  console.log('disabling draft mode');
-
   // Exit the current user from "Preview Mode". This function accepts no args.
   res.setDraftMode({ enable: false });
 

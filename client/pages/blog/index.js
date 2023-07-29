@@ -1,14 +1,14 @@
-import delve from "dlv";
-import { useState } from "react";
-import { useQuery } from "react-query";
-import Layout from "../../components/layout";
-import NoResults from "../../components/no-results";
-import ArticleCard from "../../components/pages/blog/ArticleCard";
-import BlockManager from "../../components/shared/BlockManager";
-import Container from "../../components/shared/Container";
-import Header from "../../components/shared/Header";
-import { getArticles, getData, getStrapiURL } from "../../utils";
-import { getLocalizedParams } from "../../utils/localize";
+import delve from 'dlv';
+import { useState } from 'react';
+import { useQuery } from 'react-query';
+import Layout from '../../components/layout';
+import NoResults from '../../components/no-results';
+import ArticleCard from '../../components/pages/blog/ArticleCard';
+import BlockManager from '../../components/shared/BlockManager';
+import Container from '../../components/shared/Container';
+import Header from '../../components/shared/Header';
+import { getArticles, getData, getStrapiURL } from '../../utils';
+import { getLocalizedParams } from '../../utils/localize';
 
 const Articles = ({
   global,
@@ -22,13 +22,13 @@ const Articles = ({
   const [categoryId, setCategoryId] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const blocks = delve(pageData, "attributes.blocks");
-  const header = delve(pageData, "attributes.header");
-  const categoryText = delve(pageData, "attributes.categoryText");
+  const blocks = delve(pageData, 'attributes.blocks');
+  const header = delve(pageData, 'attributes.header');
+  const categoryText = delve(pageData, 'attributes.categoryText');
 
   const { data, status } = useQuery(
     [
-      "articles",
+      'articles',
       { category: categoryId },
       { locale: locale },
       { page: pageNumber },
@@ -139,15 +139,15 @@ export async function getServerSideProps(context) {
   const data = getData(
     null,
     locale,
-    "blog-page",
-    "singleType",
+    'blog-page',
+    'singleType',
     context.draftMode
   );
 
   try {
-    const resBlogPage = await fetch(delve(data, "data"));
+    const resBlogPage = await fetch(delve(data, 'data'));
     const blogPage = await resBlogPage.json();
-    const perPage = delve(blogPage, "articlesPerPage") || 12;
+    const perPage = delve(blogPage, 'articlesPerPage') || 12;
 
     const resArticles = await fetch(
       getStrapiURL(
@@ -162,7 +162,12 @@ export async function getServerSideProps(context) {
     const categories = await resCategories.json();
 
     if (!articles.data.length || !categories.data.length) {
-      return handleRedirection(slug, context.draftMode, "");
+      return {
+        redirect: {
+          destination: '/',
+          permanent: false,
+        },
+      };
     }
 
     return {
@@ -181,7 +186,7 @@ export async function getServerSideProps(context) {
   } catch (error) {
     return {
       redirect: {
-        destination: "/",
+        destination: '/',
         permanent: false,
       },
     };

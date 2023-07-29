@@ -6,7 +6,7 @@ const BlockManager = dynamic(
   () => import('../components/shared/BlockManager'),
   { ssr: false }
 );
-import { getData, handleRedirection } from '../utils';
+import { getData } from '../utils';
 import { getLocalizedParams } from '../utils/localize';
 
 const Universals = ({ global, pageData, preview }) => {
@@ -45,7 +45,12 @@ export async function getServerSideProps(context) {
     const json = await res.json();
 
     if (!json.data.length) {
-      return handleRedirection(context.draftMode, null);
+      return {
+        redirect: {
+          destination: `/`,
+          permanent: false,
+        },
+      };
     }
 
     return {

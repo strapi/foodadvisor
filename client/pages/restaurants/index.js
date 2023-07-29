@@ -196,7 +196,12 @@ export async function getServerSideProps(context) {
       !categories.data.length ||
       !places.data.length
     ) {
-      return handleRedirection(slug, context.draftMode, '');
+      return {
+        redirect: {
+          destination: '/',
+          permanent: false,
+        },
+      };
     }
 
     return {
