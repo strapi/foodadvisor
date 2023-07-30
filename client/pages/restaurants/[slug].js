@@ -32,7 +32,7 @@ const Restaurant = ({ global, pageData, preview }) => {
 export async function getServerSideProps(context) {
   const { locale } = getLocalizedParams(context.query);
   const preview = context.draftMode
-    ? '&publicationState=preview&published_at_null=true'
+    ? '&publicationState=preview&published_at_null=true&encodeSourceMaps=true'
     : '';
   const res = await fetch(
     getStrapiURL(
