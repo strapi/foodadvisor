@@ -14,6 +14,7 @@
   "dependencies": {
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
     "@offset-dev/strapi-calendar": "^0.0.10",
+    "@strapi/plugin-content-source-map": "^0.1.0-alpha.2",
     "@strapi/plugin-graphql": "4.12.0-beta.1",
     "@strapi/plugin-i18n": "4.12.0-beta.1",
     "@strapi/plugin-users-permissions": "4.12.0-beta.1",

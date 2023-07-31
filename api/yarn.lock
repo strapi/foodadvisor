@@ -2333,6 +2333,15 @@
     "@strapi/utils" "4.12.0-beta.1"
     lodash "4.17.21"
 
+"@strapi/plugin-content-source-map@^0.1.0-alpha.2":
+  version "0.1.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-content-source-map/-/plugin-content-source-map-0.1.0-alpha.2.tgz#39bdbd2a7ad62d4e91685f4ba14160c5d104c0ef"
+  integrity sha512-vmjhQYhLhif7MapluTipULVRHBK8geaY17KcO5JWexqTr27zI1qVusE6leZZZbuXeQRqEiS+9S/i9wJ45RHJ3w==
+  dependencies:
+    "@strapi/utils" "^4.12.0"
+    "@vercel/stega" "^0.1.0"
+    zod "^3.21.4"
+
 "@strapi/plugin-content-type-builder@4.12.0-beta.1":
   version "4.12.0-beta.1"
   resolved "https://registry.yarnpkg.com/@strapi/plugin-content-type-builder/-/plugin-content-type-builder-4.12.0-beta.1.tgz#bdec00b3788466788f245f4d58b81b92f6560530"
@@ -2597,6 +2606,18 @@
   version "4.12.0-beta.1"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.12.0-beta.1.tgz#b48b6d8ca736650f557003a61e73ca4b3c164640"
   integrity sha512-allZIGl0gLhnhmHJqTIlIUr3o/NFv1MfZLLcKkAw2yubLNSUV6So4sUwQgub8lvThcBtDDT7yTdVJZWFaaOgrQ==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.30.0"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
+
+"@strapi/utils@^4.12.0":
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.12.0.tgz#243ba073e9bb35f1a53b1a9f1690ef3a7513bc0d"
+  integrity sha512-2N3IDMtvl3Mt5Y1SduMSef7xuzYJb9rlmnqY2cbUviAMPg5zR46vYfdbtLj5o+W3NajBS6b3U5iUNMkcL5d8fQ==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -3064,6 +3085,11 @@
     "@codemirror/theme-one-dark" "^6.0.0"
     "@uiw/codemirror-extensions-basic-setup" "4.21.7"
     codemirror "^6.0.0"
+
+"@vercel/stega@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@vercel/stega/-/stega-0.1.0.tgz#2eadbbc9eb0eaab26d28b0c443a922d78c23b6e3"
+  integrity sha512-5b0PkOJsFBX5alChuIO3qpkt5vIZBevzLPhUQ1UP8UzVjL3F1VllnZxp/thfD8R5ol7D7WHkgZHIjdUBX4tDpQ==
 
 "@webassemblyjs/ast@1.11.6", "@webassemblyjs/ast@^1.11.5":
   version "1.11.6"
@@ -10903,3 +10929,8 @@ yup@^0.32.9:
     nanoclone "^0.2.1"
     property-expr "^2.0.4"
     toposort "^2.0.2"
+
+zod@^3.21.4:
+  version "3.21.4"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.21.4.tgz#10882231d992519f0a10b5dd58a38c9dabbb64db"
+  integrity sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==
