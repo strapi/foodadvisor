@@ -14,16 +14,19 @@
   "dependencies": {
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
     "@offset-dev/strapi-calendar": "^0.0.10",
-    "@strapi/plugin-content-source-map": "^0.1.0-alpha.2",
-    "@strapi/plugin-graphql": "4.12.0-beta.1",
-    "@strapi/plugin-i18n": "4.12.0-beta.1",
-    "@strapi/plugin-users-permissions": "4.12.0-beta.1",
-    "@strapi/strapi": "4.12.0-beta.1",
+    "@strapi/plugin-content-source-map": "file:../../plugins/content-source-map",
+    "@strapi/plugin-graphql": "4.15.5",
+    "@strapi/plugin-i18n": "4.15.5",
+    "@strapi/plugin-users-permissions": "4.15.5",
+    "@strapi/strapi": "4.15.5",
     "@webbio/strapi-plugin-scheduler": "^0.1.2",
     "better-sqlite3": "^7.6.2",
     "fs-extra": "^10.0.0",
-    "strapi-plugin-populate-deep": "^1.1.2",
-    "strapi-plugin-todo": "^0.0.9",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^5.2.0",
+    "strapi-plugin-populate-deep": "3.0.1",
+    "styled-components": "^5.2.1",
     "unzip-stream": "^0.3.1",
     "uuid-v4": "^0.1.0"
   },
@@ -37,5 +40,8 @@
     "node": ">=14.x.x <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "volta": {
+    "node": "18.18.2"
+  }
 }

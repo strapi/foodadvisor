@@ -5,6 +5,7 @@ import { useCMEditViewDataManager } from '@strapi/helper-plugin';
 import { useIntl } from 'react-intl';
 
 const PreviewButton = () => {
+  console.log('PreviewButton');
   const { formatMessage } = useIntl();
   const { modifiedData, layout } = useCMEditViewDataManager();
 
