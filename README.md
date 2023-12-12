@@ -14,8 +14,6 @@ This repository contains the following:
 
 You can get started with this project locally on your machine by following the instructions below or you can [request a private instance on our website](https://strapi.io/demo).
 
-You can also [fork](https://github.com/strapi/foodadvisor/fork) this repository and deploy it on [Strapi Cloud](https://cloud.strapi.io)
-
 ## Prerequisites
 
 Be sure to have the correct env variables for each part:
