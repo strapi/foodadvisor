@@ -14,18 +14,21 @@
   "dependencies": {
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
     "@offset-dev/strapi-calendar": "^0.0.10",
-    "@strapi/plugin-graphql": "4.13.5",
-    "@strapi/plugin-i18n": "4.13.5",
+    "@strapi/plugin-graphql": "4.19.1",
+    "@strapi/plugin-i18n": "4.19.1",
     "@strapi/plugin-seo": "^1.9.4",
-    "@strapi/plugin-users-permissions": "4.13.5",
-    "@strapi/strapi": "4.13.5",
+    "@strapi/plugin-users-permissions": "4.19.1",
+    "@strapi/strapi": "4.19.1",
     "@webbio/strapi-plugin-scheduler": "^0.1.2",
     "better-sqlite3": "^7.6.2",
     "fs-extra": "^10.0.0",
-    "strapi-plugin-populate-deep": "^1.1.2",
-    "strapi-plugin-todo": "^0.0.9",
+    "strapi-plugin-todo": "^0.0.10",
     "unzip-stream": "^0.3.1",
-    "uuid-v4": "^0.1.0"
+    "uuid-v4": "^0.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^5.3.11"
   },
   "author": {
     "name": "A Strapi developer"
@@ -34,7 +37,7 @@
     "uuid": "9267dde0-dde7-4f0f-a715-79e91590dca5"
   },
   "engines": {
-    "node": ">=14.x.x <=18.x.x",
+    "node": ">=16.x.x <=20.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
